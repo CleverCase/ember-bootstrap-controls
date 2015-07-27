@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../templates/components/bootstrap-input';
+import layout from '../templates/components/bootstrap-textarea';
 import InputableMixin from '../mixins/component/inputable';
 
 export default Ember.Component.extend(InputableMixin, {
@@ -8,7 +8,6 @@ export default Ember.Component.extend(InputableMixin, {
   layout: layout,
   placeholder: null,
   value: null,
-  readonly: false,
   type: null,
   labelColumns: 2,
   inputColumns: 10,

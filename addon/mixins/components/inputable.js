@@ -8,7 +8,7 @@ export default Ember.Mixin.create({
   hasWarning: null,
   disabled: false,
 
-  hasError: Ember.computed.alias('errors')
+  hasError: Ember.computed.alias('errors'),
 
   inputId: Ember.computed(function() {
     return `bootstrap-component-${generateUUID}`;
