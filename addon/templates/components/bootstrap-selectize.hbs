@@ -1,0 +1,56 @@
+{{#if hasBlock}}
+  {{yield inputId}}
+{{else}}
+  {{#if label}}
+    <label class="{{if isSrOnly 'sr-only' ''}} {{if hasColumns labelColumnCss ''}}" for="{{selectId}}">{{label}}</label>
+  {{/if}}
+  {{#if hasColumns}}
+    <div class="{{inputColumnCss}}">
+      {{ember-selectize
+          elementId=selectId
+          content=content
+          selection=selection
+          value=value
+          optionValuePath=optionValuePath
+          optionLabelPath=optionLabelPath
+          placeholder=placeholder
+          multiple=multiple
+          sortField=sortField
+          sortDirection=sortDirection
+          filter=filter
+          loading=loading
+          required=required
+          readonly=readonly
+          disabled=disabled
+          selectOnTab=selectOnTab
+          create-item=createItem
+          update-filter=updateFilter
+          select-item=selectItem
+          add-item=addItem
+          remove-item=removeItem}}
+    </div>
+  {{else}}
+    {{ember-selectize
+        elementId=selectId
+        content=content
+        selection=selection
+        value=value
+        optionValuePath=optionValuePath
+        optionLabelPath=optionLabelPath
+        placeholder=placeholder
+        multiple=multiple
+        sortField=sortField
+        sortDirection=sortDirection
+        filter=filter
+        loading=loading
+        required=required
+        readonly=readonly
+        disabled=disabled
+        selectOnTab=selectOnTab
+        create-item=createItem
+        update-filter=updateFilter
+        select-item=selectItem
+        add-item=addItem
+        remove-item=removeItem}}
+  {{/if}}
+{{/if}}
