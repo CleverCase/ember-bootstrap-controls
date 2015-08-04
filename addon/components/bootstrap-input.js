@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bootstrap-input';
-import InputableMixin from '../mixins/component/inputable';
+import InputableMixin from '../mixins/components/inputable';
 
 export default Ember.Component.extend(InputableMixin, {
   classNames: ['form-group', 'bootstrap-input-component'],
