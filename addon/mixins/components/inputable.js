@@ -1,6 +1,5 @@
 import Ember from 'ember';
-import generateUUID from '../../utils/generate-uuid';
-
+import generateUUID from 'ember-bootstrap-controls/utils/generate-uuid';
 
 export default Ember.Mixin.create({
   errors: null,
@@ -11,6 +10,6 @@ export default Ember.Mixin.create({
   hasError: Ember.computed.alias('errors'),
 
   inputId: Ember.computed(function() {
-    return `bootstrap-component-${generateUUID}`;
+    return `bootstrap-component-${generateUUID()}`;
   })
 });

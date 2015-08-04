@@ -4,7 +4,7 @@ import InputableMixin from '../mixins/components/inputable';
 
 export default Ember.Component.extend(InputableMixin, {
   classNames: ['form-group', 'bootstrap-input-component'],
-  classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'hasError:has-error '],
+  classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'hasError:has-error'],
   layout: layout,
   placeholder: null,
   value: null,
