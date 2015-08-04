@@ -1,17 +1,16 @@
 import Ember from 'ember';
 import layout from '../templates/components/bootstrap-selectize';
 import InputableMixin from '../mixins/component/inputable';
+import computedActionKey from '../utils/computed-action-key';
 
 export default Ember.Component.extend(InputableMixin, {
-  classNames: ['form-group', 'bootstrap-selectize-component']
+  classNames: ['form-group', 'bootstrap-selectize-component'],
   isSrOnly: false,
   selectOnTab: true,
   classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'hasError:has-error '],
   plugins: 'remove_button',
   labelColumns: 2,
   inputColumns: 10,
-
-  classNames: ['bootstrap-selectize-component', 'form-group'],
 
   createItem: computedActionKey('create-item'),
   updateFilter: computedActionKey('update-filter'),
@@ -29,7 +28,7 @@ export default Ember.Component.extend(InputableMixin, {
     var inputColumns = this.get('inputColumns');
 
     return `col-sm-${inputColumns}`;
-  })
+  }),
 
   actions: {
     createItem: function() {
