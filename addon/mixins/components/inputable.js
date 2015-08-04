@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import generateUUID from '../utils/generate-uuid';
+import generateUUID from '../../utils/generate-uuid';
 
 
 export default Ember.Mixin.create({
