@@ -8,7 +8,7 @@ export default Ember.Component.extend(InputableMixin, {
   layout: layout,
   placeholder: null,
   value: null,
-  readonly: false,
+  readonly: null,
   type: null,
   labelColumns: 2,
   inputColumns: 10,
