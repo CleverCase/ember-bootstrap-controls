@@ -1,7 +1,7 @@
 {{#if hasBlock}}
   {{yield inputId}}
 {{else}}
-  <label for="{{inputId}}" class="control-label {{if hasColumns labelColumnCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
+  <label for="{{inputId}}" class="control-label {{if hasColumns labelColumnCss ''}} {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
   {{#if hasColumns}}
     <div class="{{inputColumnCss}}">
       {{input value=value
