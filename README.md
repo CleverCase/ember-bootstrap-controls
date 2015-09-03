@@ -4,9 +4,8 @@ This README outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
-* `git clone` this repository
-* `npm install`
-* `bower install`
+Add the following to your `package.json`:
+- `"ember-bootstrap-controls": "git+https://github.com/wildland/ember-bootstrap-controls#v0.0.5",`
 
 ## Usage
 - `bootstrap-form` form helper
