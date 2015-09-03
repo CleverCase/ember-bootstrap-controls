@@ -8,6 +8,7 @@ export default Ember.Component.extend(InputableMixin, {
   layout: layout,
   placeholder: null,
   value: null,
+  checked: null,
   readonly: null,
   type: null,
   labelColumns: 2,
@@ -15,6 +16,10 @@ export default Ember.Component.extend(InputableMixin, {
   hasColumns: null,
   srOnly: null,
   customLabelCss: null,
+
+  checkboxType: Ember.computed('type', function() {
+    return this.get('type') === 'checkbox'
+  }),
 
   labelColumnCss: Ember.computed('labelColumns', function() {
     var labelColumns = this.get('labelColumns');
