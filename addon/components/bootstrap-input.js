@@ -16,19 +16,31 @@ export default Ember.Component.extend(InputableMixin, {
   srOnly: null,
   customLabelCss: null,
 
-  valueDecorator: Ember.computed('value', 'type', function() {
-    if(this.get('type') === 'checkbox') {
-      return null;
-    } else {
-      return this.get('value');
+  valueDecorator: Ember.computed('value', 'type', {
+    get() {
+      if(this.get('type') === 'checkbox') {
+        return null;
+      } else {
+        return this.get('value');
+      }
+    },
+
+    set(key, value) {
+      this.set('value', value);
     }
   }),
 
-  checkedDecorator: Ember.computed('value', 'type', function() {
-    if(this.get('type') === 'checkbox') {
-      return this.get('value');
-    } else {
-      return null;
+  checkedDecorator: Ember.computed('value', 'type', {
+    get() {
+      if(this.get('type') === 'checkbox') {
+        return this.get('value');
+      } else {
+        return null;
+      }
+    },
+
+    set(key, value) {
+      this.set('value', value);
     }
   }),
 
