@@ -3,27 +3,47 @@
 {{else}}
   <label for="{{inputId}}" class="control-label {{if hasColumns labelColumnCss ''}} {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
   {{#if hasColumns}}
-    <div class="{{inputColumnCss}}">
+    {{#if isChecked}}
+      <div class="{{inputColumnCss}}">
+        {{input
+          checked=value
+          elementId=inputId
+          type=type
+          placeholder=placeholder
+          readonly=readonly
+          disabled=disabled}}
+      </div>
+    {{else}}
+      <div class="{{inputColumnCss}}">
+        {{input
+          value=value
+          elementId=inputId
+          type=type
+          placeholder=placeholder
+          classNames="form-control"
+          readonly=readonly
+          disabled=disabled}}
+      </div>
+    {{/if}}
+  {{else}}
+    {{#if isChecked}}
       {{input
-        value=valueDecorator
-        checked=checkedDecorator
+        checked=value
+        elementId=inputId
+        type=type
+        placeholder=placeholder
+        readonly=readonly
+        disabled=disabled}}
+    {{else}}
+      {{input
+        value=value
         elementId=inputId
         type=type
         placeholder=placeholder
         classNames="form-control"
         readonly=readonly
         disabled=disabled}}
-    </div>
-  {{else}}
-    {{input
-      value=valueDecorator
-      checked=checkedDecorator
-      elementId=inputId
-      type=type
-      placeholder=placeholder
-      classNames="form-control"
-      readonly=readonly
-      disabled=disabled}}
+    {{/if}}
   {{/if}}
   {{#if errors}}
     <div class="form-control-static alert alert-danger" role="alert">
