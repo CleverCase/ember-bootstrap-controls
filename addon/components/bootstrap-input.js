@@ -1,6 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/bootstrap-input';
 import InputableMixin from '../mixins/components/inputable';
+import computedActionKey from '../utils/computed-action-key';
 
 export default Ember.Component.extend(InputableMixin, {
   classNames: ['form-group', 'bootstrap-input-component'],
@@ -15,6 +16,8 @@ export default Ember.Component.extend(InputableMixin, {
   hasColumns: null,
   srOnly: null,
   customLabelCss: null,
+
+  keyPress: computedActionKey('key-press'),
 
   isChecked: Ember.computed('type', function() {
     return (this.get('type') === 'checkbox');
@@ -58,5 +61,11 @@ export default Ember.Component.extend(InputableMixin, {
     var inputColumns = this.get('inputColumns');
 
     return `col-sm-${inputColumns}`;
-  })
+  }),
+
+  actions: {
+    keyPress: function() {
+      this.sendAction('key-press', ...arguments);
+    },
+  },
 });
