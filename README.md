@@ -7,6 +7,9 @@ This README outlines the details of collaborating on this Ember addon.
 Add the following to your `package.json`:
 - `"ember-bootstrap-controls": "git+https://github.com/wildland/ember-bootstrap-controls#v0.0.7",`
 
+Run
+`ember g ember-bootstrap-controls`
+
 ## Usage
 - `bootstrap-form` form helper
 - `bootstrap-input` input field helper
