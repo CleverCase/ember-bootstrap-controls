@@ -11,7 +11,8 @@
           type=type
           placeholder=placeholder
           readonly=readonly
-          disabled=disabled}}
+          disabled=disabled
+          tabindex=tabindex}}
       </div>
     {{else}}
       <div class="{{inputColumnCss}}">
@@ -23,7 +24,8 @@
           classNames="form-control"
           readonly=readonly
           disabled=disabled
-          key-press=keyPress}}
+          key-press=keyPress
+          tabindex=tabindex}}
       </div>
     {{/if}}
   {{else}}
@@ -34,7 +36,8 @@
         type=type
         placeholder=placeholder
         readonly=readonly
-        disabled=disabled}}
+        disabled=disabled
+        tabindex=tabindex}}
     {{else}}
       {{input
         value=value
@@ -44,7 +47,8 @@
         classNames="form-control"
         readonly=readonly
         disabled=disabled
-        key-press=keyPress}}
+        key-press=keyPress
+        tabindex=tabindex}}
     {{/if}}
   {{/if}}
   {{#if errors}}

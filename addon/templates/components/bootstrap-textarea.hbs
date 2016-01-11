@@ -10,7 +10,8 @@
           classNames="form-control"
           rows=rows
           cols=cols
-          disabled=disabled}}
+          disabled=disabled
+          tabindex=tabindex}}
     </div>
   {{else}}
     {{textarea value=value
@@ -19,7 +20,8 @@
         classNames="form-control"
         rows=rows
         cols=cols
-        disabled=disabled}}
+        disabled=disabled
+        tabindex=tabindex}}
   {{/if}}
   {{#if errors}}
     <div class="alert alert-danger" role="alert">
