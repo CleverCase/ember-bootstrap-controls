@@ -2,7 +2,6 @@
   {{yield inputId}}
 {{else}}
   {{#if label}}
-    <h2>Derpy</h2>
     <label class="{{if isSrOnly 'sr-only' ''}} {{if hasColumns labelColumnCss ''}}" for="{{inputId}}">{{label}}</label>
   {{/if}}
   {{#if hasColumns}}
