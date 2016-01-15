@@ -2,12 +2,12 @@
   {{yield inputId}}
 {{else}}
   {{#if label}}
-    <label class="{{if isSrOnly 'sr-only' ''}} {{if hasColumns labelColumnCss ''}}" for="{{selectId}}">{{label}}</label>
+    <label class="{{if isSrOnly 'sr-only' ''}} {{if hasColumns labelColumnCss ''}}" for="{{inputId}}">{{label}}</label>
   {{/if}}
   {{#if hasColumns}}
     <div class="{{inputColumnCss}}">
       {{ember-selectize
-          elementId=selectId
+          elementId=inputId
           content=content
           selection=selection
           value=value
@@ -31,7 +31,7 @@
     </div>
   {{else}}
     {{ember-selectize
-        elementId=selectId
+        elementId=inputId
         content=content
         selection=selection
         value=value
