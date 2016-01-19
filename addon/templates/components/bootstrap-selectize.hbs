@@ -53,4 +53,11 @@
         add-item=addItem
         remove-item=removeItem}}
   {{/if}}
+  {{#if errors}}
+    <div class="form-control-static alert alert-danger" role="alert">
+      {{#each errors as |error|}}
+        <span>{{error.message}}</span>
+      {{/each}}
+    </div>
+  {{/if}}
 {{/if}}
