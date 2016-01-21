@@ -5,7 +5,7 @@ This README outlines the details of collaborating on this Ember addon.
 ## Installation
 
 Add the following to your `package.json`:
-- `"ember-bootstrap-controls": "git+https://github.com/wildland/ember-bootstrap-controls#v0.0.7",`
+- `"ember-bootstrap-controls": "git+https://github.com/wildland/ember-bootstrap-controls#v0.1.0",`
 
 Run
 `ember g ember-bootstrap-controls`
