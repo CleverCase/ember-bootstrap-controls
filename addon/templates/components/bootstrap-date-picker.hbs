@@ -4,24 +4,18 @@
   <label for="{{inputId}}" class="control-label {{if hasColumns labelColumnCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
   {{#if hasColumns}}
     <div class="{{inputColumnCss}}">
-      {{textarea
+      {{bootstrap-datepicker
+        id=inputId
         value=value
-        elementId=inputId
-        placeholder=placeholder
-        classNames="form-control"
-        rows=rows
-        cols=cols
-        disabled=disabled}}
+        todayHighlight=todayHighlight
+        class="form-control"}}
     </div>
   {{else}}
-    {{textarea
+    {{bootstrap-datepicker
+      id=inputId
       value=value
-      elementId=inputId
-      placeholder=placeholder
-      classNames="form-control"
-      rows=rows
-      cols=cols
-      disabled=disabled}}
+      todayHighlight=todayHighlight
+      class="form-control"}}
   {{/if}}
   {{#if errors}}
     <div class="alert alert-danger" role="alert">
