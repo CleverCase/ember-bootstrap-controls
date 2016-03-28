@@ -17,6 +17,8 @@ Run
 
 ### Bootstrap Form
 
+---
+
 ### Bootstrap Input
 A field helper to simplify making an input field for a form.
 
@@ -38,12 +40,54 @@ Would render
 *Required Arguments:*
 - `value` - Ember model attribute attached to the input.
 - `label` - String displayed as the labels text.
+
 *Optional Arguments:*
 - `errors` - Collection of DS.errors.
 - `customLabelCss` - Custom css to be added to the label.
 - `srOnly` - Boolean srOnly class to the label for screen readers.
 
+---
+
+### Bootstrap Date-Picker
+
+
+---
+
+### Bootstrap Selectize
+
+----
+
 ### Bootstrap TextArea
+
+A helper for simplifying textarea input fields.
+
+*Use Example:*
+
+```
+{{bootstrap-textarea
+  value=matter.description
+   label="Description"
+   content=description
+   disabled=isNotEditing
+   placeholder="Enter text..."}}
+```
+Rendered output:
+
+```
+<textarea id="bootstrap-component-3" placeholder="Enter text here..." class="ember-view ember-text-area form-control"></textarea>
+
+```
+
+*Required Arguments:*
+- `value` - Ember model attribute attached to the input.
+- `label` - String displayed as the labels text.
+
+*Optional Arguments:*
+- `errors` - Collection of DS.errors.
+- `customLabelCss` - Custom css to be added to the label.
+- `srOnly` - Boolean srOnly class to the label for screen readers.
+
+---
 
 ## Running
 
