@@ -65,9 +65,9 @@ A helper for simplifying textarea input fields.
 
 ```
 {{bootstrap-textarea
-  value=matter.description
-   label="Description"
-   content=description
+  value=value
+   label="label"
+   content=content
    disabled=isNotEditing
    placeholder="Enter text..."}}
 ```
