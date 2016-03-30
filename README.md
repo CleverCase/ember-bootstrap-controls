@@ -50,10 +50,63 @@ Would render
 
 ### Bootstrap Date-Picker
 
+*Use Example*
+
+```
+{{bootstrap-datepicker
+  id=inputId
+  value=value
+  todayHighlight=todayHighlight
+  class="form-control"}}
+```
+
+Rendered Output is a `<table>` structured like a calandar which allows the user to choose a specific date.
+
+*Required Arguments:*
+- `value` - Ember model attribute attached to the input.
+- `label` - String displayed as the labels text.
+
+*Optional Arguments:*
+- `errors` - Collection of DS.errors.
+- `customLabelCss` - Custom css to be added to the label.
+- `todayHighlight` - Highlights the current date on calandar UI.
 
 ---
 
 ### Bootstrap Selectize
+
+*Use Example:*
+
+```
+{{ember-selectize
+  elementId=inputId
+  content=content
+  selection=selection
+  value=value
+  optionValuePath=optionValuePath
+  optionLabelPath=optionLabelPath
+  placeholder=placeholder}}
+```
+
+Rendered Output:
+
+```
+ <select id="bootstrap-component-1" autocomplete="off" class="ember-view ember-selectize selectized" tabindex="-1" style="display: none;">
+    <option value="" selected="selected"></option>
+    <option value=""></option>
+    . . .
+  </select>
+```
+
+*Required Arguments:*
+- `value` - Ember model attribute attached to the input.
+- `label` - String displayed as the labels text.
+- `optionValuePath` - Values pertaining to dropdown options.
+- `optionLabelPath` - Labels for drop down options (usually equal to option value attribute).
+
+*Optional Arguments:*
+- `errors` - Collection of DS.errors.
+- `customLabelCss` - Custom css to be added to the label.
 
 ----
 
