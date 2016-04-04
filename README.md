@@ -1,19 +1,29 @@
 # Ember-bootstrap-controls
 
-This README outlines the details of collaborating on this Ember addon.
+Ember-bootstrap-controls is a small library for quickly creating EmberJS forms that utilize the Bootstrap form and input stylings.
+
+This README outlines the details of using and collaborating on this Ember addon.
 
 ## Installation
 
-Add the following to your `package.json`:
+Add the following the list of dependencies in your `package.json` which can be found in the `app-ember` directory:
 - `"ember-bootstrap-controls": "git+https://github.com/wildland/ember-bootstrap-controls#v0.1.0",`
 
-Run
+Now run `npm install`.
+
+
+Move into your root ember directory `app-ember` and run:
+
 `ember g ember-bootstrap-controls`
 
 ## Usage
 - `bootstrap-form` form helper
 - `bootstrap-input` input field helper
 - `bootstrap-textarea` text area helper
+- `bootstrap-selectize` select tag helper
+- `bootstrap-datepicker` calendar style date select helper
+
+---
 
 ### Bootstrap Form
 
