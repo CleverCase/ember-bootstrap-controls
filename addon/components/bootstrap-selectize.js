@@ -31,6 +31,10 @@ export default Ember.Component.extend(InputableMixin, {
     return `col-sm-${inputColumns}`;
   }),
 
+  init() {
+    Ember.Logger.warn('DEPRECATION: bootstrap-selectize is deprecated in favor of bootstrap-power-select.');
+  },
+
   actions: {
     createItem: function() {
       this.sendAction('create-item', ...arguments);
