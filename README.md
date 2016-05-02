@@ -83,40 +83,51 @@ Rendered Output is a `<table>` structured like a calandar which allows the user 
 
 ---
 
-### Bootstrap Selectize
+### Bootstrap Power Select
 
 *Use Example:*
 
+Template
 ```
-{{ember-selectize
-  elementId=inputId
-  content=content
-  selection=selection
-  value=value
-  optionValuePath=optionValuePath
-  optionLabelPath=optionLabelPath
-  placeholder=placeholder}}
+{{#bootstrap-power-select
+  label="Name"
+  selected=selectedItem
+  options=names
+  placeholder="Pick a name"
+  onChange=(action "foo")
+  allowClear=true
+  loadingMessage="Loading..."
+  as |option|}}
+    <span>{{option}}</span>
+{{/bootstrap-power-select}}
 ```
 
-Rendered Output:
-
+Controller
 ```
- <select id="bootstrap-component-1" autocomplete="off" class="ember-view ember-selectize selectized" tabindex="-1" style="display: none;">
-    <option value="" selected="selected"></option>
-    <option value=""></option>
-    . . .
-  </select>
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  names: ['Stefan', 'Miguel', 'Tomster', 'Pluto'],
+  selectedItem: null,
+  actions: {
+    foo(selectedItem) {
+      this.set("selectedItem", selectedItem);
+    }
+  }
+});
 ```
 
 *Required Arguments:*
-- `value` - Ember model attribute attached to the input.
 - `label` - String displayed as the labels text.
-- `optionValuePath` - Values pertaining to dropdown options.
-- `optionLabelPath` - Labels for drop down options (usually equal to option value attribute).
+- `selected` - The selected option
+- `options` - Colletion of options to display in the component
+- `onChange` - 	The function to be invoked when the user selects or unselects an option. 
 
 *Optional Arguments:*
 - `errors` - Collection of DS.errors.
-- `customLabelCss` - Custom css to be added to the label.
+- `allowClear` - When truthy, single selects allow to nullify the selection
+- `loadingMessage` - Message shown in the list of options while the options are still not resolved, tipically after a search but also when options is a promise.
+- `placeholder` - Text to display in the trigger of the component while no option is selected
 
 ----
 
