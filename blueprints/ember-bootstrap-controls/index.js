@@ -1,5 +1,5 @@
 module.exports = {
-  description: '',
+  description: 'Ember Bootstrap Controls Install blueprint',
   normalizeEntityName: function() {},
 
   afterInstall: function(options) {
@@ -12,6 +12,10 @@ module.exports = {
         {
           name: "ember-cli-bootstrap-datepicker",
           target: "0.5.5"
+        },
+        {
+          name: "ember-power-select",
+          target: "0.10.3"
         }
       ]
     });

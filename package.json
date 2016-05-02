@@ -30,6 +30,7 @@
     "ember-cli-qunit": "0.3.18",
     "ember-cli-release": "0.2.3",
     "ember-cli-selectize": "^0.4.0",
+    "ember-power-select": "0.10.3",
     "ember-cli-sri": "^1.0.1",
     "ember-cli-uglify": "^1.0.1",
     "ember-data": "1.13.7",

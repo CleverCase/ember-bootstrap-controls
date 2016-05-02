@@ -1,0 +1,20 @@
+{{#if hasBlock}}
+  <label for="{{inputId}}" class="control-label">{{label}}</label>
+  {{#power-select
+    selected=selected
+    options=options
+    placeholder=placeholder
+    onchange=onChange
+    as |option|}}
+    {{yield option}}
+  {{/power-select}}
+  {{#if errors}}
+    <div class="alert alert-danger" role="alert">
+      {{#each errors as |error|}}
+        <span>{{error.message}}</span>
+      {{/each}}
+    </div>
+  {{/if}}
+{{else}}
+  <span>Missing block syntax for power select</span>
+{{/if}}
