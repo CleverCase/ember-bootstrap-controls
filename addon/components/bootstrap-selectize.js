@@ -32,7 +32,15 @@ export default Ember.Component.extend(InputableMixin, {
   }),
 
   init() {
-    Ember.Logger.warn('DEPRECATION: bootstrap-selectize is deprecated in favor of bootstrap-power-select.');
+    Ember.deprecate(
+      'bootstrap-selectize is deprecated in favor of bootstrap-power-select.',
+      false
+      {
+        id: 'ember-bootstrap-controls.bootstrap-selectize'
+        until: '0.3.0'
+        url: 'https://github.com/wildland/ember-bootstrap-controls'
+      }
+    );
   },
 
   actions: {
