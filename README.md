@@ -121,13 +121,15 @@ export default Ember.Controller.extend({
 - `label` - String displayed as the labels text.
 - `selected` - The selected option
 - `options` - Colletion of options to display in the component
-- `onChange` - 	The function to be invoked when the user selects or unselects an option. 
+- `onChange` - 	The function to be invoked when the user selects or unselects an option.
 
 *Optional Arguments:*
 - `errors` - Collection of DS.errors.
 - `allowClear` - When truthy, single selects allow to nullify the selection
 - `loadingMessage` - Message shown in the list of options while the options are still not resolved, tipically after a search but also when options is a promise.
 - `placeholder` - Text to display in the trigger of the component while no option is selected
+- 'searchEnabled' - When falsey, hides the search in single selects
+- 'searchField' - When the options are objects and no custom matches function is provided, this option tells the component what property of the options should the default matches use to filter
 
 ----
 
