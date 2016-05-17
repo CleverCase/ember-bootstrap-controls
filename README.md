@@ -130,6 +130,7 @@ export default Ember.Controller.extend({
 - `placeholder` - Text to display in the trigger of the component while no option is selected
 - `searchEnabled` - When falsey, hides the search in single selects
 - `searchField` - When the options are objects and no custom matches function is provided, this option tells the component what property of the options should the default matches use to filter
+- `disabled` - When truthy the component cannot be interacted
 
 ----
 
