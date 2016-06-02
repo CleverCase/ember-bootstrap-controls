@@ -6,10 +6,6 @@ module.exports = {
     return this.addAddonsToProject({
       packages: [
         {
-          name: 'ember-cli-selectize',
-          target: "^0.4.0"
-        },
-        {
           name: "ember-cli-bootstrap-datepicker",
           target: "0.5.5"
         },
