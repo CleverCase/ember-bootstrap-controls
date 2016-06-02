@@ -7,7 +7,7 @@ This README outlines the details of using and collaborating on this Ember addon.
 ## Installation
 
 Add the following the list of dependencies in your `package.json` which can be found in the `app-ember` directory:
-- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.2.2",`
+- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.3.0",`
 
 Now run `npm install`.
 
@@ -20,8 +20,9 @@ Move into your root ember directory `app-ember` and run:
 - `bootstrap-form` form helper
 - `bootstrap-input` input field helper
 - `bootstrap-textarea` text area helper
-- `bootstrap-selectize` select tag helper
 - `bootstrap-datepicker` calendar style date select helper
+- `bootstrap-power-select` select tag helper
+- `bootstrap-multi-select` multi-select tag helper
 
 ---
 
@@ -131,6 +132,27 @@ export default Ember.Controller.extend({
 - `searchEnabled` - When falsey, hides the search in single selects
 - `searchField` - When the options are objects and no custom matches function is provided, this option tells the component what property of the options should the default matches use to filter
 - `disabled` - When truthy the component cannot be interacted
+
+### Bootstrap Multi Select
+
+*Use Example:*
+
+Template
+```
+{{#bootstrap-multi-select
+  label="Name"
+  selected=selectedItems
+  options=names
+  placeholder="Pick a name"
+  onChange=(action (mut selectedOptions))
+  allowClear=true
+  loadingMessage="Loading..."
+  as |option|}}
+    <span>{{option}}</span>
+{{/bootstrap-multi-select}}
+```
+
+Same options as `bootstrap-power-select`.
 
 ----
 
