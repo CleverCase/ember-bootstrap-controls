@@ -1,5 +1,7 @@
 {{#if hasBlock}}
-  <label for="{{inputId}}" class="control-label">{{label}}</label>
+  {{#if label}}
+    <label for="{{inputId}}" class="control-label">{{label}}</label>
+  {{/if}}
   {{#power-select-multiple
     selected=selected
     options=options
