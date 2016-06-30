@@ -17,16 +17,19 @@ Move into your root ember directory `app-ember` and run:
 `ember g ember-bootstrap-controls`
 
 ## Usage
-- `bootstrap-form` form helper
-- `bootstrap-input` input field helper
-- `bootstrap-textarea` text area helper
-- `bootstrap-datepicker` calendar style date select helper
-- `bootstrap-power-select` select tag helper
-- `bootstrap-multi-select` multi-select tag helper
+- [`bootstrap-form` form helper](#bootstrap-form)
+- [`bootstrap-input` input field helper](#bootstrap-input)
+- [`bootstrap-textarea` text area helper](#bootstrap-textarea)
+- [`bootstrap-datepicker` calendar style date select helper](#bootstrap-datepicker)
+- [`bootstrap-power-select` select tag helper](#bootstrap-power-select)
+- [`bootstrap-multi-select` multi-select tag helper](#bootstrap-multi-select)
+- [`bootstrap-pagination-nav` pagination navigation helper](#bootstrap-pagination-nav)
 
 ---
 
 ### Bootstrap Form
+
+> We should write some documentation for this.
 
 ---
 
@@ -35,13 +38,13 @@ A field helper to simplify making an input field for a form.
 
 *Use Example:*
 
-```
+```html
 {{bootstrap-input value=user.email  label="Email”}}
 ```
 
 Would render
 
-```
+```html
 <div class="form-group bootstrap-input-component">
   <label for="bootstrap-component-0" class="control-label" >Email</label>
   <input id="bootstrap-component-0" className="form-control ember-view ember-text-field">
@@ -59,11 +62,11 @@ Would render
 
 ---
 
-### Bootstrap Date-Picker
+### Bootstrap Datepicker
 
 *Use Example*
 
-```
+```html
 {{bootstrap-datepicker
   id=inputId
   value=value
@@ -89,7 +92,7 @@ Rendered Output is a `<table>` structured like a calandar which allows the user 
 *Use Example:*
 
 Template
-```
+```html
 {{#bootstrap-power-select
   label="Name"
   selected=selectedItem
@@ -104,7 +107,7 @@ Template
 ```
 
 Controller
-```
+```javascript
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
@@ -133,12 +136,14 @@ export default Ember.Controller.extend({
 - `searchField` - When the options are objects and no custom matches function is provided, this option tells the component what property of the options should the default matches use to filter
 - `disabled` - When truthy the component cannot be interacted
 
+---
+
 ### Bootstrap Multi Select
 
 *Use Example:*
 
 Template
-```
+```html
 {{#bootstrap-multi-select
   label="Name"
   selected=selectedItems
@@ -162,7 +167,7 @@ A helper for simplifying textarea input fields.
 
 *Use Example:*
 
-```
+```html
 {{bootstrap-textarea
   value=value
    label="label"
@@ -172,7 +177,7 @@ A helper for simplifying textarea input fields.
 ```
 Rendered output:
 
-```
+```html
 <textarea id="bootstrap-component-3" placeholder="Enter text here..." class="ember-view ember-text-area form-control"></textarea>
 
 ```
@@ -185,6 +190,59 @@ Rendered output:
 - `errors` - Collection of DS.errors.
 - `customLabelCss` - Custom css to be added to the label.
 - `srOnly` - Boolean srOnly class to the label for screen readers.
+
+---
+
+### Bootstrap Pagination Nav
+
+*Use Example:*
+
+Template
+```html
+{{bootstrap-pagination-nav
+  pageNumber=pageNumber
+  pageSize=pageSize
+  totalPages=totalPages
+  moveToPage=(action (mut pageNumber))}}
+```
+
+Controller
+```javascript
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  queryParams: ['pageNumber', 'pageSize'] 
+/* 
+    Note that you would combine these with existing queryParams. 
+    So if you had:
+  queryParams: ['search']
+    It would become:
+  queryParams: ['search', 'pageNumber', 'pageSize']
+*/
+  pageNumber: 1,
+  pageSize: 15,
+  
+});
+```
+
+Router
+```javascript
+import Ember from 'ember';
+import PaginatedRouteMixin from 'ember-bootstrap-controls/mixins/routes/pagination'; // Import the mixin
+
+export default Ember.Route.extend(PaginatedRouteMixin, { //Extend from the mixin
+
+  model: function(params) {
+    return this.get('store').query('someModel', { 
+      page: this.paginationParams(params), // Pass this information along with the query.
+    });
+  },
+
+  afterModel: function(model) {
+    this._super(...arguments); // Call the afterModel from the mixin
+  },
+});
+```
 
 ---
 
