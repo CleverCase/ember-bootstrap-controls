@@ -1,0 +1,46 @@
+<ul class="pagination {{className}}">
+  {{#if (eq pageNumber 1)}}
+      <li class="disabled"><a>Previous</a></li>
+  {{else}}
+      <li><a {{action 'moveToPage' (minus-numbers pageNumber 1)}}>Previous</a></li>
+  {{/if}}
+  {{#each visibleOuterLeftPageNumbers as |num|}}
+      {{#if (eq num pageNumber)}}
+          <li class='active'><a>{{num}}</a></li>
+      {{else}}
+          <li><a {{action 'moveToPage' num}}>{{num}}</a></li>
+      {{/if}}
+  {{/each}}
+  {{#if hasLeftGap}}
+      <li class="disabled"><a>...</a></li>
+  {{/if}}
+  {{#each visibleInnerPageNumbers as |num|}}
+      {{#if num}}
+          {{#if (eq num pageNumber)}}
+              <li class='active'><a>{{num}}</a></li>
+          {{else}}
+              <li><a {{action 'moveToPage' num}}>{{num}}</a></li>
+          {{/if}}
+      {{/if}}
+  {{/each}}
+  {{#if hasRightGap}}
+      <li class="disabled"><a>...</a></li>
+  {{/if}}
+  {{#each visibleOuterRightPageNumbers as |num|}}
+      {{#if (eq num pageNumber)}}
+          <li class='active'><a>{{num}}</a></li>
+      {{else}}
+          <li><a {{action 'moveToPage' num}}>{{num}}</a></li>
+      {{/if}}
+  {{/each}}
+  {{#if (eq pageNumber totalPages)}}
+      <li class="disabled"><a>Next</a></li>
+  {{else}}
+      <li><a {{action 'moveToPage' (add-numbers pageNumber 1)}}>Next</a></li>
+  {{/if}}
+ </ul>
+ {{#if totalRecords}}
+  <span class='position-message'>
+    {{positionMessage}}
+  </span>
+ {{/if}}
