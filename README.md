@@ -195,6 +195,8 @@ Rendered output:
 
 ### Bootstrap Pagination Nav
 
+**Note that this requires [api_me](https://github.com/wildland/api_me) >= v0.7.0**
+
 *Use Example:*
 
 Template
