@@ -7,7 +7,7 @@ This README outlines the details of using and collaborating on this Ember addon.
 ## Installation
 
 Add the following the list of dependencies in your `package.json` which can be found in the `app-ember` directory:
-- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.4.1",`
+- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.5.0",`
 
 Now run `npm install`.
 
@@ -213,9 +213,9 @@ Controller
 import Ember from 'ember';
 
 export default Ember.Controller.extend({
-  queryParams: ['pageNumber', 'pageSize'] 
-/* 
-    Note that you would combine these with existing queryParams. 
+  queryParams: ['pageNumber', 'pageSize']
+/*
+    Note that you would combine these with existing queryParams.
     So if you had:
   queryParams: ['search']
     It would become:
@@ -223,7 +223,7 @@ export default Ember.Controller.extend({
 */
   pageNumber: 1,
   pageSize: 15,
-  
+
 });
 ```
 
@@ -235,7 +235,7 @@ import PaginatedRouteMixin from 'ember-bootstrap-controls/mixins/routes/paginati
 export default Ember.Route.extend(PaginatedRouteMixin, { //Extend from the mixin
 
   model: function(params) {
-    return this.get('store').query('someModel', { 
+    return this.get('store').query('someModel', {
       page: this.paginationParams(params), // Pass this information along with the query.
     });
   },
