@@ -6,6 +6,13 @@ export default Ember.Mixin.create({
     pageSize: { refreshModel: true },
   },
 
+  actions: {
+    loading() {
+      const router = this.router;
+      router.intermediateTransitionTo('loading');
+    },
+  },
+
   paginationParams(params) {
     return {
       offset: params.pageNumber ? params.pageNumber : 1,
