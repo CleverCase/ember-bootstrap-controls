@@ -18,6 +18,7 @@ Move into your root ember directory `app-ember` and run:
 
 ## Usage
 - [`bootstrap-form` form helper](#bootstrap-form)
+- [`bootstrap-debounce-input` input field helper](#bootstrap-debounce-input)
 - [`bootstrap-input` input field helper](#bootstrap-input)
 - [`bootstrap-textarea` text area helper](#bootstrap-textarea)
 - [`bootstrap-datepicker` calendar style date select helper](#bootstrap-datepicker)
@@ -30,6 +31,26 @@ Move into your root ember directory `app-ember` and run:
 ### Bootstrap Form
 
 > We should write some documentation for this.
+
+---
+
+### Bootstrap Debounce Input
+A field helper to simplify making an input field with a delay until the user stops typing or hits enter.
+
+*Use Example:*
+
+```html
+{{bootstrap-debounce-input value=search placeholder='Search'}}
+```
+
+*Required Arguments:*
+- `value` - The attribute attached to the input.
+
+*Optional Arguments:*
+- `label` - String displayed as the labels text.
+- `placeholder` - String displayed as the placeholder text.
+- `debounce` - Time in milliseconds to wait for the user to pause before updating the value attribute. Defaults to `1000`.
+- `errors` - Collection of DS.errors.
 
 ---
 
