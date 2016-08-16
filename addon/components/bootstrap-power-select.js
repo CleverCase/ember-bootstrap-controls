@@ -12,6 +12,7 @@ export default Ember.Component.extend(InputableMixin, {
   options: null,
   onChange: null,
   label: null,
+  matcher: null,
 
   disabled: false,
   loadingMessage: 'Loading',
