@@ -156,6 +156,7 @@ export default Ember.Controller.extend({
 - `searchEnabled` - When falsey, hides the search in single selects
 - `searchField` - When the options are objects and no custom matches function is provided, this option tells the component what property of the options should the default matches use to filter
 - `disabled` - When truthy the component cannot be interacted
+- `matcher` - Sometimes the default matcher is not enough for you, for example if you need to match against several fields or you need to perform fuzzy matching. If that is the case just pass your own matcher function. It will receive the option and the search term and you can do whatever you feel like inside as long as it returns -1 if it doesn't match and a positive number if it does.
 
 ---
 
