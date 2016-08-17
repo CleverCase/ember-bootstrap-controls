@@ -158,6 +158,17 @@ export default Ember.Controller.extend({
 - `disabled` - When truthy the component cannot be interacted
 - `matcher` - Sometimes the default matcher is not enough for you, for example if you need to match against several fields or you need to perform fuzzy matching. If that is the case just pass your own matcher function. It will receive the option and the search term and you can do whatever you feel like inside as long as it returns -1 if it doesn't match and a positive number if it does.
 
+Example `matcher` that searches from the start of each item string:
+```javascript
+firstLetterMatcher(listItem, term) {
+  if(listItem.toLowerCase().startsWith(term.toLowerCase())) {
+    return 1;
+  } else {
+    return -1;
+  }
+},
+```
+
 ---
 
 ### Bootstrap Multi Select
