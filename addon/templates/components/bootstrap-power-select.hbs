@@ -2,21 +2,38 @@
   {{#if label}}
     <label for="{{inputId}}" class="control-label">{{label}}</label>
   {{/if}}
-  {{#power-select
-    selected=selected
-    options=options
-    placeholder=placeholder
-    matcher=matcher
-    loadingMessage=loadingMessage
-    onchange=onChange
-    allowClear=allowClear
-    searchEnabled=searchEnabled
-    searchField=searchField
-    allowClear=allowClear
-    disabled=disabled
-    as |option|}}
-    {{yield option}}
-  {{/power-select}}
+  {{#if matcher}}
+    {{#power-select
+      selected=selected
+      options=options
+      placeholder=placeholder
+      loadingMessage=loadingMessage
+      matcher=matcher
+      onchange=onChange
+      allowClear=allowClear
+      searchEnabled=searchEnabled
+      searchField=searchField
+      allowClear=allowClear
+      disabled=disabled
+      as |option|}}
+      {{yield option}}
+    {{/power-select}}
+  {{else}}
+    {{#power-select
+      selected=selected
+      options=options
+      placeholder=placeholder
+      loadingMessage=loadingMessage
+      onchange=onChange
+      allowClear=allowClear
+      searchEnabled=searchEnabled
+      searchField=searchField
+      allowClear=allowClear
+      disabled=disabled
+      as |option|}}
+      {{yield option}}
+    {{/power-select}}
+  {{/if}}
   {{#if errors}}
     <div class="alert alert-danger" role="alert">
       {{#each errors as |error|}}
