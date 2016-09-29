@@ -7,7 +7,7 @@ module.exports = {
       packages: [
         {
           name: "ember-cli-bootstrap-datepicker",
-          target: "0.5.5"
+          target: "0.5.6"
         },
         {
           name: "ember-power-select",

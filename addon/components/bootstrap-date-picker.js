@@ -9,9 +9,11 @@ export default Ember.Component.extend(InputableMixin, {
   placeholder: null,
   value: null,
   type: null,
+  changeDate: null,
   labelColumns: 2,
   inputColumns: 10,
   todayHighlight: true,
+  format: 'mm/dd/yyyy',
 
   labelColumnCss: Ember.computed('labelColumns', function() {
     var labelColumns = this.get('labelColumns');

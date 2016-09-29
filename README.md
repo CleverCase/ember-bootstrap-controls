@@ -105,6 +105,8 @@ Rendered Output is a `<table>` structured like a calandar which allows the user 
 - `errors` - Collection of DS.errors.
 - `customLabelCss` - Custom css to be added to the label.
 - `todayHighlight` - Highlights the current date on calandar UI.
+- `format` - Format for date. Defaults to 'mm/dd/yyyy'.
+- `changeDate` - The changeDate action is triggered when the selected date changes.
 
 ---
 
