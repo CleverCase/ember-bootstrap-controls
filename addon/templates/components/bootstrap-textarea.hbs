@@ -7,6 +7,7 @@
   {{#if hasColumns}}
     <div class="{{inputColumnCss}}">
       {{textarea
+        tabindex=tabindex
         value=value
         elementId=inputId
         placeholder=placeholder
@@ -17,6 +18,7 @@
     </div>
   {{else}}
     {{textarea
+      tabindex=tabindex
       value=value
       elementId=inputId
       placeholder=placeholder

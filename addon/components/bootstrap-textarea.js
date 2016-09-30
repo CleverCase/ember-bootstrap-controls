@@ -11,6 +11,7 @@ export default Ember.Component.extend(InputableMixin, {
   type: null,
   labelColumns: 2,
   inputColumns: 10,
+  tabindex: 0,
 
   labelColumnCss: Ember.computed('labelColumns', function() {
     var labelColumns = this.get('labelColumns');
