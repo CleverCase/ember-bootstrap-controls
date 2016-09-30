@@ -8,6 +8,7 @@
     {{#if isChecked}}
       <div class="{{inputColumnCss}}">
         {{input
+          tabindex=tabindex
           checked=value
           elementId=inputId
           type=type
@@ -18,6 +19,7 @@
     {{else}}
       <div class="{{inputColumnCss}}">
         {{input
+          tabindex=tabindex
           value=value
           elementId=inputId
           type=type
@@ -39,6 +41,7 @@
         disabled=disabled}}
     {{else}}
       {{input
+        tabindex=tabindex
         value=value
         elementId=inputId
         type=type
