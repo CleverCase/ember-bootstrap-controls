@@ -1,27 +1,29 @@
-{{#if hasBlock}}
-  {{#if label}}
-    <label for="{{inputId}}" class="control-label">{{label}}</label>
+<div class="form-group bootstrap-multi-select-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if hasError 'has-error'}} {{if required 'required'}}">
+  {{#if hasBlock}}
+    {{#if label}}
+      <label for="{{inputId}}" class="control-label">{{label}}</label>
+    {{/if}}
+    {{#power-select-multiple
+      selected=selected
+      options=options
+      placeholder=placeholder
+      onchange=onChange
+      allowClear=allowClear
+      searchEnabled=searchEnabled
+      searchField=searchField
+      allowClear=allowClear
+      disabled=disabled
+      as |option|}}
+      {{yield option}}
+    {{/power-select-multiple}}
+    {{#if errors}}
+      <div class="alert alert-danger" role="alert">
+        {{#each errors as |error|}}
+          <span>{{error.message}}</span>
+        {{/each}}
+      </div>
+    {{/if}}
+  {{else}}
+    <span>Missing block syntax for power select</span>
   {{/if}}
-  {{#power-select-multiple
-    selected=selected
-    options=options
-    placeholder=placeholder
-    onchange=onChange
-    allowClear=allowClear
-    searchEnabled=searchEnabled
-    searchField=searchField
-    allowClear=allowClear
-    disabled=disabled
-    as |option|}}
-    {{yield option}}
-  {{/power-select-multiple}}
-  {{#if errors}}
-    <div class="alert alert-danger" role="alert">
-      {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-      {{/each}}
-    </div>
-  {{/if}}
-{{else}}
-  <span>Missing block syntax for power select</span>
-{{/if}}
+</div>

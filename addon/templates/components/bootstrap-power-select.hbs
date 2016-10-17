@@ -1,46 +1,48 @@
-{{#if hasBlock}}
-  {{#if label}}
-    <label for="{{inputId}}" class="control-label">{{label}}</label>
-  {{/if}}
-  {{#if matcher}}
-    {{#power-select
-      selected=selected
-      options=options
-      placeholder=placeholder
-      loadingMessage=loadingMessage
-      matcher=matcher
-      onchange=onChange
-      allowClear=allowClear
-      searchEnabled=searchEnabled
-      searchField=searchField
-      allowClear=allowClear
-      disabled=disabled
-      as |option|}}
-      {{yield option}}
-    {{/power-select}}
+<div class="form-group bootstrap-power-select-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if hasError 'has-error'}} {{if required 'required'}}">
+  {{#if hasBlock}}
+    {{#if label}}
+      <label for="{{inputId}}" class="control-label">{{label}}</label>
+    {{/if}}
+    {{#if matcher}}
+      {{#power-select
+        selected=selected
+        options=options
+        placeholder=placeholder
+        loadingMessage=loadingMessage
+        matcher=matcher
+        onchange=onChange
+        allowClear=allowClear
+        searchEnabled=searchEnabled
+        searchField=searchField
+        allowClear=allowClear
+        disabled=disabled
+        as |option|}}
+        {{yield option}}
+      {{/power-select}}
+    {{else}}
+      {{#power-select
+        selected=selected
+        options=options
+        placeholder=placeholder
+        loadingMessage=loadingMessage
+        onchange=onChange
+        allowClear=allowClear
+        searchEnabled=searchEnabled
+        searchField=searchField
+        allowClear=allowClear
+        disabled=disabled
+        as |option|}}
+        {{yield option}}
+      {{/power-select}}
+    {{/if}}
+    {{#if errors}}
+      <div class="alert alert-danger" role="alert">
+        {{#each errors as |error|}}
+          <span>{{error.message}}</span>
+        {{/each}}
+      </div>
+    {{/if}}
   {{else}}
-    {{#power-select
-      selected=selected
-      options=options
-      placeholder=placeholder
-      loadingMessage=loadingMessage
-      onchange=onChange
-      allowClear=allowClear
-      searchEnabled=searchEnabled
-      searchField=searchField
-      allowClear=allowClear
-      disabled=disabled
-      as |option|}}
-      {{yield option}}
-    {{/power-select}}
+    <span>Missing block syntax for power select</span>
   {{/if}}
-  {{#if errors}}
-    <div class="alert alert-danger" role="alert">
-      {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-      {{/each}}
-    </div>
-  {{/if}}
-{{else}}
-  <span>Missing block syntax for power select</span>
-{{/if}}
+</div>

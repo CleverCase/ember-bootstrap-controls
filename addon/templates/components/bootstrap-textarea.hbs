@@ -1,22 +1,10 @@
-{{#if hasBlock}}
-  {{yield inputId}}
-{{else}}
-  {{#if label}}
-    <label for="{{inputId}}" class="control-label {{if hasColumns labelColumnCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
-  {{/if}}
-  {{#if hasColumns}}
-    <div class="{{inputColumnCss}}">
-      {{textarea
-        tabindex=tabindex
-        value=value
-        elementId=inputId
-        placeholder=placeholder
-        classNames="form-control"
-        rows=rows
-        cols=cols
-        disabled=disabled}}
-    </div>
+<div class="form-group bootstrap-textarea-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if hasError 'has-error'}} {{if required 'required'}}">
+  {{#if hasBlock}}
+    {{yield inputId}}
   {{else}}
+    {{#if label}}
+      <label for="{{inputId}}" class="control-label {{if srOnly 'sr-only' ''}}">{{label}}</label>
+    {{/if}}
     {{textarea
       tabindex=tabindex
       value=value
@@ -26,12 +14,12 @@
       rows=rows
       cols=cols
       disabled=disabled}}
+    {{#if errors}}
+      <div class="alert alert-danger" role="alert">
+        {{#each errors as |error|}}
+          <span>{{error.message}}</span>
+        {{/each}}
+      </div>
+    {{/if}}
   {{/if}}
-  {{#if errors}}
-    <div class="alert alert-danger" role="alert">
-      {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-      {{/each}}
-    </div>
-  {{/if}}
-{{/if}}
+</div>

@@ -4,14 +4,15 @@ import InputableMixin from '../mixins/components/inputable';
 import computedActionKey from '../utils/computed-action-key';
 
 export default Ember.Component.extend(InputableMixin, {
-  classNames: ['form-group', 'bootstrap-debounce-input-component'],
-  classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'hasError:has-error'],
+  tagName: '',
   layout: layout,
+
   value: "",
   valueText: "",
   debounce: 1000,
   label: null,
   placeholder: null,
+  required: false,
 
   didReceiveAttrs() {
     this.set('valueText', this.get('value'));

@@ -1,36 +1,10 @@
-{{#if hasBlock}}
-  {{yield inputId}}
-{{else}}
-  {{#if label}}
-    <label for="{{inputId}}" class="control-label {{if hasColumns labelColumnCss ''}} {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
-  {{/if}}
-  {{#if hasColumns}}
-    {{#if isChecked}}
-      <div class="{{inputColumnCss}}">
-        {{input
-          tabindex=tabindex
-          checked=value
-          elementId=inputId
-          type=type
-          placeholder=placeholder
-          readonly=readonly
-          disabled=disabled}}
-      </div>
-    {{else}}
-      <div class="{{inputColumnCss}}">
-        {{input
-          tabindex=tabindex
-          value=value
-          elementId=inputId
-          type=type
-          placeholder=placeholder
-          classNames="form-control"
-          readonly=readonly
-          disabled=disabled
-          key-press=keyPress}}
-      </div>
-    {{/if}}
+<div class="form-group bootstrap-input-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if hasError 'has-error'}} {{if required 'required'}}">
+  {{#if hasBlock}}
+    {{yield inputId}}
   {{else}}
+    {{#if label}}
+      <label for="{{inputId}}" class="control-label {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
+    {{/if}}
     {{#if isChecked}}
       {{input
         checked=value
@@ -38,7 +12,8 @@
         type=type
         placeholder=placeholder
         readonly=readonly
-        disabled=disabled}}
+        disabled=disabled
+        required=required}}
     {{else}}
       {{input
         tabindex=tabindex
@@ -49,14 +24,15 @@
         classNames="form-control"
         readonly=readonly
         disabled=disabled
-        key-press=keyPress}}
+        key-press=keyPress
+        required=required}}
+    {{/if}}
+    {{#if errors}}
+      <div class="form-control-static alert alert-danger" role="alert">
+        {{#each errors as |error|}}
+          <span>{{error.message}}</span>
+        {{/each}}
+      </div>
     {{/if}}
   {{/if}}
-  {{#if errors}}
-    <div class="form-control-static alert alert-danger" role="alert">
-      {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-      {{/each}}
-    </div>
-  {{/if}}
-{{/if}}
+</div>
