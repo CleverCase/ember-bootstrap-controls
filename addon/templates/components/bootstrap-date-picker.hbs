@@ -1,33 +1,35 @@
-{{#if hasBlock}}
-  {{yield inputId}}
-{{else}}
-  {{#if label}}
-    <label for="{{inputId}}" class="control-label {{if hasColumns labelColumnCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
-  {{/if}}
-  {{#if hasColumns}}
-    <div class="{{inputColumnCss}}">
+<div class="form-group bootstrap-input-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if hasError 'has-error'}} {{if required 'required'}}">
+  {{#if hasBlock}}
+    {{yield inputId}}
+  {{else}}
+    {{#if label}}
+      <label for="{{inputId}}" class="control-label {{if hasColumns labelColumnCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
+    {{/if}}
+    {{#if hasColumns}}
+      <div class="{{inputColumnCss}}">
+        {{bootstrap-datepicker
+          id=inputId
+          value=value
+          format=format
+          todayHighlight=todayHighlight
+          changeDate=changeDate
+          class="form-control"}}
+      </div>
+    {{else}}
       {{bootstrap-datepicker
         id=inputId
         value=value
         format=format
-        todayHighlight=todayHighlight
         changeDate=changeDate
+        todayHighlight=todayHighlight
         class="form-control"}}
-    </div>
-  {{else}}
-    {{bootstrap-datepicker
-      id=inputId
-      value=value
-      format=format
-      changeDate=changeDate
-      todayHighlight=todayHighlight
-      class="form-control"}}
+    {{/if}}
+    {{#if errors}}
+      <div class="alert alert-danger" role="alert">
+        {{#each errors as |error|}}
+          <span>{{error.message}}</span>
+        {{/each}}
+      </div>
+    {{/if}}
   {{/if}}
-  {{#if errors}}
-    <div class="alert alert-danger" role="alert">
-      {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-      {{/each}}
-    </div>
-  {{/if}}
-{{/if}}
+</div>

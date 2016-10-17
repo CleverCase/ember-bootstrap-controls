@@ -3,9 +3,9 @@ import layout from '../templates/components/bootstrap-date-picker';
 import InputableMixin from '../mixins/components/inputable';
 
 export default Ember.Component.extend(InputableMixin, {
-  classNames: ['form-group', 'bootstrap-input-component'],
-  classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'hasError:has-error'],
+  tagName: '',
   layout: layout,
+
   placeholder: null,
   value: null,
   type: null,
@@ -14,6 +14,7 @@ export default Ember.Component.extend(InputableMixin, {
   inputColumns: 10,
   todayHighlight: true,
   format: 'mm/dd/yyyy',
+  required: false,
 
   labelColumnCss: Ember.computed('labelColumns', function() {
     var labelColumns = this.get('labelColumns');

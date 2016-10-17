@@ -3,8 +3,7 @@ import layout from '../templates/components/bootstrap-multi-select';
 import InputableMixin from '../mixins/components/inputable';
 
 export default Ember.Component.extend(InputableMixin, {
-  classNames: ['form-group', 'bootstrap-input-component'],
-  classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'hasError:has-error'],
+  tagName: '',
   layout: layout,
 
   selected: null,
@@ -18,4 +17,5 @@ export default Ember.Component.extend(InputableMixin, {
   allowClear: false,
   searchEnabled: false,
   searchField: null,
+  required: false,
 });
