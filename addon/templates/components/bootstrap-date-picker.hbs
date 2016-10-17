@@ -3,27 +3,15 @@
     {{yield inputId}}
   {{else}}
     {{#if label}}
-      <label for="{{inputId}}" class="control-label {{if hasColumns labelColumnCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
+      <label for="{{inputId}}" class="control-label {{if srOnly 'sr-only' ''}}">{{label}}</label>
     {{/if}}
-    {{#if hasColumns}}
-      <div class="{{inputColumnCss}}">
-        {{bootstrap-datepicker
-          id=inputId
-          value=value
-          format=format
-          todayHighlight=todayHighlight
-          changeDate=changeDate
-          class="form-control"}}
-      </div>
-    {{else}}
-      {{bootstrap-datepicker
-        id=inputId
-        value=value
-        format=format
-        changeDate=changeDate
-        todayHighlight=todayHighlight
-        class="form-control"}}
-    {{/if}}
+    {{bootstrap-datepicker
+      id=inputId
+      value=value
+      format=format
+      changeDate=changeDate
+      todayHighlight=todayHighlight
+      class="form-control"}}
     {{#if errors}}
       <div class="alert alert-danger" role="alert">
         {{#each errors as |error|}}
