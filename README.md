@@ -7,7 +7,7 @@ This README outlines the details of using and collaborating on this Ember addon.
 ## Installation
 
 Add the following the list of dependencies in your `package.json` which can be found in the `app-ember` directory:
-- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.6.2",`
+- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.8.0",`
 
 Now run `npm install`.
 
@@ -23,6 +23,7 @@ Move into your root ember directory `app-ember` and run:
 - [`bootstrap-textarea` text area helper](#bootstrap-textarea)
 - [`bootstrap-datepicker` calendar style date select helper](#bootstrap-datepicker)
 - [`bootstrap-radio-group` radio button helper](#bootstrap-radio-group)
+- [`bootstrap-radio-group` checkbox button helper](#bootstrap-checkbox-group)
 - [`bootstrap-power-select` select tag helper](#bootstrap-power-select)
 - [`bootstrap-multi-select` multi-select tag helper](#bootstrap-multi-select)
 - [`bootstrap-pagination-nav` pagination navigation helper](#bootstrap-pagination-nav)
@@ -169,7 +170,7 @@ export default Ember.Controller.extend({
   names: ['Cat', 'Dog', 'Hamster'],
   selectedItem: null,
   actions: {
-    foo(selectedItem) {
+    selectValue(selectedItem) {
       this.set("selectedItem", selectedItem);
     }
   }
@@ -177,7 +178,56 @@ export default Ember.Controller.extend({
 ```
 
 *Required Arguments:*
-- `label` - String displayed as the labels text.
+- `label` - String displayed as the fieldset legend.
+- `selected` - The selected option
+- `options` - Colletion of options to display in the component
+- `onChange` -  The function to be invoked when the user checks an option.
+
+*Optional Arguments:*
+- `errors` - Collection of DS.errors.
+
+---
+
+### Bootstrap Checkbox Group
+
+*Use Example:*
+
+Template
+```html
+{{#bootstrap-checkbox-group
+  label="What pets do you own?"
+  selected=selectedItems
+  options=names
+  errors=errors
+  onChange=(action 'selectValue')
+  as |option|}}
+    <span>{{option}}</span>
+{{/bootstrap-checkbox-group}}
+
+```
+
+Controller
+```javascript
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  names: ['Cat', 'Dog', 'Hamster'],
+  selectedItems: [],
+  actions: {
+    // The first argument is what is checked and the second is the new value.
+    selectValue(selectedItem, newCheckedValue) {
+      if(newCheckedValue) {
+        selectedItems.pushObject(selectedItem);
+      } else {
+        selectedItems.removeObject(selectedItem);
+      }
+    }
+  }
+});
+```
+
+*Required Arguments:*
+- `label` - String displayed as the fieldset legend.
 - `selected` - The selected option
 - `options` - Colletion of options to display in the component
 - `onChange` -  The function to be invoked when the user checks an option.

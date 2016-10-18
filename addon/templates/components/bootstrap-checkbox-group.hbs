@@ -4,13 +4,13 @@
   </legend>
   {{#each options as |option|}}
     <label>
-      {{#bootstrap-radio-button
+      {{#bootstrap-checkbox-button
         groupName=inputId
         onChange=onChange
         option=option
         selected=selected}}
         {{yield option}}
-      {{/bootstrap-radio-button}}
+      {{/bootstrap-checkbox-button}}
     </label>
   {{/each}}
   {{#if errors}}
