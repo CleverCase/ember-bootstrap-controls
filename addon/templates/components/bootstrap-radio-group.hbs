@@ -1,0 +1,20 @@
+<div class="form-group bootstrap-radio-group-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if hasError 'has-error'}} {{if required 'required'}}">
+  {{#each options as |option|}}
+    <label>
+      {{#bootstrap-radio-button
+        groupName=inputId
+        onChange=onChange
+        option=option
+        selected=selected}}
+        {{yield option}}
+      {{/bootstrap-radio-button}}
+    </label>
+  {{/each}}
+  {{#if errors}}
+    <div class="form-control-static alert alert-danger" role="alert">
+      {{#each errors as |error|}}
+        <span>{{error.message}}</span>
+      {{/each}}
+    </div>
+  {{/if}}
+</div>
