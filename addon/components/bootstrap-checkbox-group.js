@@ -16,7 +16,7 @@ export default Ember.Component.extend(InputableMixin, {
 
   actions: {
     onChange(option, isChecked) {
-      const selected = Ember.makeArray(this.get('selected'));
+      const selected = Ember.A(this.get('selected'));
 
       if (isChecked) {
         this.get('onChange')(selected.concat(option), selected);
