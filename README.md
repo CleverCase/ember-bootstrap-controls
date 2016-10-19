@@ -7,7 +7,7 @@ This README outlines the details of using and collaborating on this Ember addon.
 ## Installation
 
 Add the following the list of dependencies in your `package.json` which can be found in the `app-ember` directory:
-- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.6.2",`
+- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.8.0",`
 
 Now run `npm install`.
 
@@ -22,6 +22,8 @@ Move into your root ember directory `app-ember` and run:
 - [`bootstrap-input` input field helper](#bootstrap-input)
 - [`bootstrap-textarea` text area helper](#bootstrap-textarea)
 - [`bootstrap-datepicker` calendar style date select helper](#bootstrap-datepicker)
+- [`bootstrap-radio-group` radio button helper](#bootstrap-radio-group)
+- [`bootstrap-radio-group` checkbox button helper](#bootstrap-checkbox-group)
 - [`bootstrap-power-select` select tag helper](#bootstrap-power-select)
 - [`bootstrap-multi-select` multi-select tag helper](#bootstrap-multi-select)
 - [`bootstrap-pagination-nav` pagination navigation helper](#bootstrap-pagination-nav)
@@ -81,6 +83,38 @@ Would render
 - `customLabelCss` - Custom css to be added to the label.
 - `srOnly` - Boolean srOnly class to the label for screen readers.
 
+----
+
+### Bootstrap TextArea
+
+A helper for simplifying textarea input fields.
+
+*Use Example:*
+
+```html
+{{bootstrap-textarea
+  value=value
+   label="label"
+   content=content
+   disabled=isNotEditing
+   placeholder="Enter text..."}}
+```
+Rendered output:
+
+```html
+<textarea id="bootstrap-component-3" placeholder="Enter text here..." class="ember-view ember-text-area form-control"></textarea>
+
+```
+
+*Required Arguments:*
+- `value` - Ember model attribute attached to the input.
+- `label` - String displayed as the labels text.
+
+*Optional Arguments:*
+- `errors` - Collection of DS.errors.
+- `customLabelCss` - Custom css to be added to the label.
+- `srOnly` - Boolean srOnly class to the label for screen readers.
+
 ---
 
 ### Bootstrap Datepicker
@@ -107,6 +141,94 @@ Rendered Output is a `<table>` structured like a calandar which allows the user 
 - `todayHighlight` - Highlights the current date on calandar UI.
 - `format` - Format for date. Defaults to 'mm/dd/yyyy'.
 - `changeDate` - The changeDate action is triggered when the selected date changes.
+
+---
+
+### Bootstrap Radio Group
+
+*Use Example:*
+
+Template
+```html
+{{#bootstrap-radio-group
+  label="Favorite Animal"
+  selected=selectedItem
+  options=names
+  errors=errors
+  onChange=(action 'selectValue')
+  as |option|}}
+    <span>{{option}}</span>
+{{/bootstrap-radio-group}}
+
+```
+
+Controller
+```javascript
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  names: ['Cat', 'Dog', 'Hamster'],
+  selectedItem: null,
+  actions: {
+    selectValue(selectedItem) {
+      this.set("selectedItem", selectedItem);
+    }
+  }
+});
+```
+
+*Required Arguments:*
+- `label` - String displayed as the fieldset legend.
+- `selected` - The selected option
+- `options` - Colletion of options to display in the component
+- `onChange` -  The function to be invoked when the user checks an option.
+
+*Optional Arguments:*
+- `errors` - Collection of DS.errors.
+
+---
+
+### Bootstrap Checkbox Group
+
+*Use Example:*
+
+Template
+```html
+{{#bootstrap-checkbox-group
+  label="What pets do you own?"
+  selected=selectedItems
+  options=names
+  errors=errors
+  onChange=(action 'selectValue')
+  as |option|}}
+    <span>{{option}}</span>
+{{/bootstrap-checkbox-group}}
+
+```
+
+Controller
+```javascript
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  names: ['Cat', 'Dog', 'Hamster'],
+  selectedItems: [],
+  actions: {
+    selectValue(newSelections, oldSelections) {
+      this.set('selectedItems', newSelections);
+    }
+  }
+});
+```
+
+*Required Arguments:*
+- `label` - String displayed as the fieldset legend.
+- `selected` - The selected option
+- `options` - Colletion of options to display in the component
+- `onChange` -  The function to be invoked when the user checks an option.
+
+*Optional Arguments:*
+- `errors` - Collection of DS.errors.
 
 ---
 
@@ -193,38 +315,6 @@ Template
 ```
 
 Same options as `bootstrap-power-select`.
-
-----
-
-### Bootstrap TextArea
-
-A helper for simplifying textarea input fields.
-
-*Use Example:*
-
-```html
-{{bootstrap-textarea
-  value=value
-   label="label"
-   content=content
-   disabled=isNotEditing
-   placeholder="Enter text..."}}
-```
-Rendered output:
-
-```html
-<textarea id="bootstrap-component-3" placeholder="Enter text here..." class="ember-view ember-text-area form-control"></textarea>
-
-```
-
-*Required Arguments:*
-- `value` - Ember model attribute attached to the input.
-- `label` - String displayed as the labels text.
-
-*Optional Arguments:*
-- `errors` - Collection of DS.errors.
-- `customLabelCss` - Custom css to be added to the label.
-- `srOnly` - Boolean srOnly class to the label for screen readers.
 
 ---
 
