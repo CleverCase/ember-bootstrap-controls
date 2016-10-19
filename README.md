@@ -214,13 +214,8 @@ export default Ember.Controller.extend({
   names: ['Cat', 'Dog', 'Hamster'],
   selectedItems: [],
   actions: {
-    // The first argument is what is checked and the second is the new value.
-    selectValue(selectedItem, newCheckedValue) {
-      if(newCheckedValue) {
-        selectedItems.pushObject(selectedItem);
-      } else {
-        selectedItems.removeObject(selectedItem);
-      }
+    selectValue(newSelections, oldSelections) {
+      this.set('selectedItems', newSelections);
     }
   }
 });

@@ -9,8 +9,7 @@ export default Ember.Component.extend({
   }),
 
   didReceiveAttrs() {
-    let selected = this.get('selected');
-    if(Ember.isEmpty(selected)) { selected = []; }
+    let selected = Ember.makeArray(this.get('selected'));
     this.set('isChecked', selected.includes(this.get('option')));
   },
 });

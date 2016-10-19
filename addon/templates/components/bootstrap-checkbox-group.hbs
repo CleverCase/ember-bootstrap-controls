@@ -6,7 +6,7 @@
     <label>
       {{#bootstrap-checkbox-button
         groupName=inputId
-        onChange=onChange
+        onChange=(action 'onChange')
         option=option
         selected=selected}}
         {{yield option}}
