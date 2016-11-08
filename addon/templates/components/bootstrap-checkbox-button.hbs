@@ -1,8 +1,7 @@
 {{#if isChecked}}
-  <input name='{{groupName}}' checked='true' type='checkbox' onclick={{action onChange option isNotChecked}}>
+  <input name='{{groupName}}' checked='true' type='checkbox' onclick={{action onChange option isNotChecked}} >
   {{yield option}}
 {{else}}
-  <input name='{{groupName}}' type='checkbox' onclick={{action onChange option isNotChecked}}>
+  <input name='{{groupName}}' type='checkbox' onclick={{action onChange option isNotChecked}} >
   {{yield option}}
 {{/if}}
-
