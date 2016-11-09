@@ -1,4 +1,4 @@
-<div class="form-group bootstrap-date-picker-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if hasError 'has-error'}} {{if required 'required'}}">
+<div class="form-group bootstrap-date-picker-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
   {{#if hasBlock}}
     {{yield inputId}}
   {{else}}
@@ -11,7 +11,8 @@
       format=format
       changeDate=changeDate
       todayHighlight=todayHighlight
-      class="form-control"}}
+      class="form-control"
+      required=required}}
     {{#if errors}}
       <div class="alert alert-danger" role="alert">
         {{#each errors as |error|}}

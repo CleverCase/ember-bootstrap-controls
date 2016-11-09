@@ -1,4 +1,4 @@
-<div class="form-group bootstrap-power-select-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if hasError 'has-error'}} {{if required 'required'}}">
+<div class="form-group bootstrap-power-select-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
   {{#if hasBlock}}
     {{#if label}}
       <label for="{{inputId}}" class="control-label">{{label}}</label>
@@ -16,6 +16,7 @@
         searchField=searchField
         allowClear=allowClear
         disabled=disabled
+        required=required
         renderInPlace=renderInPlace
         as |option|}}
         {{yield option}}

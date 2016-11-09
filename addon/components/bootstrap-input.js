@@ -17,6 +17,12 @@ export default Ember.Component.extend(InputableMixin, {
 
   keyPress: computedActionKey('key-press'),
 
+  hasValue: Ember.computed('value', function() {
+    const value = this.get('value');
+
+    return value ? true : false;
+  }),
+
   isChecked: Ember.computed('type', function() {
     return (this.get('type') === 'checkbox');
   }),

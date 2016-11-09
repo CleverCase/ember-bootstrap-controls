@@ -1,4 +1,4 @@
-<div class="form-group bootstrap-input-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if hasError 'has-error'}} {{if required 'required'}}">
+<div class="form-group bootstrap-input-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
   {{#if label}}
     <label for="{{inputId}}" class="control-label">{{label}}</label>
   {{/if}}
@@ -6,7 +6,8 @@
     elementId=inputId
     enter='applyValueImmediately'
     value=valueText
-    placeholder=placeholder}}
+    placeholder=placeholder
+    required=required}}
   {{#if errors}}
     <div class="form-control-static alert alert-danger" role="alert">
       {{#each errors as |error|}}
