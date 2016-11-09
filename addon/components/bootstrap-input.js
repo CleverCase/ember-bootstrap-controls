@@ -16,6 +16,8 @@ export default Ember.Component.extend(InputableMixin, {
   required: true,
 
   keyPress: computedActionKey('key-press'),
+  keyUp: computedActionKey('key-up'),
+  keyDown: computedActionKey('key-down'),
 
   isChecked: Ember.computed('type', function() {
     return (this.get('type') === 'checkbox');
@@ -52,6 +54,14 @@ export default Ember.Component.extend(InputableMixin, {
   actions: {
     keyPress: function() {
       this.sendAction('key-press', ...arguments);
+    },
+
+    keyUp: function() {
+      this.sendAction('key-up', ...arguments);
+    },
+
+    keyDown: function() {
+      this.sendAction('key-down', ...arguments);
     },
   },
 });
