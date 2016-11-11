@@ -17,6 +17,7 @@ export default Ember.Component.extend(InputableMixin, {
   loadingMessage: 'Loading',
   renderInPlace: false,
   allowClear: true,
+  search: null,
   searchEnabled: false,
   searchField: null,
   required: false,
