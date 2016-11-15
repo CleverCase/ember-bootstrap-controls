@@ -89,19 +89,6 @@ Would render
 ### Bootstrap Currency Input
 A field helper to simplify making an currency input field for a form.
 
-*Required Arguments:*
-- `value` - Ember model attribute attached to the input.
-- `label` - String displayed as the labels text.
-
-*Optional Arguments:*
-- `mask` - Optionally change the default currency mask (see [ember-text-mask](https://github.com/text-mask/text-mask/tree/master/ember) for details)
-- `errors` - Collection of DS.errors.
-- `placeholder` - Placeholder value.
-- `srOnly` - Boolean srOnly class to the label for screen readers. This hides the label, but still allows screen readers/computers to read the label by keeping it in the DOM. If it is desirable to hide the label, set this to `true`.
-- `key-press` - Key press action.
-- `key-up` - Key up action.
-- `key-down` - Key down action.
-
 *Use Example:*
 
 ```html
@@ -138,6 +125,18 @@ rate: computed('rateInCents', {
 
 This pattern stores the rate in cents, and converts it to/from a currency string through a computed property.
 
+*Required Arguments:*
+- `value` - Ember model attribute attached to the input.
+- `label` - String displayed as the labels text.
+
+*Optional Arguments:*
+- `mask` - Optionally change the default currency mask (see [ember-text-mask](https://github.com/text-mask/text-mask/tree/master/ember) for details)
+- `errors` - Collection of DS.errors.
+- `placeholder` - Placeholder value.
+- `srOnly` - Boolean srOnly class to the label for screen readers. This hides the label, but still allows screen readers/computers to read the label by keeping it in the DOM. If it is desirable to hide the label, set this to `true`.
+- `key-press` - Key press action.
+- `key-up` - Key up action.
+- `key-down` - Key down action.
 
 ----
 
