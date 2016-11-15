@@ -20,6 +20,7 @@ Move into your root ember directory `app-ember` and run:
 - [`bootstrap-form` form helper](#bootstrap-form)
 - [`bootstrap-debounce-input` input field helper](#bootstrap-debounce-input)
 - [`bootstrap-input` input field helper](#bootstrap-input)
+- [`bootstrap-currency-input ` currency field helper](#bootstrap-currency-input)
 - [`bootstrap-textarea` text area helper](#bootstrap-textarea)
 - [`bootstrap-datepicker` calendar style date select helper](#bootstrap-datepicker)
 - [`bootstrap-radio-group` radio button helper](#bootstrap-radio-group)
@@ -81,7 +82,61 @@ Would render
 *Optional Arguments:*
 - `errors` - Collection of DS.errors.
 - `customLabelCss` - Custom css to be added to the label.
-- `srOnly` - Boolean srOnly class to the label for screen readers.
+- `srOnly` - Boolean srOnly class to the label for screen readers. This hides the label, but still allows screen readers/computers to read the label by keeping it in the DOM. If it is desirable to hide the label, set this to `true`.
+
+---
+
+### Bootstrap Currency Input
+A field helper to simplify making an currency input field for a form.
+
+*Use Example:*
+
+```html
+{{bootstrap-currency-input
+  value=model.rate
+  label="Rate"
+  required=true
+  errors=model.errors.rate}}
+```
+
+$'s are also allowed to be prefixed to the number al la `$55.45`, so this might need to be handled by business logic somewhere in the application. One pattern that could be used to achive this is (using `ember-cli-accounting`):
+```js
+import accounting from "accounting"
+
+...
+
+rateInCents: attr('number'),
+rate: computed('rateInCents', {
+  get() {
+    return `${accounting.formatMoney(this.get('rateInCents') / 100.0)}`;
+  },
+
+  set(key, value) {
+    if (value) {
+      this.set('rateInCents', accounting.unformat(value) * 100);
+
+      return value;
+    } else {
+      this.set('attorneyBillRateInCents', null);
+    }
+  }
+}),
+```
+
+This pattern stores the rate in cents, and converts it to/from a currency string through a computed property.
+
+*Required Arguments:*
+- `value` - Ember model attribute attached to the input.
+- `label` - String displayed as the labels text.
+
+*Optional Arguments:*
+- `mask` - Optionally change the default currency mask (see [ember-text-mask](https://github.com/text-mask/text-mask/tree/master/ember) for details)
+- `errors` - Collection of DS.errors.
+- `placeholder` - Placeholder value.
+- `srOnly` - Boolean srOnly class to the label for screen readers. This hides the label, but still allows screen readers/computers to read the label by keeping it in the DOM. If it is desirable to hide the label, set this to `true`.
+- `key-press` - Key press action.
+- `key-up` - Key up action.
+- `key-down` - Key down action.
 
 ----
 
@@ -113,7 +168,7 @@ Rendered output:
 *Optional Arguments:*
 - `errors` - Collection of DS.errors.
 - `customLabelCss` - Custom css to be added to the label.
-- `srOnly` - Boolean srOnly class to the label for screen readers.
+- `srOnly` - Boolean srOnly class to the label for screen readers. This hides the label, but still allows screen readers/computers to read the label by keeping it in the DOM. If it is desirable to hide the label, set this to `true`.
 
 ---
 
@@ -141,6 +196,7 @@ Rendered Output is a `<table>` structured like a calandar which allows the user 
 - `todayHighlight` - Highlights the current date on calandar UI.
 - `format` - Format for date. Defaults to 'mm/dd/yyyy'.
 - `changeDate` - The changeDate action is triggered when the selected date changes.
+- `srOnly` - Boolean srOnly class to the label for screen readers. This hides the label, but still allows screen readers/computers to read the label by keeping it in the DOM. If it is desirable to hide the label, set this to `true`.
 
 ---
 

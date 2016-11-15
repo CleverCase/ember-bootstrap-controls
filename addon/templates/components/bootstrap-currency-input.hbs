@@ -1,0 +1,30 @@
+<div class="form-group bootstrap-input-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
+  {{#if hasBlock}}
+    {{yield inputId}}
+  {{else}}
+    {{#if label}}
+      <label for="{{inputId}}" class="control-label {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
+    {{/if}}
+    {{masked-input
+      mask=currencyMask
+      tabindex=tabindex
+      value=value
+      elementId=inputId
+      type=type
+      placeholder=placeholder
+      classNames="form-control"
+      readonly=readonly
+      disabled=disabled
+      key-press=keyPress
+      key-up=keyUp
+      key-down=keyDown
+      required=required}}
+    {{#if errors}}
+      <div class="form-control-static alert alert-danger" role="alert">
+        {{#each errors as |error|}}
+          <span>{{error.message}}</span>
+        {{/each}}
+      </div>
+    {{/if}}
+  {{/if}}
+</div>
