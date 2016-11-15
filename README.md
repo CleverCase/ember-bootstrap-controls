@@ -36,6 +36,47 @@ Move into your root ember directory `app-ember` and run:
 
 ---
 
+### Bootstrap Currency Input
+A input helper to only allow dollar/cent amounts to be inputed
+
+*Usage Example*
+
+```html
+{{bootstrap-currency-input
+  value=model.rate
+  label="Rate"
+  required=true
+  errors=model.errors.rate}}
+```
+
+$'s are also allowed to be prefixed to the number al la `$55.45`, so this might need to be handled by business logic somewhere in the application. One pattern that could be used to achive this is (using `ember-cli-accounting`):
+```js
+import accounting from "accounting"
+
+...
+
+rateInCents: attr('number'),
+rate: computed('rateInCents', {
+  get() {
+    return `${accounting.formatMoney(this.get('rateInCents') / 100.0)}`;
+  },
+
+  set(key, value) {
+    if (value) {
+      this.set('rateInCents', accounting.unformat(value) * 100);
+
+      return value;
+    } else {
+      this.set('attorneyBillRateInCents', null);
+    }
+  }
+}),
+```
+
+This pattern stores the rate in cents, and converts it to/from a currency string through a computed property.
+  
+---
+
 ### Bootstrap Debounce Input
 A field helper to simplify making an input field with a delay until the user stops typing or hits enter.
 
