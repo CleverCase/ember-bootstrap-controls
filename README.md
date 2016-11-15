@@ -20,6 +20,7 @@ Move into your root ember directory `app-ember` and run:
 - [`bootstrap-form` form helper](#bootstrap-form)
 - [`bootstrap-debounce-input` input field helper](#bootstrap-debounce-input)
 - [`bootstrap-input` input field helper](#bootstrap-input)
+- [`bootstrap-currency-input ` currency field helper](#bootstrap-currency-input)
 - [`bootstrap-textarea` text area helper](#bootstrap-textarea)
 - [`bootstrap-datepicker` calendar style date select helper](#bootstrap-datepicker)
 - [`bootstrap-radio-group` radio button helper](#bootstrap-radio-group)
@@ -82,6 +83,31 @@ Would render
 - `errors` - Collection of DS.errors.
 - `customLabelCss` - Custom css to be added to the label.
 - `srOnly` - Boolean srOnly class to the label for screen readers.
+
+----
+
+### Bootstrap Currency Input
+A field helper to simplify making an currency input field for a form.
+
+*Use Example:*
+
+```html
+{{bootstrap-currency-input 
+  value=widget.price  
+  label="Price”}}
+```
+
+*Required Arguments:*
+- `value` - Ember model attribute attached to the input.
+- `label` - String displayed as the labels text.
+
+*Optional Arguments:*
+- `errors` - Collection of DS.errors.
+- `placeholder` - Placeholder value.
+- `srOnly` - Boolean srOnly class to the label for screen readers.
+- `key-press` - Key press action.
+- `key-up` - Key up action.
+- `key-down` - Key down action.
 
 ----
 
