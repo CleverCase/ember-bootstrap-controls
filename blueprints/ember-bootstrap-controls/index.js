@@ -3,8 +3,17 @@ module.exports = {
   normalizeEntityName: function() {},
 
   afterInstall: function(options) {
+    this.addPackageToProject('text-mask-addons', '^1.0.1');
     return this.addAddonsToProject({
       packages: [
+        {
+          name: 'ember-browserify',
+          target: '^1.1.11'
+        },
+        {
+          name: 'ember-text-mask',
+          target: '^0.1.0'
+        },
         {
           name: "ember-cli-bootstrap-datepicker",
           target: "0.5.6"
