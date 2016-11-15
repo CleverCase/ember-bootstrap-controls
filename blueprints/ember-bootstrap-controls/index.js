@@ -8,23 +8,23 @@ module.exports = {
       packages: [
         {
           name: 'ember-browserify',
-          target: '^1.1.11'
+          target: '~1.1.11'
         },
         {
           name: 'ember-text-mask',
-          target: '^0.1.0'
+          target: '~0.1.0'
         },
         {
           name: "ember-cli-bootstrap-datepicker",
-          target: "0.5.6"
+          target: "~0.5.6"
         },
         {
           name: "ember-power-select",
-          target: "0.10.3"
+          target: "~0.10.3"
         },
         {
           name: "ember-truth-helpers",
-          target: "1.2.0"
+          target: "~1.2.0"
         }
       ]
     });
