@@ -84,14 +84,6 @@ Would render
 - `customLabelCss` - Custom css to be added to the label.
 - `srOnly` - Boolean srOnly class to the label for screen readers. This hides the label, but still allows screen readers/computers to read the label by keeping it in the DOM. If it is desirable to hide the label, set this to `true`.
 
-----
-
-### Bootstrap Currency Input
-A input helper to only allow dollar/cent amounts to be inputed
-
-*Usage Example*
-
-  
 ---
 
 ### Bootstrap Currency Input
