@@ -21,4 +21,5 @@ export default Ember.Component.extend(InputableMixin, {
   searchEnabled: false,
   searchField: null,
   required: false,
+  srOnly: null,
 });
