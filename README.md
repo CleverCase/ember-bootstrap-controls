@@ -301,6 +301,7 @@ Template
   placeholder="Pick a name"
   onChange=(action "foo")
   allowClear=true
+  srOnly=false
   loadingMessage="Loading..."
   as |option|}}
     <span>{{option}}</span>
@@ -335,6 +336,7 @@ export default Ember.Controller.extend({
 - `placeholder` - Text to display in the trigger of the component while no option is selected
 - `searchEnabled` - When falsey, hides the search in single selects
 - `searchField` - When the options are objects and no custom matches function is provided, this option tells the component what property of the options should the default matches use to filter
+- `srOnly` - When set to true, this will apply the "sr-only" class to the the label element causing it to be hidden
 - `disabled` - When truthy the component cannot be interacted
 - `renderInPlace` - When truthy, the list of options will be rendered in place instead of being attaches to the root of the body and positioned with javascript. Enabling this option also adds a wrapper div around the trigger and the content with class .ember-power-select. Useful when the power-select is inside of a modal.
 - `matcher` - Sometimes the default matcher is not enough for you, for example if you need to match against several fields or you need to perform fuzzy matching. If that is the case just pass your own matcher function. It will receive the option and the search term and you can do whatever you feel like inside as long as it returns -1 if it doesn't match and a positive number if it does.
