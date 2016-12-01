@@ -526,7 +526,7 @@ export default Ember.Route.extend(PaginatedRouteMixin, { //Extend from the mixin
   * `idOnRoute` - Boolean, when `true` adds the id of the row's model to the url (used mainly for show and edit routes).
   * `url` - String value of Ember route (i.e. `"posts.show"`)
 
-*All optional argument values are `false` as default*
+*All optional argument values are* `false` *as default*
 
 **Note:** Width is determined by size of the table's parent element.
 
