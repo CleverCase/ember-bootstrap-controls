@@ -28,6 +28,7 @@ Move into your root ember directory `app-ember` and run:
 - [`bootstrap-power-select` select tag helper](#bootstrap-power-select)
 - [`bootstrap-multi-select` multi-select tag helper](#bootstrap-multi-select)
 - [`bootstrap-pagination-nav` pagination navigation helper](#bootstrap-pagination-nav)
+- [`bootstrap-data-table` table helper](#bootstrap-data-table)
 
 ---
 
@@ -429,6 +430,107 @@ export default Ember.Route.extend(PaginatedRouteMixin, { //Extend from the mixin
   },
 });
 ```
+
+---
+
+### Bootstrap Data Table
+
+*Use Example:*
+
+```html
+{{bootstrap-data-table
+  dataArray=users
+  title="User Index"
+  bordered=true
+  columns=(array
+    (hash
+      attr="fullName"
+      label="Name"
+    )
+    (hash
+      attr="username"
+      label="Username"
+      hasLink=true
+      idOnRoute=true
+      url="users.show"
+    )
+    (hash
+      attr="phone"
+      label="Contact #"
+    )
+    (hash
+      attr="email"
+      label="Email"
+      hasLink=true
+      idOnRoute=false
+      url="contacts.index"
+    )
+  )
+}}
+```
+
+*Rendered Output:*
+
+```html
+<h3 class="text-center">{{title}}</h3>
+<table class="table table-bordered">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Username</th>
+      <th>Contact #</th>
+      <th>Email</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>{{user.fullName}}</td>
+      <td><a href="users/show/:id">{{user.username}}</a></td>
+      <td>{{user.phone}}</td>
+      <td><a href="contacts/index">{{user.email}}</a></td>
+    </tr>
+    <tr>
+      <td>{{user.fullName}}</td>
+      <td><a href="users/show/:id">{{user.username}}</a></td>
+      <td>{{user.phone}}</td>
+      <td><a href="contacts/index">{{user.email}}</a></td>
+    </tr>
+    <tr>
+      <td>{{user.fullName}}</td>
+      <td><a href="users/show/:id">{{user.username}}</a></td>
+      <td>{{user.phone}}</td>
+      <td><a href="contacts/index">{{user.email}}</a></td>
+    </tr>
+    <!-- ...etc... -->
+  </tbody>
+</table>
+```
+
+*Required Arguments:*
+- `dataArray` - Array of Ember models to display on the table as rows (**Note:** At this time only Ember model objects work in the `dataArray`).
+- `columns` - Array of **Hashes** containing column data.
+  * `attr` - Name of Model's attribute to be displayed in column.
+  * `label` - String displayed as the column's header text.
+
+*Optional Arguments:*
+- `title` - String displayed as the table's title.
+- `titleSmall` - Boolean, when `true` reduces the size of the table's title.
+- `striped` - Boolean, when `true` adds alternating shaded rows to table.
+- `responsive` - Boolean, when `true` enabled horizontal scrolling on table and hides y-axis overflow.
+- `bordered` - Boolean, when `true` adds border to table and columns
+- `canHover` - Boolean, when `true` enables row shading on mouse hover.
+- `condensed` - Boolean, when `true` removes cell padding for a smaller table.
+- `numberedRows` - Boolean, when `true` displays row number in first column.
+  * *Optional Column Arguments*
+  * `hasLink` - Boolean, when `true` wraps the column's content in a link tag.
+  * `idOnRoute` - Boolean, when `true` adds the id of the row's model to the url (used mainly for show and edit routes).
+  * `url` - String value of Ember route (i.e. `"posts.show"`)
+
+*All optional argument values are `false` as default*
+
+**Note:** Width is determined by size of the table's parent element.
+
+For more information on Bootstrap style tables, visit the [Bootstrap](http://getbootstrap.com/css/#tables) website.
 
 ---
 
