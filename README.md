@@ -465,6 +465,11 @@ export default Ember.Route.extend(PaginatedRouteMixin, { //Extend from the mixin
       idOnRoute=false
       url="contacts.index"
     )
+    (hash
+      attr="employment_organization.label"
+      label="Work"
+    )
+    <!-- NOTE: When calling an association of the dataArray model, you must use snke case instead oc camel case. -->
   )
 }}
 ```
