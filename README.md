@@ -4,15 +4,20 @@ Ember-bootstrap-controls is a small library for quickly creating EmberJS forms t
 
 This README outlines the details of using and collaborating on this Ember addon.
 
+## Upgrade Instructions
+Move into your root ember directory and run:
+
+`ember g ember-bootstrap-controls`
+
 ## Installation
 
-Add the following the list of dependencies in your `package.json` which can be found in the `app-ember` directory:
+Add the following the list of dependencies in your `package.json` which can be found in the root ember directory:
 - `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.9.1",`
 
 Now run `npm install`.
 
 
-Move into your root ember directory `app-ember` and run:
+Move into your root ember directory and run:
 
 `ember g ember-bootstrap-controls`
 
