@@ -528,6 +528,17 @@ export default Ember.Route.extend(PaginatedRouteMixin, { //Extend from the mixin
 
 *All optional argument values are* `false` *as default*
 
+*Styling:*
+
+Adding custom styling to the table is simple, just add a few handy class selectors to your css, scss, or less files and style normally. Here are the class selectors:
+
+- `ember-bs-data-table-control` - The outside wrap `<div>` for the table component.
+- `ember-bs-data-table` - Selector for the `<table>` element itself
+- `ember-bs-table-header-row` - The `<tr>` element inside of `<thead>`.
+- `ember-bs-table-header-cell` - The `<td>` element inside of `<thead>`.
+- `ember-bs-table-row` - The `<tr>` element inside of `<tbody>`.
+- `ember-bs-table-cell` - The `<td>` element inside of `<tbody>`.
+
 **Note:** Width is determined by size of the table's parent element.
 
 For more information on Bootstrap style tables, visit the [Bootstrap](http://getbootstrap.com/css/#tables) website.

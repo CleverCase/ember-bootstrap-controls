@@ -3,7 +3,7 @@
 
 module.exports = {
   name: 'ember-bootstrap-controls',
-  // isDevelopingAddon: function() {
-  //   return true;
-  // }
+  isDevelopingAddon: function() {
+    return true;
+  }
 };

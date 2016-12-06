@@ -1,4 +1,4 @@
-<div class="bootstrap-data-table-component" style="padding: 5px">
+<div class="bootstrap-data-table-component ember-bs-data-table-control {{if responsive 'table-responsive'}}">
   {{#if title}}
     <div class="row">
       <div class="col-md-12">
@@ -10,32 +10,32 @@
       </div>
     </div>
   {{/if}}
-  <table class="table {{if striped 'table-striped'}} {{if responsive 'table-responsive'}} {{if bordered 'table-bordered'}} {{if canHover 'table-hover'}} {{if condensed 'table-condensed'}}" style="background-color: white">
+  <table class="table ember-bs-data-table {{if striped 'table-striped'}} {{if bordered 'table-bordered'}} {{if canHover 'table-hover'}} {{if condensed 'table-condensed'}}">
     <thead>
-      <tr>
+      <tr class="ember-bs-table-header-row">
         {{#if numberedRows}}
-          <th>&#35;</th>
+          <th class="ember-bs-table-header-cell">&#35;</th>
         {{/if}}
         {{#each columns as |column|}}
-          <th>{{column.label}}</th>
+          <th class="ember-bs-table-header-cell">{{column.label}}</th>
         {{/each}}
       </tr>
     </thead>
     <tbody>
       {{#each dataArray as |item index|}}
-        <tr>
+        <tr class="ember-bs-table-row">
           {{#if numberedRows}}
-            <td>{{add-numbers index 1}}</td>
+            <td class="ember-bs-table-cell">{{add-numbers index 1}}</td>
           {{/if}}
           {{#each columns as |column|}}
             {{#if column.hasLink}}
               {{#if column.idOnRoute}}
-                <td>{{#link-to column.url item}}{{parse-columns item column.attr}}{{/link-to}}</td>
+                <td class="ember-bs-table-cell">{{#link-to column.url item}}{{parse-columns item column.attr}}{{/link-to}}</td>
               {{else}}
-                <td>{{#link-to column.url}}{{parse-columns item column.attr}}{{/link-to}}</td>
+                <td class="ember-bs-table-cell">{{#link-to column.url}}{{parse-columns item column.attr}}{{/link-to}}</td>
               {{/if}}
             {{else}}
-              <td>{{parse-columns item column.attr}}</td>
+              <td class="ember-bs-table-cell">{{parse-columns item column.attr}}</td>
             {{/if}}
           {{/each}}
         </tr>

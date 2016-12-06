@@ -14,5 +14,4 @@ export default Ember.Component.extend({
   hasLink: null,
   idOnRoute: null,
   url: null,
-
 });
