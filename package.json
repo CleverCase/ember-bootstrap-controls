@@ -1,6 +1,6 @@
 {
   "name": "ember-bootstrap-controls",
-  "version": "0.9.1",
+  "version": "0.9.2",
   "description": "The default blueprint for ember-cli addons.",
   "private": true,
   "directories": {
@@ -48,7 +48,8 @@
   ],
   "dependencies": {
     "ember-cli-babel": "^5.0.0",
-    "ember-cli-htmlbars": "0.7.9"
+    "ember-cli-htmlbars": "0.7.9",
+    "ember-freestyle": "0.2.13"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

@@ -25,6 +25,10 @@ module.exports = {
         {
           name: "ember-truth-helpers",
           target: "~1.2.0"
+        },
+        {
+          name: 'ember-freestyle',
+          target: '0.2.13'
         }
       ]
     });
