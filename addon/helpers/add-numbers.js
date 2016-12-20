@@ -6,7 +6,5 @@ export default function addNumbers(params) {
   for (let i = 1; i < params.length; i++) {
     result = result + params[i];
   }
-
   return result;
 }
-
