@@ -1,0 +1,312 @@
+{{#freestyle-section name='Bootstrap Controls' as |section|}}
+  <!-- Checkbox Sample-->
+  {{#freestyle-subsection name="Checkbox" section=section}}
+    {{#freestyle-collection title='Checkbox' defaultKey='checkbox-unchecked' inline=true as |collection|}}
+      {{#freestyle-variant collection=collection key='checkbox-unchecked'}}
+        {{#freestyle-usage "checkbox-unchecked" title="Checkbox Unchecked"}}
+          {{input
+            label="Checkbox"
+            name="Checkbox"
+            type="checkbox"
+            checked=false}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='checkbox-checked'}}
+        {{#freestyle-usage "checkbox-checked" title="Checkbox Checked"}}
+          {{input
+            label="Checkbox Checked"
+            name="Checkbox Checked"
+            type="checkbox"
+            checked=true}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='checkbox-error'}}
+        {{#freestyle-usage "checkbox-error" title="Checkbox Alert"}}
+          {{input
+            label="Checkbox Alert"
+            name="Checkbox Alert"
+            type="checkbox"
+            checked=false
+            errors=true}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+    {{/freestyle-collection}}
+  {{/freestyle-subsection}}
+  <!-- Currency Input Field Sample-->
+  {{#freestyle-subsection name="Currency Input" section=section}}
+    {{#freestyle-collection title='Currency Input' defaultKey='ci-default' inline=true as |collection|}}
+      {{#freestyle-variant collection=collection key='ci-default'}}
+        {{#freestyle-usage "ci-default" title="Currency Input"}}
+        {{bootstrap-currency-input
+          masked-input
+          mask=currencyMask
+          tabindex=tabindex
+          value=value
+          elementId=inputId
+          type=type
+          placeholder="0.00"
+          label="Currency Input"
+          classNames="form-control"
+          readonly=readonly
+          disabled=disabled
+          key-press=keyPress
+          key-up=keyUp
+          key-down=keyDown
+          required=required
+          errors=errors}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='ci-read-only'}}
+        {{#freestyle-usage "ci-read-only" title="Currency Input Read Only"}}
+        {{bootstrap-currency-input
+          masked-input
+          mask=currencyMask
+          tabindex=tabindex
+          value=value
+          elementId=inputId
+          type=type
+          placeholder="0.00"
+          label="Currency Input"
+          classNames="form-control"
+          readonly=true
+          disabled=disabled
+          key-press=keyPress
+          key-up=keyUp
+          key-down=keyDown
+          required=required
+          errors=errors}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='ci-disabled'}}
+        {{#freestyle-usage "ci-disabled" title="Currency Input Disabled"}}
+        {{bootstrap-currency-input
+          masked-input
+          mask=currencyMask
+          tabindex=tabindex
+          value=value
+          elementId=inputId
+          type=type
+          placeholder="0.00"
+          label="Currency Input"
+          classNames="form-control"
+          readonly=readonly
+          disabled=true
+          key-press=keyPress
+          key-up=keyUp
+          key-down=keyDown
+          required=required
+          errors=errors}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='ci-alert'}}
+        {{#freestyle-usage "ci-alert" title="Currency Input Alert"}}
+        {{bootstrap-currency-input
+          masked-input
+          mask=currencyMask
+          tabindex=tabindex
+          value=value
+          elementId=inputId
+          type=type
+          placeholder="0.00"
+          label="Currency Input"
+          classNames="form-control"
+          readonly=readonly
+          disabled=disabled
+          key-press=keyPress
+          key-up=keyUp
+          key-down=keyDown
+          required=required
+          errors=true}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+    {{/freestyle-collection}}
+  {{/freestyle-subsection}}
+  <!-- Text Input Field Sample-->
+  {{#freestyle-subsection name="Input Field" section=section}}
+    {{#freestyle-collection title='Input Field Blank' defaultKey='default' inline=true as |collection|}}
+      {{#freestyle-variant collection=collection key='default'}}
+        {{#freestyle-usage "default" title="Input Default"}}
+        {{bootstrap-input
+          tabindex=tabindex
+          value=value
+          elementId=inputId
+          type=type
+          placeholder="Input Field"
+          label="Input Field"
+          classNames="form-control"
+          readonly=readonly
+          disabled=disabled
+          key-press=keyPress
+          key-up=keyUp
+          key-down=keyDown
+          required=false
+          errors=errors}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='read-only'}}
+        {{#freestyle-usage "read-only" title="Input Read Only"}}
+        {{bootstrap-input
+          tabindex=tabindex
+          value=value
+          elementId=inputId
+          type=type
+          placeholder="Input Field"
+          label="Input Field"
+          classNames="form-control"
+          readonly=true
+          disabled=disabled
+          key-press=keyPress
+          key-up=keyUp
+          key-down=keyDown
+          required=false
+          errors=errors}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='disabled'}}
+        {{#freestyle-usage "disabled" title="Input Disabled"}}
+        {{bootstrap-input
+          tabindex=tabindex
+          value=value
+          elementId=inputId
+          type=type
+          placeholder="Input Field"
+          label="Input Field"
+          classNames="form-control"
+          readonly=readonly
+          disabled=true
+          key-press=keyPress
+          key-up=keyUp
+          key-down=keyDown
+          required=false
+          errors=errors}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='alert'}}
+        {{#freestyle-usage "alert" title="Input Alert"}}
+        {{bootstrap-input
+          tabindex=tabindex
+          value=value
+          elementId=inputId
+          type=type
+          placeholder="Input Field"
+          label="Input Field"
+          classNames="form-control"
+          readonly=readonly
+          disabled=disabled
+          key-press=keyPress
+          key-up=keyUp
+          key-down=keyDown
+          required=false
+          errors=true}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+    {{/freestyle-collection}}
+  {{/freestyle-subsection}}
+  <!-- Power Select Field -->
+  {{#freestyle-subsection name="Power Select" section=section}}
+    {{#freestyle-collection title='Power Select' defaultKey='default-power-select' inline=true as |collection|}}
+      {{#freestyle-variant collection=collection key='default-power-select'}}
+        {{#freestyle-usage "default-power-select" title="Power Select Default"}}
+          {{#bootstrap-power-select
+            label="Sample"
+            selected=selectedSample
+            options=(sort-by 'label' sample)
+            placeholder="Pick a Sample"
+            onChange=(action "selectItem")
+            allowClear=true
+            searchEnabled=true
+            searchField="label"
+            loadingMessage="Loading Samples..."
+            as |sample|}}
+              <span>{{sample.label}}</span>
+          {{/bootstrap-power-select}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='alert-power-select'}}
+        {{#freestyle-usage "alert-power-select" title="Alert Power Select"}}
+          {{#bootstrap-power-select
+            label="Sample"
+            selected=selectedSample
+            options=(sort-by 'label' sample)
+            placeholder="Pick a Sample"
+            onChange=(action "selectItem")
+            allowClear=true
+            searchEnabled=true
+            searchField="label"
+            errors=errors
+            loadingMessage="Loading Samples..."
+            as |sample|}}
+              <span>{{sample.label}}</span>
+          {{/bootstrap-power-select}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+    {{/freestyle-collection}}
+  {{/freestyle-subsection}}
+  <!-- End of Power Select Field -->
+  <!-- Date Picker -->
+  {{#freestyle-subsection name="Date Picker" section=section}}
+    {{#freestyle-collection title='Date Picker' defaultKey='default' inline=true as |collection|}}
+      {{#freestyle-variant collection=collection key='default'}}
+        {{#freestyle-usage "default" title="Date Picker Default"}}
+          {{bootstrap-datepicker
+            id=inputId
+            value=value
+            format=format
+            placeholder="Select a Date"
+            readonly=readonly
+            disabled=disabled
+            changeDate=changeDate
+            todayHighlight=todayHighlight
+            class="form-control"
+            required=required
+            errors=errors}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='date-picker-readonly'}}
+        {{#freestyle-usage "date-picker-readonly" title="Date Picker ReadOnly"}}
+          {{bootstrap-datepicker
+            id=inputId
+            value=value
+            format=format
+            placeholder="Select a Date"
+            readonly=true
+            disabled=disabled
+            changeDate=changeDate
+            todayHighlight=todayHighlight
+            class="form-control"
+            required=required
+            errors=errors}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+      {{#freestyle-variant collection=collection key='date-picker-disabled'}}
+        {{#freestyle-usage "date-picker-disabled" title="Date Picker Disabled"}}
+          {{bootstrap-datepicker
+            id=inputId
+            value=value
+            format=format
+            placeholder="Select a Date"
+            readonly=readonly
+            disabled=true
+            changeDate=changeDate
+            todayHighlight=todayHighlight
+            class="form-control"
+            required=required
+            errors=errors}}
+        {{/freestyle-usage}}
+      {{/freestyle-variant}}
+    {{/freestyle-collection}}
+  {{/freestyle-subsection}}
+  <!-- Date Picker -->
+
+  <!-- Pagination -->
+  {{#freestyle-subsection name="Pagination" section=section}}
+    {{#freestyle-usage "pagination" title="Pagination"}}
+      {{bootstrap-pagination-nav
+        pageNumber=5
+        pageSize=pagesize
+        totalPages=10
+        moveToPage=(action (mut pageNumber))}}
+    {{/freestyle-usage}}
+  {{/freestyle-subsection}}
+  <!-- Pagination -->
+{{/freestyle-section}}
