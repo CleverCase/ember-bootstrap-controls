@@ -12,10 +12,12 @@
     "test": "tests"
   },
   "scripts": {
-    "start": "ember server",
     "build": "ember build",
-    "test": "ember try:each",
-    "clean": "rm -rf node_modules/ bower_components/ && npm cache clean && bower cache clean && npm install && bower install"
+    "clean": "rm -rf node_modules/ bower_components/ && npm cache clean && bower cache clean && npm install && bower install",
+    "deploy": "ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\"; git push; git checkout -",
+    "start": "ember server",
+    "test": "ember try:each"
+
   },
   "repository": "",
   "engines": {
