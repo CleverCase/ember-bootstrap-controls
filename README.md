@@ -22,6 +22,8 @@ Move into your root ember directory and run:
 `ember g ember-bootstrap-controls`
 
 ## Usage
+See a [live demo](http://wildland.github.io/ember-bootstrap-controls/).
+
 - [`bootstrap-form` form helper](#bootstrap-form)
 - [`bootstrap-debounce-input` input field helper](#bootstrap-debounce-input)
 - [`bootstrap-input` input field helper](#bootstrap-input)
