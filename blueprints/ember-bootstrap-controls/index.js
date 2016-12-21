@@ -3,7 +3,8 @@ module.exports = {
   normalizeEntityName: function() {},
 
   afterInstall: function(options) {
-    this.addPackageToProject('text-mask-addons', '^1.0.1');
+    this.addPackageToProject('text-mask-addons', '~1.0.1');
+
     return this.addAddonsToProject({
       packages: [
         {
@@ -28,7 +29,7 @@ module.exports = {
         },
         {
           name: 'ember-freestyle',
-          target: '0.2.13'
+          target: '~0.2.13'
         }
       ]
     });
