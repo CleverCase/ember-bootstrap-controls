@@ -8,6 +8,7 @@ const { Component } = Ember;
 
 export default Component.extend(InputableMixin, {
   tagName: '',
+  classNames: '',
   layout: layout,
 
   placeholder: null,
