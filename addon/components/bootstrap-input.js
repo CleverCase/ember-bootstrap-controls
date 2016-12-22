@@ -5,6 +5,7 @@ import computedActionKey from '../utils/computed-action-key';
 
 export default Ember.Component.extend(InputableMixin, {
   tagName: '',
+  classNames: '',
   layout: layout,
 
   placeholder: null,

@@ -4,6 +4,7 @@ import InputableMixin from '../mixins/components/inputable';
 
 export default Ember.Component.extend(InputableMixin, {
   tagName: '',
+  classNames: '',
   layout: layout,
 
   placeholder: null,
