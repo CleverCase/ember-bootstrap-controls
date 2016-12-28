@@ -1,0 +1,9 @@
+{{#freestyle-subsection name="Pagination" section=section}}
+  {{#freestyle-usage "pagination" title="Pagination"}}
+    {{bootstrap-pagination-nav
+      pageNumber=pageNumber
+      pageSize=pagesize
+      totalPages=totalPages
+      moveToPage=(action (mut pageNumber))}}
+  {{/freestyle-usage}}
+{{/freestyle-subsection}}

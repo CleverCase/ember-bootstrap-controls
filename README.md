@@ -557,6 +557,18 @@ For more information on Bootstrap style tables, visit the [Bootstrap](http://get
 
 ---
 
+## Freestyle
+If you are running [ember-freestyle](https://github.com/chrislopresto/ember-freestyle) then you can add the following component to get a `{{freestyle-section}}` that contains all of this library's components.
+```
+{{#freestyle-guide
+...
+
+  {{ember-bootstrap-controls-freestyle}}
+
+...
+{{/freestyle-guide}}
+```
+
 ## Running
 
 * `ember server`

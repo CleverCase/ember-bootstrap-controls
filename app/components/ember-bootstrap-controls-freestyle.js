@@ -1,0 +1,1 @@
+export { default } from 'ember-bootstrap-controls/components/ember-bootstrap-controls-freestyle';
