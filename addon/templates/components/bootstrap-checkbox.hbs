@@ -2,6 +2,7 @@
 {{#if srOnly}}
   <input
     type="checkbox"
+    id="{{inputId}}"
     checked={{isChecked}}
     onclick={{action "change" value="target.checked"}}
     name={{name}}
@@ -14,6 +15,7 @@
   <label for="{{inputId}}" style="{{if disabled "cursor: not-allowed; color: #ccc;"}}">
     <input
       type="checkbox"
+      id="{{inputId}}"
       checked={{isChecked}}
       onclick={{action "change" value="target.checked"}}
       name={{name}}

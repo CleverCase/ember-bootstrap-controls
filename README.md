@@ -124,6 +124,7 @@ Would render
 *Optional Arguments:*
 - `label` - String displayed as the labels text.
 - `name` - Set the input name attribute.
+- `value` - Set the internal value stored by the checkbox component.
 - `isChecked` - Set the checked value of the checkbox when initializing.
 - `readonly` - Sets the checkbox to read only and is not changeable.
 - `disabled` - Sets the checkbox to disabled.
@@ -132,7 +133,7 @@ Would render
 - `required` - Sets the checkbox input to required.
 - `errors` - Collection of DS.errors.
 - `srOnly` - Boolean srOnly removes the label when set to true.
-- `onclick` - An action passed to the control to call when value changes. Sends checked value as param.
+- `onclick` - An action passed to the control to call when value changes. Sends checked state (true/false) and the value as params. Using onclick is more accurate than onchange for checkbox event handling.
 
 ---
 

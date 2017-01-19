@@ -6,6 +6,8 @@ export default Ember.Component.extend({
 
   label: null,
   name: null,
+  value: null,
+  inputId: null,
   readonly: null,
   disabled: false,
   required: false,
@@ -22,17 +24,28 @@ export default Ember.Component.extend({
     return !this.get('isChecked');
   }),
 
+  hasValue: Ember.computed('value', function() {
+    const value = this.get('value');
+
+    return value ? true : false;
+  }),
+
   actions: {
     change: function(checked) {
       const onclickFunc = this.get('onclick');
       const readonly = this.get('readonly');
+      const value = this.get('value');
 
       if(!readonly) {
         this.set('isChecked', checked);
       }
 
-      if(onclickFunc) {
-        onclickFunc(checked);
+      if (onclickFunc) {
+        if (this.hasValue()) {
+          onclickFunc(checked, value);
+        } else {
+          onclickFunc(checked);
+        }
       }
     },
   },
