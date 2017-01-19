@@ -92,6 +92,12 @@ Would render
 - `errors` - Collection of DS.errors.
 - `customLabelCss` - Custom css to be added to the label.
 - `srOnly` - Boolean srOnly class to the label for screen readers. This hides the label, but still allows screen readers/computers to read the label by keeping it in the DOM. If it is desirable to hide the label, set this to `true`.
+- `placeholder` - Used to set the placeholder value of the input.
+- `readonly` - Used to make the input read-only.
+- `type` - Set the type of input, usually text.
+- `tabindex` - Sets the tabindex for the input.
+- `required` - Make the input a required entry.
+- `inputId` - Sets the `id` value of the DOM element.
 
 ---
 
@@ -134,6 +140,7 @@ Would render
 - `errors` - Collection of DS.errors.
 - `srOnly` - Boolean srOnly removes the label when set to true.
 - `onclick` - An action passed to the control to call when value changes. Sends checked state (true/false) and the value as params. Using onclick is more accurate than onchange for checkbox event handling.
+- `inputId` - Sets the `id` value of the DOM element.
 
 ---
 
