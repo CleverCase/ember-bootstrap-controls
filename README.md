@@ -27,7 +27,7 @@ See a [live demo](http://wildland.github.io/ember-bootstrap-controls/).
 - [`bootstrap-form` form helper](#bootstrap-form)
 - [`bootstrap-debounce-input` input field helper](#bootstrap-debounce-input)
 - [`bootstrap-input` input field helper](#bootstrap-input)
-- [`bootstrap-checkbox` input field helper](#bootstrap-checkbox)
+- [`bootstrap-checkbox` checkbox input field helper](#bootstrap-checkbox)
 - [`bootstrap-currency-input ` currency field helper](#bootstrap-currency-input)
 - [`bootstrap-textarea` text area helper](#bootstrap-textarea)
 - [`bootstrap-datepicker` calendar style date select helper](#bootstrap-datepicker)
