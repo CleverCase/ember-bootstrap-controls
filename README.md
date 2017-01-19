@@ -27,6 +27,7 @@ See a [live demo](http://wildland.github.io/ember-bootstrap-controls/).
 - [`bootstrap-form` form helper](#bootstrap-form)
 - [`bootstrap-debounce-input` input field helper](#bootstrap-debounce-input)
 - [`bootstrap-input` input field helper](#bootstrap-input)
+- [`bootstrap-checkbox` input field helper](#bootstrap-checkbox)
 - [`bootstrap-currency-input ` currency field helper](#bootstrap-currency-input)
 - [`bootstrap-textarea` text area helper](#bootstrap-textarea)
 - [`bootstrap-datepicker` calendar style date select helper](#bootstrap-datepicker)
@@ -91,6 +92,47 @@ Would render
 - `errors` - Collection of DS.errors.
 - `customLabelCss` - Custom css to be added to the label.
 - `srOnly` - Boolean srOnly class to the label for screen readers. This hides the label, but still allows screen readers/computers to read the label by keeping it in the DOM. If it is desirable to hide the label, set this to `true`.
+
+---
+
+### Bootstrap Checkbox
+A field helper to simplify making a checkbox field for a form.
+
+*Use Example:*
+
+```html
+{{bootstrap-checkbox isChecked=false label="Email”}}
+```
+
+Would render
+
+```html
+<div class="checkbox">
+  <label>
+    <input
+      type="checkbox"
+      checked=false
+      disabled=false
+      required=false
+      autofocus=false
+      readonly=""
+      tabindex=0>
+  </label>
+<div>
+```
+
+*Optional Arguments:*
+- `label` - String displayed as the labels text.
+- `name` - Set the input name attribute.
+- `isChecked` - Set the checked value of the checkbox when initializing.
+- `readonly` - Sets the checkbox to read only and is not changeable.
+- `disabled` - Sets the checkbox to disabled.
+- `autofocus` - Sets the checkbox focus when initialized.
+- `tabindex` - Sets the tab index attribute of the input.
+- `required` - Sets the checkbox input to required.
+- `errors` - Collection of DS.errors.
+- `srOnly` - Boolean srOnly removes the label when set to true.
+- `onclick` - An action passed to the control to call when value changes. Sends checked value as param.
 
 ---
 
