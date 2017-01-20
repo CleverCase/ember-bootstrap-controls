@@ -107,7 +107,11 @@ A field helper to simplify making a checkbox field for a form.
 *Use Example:*
 
 ```html
-{{bootstrap-checkbox isChecked=false label="Email”}}
+{{bootstrap-checkbox
+  isChecked=false
+  label="I am a person"
+  value="Y"
+  onclick=(action "myClickAction")}}
 ```
 
 Would render
@@ -122,7 +126,10 @@ Would render
       required=false
       autofocus=false
       readonly=""
+      value="Y"
+      onclick="function <ember action>(this.checked,this.value);"
       tabindex=0>
+      I am a person
   </label>
 <div>
 ```
