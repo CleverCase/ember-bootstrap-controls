@@ -1,0 +1,43 @@
+{{#freestyle-subsection name="Checkbox" section=section}}
+  {{#freestyle-collection title='Checkbox' defaultKey='checkbox-checked' inline=true as |collection|}}
+
+    {{#freestyle-variant collection=collection key='checkbox-checked'}}
+      {{#freestyle-usage "checkbox-checked" title="Checkbox Checked"}}
+        {{bootstrap-checkbox
+          label="Checkbox Checked"
+          name="CheckboxChecked"
+          isChecked=true}}
+      {{/freestyle-usage}}
+    {{/freestyle-variant}}
+
+    {{#freestyle-variant collection=collection key='checkbox-unchecked'}}
+      {{#freestyle-usage "checkbox-unchecked" title="Checkbox Unchecked"}}
+        {{bootstrap-checkbox
+          label="Checkbox Un-Checked"
+          name="CheckboxUnChecked"
+          isChecked=false}}
+      {{/freestyle-usage}}
+    {{/freestyle-variant}}
+
+    {{#freestyle-variant collection=collection key='checkbox-error'}}
+      {{#freestyle-usage "checkbox-error" title="Checkbox Alert"}}
+        {{bootstrap-checkbox
+          label="Checkbox Alert"
+          name="CheckboxAlert"
+          isChecked=false
+          errors=true}}
+      {{/freestyle-usage}}
+    {{/freestyle-variant}}
+
+    {{#freestyle-variant collection=collection key='checkbox-autofocus'}}
+      {{#freestyle-usage "checkbox-autofocus" title="Checkbox Auto Focus"}}
+        {{bootstrap-checkbox
+          label="Checkbox Auto Focus"
+          name="CheckboxAutoFocus"
+          isChecked=false
+          autofocus=true}}
+      {{/freestyle-usage}}
+    {{/freestyle-variant}}
+
+  {{/freestyle-collection}}
+{{/freestyle-subsection}}
