@@ -1,6 +1,6 @@
 import Ember from 'ember';
-export default function computerActionKey(dependentActionKey) {
-  var camelCaseActionKey = dependentActionKey.camelize();
+export default function computedActionKey(dependentActionKey) {
+  var camelCaseActionKey = Ember.String.camelize(dependentActionKey);
 
   return Ember.computed(dependentActionKey, function() {
     return this.get(dependentActionKey) ? camelCaseActionKey : null;

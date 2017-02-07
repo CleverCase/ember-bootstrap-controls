@@ -6,7 +6,7 @@ export function parseColumns(params/*, hash*/) {
 
   let result = record.get(attrName);
 
-  return new Ember.Handlebars.SafeString(result);
+  return new Ember.String.htmlSafe(result);
 }
 
 export default Ember.Helper.helper(parseColumns);

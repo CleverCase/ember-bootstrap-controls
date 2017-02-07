@@ -58,6 +58,18 @@ export default Ember.Component.extend(InputableMixin, {
     }
   }),
 
+  didReceiveAttrs() {
+    this._super(...arguments);
+
+    if(this.get('type') === 'checkbox') {
+      Ember.deprecate(
+        "This component will be removed in the next minor version of ember-bootstrap-controls. Please use `bootstrap-checkbox` instead of `bootstrap-input` with checkbox type for checkboxes.",
+        false, // always raise depecation
+        { id: 'ember-bootstrap-controls' }
+      );
+    }
+  },
+
   actions: {
     keyPress: function() {
       this.sendAction('key-press', ...arguments);

@@ -1,0 +1,24 @@
+{{#freestyle-subsection name="Input" section=section}}
+  {{#freestyle-collection title='Input' defaultKey='input-text' inline=true as |collection|}}
+
+    {{#freestyle-variant collection=collection key='input-text'}}
+      {{#freestyle-usage "input-text" title="Input Text"}}
+
+        {{bootstrap-input
+          value=value
+          type=type
+          placeholder="Input Field"
+          label="Input Field"
+          classNames="form-control"
+          readonly=readonly
+          disabled=disabled
+          key-press=(action 'keyPress')
+          key-up=(action 'keyUp')
+          key-down=(action 'keyDown')
+          required=false}}
+
+      {{/freestyle-usage}}
+    {{/freestyle-variant}}
+
+  {{/freestyle-collection}}
+{{/freestyle-subsection}}
