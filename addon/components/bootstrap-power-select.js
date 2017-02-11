@@ -19,13 +19,7 @@ export default Ember.Component.extend(InputableMixin, {
   renderInPlace: false,
   allowClear: true,
   search: null,
-  searchEnabled: Ember.computed('matcher', 'search', 'searchField', function(){
-    const matcher = this.get('matcher');
-    const search = this.get('search');
-    const searchField = this.get('searchField');
-
-    return (matcher || search || searchField);
-  }),
+  searchEnabled: true,
   searchField: null,
   required: false,
   srOnly: null,
