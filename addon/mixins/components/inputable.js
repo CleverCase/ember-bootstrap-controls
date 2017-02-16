@@ -11,5 +11,5 @@ export default Ember.Mixin.create({
 
   inputId: Ember.computed(function() {
     return `bootstrap-component-${generateUUID()}`;
-  })
+  }),
 });

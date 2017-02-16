@@ -2,6 +2,7 @@ import Ember from 'ember';
 import layout from '../templates/components/bootstrap-debounce-input';
 import InputableMixin from '../mixins/components/inputable';
 import computedActionKey from '../utils/computed-action-key';
+import { task, timeout } from 'ember-concurrency';
 
 export default Ember.Component.extend(InputableMixin, {
   tagName: '',
@@ -9,29 +10,20 @@ export default Ember.Component.extend(InputableMixin, {
   layout: layout,
 
   value: "",
-  valueText: "",
+  textValue: null,
   debounce: 1000,
   label: null,
   placeholder: null,
   required: false,
 
   didReceiveAttrs() {
-    this.set('valueText', this.get('value'));
+    this.get('setValue').perform(this.get('textValue'));
   },
 
-  onValueTextChange: function() {
-    if(this.get('valueText') != this.get('value')) {
-      Ember.run.debounce(this, this.applyValue, this.get('debounce'));
+  setValue: task(function * (text) {
+    yield timeout(this.get('debounce')); // wait for a monent before changing
+    if (text !== this.get('value')) {
+      this.set('value', text);
     }
-  }.observes('valueText'),
-
-  applyValue: function() {
-    this.set('value', this.get('valueText'));
-  },
-
-  actions: {
-    applyValueImmediately() {
-      this.set('value', this.get('valueText'));
-    }
-  },
+  }).restartable(),
 });
