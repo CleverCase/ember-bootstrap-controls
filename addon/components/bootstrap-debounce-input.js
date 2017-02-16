@@ -9,21 +9,27 @@ export default Ember.Component.extend(InputableMixin, {
   classNames: '',
   layout: layout,
 
-  value: "",
-  textValue: null,
-  debounce: 1000,
+  /* Public Attrs */
+  value: null,
+  debounce: 800,
   label: null,
   placeholder: null,
   required: false,
 
+  /* Public Actions */
+  onChange: null,
+
+  _value: null,
+
   didReceiveAttrs() {
-    this.get('setValue').perform(this.get('textValue'));
+    this.set('_value', this.get('value'));
   },
 
-  setValue: task(function * (text) {
+  valueChanged: task(function * () {
     yield timeout(this.get('debounce')); // wait for a monent before changing
-    if (text !== this.get('value')) {
-      this.set('value', text);
+
+    if (this.get('onChange')) {
+      this.get('onChange')(this.get('_value'));
     }
   }).restartable(),
 });

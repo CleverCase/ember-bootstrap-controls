@@ -5,10 +5,11 @@
       {{#freestyle-usage "input-debounce" title="Debounce Input Text"}}
 
         {{bootstrap-debounce-input
-          textValue=searchText
-          onChange="searchAction"
+          value=searchText
+          onChange=(action 'searchAction')
           placeholder='Search'}}
 
+          {{#if searchCompleted}}<strong>onChange</strong> Action Fired: {{searchText}}{{/if}}
       {{/freestyle-usage}}
     {{/freestyle-variant}}
 

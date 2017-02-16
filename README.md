@@ -52,11 +52,12 @@ A field helper to simplify making an input field with a delay until the user sto
 *Use Example:*
 
 ```html
-{{bootstrap-debounce-input value=search placeholder='Search'}}
+{{bootstrap-debounce-input value=search onChange=(action (mut value)) placeholder='Search'}}
 ```
 
 *Required Arguments:*
 - `value` - The attribute attached to the input.
+- `onChange` - The action to fire once the user is done typing
 
 *Optional Arguments:*
 - `label` - String displayed as the labels text.

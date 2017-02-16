@@ -3,5 +3,13 @@ import layout from '../../templates/components/freestyle/bootstrap-debounce-inpu
 
 export default Ember.Component.extend({
   layout: layout,
-  searchText: 'default text',
+
+  searchCompleted: false,
+
+  actions: {
+    searchAction(text) {
+      this.set('searchCompleted', true);
+      this.set('searchText', text);
+    },
+  },
 });

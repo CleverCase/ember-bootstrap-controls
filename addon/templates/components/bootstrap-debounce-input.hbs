@@ -4,7 +4,8 @@
   {{/if}}
   {{input
     elementId=inputId
-    value=textValue
+    value=_value
+    key-up=(perform valueChanged)
     placeholder=placeholder
     required=required}}
   {{#if errors}}
