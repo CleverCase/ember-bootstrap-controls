@@ -4,6 +4,8 @@ import layout from '../templates/components/bootstrap-checkbox';
 export default Ember.Component.extend({
   layout: layout,
 
+  tagName: '',
+
   label: null,
   name: null,
   value: null,

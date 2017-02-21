@@ -14,7 +14,7 @@ export default Ember.Component.extend(InputableMixin, {
   type: null,
   srOnly: null,
   tabindex: 0,
-  required: true,
+  required: false,
 
   keyPress: computedActionKey('key-press'),
   keyUp: computedActionKey('key-up'),
