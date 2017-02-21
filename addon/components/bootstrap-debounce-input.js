@@ -2,36 +2,34 @@ import Ember from 'ember';
 import layout from '../templates/components/bootstrap-debounce-input';
 import InputableMixin from '../mixins/components/inputable';
 import computedActionKey from '../utils/computed-action-key';
+import { task, timeout } from 'ember-concurrency';
 
 export default Ember.Component.extend(InputableMixin, {
   tagName: '',
   classNames: '',
   layout: layout,
 
-  value: "",
-  valueText: "",
-  debounce: 1000,
+  /* Public Attrs */
+  value: null,
+  debounce: 800,
   label: null,
   placeholder: null,
   required: false,
 
+  /* Public Actions */
+  onChange: null,
+
+  _value: null,
+
   didReceiveAttrs() {
-    this.set('valueText', this.get('value'));
+    this.set('_value', this.get('value'));
   },
 
-  onValueTextChange: function() {
-    if(this.get('valueText') != this.get('value')) {
-      Ember.run.debounce(this, this.applyValue, this.get('debounce'));
+  valueChanged: task(function * () {
+    yield timeout(this.get('debounce')); // wait for a monent before changing
+
+    if (this.get('onChange')) {
+      this.get('onChange')(this.get('_value'));
     }
-  }.observes('valueText'),
-
-  applyValue: function() {
-    this.set('value', this.get('valueText'));
-  },
-
-  actions: {
-    applyValueImmediately() {
-      this.set('value', this.get('valueText'));
-    }
-  },
+  }).restartable(),
 });

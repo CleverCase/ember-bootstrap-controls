@@ -1,0 +1,17 @@
+{{#freestyle-subsection name="Debounce" section=section}}
+  {{#freestyle-collection title='Debounce Input' defaultKey='input-debounce' inline=true as |collection|}}
+
+    {{#freestyle-variant collection=collection key='input-debounce'}}
+      {{#freestyle-usage "input-debounce" title="Debounce Input Text"}}
+
+        {{bootstrap-debounce-input
+          value=searchText
+          onChange=(action 'searchAction')
+          placeholder='Search'}}
+
+          {{#if searchCompleted}}<strong>onChange</strong> Action Fired: {{searchText}}{{/if}}
+      {{/freestyle-usage}}
+    {{/freestyle-variant}}
+
+  {{/freestyle-collection}}
+{{/freestyle-subsection}}

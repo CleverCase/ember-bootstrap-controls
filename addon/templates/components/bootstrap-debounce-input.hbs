@@ -4,8 +4,8 @@
   {{/if}}
   {{input
     elementId=inputId
-    enter='applyValueImmediately'
-    value=valueText
+    value=_value
+    key-up=(perform valueChanged)
     placeholder=placeholder
     required=required}}
   {{#if errors}}

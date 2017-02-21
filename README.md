@@ -12,7 +12,7 @@ This README outlines the details of using and collaborating on this Ember addon.
 ## Installation
 
 Add the following the list of dependencies in your `package.json` which can be found in the root ember directory:
-- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.9.5",`
+- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.10.1",`
 
 Now run `npm install`.
 
@@ -52,16 +52,17 @@ A field helper to simplify making an input field with a delay until the user sto
 *Use Example:*
 
 ```html
-{{bootstrap-debounce-input value=search placeholder='Search'}}
+{{bootstrap-debounce-input value=search onChange=(action (mut value)) placeholder='Search'}}
 ```
 
 *Required Arguments:*
 - `value` - The attribute attached to the input.
+- `onChange` - The action to fire once the user is done typing
 
 *Optional Arguments:*
 - `label` - String displayed as the labels text.
 - `placeholder` - String displayed as the placeholder text.
-- `debounce` - Time in milliseconds to wait for the user to pause before updating the value attribute. Defaults to `1000`.
+- `debounce` - Time in milliseconds to wait for the user to pause before updating the value attribute. Defaults to `800`.
 - `errors` - Collection of DS.errors.
 
 ---
