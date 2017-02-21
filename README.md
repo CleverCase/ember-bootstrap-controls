@@ -62,7 +62,7 @@ A field helper to simplify making an input field with a delay until the user sto
 *Optional Arguments:*
 - `label` - String displayed as the labels text.
 - `placeholder` - String displayed as the placeholder text.
-- `debounce` - Time in milliseconds to wait for the user to pause before updating the value attribute. Defaults to `1000`.
+- `debounce` - Time in milliseconds to wait for the user to pause before updating the value attribute. Defaults to `800`.
 - `errors` - Collection of DS.errors.
 
 ---
