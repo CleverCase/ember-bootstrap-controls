@@ -10,7 +10,6 @@
       disabled={{disabled}}
       required={{required}}
       autofocus={{autofocus}}
-      readonly={{if readonly "readonly"}}
       tabindex={{tabindex}}>
   {{else}}
     <label for="{{inputId}}" style="{{if disabled "cursor: not-allowed; color: #ccc;"}}">
@@ -23,7 +22,6 @@
         disabled={{disabled}}
         required={{required}}
         autofocus={{autofocus}}
-        readonly={{if readonly "readonly"}}
         tabindex={{tabindex}}>
       {{label}}
     </label>
