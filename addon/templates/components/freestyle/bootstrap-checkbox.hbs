@@ -6,7 +6,8 @@
         {{bootstrap-checkbox
           label="Checkbox Checked"
           name="CheckboxChecked"
-          isChecked=true}}
+          onclick=(action 'checkboxChange')
+          isChecked=isChecked}}
       {{/freestyle-usage}}
     {{/freestyle-variant}}
 
@@ -15,7 +16,8 @@
         {{bootstrap-checkbox
           label="Checkbox Un-Checked"
           name="CheckboxUnChecked"
-          isChecked=false}}
+          onclick=(action 'checkboxChange')
+          isChecked=isNotChecked}}
       {{/freestyle-usage}}
     {{/freestyle-variant}}
 
@@ -24,7 +26,7 @@
         {{bootstrap-checkbox
           label="Checkbox Alert"
           name="CheckboxAlert"
-          isChecked=false
+          isChecked=isChecked
           errors=true}}
       {{/freestyle-usage}}
     {{/freestyle-variant}}

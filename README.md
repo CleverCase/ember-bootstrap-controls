@@ -12,7 +12,7 @@ This README outlines the details of using and collaborating on this Ember addon.
 ## Installation
 
 Add the following the list of dependencies in your `package.json` which can be found in the root ember directory:
-- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.10.1",`
+- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.10.2",`
 
 Now run `npm install`.
 
@@ -138,9 +138,7 @@ Would render
 *Optional Arguments:*
 - `label` - String displayed as the labels text.
 - `name` - Set the input name attribute.
-- `value` - Set the internal value stored by the checkbox component.
 - `isChecked` - Set the checked value of the checkbox when initializing.
-- `readonly` - Sets the checkbox to read only and is not changeable.
 - `disabled` - Sets the checkbox to disabled.
 - `autofocus` - Sets the checkbox focus when initialized.
 - `tabindex` - Sets the tab index attribute of the input.
