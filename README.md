@@ -12,7 +12,7 @@ This README outlines the details of using and collaborating on this Ember addon.
 ## Installation
 
 Add the following the list of dependencies in your `package.json` which can be found in the root ember directory:
-- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.10.1",`
+- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.10.2",`
 
 Now run `npm install`.
 
