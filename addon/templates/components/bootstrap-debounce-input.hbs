@@ -1,10 +1,11 @@
-<div class="{{classNames}} form-group bootstrap-input-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
+<div class="{{concat-class-names classNames}} form-group bootstrap-input-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
   {{#if label}}
     <label for="{{inputId}}" class="control-label">{{label}}</label>
   {{/if}}
   {{input
     elementId=inputId
     value=_value
+    classNames="form-control"
     key-up=(perform valueChanged)
     placeholder=placeholder
     required=required}}
