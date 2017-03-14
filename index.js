@@ -2,8 +2,8 @@
 'use strict';
 
 module.exports = {
-  name: 'ember-bootstrap-controls',
   isDevelopingAddon: function() {
     return true;
-  }
+  },
+  name: 'ember-bootstrap-controls'
 };
