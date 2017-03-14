@@ -1,4 +1,6 @@
 {
   "name": "ember-bootstrap-controls",
-  "dependencies": {}
+  "dependencies": {
+    "bootstrap-datepicker": "^1.6.4"
+  }
 }
