@@ -55,10 +55,9 @@
     "ember-resolver": "^2.0.3",
     "ember-text-mask": "~0.1.0",
     "ember-truth-helpers": "~1.2.0",
-    "text-mask-addons": "~1.0.1"
+    "text-mask-addons": "~1.0.1",
     "ember-source": "~2.11.0",
     "loader.js": "^4.0.10"
-  },
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"
