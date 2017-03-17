@@ -27,6 +27,7 @@ See a [live demo](http://wildland.github.io/ember-bootstrap-controls/).
 - [`bootstrap-form` form helper](#bootstrap-form)
 - [`bootstrap-debounce-input` input field helper](#bootstrap-debounce-input)
 - [`bootstrap-input` input field helper](#bootstrap-input)
+- [`bootstrap-text-mask` input field helper] (#bootstrap-text-mask)
 - [`bootstrap-checkbox` checkbox input field helper](#bootstrap-checkbox)
 - [`bootstrap-currency-input ` currency field helper](#bootstrap-currency-input)
 - [`bootstrap-textarea` text area helper](#bootstrap-textarea)
@@ -99,6 +100,72 @@ Would render
 - `tabindex` - Sets the tabindex for the input.
 - `required` - Make the input a required entry.
 - `inputId` - Sets the `id` value of the DOM element.
+
+---
+
+### Bootstrap Text Mask
+A field helper to add custom formatted text-masks to inputs.
+
+*Use Examples*
+
+Template
+```html
+{{bootstrap-mask-input
+  mask=myMask
+  value=model.phoneNumber
+  label="Phone #"
+  placeholderChar="0"
+  placeholder="(000) 000-0000"
+  errors=model.errors.phoneNumber
+  keepCharPositions=true
+  focusOut=(action "saveModel" model)}}
+```
+
+Controller
+```javascript
+import Ember from 'ember';
+
+export default Ember.Controller.extend({
+  myMask: ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+
+  actions: {
+    saveModel(model) {
+      model.save();
+    },
+  }
+});
+```
+
+*Rendered Output*
+
+```html
+<div class="ember-view form-group bootstrap-input-component" id="ember[1###]">
+  <label class="control-label" for="input-ember[1###]">Phone #</label>
+  <input id="input-ember[1###]" placeholder="(000) 000-0000" type="text" class="ember-view ember-text-field form-control">
+</div>
+
+<!--
+NOTE:
+- The Text Mask will be in place of the placeholder and persist through typing while forcing a formatted value.
+- This input will autosave the model when user clicks out of input (See: focusOut below).
+- Setting the `placeholderChar` to "0" forces the mask to render `(000) 000-0000`, leaving it blank or defaulted would render `(___) ___-____` (See: placeholderChar below).
+-->
+```
+
+*Required Arguments:*
+- `mask` - An array of Regex values containing each text-mask character.
+- `value` - Ember model attribute attached to the input.
+- `label` - String displayed as the labels text.
+
+*Optional Arguments:*
+- NOTE: Contains all optional values for `bootstrap-input`, plus the following:
+- `keepCharPositions` - Boolean value to set whether or not characters' spaces in the format will be saved when another character is deleted (Default is set to `true`).
+- `placeholder` - String used to set the placeholder value of the input.
+- `placeholderChar` - Sets the default character to be used in the mask, default setting is `'_'`.
+- `focusOut` - An action passed to the control to call when the user navigates out of input.
+- `keyPress` - An action passed to the control to call when a key is interacted with.
+- `keyUp` - An action passed to the control to call when a key is released.
+- `keyDown` - An action passed to the control to call when a key is pressed down.
 
 ---
 
