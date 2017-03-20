@@ -4,6 +4,12 @@ import layout from '../../templates/components/freestyle/bootstrap-mask-input';
 export default Ember.Component.extend({
   layout: layout,
 
+  value: null,
+  inputId: 1,
+  type: "text",
+  readonly: false,
+  disabled: false,
+
   myMask: ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
 
   actions: {

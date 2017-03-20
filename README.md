@@ -27,7 +27,7 @@ See a [live demo](http://wildland.github.io/ember-bootstrap-controls/).
 - [`bootstrap-form` form helper](#bootstrap-form)
 - [`bootstrap-debounce-input` input field helper](#bootstrap-debounce-input)
 - [`bootstrap-input` input field helper](#bootstrap-input)
-- [`bootstrap-text-mask` input field helper] (#bootstrap-text-mask)
+- [`bootstrap-mask-input` input field helper] (#bootstrap-mask-input)
 - [`bootstrap-checkbox` checkbox input field helper](#bootstrap-checkbox)
 - [`bootstrap-currency-input ` currency field helper](#bootstrap-currency-input)
 - [`bootstrap-textarea` text area helper](#bootstrap-textarea)
