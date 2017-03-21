@@ -24,10 +24,11 @@ export default Ember.Component.extend(InputableMixin, {
   guid: Ember.computed.readOnly('_guid'),
   _guid: null,
 
-  keyPress: computedActionKey('key-press'),
-  keyUp: computedActionKey('key-up'),
-  keyDown: computedActionKey('key-down'),
-  focusOut: null,
+  /* action attrs */
+  'key-press': null,
+  'key-up': null,
+  'key-down': null,
+  'focus-out': null,
 
   inputGuid: Ember.computed('guid', function() {
     return `input-${this.get('guid')}`;
@@ -42,19 +43,5 @@ export default Ember.Component.extend(InputableMixin, {
     this._super(...arguments);
     const guid = guidFor(this);
     this.set('_guid', guid);
-  },
-
-  actions: {
-    keyPress: function() {
-      this.sendAction('key-press', ...arguments);
-    },
-
-    keyUp: function() {
-      this.sendAction('key-up', ...arguments);
-    },
-
-    keyDown: function() {
-      this.sendAction('key-down', ...arguments);
-    },
   }
 });

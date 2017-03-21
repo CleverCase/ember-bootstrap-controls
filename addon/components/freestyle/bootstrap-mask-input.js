@@ -22,5 +22,8 @@ export default Ember.Component.extend({
     keyDown() {
       console.log('key down');
     },
+    focusOut() {
+      console.log('focus out');
+    }
   },
 });

@@ -118,7 +118,7 @@ Template
   placeholder="(000) 000-0000"
   errors=model.errors.phoneNumber
   keepCharPositions=true
-  focusOut=(action "saveModel" model)}}
+  key-press=(action "saveModel" model)}}
 ```
 
 Controller
@@ -162,10 +162,10 @@ NOTE:
 - `keepCharPositions` - Boolean value to set whether or not characters' spaces in the format will be saved when another character is deleted (Default is set to `true`).
 - `placeholder` - String used to set the placeholder value of the input.
 - `placeholderChar` - Sets the default character to be used in the mask, default setting is `'_'`.
-- `focusOut` - An action passed to the control to call when the user navigates out of input.
-- `keyPress` - An action passed to the control to call when a key is interacted with.
-- `keyUp` - An action passed to the control to call when a key is released.
-- `keyDown` - An action passed to the control to call when a key is pressed down.
+- `focus-out` - An action passed to the control to call when the user navigates out of input.
+- `key-press` - An action passed to the control to call when a key is interacted with.
+- `key-up` - An action passed to the control to call when a key is released.
+- `key-down` - An action passed to the control to call when a key is pressed down.
 
 ---
 
