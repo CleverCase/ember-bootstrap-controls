@@ -15,6 +15,7 @@ export default Ember.Component.extend(InputableMixin, {
   srOnly: null,
   tabindex: 0,
   required: false,
+  disabled: false,
 
   mask: null,
   placeholderChar: '_',
