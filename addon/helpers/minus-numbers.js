@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default function minusNumbers(params) {
+export function minusNumbers(params) {
   var result = params[0];
 
   for (var i = 1; i < params.length; i++) {
@@ -9,3 +9,5 @@ export default function minusNumbers(params) {
 
   return result;
 }
+
+export default Ember.Helper.helper(minusNumbers);
