@@ -1,6 +1,6 @@
 import Ember from 'ember';
 
-export default function addNumbers(params) {
+export function addNumbers(params) {
   let result = params[0];
 
   for (let i = 1; i < params.length; i++) {
@@ -8,3 +8,5 @@ export default function addNumbers(params) {
   }
   return result;
 }
+
+export default Ember.Helper.helper(addNumbers);
