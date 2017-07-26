@@ -3,9 +3,10 @@ import layout from '../templates/components/bootstrap-textarea';
 import InputableMixin from '../mixins/components/inputable';
 
 export default Ember.Component.extend(InputableMixin, {
-  tagName: '',
-  classNames: '',
   layout: layout,
+
+  classNames: ['form-group', 'bootstrap-textarea-component'],
+  classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'showError:has-error'],
 
   placeholder: null,
   value: null,

@@ -4,7 +4,8 @@ import layout from '../templates/components/bootstrap-checkbox';
 export default Ember.Component.extend({
   layout: layout,
 
-  tagName: '',
+  classNames: ['checkbox', 'bootstrap-checked-component'],
+  attributeBindings: ['disabled'],
 
   label: null,
   name: null,
@@ -20,6 +21,18 @@ export default Ember.Component.extend({
 
   // Actions
   onclick: null,
+
+  didReceiveAttrs() {
+    this._super(...arguments);
+
+    if (this.get('errors')) {
+      Ember.deprecate(
+        "bootstrap-checkbox errors will be removed in the next minor version of ember-bootstrap-controls. Checkboxes should be hidden if they accept invalid input.",
+        false, // always raise depecation
+        { id: 'ember-bootstrap-controls' }
+      );
+    }
+  },
 
   actions: {
     change: function(checked) {

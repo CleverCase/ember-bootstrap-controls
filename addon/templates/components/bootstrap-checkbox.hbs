@@ -1,36 +1,20 @@
-<div class="{{concat-class-names}} checkbox bootstrap-checkbox-component">
-  {{#if srOnly}}
-    <label class="sr-only" for="{{inputId}}">{{label}}</label>
-    <input
-      type="checkbox"
-      id="{{inputId}}"
-      checked={{isChecked}}
-      onclick={{action "change" value="target.checked"}}
-      name={{name}}
-      disabled={{disabled}}
-      required={{required}}
-      autofocus={{autofocus}}
-      tabindex={{tabindex}}>
-  {{else}}
-    <label for="{{inputId}}" style="{{if disabled "cursor: not-allowed; color: #ccc;"}}">
-      <input
-        type="checkbox"
-        id="{{inputId}}"
-        checked={{isChecked}}
-        onclick={{action "change" value="target.checked"}}
-        name={{name}}
-        disabled={{disabled}}
-        required={{required}}
-        autofocus={{autofocus}}
-        tabindex={{tabindex}}>
-      {{label}}
-    </label>
-  {{/if}}
-  {{#if errors}}
-    <div class="form-control-static alert alert-danger" role="alert">
-      {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-      {{/each}}
-    </div>
-  {{/if}}
-</div>
+<label style="{{if disabled "cursor: not-allowed; color: #ccc;"}}">
+  <input
+    type="checkbox"
+    id="{{inputId}}"
+    checked={{isChecked}}
+    onclick={{action "change" value="target.checked"}}
+    name={{name}}
+    disabled={{disabled}}
+    required={{required}}
+    autofocus={{autofocus}}
+    tabindex={{tabindex}}>
+  {{label}}
+</label>
+{{#if errors}}
+  <div class="form-control-static alert alert-danger" role="alert">
+    {{#each errors as |error|}}
+      <span>{{error.message}}</span>
+    {{/each}}
+  </div>
+{{/if}}
