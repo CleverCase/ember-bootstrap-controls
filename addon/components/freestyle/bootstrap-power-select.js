@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../../templates/components/freestyle/bootstrap-power-select';
-import { task, timeout } from 'ember-concurrency'
+import { task, timeout } from 'ember-concurrency';
 
 export default Ember.Component.extend({
   layout: layout,

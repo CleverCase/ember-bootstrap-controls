@@ -1,7 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bootstrap-phone-mask-input';
 import InputableMixin from '../mixins/components/inputable';
-import { createNumberMask } from '../text-mask-addons';
 
 const { Component } = Ember;
 

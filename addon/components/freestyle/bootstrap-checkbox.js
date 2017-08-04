@@ -8,10 +8,7 @@ export default Ember.Component.extend({
   isNotChecked: false,
 
   actions: {
-    checkboxChange(newChecked, oldChecked) {
-      //this.set('isChecked', newChecked)
-      console.log(`Checkbox checked = ${newChecked}`);
-      console.log(`isChecked = ${this.get('isChecked')}`);
+    checkboxChange(/*newChecked, oldChecked*/) {
     },
   },
 });

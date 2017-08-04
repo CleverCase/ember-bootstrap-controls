@@ -1,7 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/bootstrap-mask-input';
 import InputableMixin from '../mixins/components/inputable';
-import computedActionKey from '../utils/computed-action-key';
 
 const { guidFor } = Ember;
 

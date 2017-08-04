@@ -6,6 +6,6 @@ export default Ember.Component.extend({
   isChecked: false,
 
   didReceiveAttrs() {
-    this.set('isChecked', this.get('option') === this.get('selected'))
+    this.set('isChecked', this.get('option') === this.get('selected'));
   },
 });
