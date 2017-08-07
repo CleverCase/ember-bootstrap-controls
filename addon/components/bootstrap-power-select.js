@@ -3,9 +3,10 @@ import layout from '../templates/components/bootstrap-power-select';
 import InputableMixin from '../mixins/components/inputable';
 
 export default Ember.Component.extend(InputableMixin, {
-  tagName: '',
-  classNames: '',
   layout: layout,
+
+  classNames: ['form-group', 'bootstrap-power-select-component'],
+  classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'showError:has-error'],
 
   selected: null,
   placeholder: null,

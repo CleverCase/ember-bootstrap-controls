@@ -6,11 +6,11 @@ export default Ember.Component.extend({
 
   actions: {
     selectItem(selectedItem) {
-      this.set("selectedSample", selectedItem)
+      this.set("selectedSample", selectedItem);
     },
 
     alertSelectItem(selectedItem) {
-      this.set("selectedSample", selectedItem)
+      this.set("selectedSample", selectedItem);
     },
   }
 });
