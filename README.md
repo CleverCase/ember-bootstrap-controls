@@ -212,7 +212,6 @@ Would render
 - `autofocus` - Sets the checkbox focus when initialized.
 - `tabindex` - Sets the tab index attribute of the input.
 - `required` - Sets the checkbox input to required.
-- `errors` - Collection of DS.errors.
 - `srOnly` - Boolean srOnly removes the label when set to true.
 - `onclick` - An action passed to the control to call when value changes. Sends checked state (true/false) and the value as params. Using onclick is more accurate than onchange for checkbox event handling.
 - `inputId` - Sets the `id` value of the DOM element.
