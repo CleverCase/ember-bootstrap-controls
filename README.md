@@ -5,6 +5,10 @@ Ember-bootstrap-controls is a small library for quickly creating EmberJS forms t
 This README outlines the details of using and collaborating on this Ember addon.
 
 ## Upgrade Instructions
+### 0.14.0 - 0.15.0
+ - `keyPress`, `keyDown`, `keyUp` events were all renamed to `key-press`, `key-down`, and `key-up` respectively. This was to prevent it from conflicting with Ember.Component `keyPress`, `keyDown`, and `keyUp` events. An assert is thrown to help the developer identify and fix these issues, but it is further recommeneded to do a project find, and replace where used.
+
+### 0.X - 0.14.0
 ### This version is likely not backwards compatible with ember-cli < 2.11.0 and ember-cli-htmlbars < 1.1.1
 ### If you need to support a version less than one of these, please use 0.11.x instead.
  - Find the `ember-bootstrap-controls` in your `package.json` which can be found in the root ember directory and update the version to the latest release.
