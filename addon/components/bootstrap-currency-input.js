@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import layout from '../templates/components/bootstrap-currency-input';
 import InputableMixin from '../mixins/components/inputable';
-import computedActionKey from '../utils/computed-action-key';
+import asserIfUsingRenamedEvents from '../utils/assert-if-using-renamed-events';
 import { createNumberMask } from '../text-mask-addons';
 
 const { Component } = Ember;
@@ -20,9 +20,6 @@ export default Component.extend(InputableMixin, {
   required: true,
 
   currencyMask: createNumberMask({ prefix: '$', allowDecimal: true, decimalLimit: 2 }),
-  keyPress: computedActionKey('key-press'),
-  keyUp: computedActionKey('key-up'),
-  keyDown: computedActionKey('key-down'),
 
   hasValue: Ember.computed('value', function() {
     const value = this.get('value');
@@ -30,17 +27,9 @@ export default Component.extend(InputableMixin, {
     return value ? true : false;
   }),
 
-  actions: {
-    keyPress: function() {
-      this.sendAction('key-press', ...arguments);
-    },
+  didReceiveAttrs() {
+    this._super(...arguments);
 
-    keyUp: function() {
-      this.sendAction('key-up', ...arguments);
-    },
-
-    keyDown: function() {
-      this.sendAction('key-down', ...arguments);
-    },
+    asserIfUsingRenamedEvents(this);
   },
 });
