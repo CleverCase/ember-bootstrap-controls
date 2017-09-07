@@ -9,7 +9,7 @@ module.exports = {
       packages: [
         {
           name: 'ember-browserify',
-          target: '~1.1.11'
+          target: '~1.1.14'
         },
         {
           name: 'ember-text-mask',
@@ -21,7 +21,7 @@ module.exports = {
         },
         {
           name: "ember-power-select",
-          target: "~0.10.3"
+          target: "~1.9.1"
         },
         {
           name: "ember-truth-helpers",
@@ -29,7 +29,7 @@ module.exports = {
         },
         {
           name: 'ember-freestyle',
-          target: '~0.2.13'
+          target: '~0.6.1'
         }
       ]
     });
