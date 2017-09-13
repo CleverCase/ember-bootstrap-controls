@@ -1,9 +1,7 @@
-{{#freestyle-subsection name="Power Select" section=section}}
+{{#section.subsection name="Power Select"}}
   {{#freestyle-collection title='Power Select' defaultKey='power-select-basic' inline=true as |collection|}}
-
-    {{#freestyle-variant collection=collection key='power-select-basic'}}
+    {{#collection.variant key='power-select-basic'}}
       {{#freestyle-usage "power-select-basic" title="Basic Power Select"}}
-
         {{#bootstrap-power-select
           label="Name"
           selected=selectedItem
@@ -13,60 +11,52 @@
           as |option|}}
             <span>{{option}}</span>
         {{/bootstrap-power-select}}
-
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
+    {{/collection.variant}}
 
-    {{#freestyle-variant collection=collection key='power-select-search'}}
+    {{#collection.variant key='power-select-search'}}
       {{#freestyle-usage "power-select-search" title="Power Select Search"}}
-
-      {{#bootstrap-power-select
-        label="Name"
-        selected=selectedItem
-        options=moreNames
-        onChange=(action "selectItem")
-        searchField="label"
-        allowClear=true
-        as |option|}}
-          <span>{{option.label}}</span>
-      {{/bootstrap-power-select}}
-
+        {{#bootstrap-power-select
+          label="Name"
+          selected=selectedItem
+          options=moreNames
+          onChange=(action "selectItem")
+          searchField="label"
+          allowClear=true
+          as |option|}}
+            <span>{{option.label}}</span>
+        {{/bootstrap-power-select}}
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
+    {{/collection.variant}}
 
-    {{#freestyle-variant collection=collection key='power-select-advance-search'}}
+    {{#collection.variant key='power-select-advance-search'}}
       {{#freestyle-usage "power-select-advance-search" title="Power Select Advance Search"}}
-
-      {{#bootstrap-power-select
-        label="Name"
-        selected=selectedItem
-        options=moreNames
-        onChange=(action "selectItem")
-        search=(perform searchTask)
-        allowClear=true
-        as |option|}}
-          <span>{{option.label}}</span>
-      {{/bootstrap-power-select}}
-
+        {{#bootstrap-power-select
+          label="Name"
+          selected=selectedItem
+          options=moreNames
+          onChange=(action "selectItem")
+          search=(perform searchTask)
+          allowClear=true
+          as |option|}}
+            <span>{{option.label}}</span>
+        {{/bootstrap-power-select}}
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
+    {{/collection.variant}}
 
-    {{#freestyle-variant collection=collection key='power-select-matcher'}}
+    {{#collection.variant key='power-select-matcher'}}
       {{#freestyle-usage "power-select-matcher" title="Power Select Matcher"}}
-
-      {{#bootstrap-power-select
-        label="Name"
-        selected=selectedItem
-        options=moreNames
-        onChange=(action "selectItem")
-        matcher=myMatcher
-        allowClear=true
-        as |option|}}
-          <span>{{option.label}} ({{option.value}})</span>
-      {{/bootstrap-power-select}}
-
+        {{#bootstrap-power-select
+          label="Name"
+          selected=selectedItem
+          options=moreNames
+          onChange=(action "selectItem")
+          matcher=myMatcher
+          allowClear=true
+          as |option|}}
+            <span>{{option.label}} ({{option.value}})</span>
+        {{/bootstrap-power-select}}
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
-
+    {{/collection.variant}}
   {{/freestyle-collection}}
-{{/freestyle-subsection}}
+{{/section.subsection}}

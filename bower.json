@@ -1,9 +1,6 @@
 {
   "name": "ember-bootstrap-controls",
   "dependencies": {
-    "remarkable": "1.6.2",
-    "highlightjs": "9.1.0",
-    "bootstrap-datepicker": "^1.6.4",
-    "bootstrap": "~3.3.5"
+    "bootstrap-datepicker": "^1.7.1"
   }
 }

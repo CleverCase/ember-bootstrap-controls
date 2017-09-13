@@ -2,7 +2,7 @@ import Ember from 'ember';
 import layout from '../templates/components/bootstrap-currency-input';
 import InputableMixin from '../mixins/components/inputable';
 import asserIfUsingRenamedEvents from '../utils/assert-if-using-renamed-events';
-import { createNumberMask } from '../text-mask-addons';
+import { createNumberMask } from 'ember-text-mask-addons';
 
 const { Component } = Ember;
 

@@ -1,7 +1,6 @@
-{{#freestyle-subsection name="Checkbox" section=section}}
+{{#section.subsection name="Checkbox"}}
   {{#freestyle-collection title='Checkbox' defaultKey='checkbox-checked' inline=true as |collection|}}
-
-    {{#freestyle-variant collection=collection key='checkbox-checked'}}
+    {{#collection.variant key='checkbox-checked'}}
       {{#freestyle-usage "checkbox-checked" title="Checkbox Checked"}}
         {{bootstrap-checkbox
           label="Checkbox Checked"
@@ -9,9 +8,9 @@
           onclick=(action 'checkboxChange')
           isChecked=isChecked}}
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
+    {{/collection.variant}}
 
-    {{#freestyle-variant collection=collection key='checkbox-unchecked'}}
+    {{#collection.variant key='checkbox-unchecked'}}
       {{#freestyle-usage "checkbox-unchecked" title="Checkbox Unchecked"}}
         {{bootstrap-checkbox
           label="Checkbox Un-Checked"
@@ -19,9 +18,9 @@
           onclick=(action 'checkboxChange')
           isChecked=isNotChecked}}
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
+    {{/collection.variant}}
 
-    {{#freestyle-variant collection=collection key='checkbox-error'}}
+    {{#collection.variant key='checkbox-error'}}
       {{#freestyle-usage "checkbox-error" title="Checkbox Alert"}}
         {{bootstrap-checkbox
           label="Checkbox Alert"
@@ -29,9 +28,9 @@
           isChecked=isChecked
           errors=true}}
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
+    {{/collection.variant}}
 
-    {{#freestyle-variant collection=collection key='checkbox-autofocus'}}
+    {{#collection.variant key='checkbox-autofocus'}}
       {{#freestyle-usage "checkbox-autofocus" title="Checkbox Auto Focus"}}
         {{bootstrap-checkbox
           label="Checkbox Auto Focus"
@@ -39,7 +38,6 @@
           isChecked=false
           autofocus=true}}
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
-
+    {{/collection.variant}}
   {{/freestyle-collection}}
-{{/freestyle-subsection}}
+{{/section.subsection}}

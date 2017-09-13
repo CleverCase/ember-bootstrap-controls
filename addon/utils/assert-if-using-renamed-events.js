@@ -18,5 +18,6 @@ export default function asserIfUsingRenamedEvents(component) {
 }
 
 function assertEvent(eventName) {
-  Ember.assert('This event has been renamed from `keyPress` to `key-press`, please rename occordingly');
+  const dasherizedEventName = Ember.String.dasherize(eventName);
+  Ember.assert(`This event has been renamed from "${eventName}" to "${dasherizedEventName}", please rename occordingly`);
 }

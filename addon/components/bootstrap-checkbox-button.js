@@ -2,7 +2,7 @@ import Ember from 'ember';
 import layout from '../templates/components/bootstrap-checkbox-button';
 
 export default Ember.Component.extend({
-  layout: layout,
+  layout,
   isChecked: false,
   isNotChecked: Ember.computed('isChecked', function() {
     return !this.get('isChecked');
