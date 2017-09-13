@@ -1,7 +1,9 @@
 import Ember from 'ember';
-import generateUUID from 'ember-bootstrap-controls/utils/generate-uuid';
 
 export default Ember.Mixin.create({
+  classNames: ['form-group'],
+  classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'showError:has-error'],
+
   errors: undefined,
   hasSuccess: undefined,
   hasWarning: undefined,
@@ -21,9 +23,5 @@ export default Ember.Mixin.create({
     const hasValue = this.get('hasValue');
 
     return hasError || (required && !hasValue);
-  }),
-
-  inputId: Ember.computed(function() {
-    return `bootstrap-component-${generateUUID()}`;
-  }),
+  })
 });

@@ -5,6 +5,9 @@ const EmberAddon = require('ember-cli/lib/broccoli/ember-addon');
 
 module.exports = function(defaults) {
   let app = new EmberAddon(defaults, {
+    freestyle: {
+      snippetSearchPaths: ['addon', 'tests/dummy/app']
+    },
     'ember-bootstrap': {
       bootstrapVersion: 3,
       importBootstrapFont: true,

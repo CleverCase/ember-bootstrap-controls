@@ -1,0 +1,1 @@
+export { default } from 'ember-bootstrap-controls/components/power-select/lazy-options';

@@ -1,0 +1,9 @@
+<label for="{{if ariaLabelledBy '' inputId}}" id="{{if ariaLabelledBy inputId}}" class="control-label {{if srOnly 'sr-only' ''}}">{{label}}</label>
+{{yield (hash inputId=inputId)}}
+{{#if errors}}
+  <div class="alert alert-danger" role="alert">
+    {{#each errors as |error|}}
+      <span>{{error.message}}</span>
+    {{/each}}
+  </div>
+{{/if}}
