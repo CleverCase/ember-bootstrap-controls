@@ -6,8 +6,6 @@ moduleForComponent('bootstrap-checkbox-button', 'Integration | Component | boots
 });
 
 test('it renders', function(assert) {
-  assert.expect(2);
-
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 

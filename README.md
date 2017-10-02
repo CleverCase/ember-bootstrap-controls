@@ -490,6 +490,30 @@ firstLetterMatcher(listItem, term) {
 
 ---
 
+### Bootstrap Lazy Power Select
+Lazy power select is only built to handle large datasets and must use the search action because the page of the data that will be paginated through must be known, which cannot be known before a search key has been established. Thus, do not expect a search to work unless the `search` attribute is used instead of `options`. Lazy power select, in order to keep track of the total pages available, expects the promise to return `{ options, pageCount }` where `pageCount` is the total number of pages, and `options` is an enumerable of the fetched options to show.
+
+*Required Arguments:*
+- `label` - String displayed as the labels text.
+- `selected` - The selected option
+- `searchByPage` - When called, this passes the `searchTerm` and the `page` to load. Must return `{ options, pageCount }` where `options` are the resolved page options, and `pageCount` is the total count of pages that can be loaded. When the user scrolls to the bottom of the list, `bootstrap-power-select-lazy` will call `searchByPage` to load the next page of results.
+- `onChange` - 	The function to be invoked when the user selects or unselects an option.
+
+*Example Use*
+```hbs
+{{#bootstrap-power-select-lazy
+  label="Name"
+  selected=selectedItem
+  searchByPage=(action 'fetchColors')
+  onChange=(action (mut selected))
+  as |option|}}
+    <span>{{option}}</span>
+{{/bootstrap-power-select-lazy}}
+
+```
+
+---
+
 ### Bootstrap Multi Select
 
 *Use Example:*

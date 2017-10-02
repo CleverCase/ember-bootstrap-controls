@@ -2,10 +2,10 @@ import Ember from 'ember';
 import generateUUID from 'ember-bootstrap-controls/utils/generate-uuid';
 
 export default Ember.Mixin.create({
-  errors: null,
-  hasSuccess: null,
-  hasWarning: null,
-  disabled: false,
+  errors: undefined,
+  hasSuccess: undefined,
+  hasWarning: undefined,
+  disabled: undefined,
 
   hasError: Ember.computed.alias('errors.length'),
 

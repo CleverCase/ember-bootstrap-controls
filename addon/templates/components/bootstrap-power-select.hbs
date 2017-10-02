@@ -1,44 +1,37 @@
 {{#if hasBlock}}
   {{#if label}}
     <label for="{{inputId}}" class="control-label {{if srOnly 'sr-only' ''}}">{{label}}</label>
-  {{/if}}
-  {{#if matcher}}
-    {{#power-select
-      selected=selected
-      options=options
-      placeholder=placeholder
-      loadingMessage=loadingMessage
-      matcher=matcher
-      onchange=onChange
-      allowClear=allowClear
-      search=search
-      searchEnabled=searchEnabled
-      searchField=searchField
-      allowClear=allowClear
-      disabled=disabled
-      required=required
-      renderInPlace=renderInPlace
-      as |option|}}
-      {{yield option}}
-    {{/power-select}}
   {{else}}
-    {{#power-select
-      selected=selected
-      options=options
-      placeholder=placeholder
-      loadingMessage=loadingMessage
-      onchange=onChange
-      allowClear=allowClear
-      search=search
-      searchEnabled=searchEnabled
-      searchField=searchField
-      allowClear=allowClear
-      disabled=disabled
-      renderInPlace=renderInPlace
-      as |option|}}
-      {{yield option}}
-    {{/power-select}}
+    {{log 'An optional label will be removed in the next version of ember-bootstrap-controls. Please use srOnly to hide the label instead'}}
   {{/if}}
+  {{#power-select
+    selected=selected
+    options=options
+    matcher=matcher
+    placeholder=placeholder
+    loadingMessage=loadingMessage
+    noMatchesMessage=noMatchesMessage
+    onchange=onChange
+    allowClear=allowClear
+    search=search
+    searchEnabled=searchEnabled
+    searchField=searchField
+    searchMessage=searchMessage
+    allowClear=allowClear
+    disabled=disabled
+    required=required
+    renderInPlace=renderInPlace
+    afterOptionsComponent=afterOptionsComponent
+    beforeOptionsComponent=beforeOptionsComponent
+    optionsComponent=optionsComponent
+    groupComponent=groupComponent
+    triggerComponent=triggerComponent
+    searchMessageComponent=searchMessageComponent
+    placeholderComponent=placeholderComponent
+    as |option|
+  }}
+    {{yield option}}
+  {{/power-select}}
   {{#if errors}}
     <div class="alert alert-danger" role="alert">
       {{#each errors as |error|}}

@@ -1,6 +1,6 @@
-{{#freestyle-subsection name="Checkbox Button" section=section}}
+{{#section.subsection name="Checkbox Button"}}
   {{#freestyle-collection title='Checkbox' defaultKey='checkbox-unchecked' inline=true as |collection|}}
-    {{#freestyle-variant collection=collection key='checkbox-unchecked'}}
+    {{#collection.variant key='checkbox-unchecked'}}
       {{#freestyle-usage "checkbox-unchecked" title="Checkbox Unchecked"}}
         {{input
           label="Checkbox"
@@ -8,9 +8,9 @@
           type="checkbox"
           checked=false}}
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
+    {{/collection.variant}}
 
-    {{#freestyle-variant collection=collection key='checkbox-checked'}}
+    {{#collection.variant key='checkbox-checked'}}
       {{#freestyle-usage "checkbox-checked" title="Checkbox Checked"}}
         {{input
           label="Checkbox Checked"
@@ -18,9 +18,9 @@
           type="checkbox"
           checked=true}}
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
+    {{/collection.variant}}
 
-    {{#freestyle-variant collection=collection key='checkbox-error'}}
+    {{#collection.variant key='checkbox-error'}}
       {{#freestyle-usage "checkbox-error" title="Checkbox Alert"}}
         {{input
           label="Checkbox Alert"
@@ -29,6 +29,6 @@
           checked=false
           errors=true}}
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
+    {{/collection.variant}}
   {{/freestyle-collection}}
-{{/freestyle-subsection}}
+{{/section.subsection}}

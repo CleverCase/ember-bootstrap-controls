@@ -1,3 +1,4 @@
+/*eslint no-console: ["error", { allow: ["log"] }] */
 import Ember from 'ember';
 import layout from '../../templates/components/freestyle/bootstrap-input';
 

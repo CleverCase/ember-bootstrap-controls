@@ -1,9 +1,7 @@
-{{#freestyle-subsection name="Input" section=section}}
+{{#section.subsection name="Input"}}
   {{#freestyle-collection title='Input' defaultKey='input-text' inline=true as |collection|}}
-
-    {{#freestyle-variant collection=collection key='input-text'}}
+    {{#collection.variant key='input-text'}}
       {{#freestyle-usage "input-text" title="Input Text"}}
-
         {{bootstrap-input
           value=value
           type=type
@@ -15,9 +13,7 @@
           key-up=(action 'keyUp')
           key-down=(action 'keyDown')
           required=false}}
-
       {{/freestyle-usage}}
-    {{/freestyle-variant}}
-
+    {{/collection.variant}}
   {{/freestyle-collection}}
-{{/freestyle-subsection}}
+{{/section.subsection}}

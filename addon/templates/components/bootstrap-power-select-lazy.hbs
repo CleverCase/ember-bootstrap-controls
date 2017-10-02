@@ -1,0 +1,28 @@
+{{#bootstrap/control-wrapper classNames=classNames ariaLabelledBy=true srOnly=srOnly label=label as |control|}}
+  {{#power-select
+    ariaLabelledBy=control.inputId
+    selected=selected
+    placeholder=placeholder
+    loadingMessage=loadingMessage
+    noMatchesMessage=noMatchesMessage
+    onchange=onChange
+    allowClear=allowClear
+    search=(action 'search')
+    searchEnabled=searchEnabled
+    searchMessage=searchMessage
+    allowClear=allowClear
+    disabled=disabled
+    required=required
+    renderInPlace=renderInPlace
+    afterOptionsComponent=afterOptionsComponent
+    beforeOptionsComponent=beforeOptionsComponent
+    optionsComponent=(component 'power-select/lazy-options' isLoading=_isLoading canLoadMore=_canLoadMore)
+    groupComponent=groupComponent
+    triggerComponent=triggerComponent
+    searchMessageComponent=searchMessageComponent
+    placeholderComponent=placeholderComponent
+    as |option|
+  }}
+    {{yield option}}
+  {{/power-select}}
+{{/bootstrap/control-wrapper}}
