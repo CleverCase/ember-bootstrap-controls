@@ -1,11 +1,8 @@
-{{#if hasBlock}}
-  {{yield inputId}}
-{{else}}
-  <label for="{{inputId}}" class="control-label {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
+{{#bootstrap/control-wrapper classNames=classNames srOnly=srOnly label=label as |control|}}
   {{input
     tabindex=tabindex
     value=value
-    elementId=inputId
+    elementId=control.inputId
     type=type
     placeholder=placeholder
     classNames="form-control"
@@ -15,11 +12,4 @@
     key-up=key-up
     key-down=key-down
     required=required}}
-  {{#if errors}}
-    <div class="form-control-static alert alert-danger" role="alert">
-      {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-      {{/each}}
-    </div>
-  {{/if}}
-{{/if}}
+{{/bootstrap/control-wrapper}}
