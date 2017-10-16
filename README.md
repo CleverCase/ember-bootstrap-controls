@@ -499,6 +499,9 @@ Lazy power select is only built to handle large datasets and must use the search
 - `searchByPage` - When called, this passes the `searchTerm` and the `page` to load. Must return `{ options, pageCount }` where `options` are the resolved page options, and `pageCount` is the total count of pages that can be loaded. When the user scrolls to the bottom of the list, `bootstrap-power-select-lazy` will call `searchByPage` to load the next page of results.
 - `onChange` - 	The function to be invoked when the user selects or unselects an option.
 
+*Optional Arguments:*
+- `debounceMS` - Used to avoid firing a request on every letter input
+
 *Example Use*
 ```hbs
 {{#bootstrap-power-select-lazy
