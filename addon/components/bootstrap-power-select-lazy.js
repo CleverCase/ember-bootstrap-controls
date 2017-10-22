@@ -1,7 +1,7 @@
 import Ember from 'ember';
 import { POWER_SELECT_CLASS_NAME } from './bootstrap-power-select';
 import generateUUID from 'ember-bootstrap-controls/utils/generate-uuid';
-import { task, didCancel } from 'ember-concurrency';
+import { task, didCancel, timeout } from 'ember-concurrency';
 import layout from '../templates/components/bootstrap-power-select-lazy';
 
 export default Ember.Component.extend({
@@ -13,7 +13,7 @@ export default Ember.Component.extend({
   searchByPage: undefined,
 
   /* Optional Attributes */
-  pageSize: 25,
+  debounceMS: 250,
 
   /* Internal State Attributes */
   _lastSearchTerm: undefined,
@@ -37,6 +37,8 @@ export default Ember.Component.extend({
       this.set('_lastSearchTerm', searchString);
       this.set('_page', 1);
 
+      yield timeout(this.get('debounceMS'));
+
       const { options, pageCount } = yield this.get('fetch').perform(searchString, 1);
 
       this.set('_pageCount', pageCount);
@@ -56,7 +58,7 @@ export default Ember.Component.extend({
     } catch(e) {
       if (!didCancel(e)) { throw e; }
     }
-  }),
+  }).restartable(),
 
   loadMoreFetch: task(function * (searchString) {
     // Avoid throwing canceled `fetch` sub-task

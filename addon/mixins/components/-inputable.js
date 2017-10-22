@@ -23,5 +23,9 @@ export default Ember.Mixin.create({
     const hasValue = this.get('hasValue');
 
     return hasError || (required && !hasValue);
-  })
+  }),
+
+  inputId: Ember.computed(function() {
+    return `bootstrap-control-input-${Ember.guidFor(this)}`;
+  }),
 });

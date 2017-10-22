@@ -1,5 +1,5 @@
 <label for="{{if ariaLabelledBy '' inputId}}" id="{{if ariaLabelledBy inputId}}" class="control-label {{if srOnly 'sr-only' ''}}">{{label}}</label>
-{{yield (hash inputId=inputId)}}
+{{yield (if ariaLabelledBy (hash labelId=inputId) (hash inputId=inputId))}}
 {{#if errors}}
   <div class="alert alert-danger" role="alert">
     {{#each errors as |error|}}
