@@ -1,4 +1,4 @@
-<div class="{{concat-class-names classNames}} form-group bootstrap-multi-select-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
+<div class="{{concat-class-names classNames}} form-group {{multiSelectClassName}} {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
   {{#if hasBlock}}
     {{#if label}}
       <label for="{{inputId}}" class="control-label">{{label}}</label>
