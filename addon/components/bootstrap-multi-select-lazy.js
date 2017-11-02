@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import { MULTI_SELECT_CLASS_NAME } from './bootstrap-multi-select';
-import generateUUID from 'ember-bootstrap-controls/utils/generate-uuid';
 import layout from '../templates/components/bootstrap-multi-select-lazy';
 import LazySelectState from '../utils/lazy-select-state';
 

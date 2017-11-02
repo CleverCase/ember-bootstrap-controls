@@ -26,7 +26,7 @@
         <span>{{option}}</span>
     {{/bootstrap-multi-select-lazy}}
   {{/freestyle-usage}}
-  {{#freestyle-note "lazy-mutli-select-search--notes"}}
+  {{#freestyle-note "lazy-multi-select-search--notes"}}
     Lazy power select is only built to handle large datasets and must use the search action because the page of the data that will be paginated through must be known, which cannot be known before a search key has been established. Thus, do not expect a search to work unless the `search` attribute is used instead of `options`. Lazy power select, in order to keep track of the total pages available, expects the promise to return `{ options, pageCount }` where `pageCount` is the total number of pages, and `options` is an enumerable of the fetched options to show.
   {{/freestyle-note}}
 {{/collection.variant}}
