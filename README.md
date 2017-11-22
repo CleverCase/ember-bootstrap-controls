@@ -18,7 +18,7 @@ This README outlines the details of using and collaborating on this Ember addon.
 ## Installation
 
 Add the following the list of dependencies in your `package.json` which can be found in the root ember directory:
-- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.16.0",`
+- `"ember-bootstrap-controls": "wildland/ember-bootstrap-controls#v0.17.0",`
 
 Now run `npm install`.
 
@@ -28,7 +28,7 @@ Move into your root ember directory and run:
 `ember g ember-bootstrap-controls`
 
 ## Usage
-See a [live demo](http://wildland.github.io/ember-bootstrap-controls/).
+See the [live documentation](http://wildland.github.io/ember-bootstrap-controls/).
 
 - [`bootstrap-form` form helper](#bootstrap-form)
 - [`bootstrap-debounce-input` input field helper](#bootstrap-debounce-input)
@@ -512,6 +512,30 @@ Lazy power select is only built to handle large datasets and must use the search
   as |option|}}
     <span>{{option}}</span>
 {{/bootstrap-power-select-lazy}}
+
+```
+
+---
+
+### Bootstrap Lazy Mutli Select
+Lazy multi select is only built to handle large datasets and must use the search action because the page of the data that will be paginated through must be known, which cannot be known before a search key has been established. Thus, do not expect a search to work unless the `search` attribute is used instead of `options`. Lazy power select, in order to keep track of the total pages available, expects the promise to return `{ options, pageCount }` where `pageCount` is the total number of pages, and `options` is an enumerable of the fetched options to show.
+
+*Required Arguments:*
+- `label` - String displayed as the labels text.
+- `selected` - The selected options
+- `searchByPage` - When called, this passes the `searchTerm` and the `page` to load. Must return `{ options, pageCount }` where `options` are the resolved page options, and `pageCount` is the total count of pages that can be loaded. When the user scrolls to the bottom of the list, `bootstrap-power-select-lazy` will call `searchByPage` to load the next page of results.
+- `onChange` - 	The function to be invoked when the user selects or unselects an option.
+
+*Example Use*
+```hbs
+{{#bootstrap-multi-select-lazy
+  label="Name"
+  selected=selectedItem
+  searchByPage=(action 'fetchColors')
+  onChange=(action (mut selected))
+  as |option|}}
+    <span>{{option}}</span>
+{{/bootstrap-multi-select-lazy}}
 
 ```
 

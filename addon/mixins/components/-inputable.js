@@ -17,12 +17,10 @@ export default Ember.Mixin.create({
     return value ? true : false;
   }),
 
-  showError: Ember.computed('hasError', 'required', 'hasValue', function() {
+  showError: Ember.computed('hasError', function() {
     const hasError = this.get('hasError');
-    const required = this.get('required');
-    const hasValue = this.get('hasValue');
 
-    return hasError || (required && !hasValue);
+    return !!hasError;
   }),
 
   inputId: Ember.computed(function() {

@@ -5,11 +5,28 @@
       selected=selectedItem
       searchByPage=(action 'fetchColors')
       onChange=(action (mut selected))
-      as |option|}}
+      as |option|
+    }}
         <span>{{option}}</span>
     {{/bootstrap-power-select-lazy}}
   {{/freestyle-usage}}
   {{#freestyle-note "lazy-power-select-search--notes"}}
+    Lazy power select is only built to handle large datasets and must use the search action because the page of the data that will be paginated through must be known, which cannot be known before a search key has been established. Thus, do not expect a search to work unless the `search` attribute is used instead of `options`. Lazy power select, in order to keep track of the total pages available, expects the promise to return `{ options, pageCount }` where `pageCount` is the total number of pages, and `options` is an enumerable of the fetched options to show.
+  {{/freestyle-note}}
+{{/collection.variant}}
+{{#collection.variant key='lazy-multi-select-search'}}
+  {{#freestyle-usage "lazy-multi-select-search" title="Search Enabled Lazy Mutli Select"}}
+    {{#bootstrap-multi-select-lazy
+      label="Name"
+      selected=multiSelectSelected
+      searchByPage=(action 'fetchColors')
+      onChange=(action (mut multiSelectSelected))
+      as |option|
+    }}
+        <span>{{option}}</span>
+    {{/bootstrap-multi-select-lazy}}
+  {{/freestyle-usage}}
+  {{#freestyle-note "lazy-multi-select-search--notes"}}
     Lazy power select is only built to handle large datasets and must use the search action because the page of the data that will be paginated through must be known, which cannot be known before a search key has been established. Thus, do not expect a search to work unless the `search` attribute is used instead of `options`. Lazy power select, in order to keep track of the total pages available, expects the promise to return `{ options, pageCount }` where `pageCount` is the total number of pages, and `options` is an enumerable of the fetched options to show.
   {{/freestyle-note}}
 {{/collection.variant}}

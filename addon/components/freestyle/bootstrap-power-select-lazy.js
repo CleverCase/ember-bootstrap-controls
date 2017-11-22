@@ -57,6 +57,8 @@ export default Ember.Component.extend({
   pageSize: 10,
   selected: undefined,
 
+  multiSelectSelected: undefined,
+
   init() {
     this._super(...arguments);
   },
@@ -85,6 +87,6 @@ export default Ember.Component.extend({
   actions: {
     fetchColors(searchString, page) {
       return this.fetchColors(searchString, page);
-    }
+    },
   }
 });
