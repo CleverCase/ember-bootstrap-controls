@@ -4,8 +4,7 @@ import layout from '../../templates/components/freestyle/bootstrap-input';
 
 export default Ember.Component.extend({
   layout: layout,
-
-  value: "test",
+  value: null,
   inputId: 1,
   type: "text",
   readonly: false,
@@ -13,13 +12,13 @@ export default Ember.Component.extend({
 
   actions: {
     keyPress() {
-      console.log('key pressed');
+      Ember.Logger.debug('key pressed');
     },
     keyUp() {
-      console.log('key up');
+      Ember.Logger.debug('key up');
     },
     keyDown() {
-      console.log('key down');
+      Ember.Logger.debug('key down');
     },
   },
 });

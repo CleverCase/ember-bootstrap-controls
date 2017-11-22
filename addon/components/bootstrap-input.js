@@ -5,10 +5,8 @@ import asserIfUsingRenamedEvents from '../utils/assert-if-using-renamed-events';
 
 export default Ember.Component.extend(InputableMixin, {
   layout: layout,
-
   classNames: ['form-group', 'bootstrap-input-component'],
   classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'showError:has-error'],
-
   placeholder: null,
   value: null,
   readonly: null,
