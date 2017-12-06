@@ -15,7 +15,7 @@ export default Ember.Component.extend({
 
   actions: {
     keyPress() {
-      console.log('key pressed');
+      console.log('key pressed:');
     },
     keyUp() {
       console.log('key up');
