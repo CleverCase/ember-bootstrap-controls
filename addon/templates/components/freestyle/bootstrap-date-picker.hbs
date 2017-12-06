@@ -1,0 +1,15 @@
+{{#section.subsection name="Date Picker"}}
+  {{#freestyle-collection title='Date Picker Input' defaultKey='input-date-picker' inline=true as |collection|}}
+    {{#collection.variant key='input-date-picker'}}
+      {{#freestyle-usage "input-date-picker" title="Basic Date Picker Input"}}
+        {{bootstrap-date-picker
+          value=date
+          label="Date"
+          required=true}}
+      {{/freestyle-usage}}
+      {{#freestyle-note "input-date-picker--notes"}}
+        See [bootstrap-datepicker](http://sul.im/ember-cli-bootstrap-datepicker/) for optional datepicker attributes.
+      {{/freestyle-note}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}

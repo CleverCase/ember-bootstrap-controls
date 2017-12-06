@@ -1,24 +1,24 @@
-<div class="{{concat-class-names classNames}} form-group bootstrap-date-picker-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
-  {{#if hasBlock}}
-    {{yield inputId}}
-  {{else}}
-    {{#if label}}
-      <label for="{{inputId}}" class="control-label {{if srOnly 'sr-only' ''}}">{{label}}</label>
-    {{/if}}
-    {{bootstrap-datepicker
-      id=inputId
-      value=value
-      format=format
-      changeDate=changeDate
-      todayHighlight=todayHighlight
-      class="form-control"
-      required=required}}
-    {{#if errors}}
-      <div class="alert alert-danger" role="alert">
-        {{#each errors as |error|}}
-          <span>{{error.message}}</span>
-        {{/each}}
-      </div>
-    {{/if}}
-  {{/if}}
-</div>
+{{#bootstrap/control-wrapper classNames=classNames required=required srOnly=srOnly label=label as |control|}}
+  {{bootstrap-datepicker
+    value=value
+    classNames="form-control"
+    elementId=control.inputId
+    autoclose=autoclose
+    calendarWeeks=calendarWeeks
+    clearBtn=clearBtn
+    daysOfWeekDisabled=daysOfWeekDisabled
+    endDate=endDate
+    forceParse=forceParse
+    format=format
+    keyboardNavigation=keyboardNavigation
+    language=language
+    minViewMode=minViewMode
+    multidate=multidate
+    multidateSeparator=multidateSeparator
+    orientation=orientation
+    startDate=startDate
+    startView=startView
+    todayBtn=todayBtn
+    todayHighlight=todayHighlight
+    weekStart=weekStart}}
+{{/bootstrap/control-wrapper}}

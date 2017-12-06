@@ -1,26 +1,19 @@
-<div class="{{concat-class-names classNames}} form-group bootstrap-input-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}" id="{{elementId}}">
-  {{#if label}}
-    <label for="{{inputGuid}}" class="control-label">{{label}}</label>
-  {{/if}}
-    {{masked-input
-      mask=mask
-      placeholderChar=placeholderChar
-      value=(readonly value)
-      focus-out=focus-out
-      key-press=key-press
-      key-up=key-up
-      key-down=key-down
-      elementId=inputGuid
-      required=required
-      disabled=disabled
-      keepCharPositions=keepCharPositions
-      classNames="form-control"
-      placeholder=placeholder}}
-  {{#if errors}}
-    <div class="form-control-static alert alert-danger" role="alert">
-      {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-      {{/each}}
-    </div>
-  {{/if}}
-</div>
+{{#bootstrap/control-wrapper classNames=classNames required=required srOnly=srOnly label=label as |control|}}
+  {{masked-input
+    classNames="form-control"
+    value=value
+    mask=mask
+    guide=guide
+    placeholderChar=placeholderChar
+    keepCharPositions=keepCharPositions
+    pipe=pipe
+    showMask=showMask
+    conformToMask=conformToMask
+    enter=enter
+    insert-newline=insert-newline
+    escape-press=escape-press
+    focus-in=focus-in
+    focus-out=focus-out
+    key-press=key-press
+    key-up=key-up}}
+{{/bootstrap/control-wrapper}}

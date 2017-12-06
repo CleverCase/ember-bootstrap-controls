@@ -1,17 +1,13 @@
 import Ember from 'ember';
 import layout from '../templates/components/bootstrap-date-picker';
-import InputableMixin from '../mixins/components/inputable';
 
-export default Ember.Component.extend(InputableMixin, {
+export const DATEPICKER_CLASS_NAME = 'bootstrap-date-picker-component';
+
+export default Ember.Component.extend({
   tagName: '',
-  classNames: '',
+  classNames: [DATEPICKER_CLASS_NAME],
   layout: layout,
 
-  placeholder: null,
-  value: null,
-  type: null,
-  changeDate: null,
   todayHighlight: true,
   format: 'mm/dd/yyyy',
-  required: false,
 });
