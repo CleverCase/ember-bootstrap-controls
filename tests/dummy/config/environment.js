@@ -18,6 +18,16 @@ module.exports = function(environment) {
       }
     },
 
+    ['ember-a11y-testing']: {
+      componentOptions: {
+        axeOptions: {
+          rules: {
+            'color-contrast': { enabled: false },
+          }
+        }
+      }
+    },
+
     APP: {
       // Here you can pass flags/options to your application instance
       // when it is created

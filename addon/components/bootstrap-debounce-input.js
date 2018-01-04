@@ -1,24 +1,22 @@
 import Ember from 'ember';
 import layout from '../templates/components/bootstrap-debounce-input';
-import InputableMixin from '../mixins/components/inputable';
 import { task, timeout } from 'ember-concurrency';
+import { INPUT_CLASS_NAME } from './bootstrap-input';
 
-export default Ember.Component.extend(InputableMixin, {
-  tagName: '',
-  classNames: '',
+export default Ember.Component.extend({
   layout: layout,
+  tagName: '',
+
+  classNames: [INPUT_CLASS_NAME],
 
   /* Public Attrs */
-  value: null,
+  value: undefined,
   debounce: 800,
-  label: null,
-  placeholder: null,
-  required: false,
 
   /* Public Actions */
-  onChange: null,
+  onChange: undefined,
 
-  _value: null,
+  _value: undefined,
 
   didReceiveAttrs() {
     this.set('_value', this.get('value'));

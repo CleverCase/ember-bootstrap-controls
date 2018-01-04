@@ -23,4 +23,4 @@ bower.json.ember-try
 package.json.ember-try
 .project
 package-lock.json
-
+*.orig

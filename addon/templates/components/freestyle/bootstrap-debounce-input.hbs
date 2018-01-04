@@ -3,6 +3,8 @@
     {{#collection.variant key='input-debounce'}}
       {{#freestyle-usage "input-debounce" title="Debounce Input Text"}}
         {{bootstrap-debounce-input
+          label="Search"
+          srOnly=true
           value=searchText
           onChange=(action 'searchAction')
           placeholder='Search'}}

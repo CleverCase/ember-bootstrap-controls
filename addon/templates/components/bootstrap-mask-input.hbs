@@ -4,6 +4,7 @@
       (hash
         label=(component control.label for=control.inputId label=label srOnly=srOnly)
         input=(component 'masked-input'
+          elementId=control.inputId
           classNames="form-control"
           value=value
           disabled=disabled
@@ -28,6 +29,7 @@
   {{else}}
     {{control.label for=control.inputId label=label srOnly=srOnly}}
     {{masked-input
+      elementId=control.inputId
       classNames="form-control"
       value=value
       disabled=disabled
