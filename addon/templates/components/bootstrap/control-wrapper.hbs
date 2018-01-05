@@ -1,5 +1,4 @@
-<label for="{{if ariaLabelledBy '' inputId}}" id="{{if ariaLabelledBy inputId}}" class="control-label {{if srOnly 'sr-only' ''}}">{{label}}</label>
-{{yield (if ariaLabelledBy (hash labelId=inputId) (hash inputId=inputId))}}
+{{yield (hash label=(component 'bootstrap/-label' classNames=(if srOnly 'control-label sr-only' 'control-label')) inputId=inputId)}}
 {{#if errors}}
   <div class="alert alert-danger" role="alert">
     {{#each errors as |error|}}

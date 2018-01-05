@@ -1,6 +1,5 @@
 import Ember from 'ember';
 import { POWER_SELECT_CLASS_NAME } from './bootstrap-power-select';
-import generateUUID from 'ember-bootstrap-controls/utils/generate-uuid';
 import layout from '../templates/components/bootstrap-power-select-lazy';
 import LazySelectState from '../utils/lazy-select-state';
 

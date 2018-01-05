@@ -4,9 +4,7 @@ import layout from '../../templates/components/freestyle/bootstrap-input';
 
 export default Ember.Component.extend({
   layout: layout,
-  value: null,
-  inputId: 1,
-  type: "text",
+  value: undefined,
   readonly: false,
   disabled: false,
 
