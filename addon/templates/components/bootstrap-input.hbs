@@ -1,15 +1,37 @@
-{{#bootstrap/control-wrapper classNames=classNames errors=errors srOnly=srOnly label=label as |control|}}
-  {{input
-    tabindex=tabindex
-    value=value
-    elementId=control.inputId
-    type=type
-    placeholder=placeholder
-    classNames="form-control"
-    readonly=readonly
-    disabled=disabled
-    key-press=key-press
-    key-up=key-up
-    key-down=key-down
-    required=required}}
+{{#bootstrap/control-wrapper classNames=classNames errors=errors as |control|}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        label=(component control.label for=control.inputId srOnly=srOnly label=label)
+        input=(component 'bootstrap/-input'
+          value=value
+          elementId=control.inputId
+          type=type
+          placeholder=placeholder
+          classNames="form-control"
+          readonly=readonly
+          disabled=disabled
+          key-press=key-press
+          key-up=key-up
+          key-down=key-down
+          required=required
+        )
+      )
+    }}
+  {{else}}
+    {{control.label for=control.inputId label=label srOnly=srOnly}}
+    {{bootstrap/-input
+      tabindex=tabindex
+      value=value
+      elementId=control.inputId
+      type=type
+      placeholder=placeholder
+      readonly=readonly
+      disabled=disabled
+      key-press=key-press
+      key-up=key-up
+      key-down=key-down
+      required=required
+    }}
+  {{/if}}
 {{/bootstrap/control-wrapper}}
