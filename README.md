@@ -4,6 +4,8 @@ Ember-bootstrap-controls is a small library for quickly creating EmberJS forms t
 
 This README outlines the details of using and collaborating on this Ember addon.
 
+Checkout our [Changelog](CHANGELOG.md) for what has changed.
+
 ## Upgrade Instructions
 ### 0.14.0 - 0.15.0
  - `keyPress`, `keyDown`, `keyUp` events were all renamed to `key-press`, `key-down`, and `key-up` respectively. This was to prevent it from conflicting with Ember.Component `keyPress`, `keyDown`, and `keyUp` events. An assert is thrown to help the developer identify and fix these issues, but it is further recommeneded to do a project find, and replace where used.
@@ -568,6 +570,11 @@ Same options as `bootstrap-power-select`.
 
 **Note that this requires [api_me](https://github.com/wildland/api_me) >= v0.7.0**
 
+*Required Arguments:*
+- `pageNumber` - Integer that is the current page number.
+- `pageSize` - Integer that is the number of elements per page.
+- `totalPages` - Integer this is the total number of pages.
+
 *Use Example:*
 
 Template
@@ -615,6 +622,19 @@ export default Ember.Route.extend(PaginatedRouteMixin, { //Extend from the mixin
     this._super(...arguments); // Call the afterModel from the mixin
   },
 });
+```
+
+
+If you don't want to show the component when there is only a single page:
+```
+{{#if (gt totalPages 1)}}
+  {{bootstrap-pagination-nav
+    pageNumber=pageNumber
+    pageSize=pagesize
+    totalPages=totalPages
+    moveToPage=(action (mut pageNumber))
+  }}
+{{/if}}
 ```
 
 ---

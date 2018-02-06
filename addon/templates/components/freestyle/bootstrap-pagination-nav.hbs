@@ -1,9 +1,19 @@
 {{#section.subsection name="Pagination"}}
+  {{#freestyle-annotation}}
+    {{bootstrap-input
+      label='Page Size Option'
+      value=pageSize}}
+  {{/freestyle-annotation}}
   {{#freestyle-usage "pagination" title="Pagination"}}
     {{bootstrap-pagination-nav
       pageNumber=pageNumber
-      pageSize=pagesize
+      pageSize=pageSize
       totalPages=totalPages
       moveToPage=(action (mut pageNumber))}}
   {{/freestyle-usage}}
+  <ol>
+    {{#each elements as |element|}}
+      <li>Item {{element}}</li>
+    {{/each}}
+  </ol>
 {{/section.subsection}}

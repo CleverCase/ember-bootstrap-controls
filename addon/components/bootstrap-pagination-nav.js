@@ -9,7 +9,6 @@ export default Ember.Component.extend({
   // Attributes
   pageNumber: null,
   totalPages: null,
-  totalRecords: null,
   innerWindowSize: 2,
   outerWindowSize: 1,
 
@@ -111,19 +110,6 @@ export default Ember.Component.extend({
       return lastInnerPageNumber < firstOuterRightPageNumber;
     }
   ),
-
-  positionMessage: Ember.computed('pageNumber','totalRecords','pageSize',function(){
-    const pageNumber = this.get('pageNumber');
-    const totalRecords = this.get('totalRecords');
-    const pageSize = this.get('pageSize');
-
-    let firstRec = 1 + ( (pageNumber - 1) * pageSize);
-    let lastRec = pageNumber * pageSize;
-
-    lastRec = lastRec > totalRecords ? totalRecords : lastRec;
-
-    return ` showing ${firstRec} to ${lastRec} of ${totalRecords}`;
-  }),
 
   actions: {
     moveToPage: function(pageNumber) {
