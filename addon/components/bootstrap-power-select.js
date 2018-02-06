@@ -1,14 +1,12 @@
 import Ember from 'ember';
 import layout from '../templates/components/bootstrap-power-select';
-import InputableMixin from '../mixins/components/inputable';
 
 export const POWER_SELECT_CLASS_NAME = 'bootstrap-power-select-component';
 
-export default Ember.Component.extend(InputableMixin, {
+export default Ember.Component.extend({
   layout: layout,
 
-  classNames: ['form-group', POWER_SELECT_CLASS_NAME],
-  classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'showError:has-error'],
+  classNames: [POWER_SELECT_CLASS_NAME],
 
   /***
    * IMPORTANT:

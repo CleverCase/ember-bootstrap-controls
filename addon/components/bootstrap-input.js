@@ -1,19 +1,16 @@
 import Ember from 'ember';
 import layout from '../templates/components/bootstrap-input';
-import InputableMixin from '../mixins/components/inputable';
 import asserIfUsingRenamedEvents from '../utils/assert-if-using-renamed-events';
 
-export default Ember.Component.extend(InputableMixin, {
+export const INPUT_CLASS_NAME = 'bootstrap-input-component';
+
+export default Ember.Component.extend({
   layout: layout,
-  classNames: ['form-group', 'bootstrap-input-component'],
-  classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'showError:has-error'],
-  placeholder: null,
-  value: null,
-  readonly: null,
-  type: null,
-  srOnly: null,
+  tagName: '',
+
+  classNames: [INPUT_CLASS_NAME],
+
   tabindex: 0,
-  required: false,
 
   didReceiveAttrs() {
     this._super(...arguments);

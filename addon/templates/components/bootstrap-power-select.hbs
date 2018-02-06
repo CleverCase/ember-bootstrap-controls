@@ -1,10 +1,6 @@
-{{#if hasBlock}}
-  {{#if label}}
-    <label for="{{inputId}}" class="control-label {{if srOnly 'sr-only' ''}}">{{label}}</label>
-  {{else}}
-    {{log 'An optional label will be removed in the next version of ember-bootstrap-controls. Please use srOnly to hide the label instead'}}
-  {{/if}}
+{{#bootstrap/control-wrapper errors=errors classNames=classNames ariaLabelledBy=true srOnly=srOnly label=label as |control|}}
   {{#power-select
+    ariaLabelledBy=control.labelId
     selected=selected
     options=options
     matcher=matcher
@@ -32,13 +28,4 @@
   }}
     {{yield option}}
   {{/power-select}}
-  {{#if errors}}
-    <div class="alert alert-danger" role="alert">
-      {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-      {{/each}}
-    </div>
-  {{/if}}
-{{else}}
-  <span>Missing block syntax for power select</span>
-{{/if}}
+{{/bootstrap/control-wrapper}}
