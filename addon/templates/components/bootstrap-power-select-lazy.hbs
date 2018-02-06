@@ -1,6 +1,7 @@
-{{#bootstrap/control-wrapper errors=errors classNames=classNames ariaLabelledBy=true srOnly=srOnly label=label as |control|}}
+{{#bootstrap/control-wrapper errors=errors classNames=classNames as |control|}}
+  {{control.label elementId=control.inputId srOnly=srOnly label=label}}
   {{#power-select
-    ariaLabelledBy=control.labelId
+    ariaLabelledBy=control.inputId
     selected=selected
     placeholder=placeholder
     loadingMessage=loadingMessage
