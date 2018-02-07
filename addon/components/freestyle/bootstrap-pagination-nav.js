@@ -8,13 +8,13 @@ export default Ember.Component.extend({
   pageSize: 5,
 
   totalPages: Ember.computed('pageSize', 'numberOfElements', function() {
-    if(this.get('pageSize') && this.get('pageSize') > 0) {
+    if (this.get('pageSize') && this.get('pageSize') > 0) {
       return Math.ceil(this.get('numberOfElements') / this.get('pageSize'));
     } else {
       return this.get('numberOfElements');
     }
   }),
-  elements: Ember.computed('pageSize', 'numberOfElements', 'pageNumber', function() {
+  elements: Ember.computed('pageSize', 'pageNumber', function() {
     let counter = [];
     let start = (this.get('pageNumber') - 1) * this.get('pageSize') + 1;
     let end = start + parseInt(this.get('pageSize'));
