@@ -1,0 +1,5 @@
+{{#if hasBlock}}
+  {{yield (hash pageLink=(component 'bootstrap-pagination-nav/page-link' disabled=disabled action=action))}}
+{{else}}
+  {{#bootstrap-pagination-nav/page-link disabled=disabled action=action}}{{pageNumber}}{{/bootstrap-pagination-nav/page-link}}
+{{/if}}

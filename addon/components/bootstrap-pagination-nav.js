@@ -4,9 +4,11 @@ import layout from '../templates/components/bootstrap-pagination-nav';
 export default Ember.Component.extend({
   tagName: 'nav',
   className: ['bootstrap-pagination-nav-component'],
+  classNameBindings: ['aria-label'],
   layout: layout,
 
   // Attributes
+  'aria-label': 'Page navigation',
   pageNumber: null,
   totalPages: null,
   innerWindowSize: 2,

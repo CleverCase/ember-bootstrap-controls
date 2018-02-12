@@ -1,77 +1,35 @@
-<ul class="pagination {{concat-class-names className}}">
-  {{#if (eq pageNumber 1)}}
-    <li class="page-item disabled">
-      <a class="page-link" href="#!" aria-label="Previous">
-        <span aria-hidden="true">&laquo;</span>
-        <span class="sr-only">Previous</span>
-      </a>
-    </li>
-  {{else}}
-    <li class="page-item">
-      <a class="page-link" href="#!" aria-label="Previous"{{action 'moveToPage' (minus-numbers pageNumber 1)}}>
+<ul class="pagination">
+  {{#bootstrap-pagination-nav/page-item
+    disabled=(lte pageNumber 1)
+    as |pageItem|
+  }}
+    {{#pageItem.pageLink aria-label="Previous" tabindex="-1" action=(action 'moveToPage' (minus-numbers pageNumber 1))}}
       <span aria-hidden="true">&laquo;</span>
       <span class="sr-only">Previous</span>
-      </a>
-    </li>
-  {{/if}}
+    {{/pageItem.pageLink}}
+  {{/bootstrap-pagination-nav/page-item}}
   {{#each visibleOuterLeftPageNumbers as |num|}}
-    {{#if (eq num pageNumber)}}
-      <li class='page-item active'>
-        <a class="page-link">{{num}}</a>
-      </li>
-    {{else}}
-      <li class="page-item">
-        <a class="page-link"{{action 'moveToPage' num}}>{{num}}</a>
-      </li>
-    {{/if}}
+    {{bootstrap-pagination-nav/page-item pageNumber=num active=(eq num pageNumber) action=(action 'moveToPage' num)}}
   {{/each}}
     {{#if hasLeftGap}}
-      <li class="page-item disabled">
-        <a class="page-link">...</a>
-      </li>
+      {{bootstrap-pagination-nav/page-item pageNumber="..." disabled=true}}
     {{/if}}
   {{#each visibleInnerPageNumbers as |num|}}
-    {{#if num}}
-      {{#if (eq num pageNumber)}}
-        <li class='page-item active'>
-          <a class="page-link">{{num}}</a>
-        </li>
-      {{else}}
-        <li class="page-item">
-          <a class="page-link"{{action 'moveToPage' num}}>{{num}}</a>
-        </li>
-      {{/if}}
-    {{/if}}
+    {{bootstrap-pagination-nav/page-item pageNumber=num active=(eq num pageNumber) action=(action 'moveToPage' num)}}
   {{/each}}
   {{#if hasRightGap}}
-    <li class="page-item  disabled">
-      <a class="page-link">...</a>
-    </li>
+    {{bootstrap-pagination-nav/page-item pageNumber="..." disabled=true}}
   {{/if}}
   {{#each visibleOuterRightPageNumbers as |num|}}
-    {{#if (eq num pageNumber)}}
-      <li class='page-item active'>
-        <a class="page-link">{{num}}</a>
-      </li>
-    {{else}}
-      <li class="page-item">
-        <a class="page-link"{{action 'moveToPage' num}}>{{num}}</a>
-      </li>
-    {{/if}}
+    {{bootstrap-pagination-nav/page-item pageNumber=num active=(eq num pageNumber) action=(action 'moveToPage' num)}}
   {{/each}}
-  {{#if (eq pageNumber totalPages)}}
-    <li class="page-item disabled">
-      <a class="page-link" href="#!" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-  {{else}}
-    <li class="page-item">
-      <a class="page-link" {{action 'moveToPage' (add-numbers pageNumber 1)}} href="#!" aria-label="Next">
-        <span aria-hidden="true">&raquo;</span>
-        <span class="sr-only">Next</span>
-      </a>
-    </li>
-  {{/if}}
+  {{#bootstrap-pagination-nav/page-item
+    disabled=(gte pageNumber totalPages)
+    as |pageItem|
+  }}
+    {{#pageItem.pageLink aria-label="Previous" action=(action 'moveToPage' (add-numbers pageNumber 1))}}
+      <span aria-hidden="true">&raquo;</span>
+      <span class="sr-only">Next</span>
+    {{/pageItem.pageLink}}
+  {{/bootstrap-pagination-nav/page-item}}
 </ul>
