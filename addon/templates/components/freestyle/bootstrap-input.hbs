@@ -1,18 +1,60 @@
 {{#section.subsection name="Input"}}
   {{#freestyle-collection title='Input' defaultKey='input-text' inline=true as |collection|}}
     {{#collection.variant key='input-text'}}
-      {{#freestyle-usage "input-text" title="Input Text"}}
+      {{#freestyle-usage "input-text" title="Basic Input Usage"}}
         {{bootstrap-input
           value=value
-          type=type
           placeholder="Input Field"
           label="Input Field"
-          readonly=readonly
-          disabled=disabled
-          key-press=(action 'keyPress')
-          key-up=(action 'keyUp')
-          key-down=(action 'keyDown')
-          required=false}}
+        }}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='input-text-no-label'}}
+      {{#freestyle-usage "input-text-no-label" title="Input Without Label"}}
+        {{bootstrap-input
+          value=value
+          placeholder="Input Field"
+          label="Input Field"
+          srOnly=true
+        }}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='input-text-fancy'}}
+      {{#freestyle-usage "input-text-fancy" title="Fancy Looking Input"}}
+        {{#bootstrap-input
+          value=value
+          placeholder="Some Number"
+          label="Dollars"
+          srOnly=true
+          as |control|
+        }}
+          {{control.label}}
+          <div class="input-group">
+            <div class="input-group-addon">$</div>
+            {{control.input}}
+            <div class="input-group-addon">.00</div>
+          </div>
+          <span class="help-block">
+            This is some help text
+          </span>
+        {{/bootstrap-input}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='input-text-horizontal'}}
+      {{#freestyle-usage "input-text-horizontal" title="Fancy Looking Input"}}
+        <form class="form-horizontal">
+          {{#bootstrap-input
+            value=value
+            label="Email"
+            placeholder="Email"
+            as |control|
+          }}
+            {{control.label classNames="col-sm-2 control-label"}}
+            <div class="col-sm-10">
+              {{control.input }}
+            </div>
+          {{/bootstrap-input}}
+        </form>
       {{/freestyle-usage}}
     {{/collection.variant}}
   {{/freestyle-collection}}

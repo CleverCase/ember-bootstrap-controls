@@ -1,21 +1,51 @@
-{{#bootstrap/control-wrapper errors=errors classNames=classNames required=required srOnly=srOnly label=label as |control|}}
-  {{masked-input
-    classNames="form-control"
-    value=value
-    disabled=disabled
-    mask=mask
-    guide=guide
-    placeholder=placeholder
-    placeholderChar=placeholderChar
-    keepCharPositions=keepCharPositions
-    pipe=pipe
-    showMask=showMask
-    conformToMask=conformToMask
-    enter=enter
-    insert-newline=insert-newline
-    escape-press=escape-press
-    focus-in=focus-in
-    focus-out=focus-out
-    key-press=key-press
-    key-up=key-up}}
+{{#bootstrap/control-wrapper errors=errors classNames=classNames as |control|}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        label=(component control.label for=control.inputId label=label srOnly=srOnly)
+        input=(component 'masked-input'
+          classNames="form-control"
+          value=value
+          disabled=disabled
+          mask=mask
+          guide=guide
+          placeholder=placeholder
+          placeholderChar=placeholderChar
+          keepCharPositions=keepCharPositions
+          pipe=pipe
+          showMask=showMask
+          conformToMask=conformToMask
+          enter=enter
+          insert-newline=insert-newline
+          escape-press=escape-press
+          focus-in=focus-in
+          focus-out=focus-out
+          key-press=key-press
+          key-up=key-up
+        )
+      )
+    }}
+  {{else}}
+    {{control.label for=control.inputId label=label srOnly=srOnly}}
+    {{masked-input
+      classNames="form-control"
+      value=value
+      disabled=disabled
+      mask=mask
+      guide=guide
+      placeholder=placeholder
+      placeholderChar=placeholderChar
+      keepCharPositions=keepCharPositions
+      pipe=pipe
+      showMask=showMask
+      conformToMask=conformToMask
+      enter=enter
+      insert-newline=insert-newline
+      escape-press=escape-press
+      focus-in=focus-in
+      focus-out=focus-out
+      key-press=key-press
+      key-up=key-up
+    }}
+  {{/if}}
 {{/bootstrap/control-wrapper}}

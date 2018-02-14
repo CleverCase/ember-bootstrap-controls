@@ -1,4 +1,5 @@
-{{#bootstrap/control-wrapper classNames=classNames errors=errors required=required srOnly=srOnly label=label as |control|}}
+{{#bootstrap/control-wrapper classNames=classNames errors=errors as |control|}}
+  {{control.label for=control.inputId label=label srOnly=srOnly}}
   {{bootstrap-datepicker
     value=value
     classNames="form-control"
