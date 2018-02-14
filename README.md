@@ -209,6 +209,36 @@ Would render
   </label>
 <div>
 ```
+*Use Example:*
+
+```html
+{{#bootstrap-checkbox
+  classNames="fancy-checkbox"
+  label="Star"
+  srOnly=false
+  onclick=(action "toggleFavorite") as |checkbox|}}
+  {{#checkbox.label}}
+    {{checkbox.input}}
+    <i class="fal fa-star unchecked"></i>
+    <i class="fas fa-star checked"></i>
+  {{/checkbox.label}}
+{{/bootstrap-checkbox}}
+```
+
+Would render
+
+```html
+  <div id="" class="checkbox bootstrap-checked-component fancy-checkbox ember-view">
+    <div id="ember781" class="form-group checkbox bootstrap-checked-component fancy-checkbox ember-view">    
+      <label for="bootstrap-control-input-ember781" id="ember782" class="control-label ember-view">            
+      <input type="checkbox" value="" id="bootstrap-control-input-ember781" class="ember-text-field form-control form-control ember-view">
+      <svg class="fa fa-star fa-w-18 unchecked">
+       <svg class="fa fa-star fa-w-18 checked">
+       </label>
+    </div>
+   </div>
+```
+
 
 *Optional Arguments:*
 - `label` - String displayed as the labels text.
