@@ -1,0 +1,18 @@
+.freestyle-bootstrap.fancy-checkbox input[type="checkbox"],
+.fancy-checkbox .checked {
+  display: none;
+}
+
+.freestyle-bootstrap.fancy-checkbox input[type="checkbox"]:checked ~ .checked {
+  color: $yellow;
+  display: inline-block;
+}
+
+.freestyle-bootstrap.fancy-checkbox input[type="checkbox"]:checked ~ .unchecked {
+  display: none;
+}
+
+.note {
+  padding: 1rem;
+  background-color: gainsboro;
+}

@@ -35,7 +35,8 @@ export default Ember.Component.extend({
   },
 
   actions: {
-    change: function(checked) {
+    change: function(clickEvent) {
+      const checked = clickEvent.currentTarget.checked
       const onclickFunc = this.get('onclick');
 
       if (onclickFunc) {

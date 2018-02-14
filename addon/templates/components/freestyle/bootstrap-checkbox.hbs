@@ -20,6 +20,25 @@
       {{/freestyle-usage}}
     {{/collection.variant}}
 
+    {{#collection.variant key='checkbox-icon'}}
+      {{#freestyle-usage "checkbox-icon" title="Checkbox Icon"}}
+        {{#bootstrap-checkbox
+          classNames="fancy-checkbox"
+          label="Star"
+          srOnly=false
+          onclick=(action "toggleFavorite") as |checkbox|}}
+          {{#checkbox.label}}
+            {{checkbox.input}}
+            <i class="fal fa-star unchecked"></i>
+            <i class="fas fa-star checked"></i>
+          {{/checkbox.label}}
+        {{/bootstrap-checkbox}}
+      {{/freestyle-usage}}
+
+
+    {{/collection.variant}}
+
+
     {{#collection.variant key='checkbox-error'}}
       {{#freestyle-usage "checkbox-error" title="Checkbox Alert"}}
         {{bootstrap-checkbox

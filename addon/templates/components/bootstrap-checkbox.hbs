@@ -1,20 +1,39 @@
-<label style="{{if disabled "cursor: not-allowed; color: #ccc;"}}">
-  <input
-    type="checkbox"
-    id="{{inputId}}"
-    checked={{isChecked}}
-    onclick={{action "change" value="target.checked"}}
-    name={{name}}
-    disabled={{disabled}}
-    required={{required}}
-    autofocus={{autofocus}}
-    tabindex={{tabindex}}>
-  {{label}}
-</label>
-{{#if errors}}
-  <div class="form-control-static alert alert-danger" role="alert">
-    {{#each errors as |error|}}
-      <span>{{error.message}}</span>
-    {{/each}}
-  </div>
-{{/if}}
+{{#bootstrap/control-wrapper classNames=classNames errors=errors as |control|}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        label=(component control.label for=control.inputId srOnly=srOnly label=label)
+        input=(component 'bootstrap/-input'
+          checked=isChecked
+          onClick=(action "change")
+          elementId=control.inputId
+          type='checkbox'
+          placeholder=placeholder
+          classNames="form-control"
+          readonly=readonly
+          disabled=disabled
+          key-press=key-press
+          key-up=key-up
+          key-down=key-down
+          required=required
+        )
+      )
+    }}
+  {{else}}
+    {{control.label for=control.inputId label=label srOnly=srOnly}}
+    {{bootstrap/-input
+      tabindex=tabindex
+      checked=isChecked
+      onClick=(action "change")
+      elementId=control.inputId
+      type='checkbox'
+      placeholder=placeholder
+      readonly=readonly
+      disabled=disabled
+      key-press=key-press
+      key-up=key-up
+      key-down=key-down
+      required=required
+    }}
+  {{/if}}
+{{/bootstrap/control-wrapper}}
