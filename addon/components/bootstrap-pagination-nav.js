@@ -102,19 +102,36 @@ export default Ember.Component.extend({
     'innerWindowSize',
     'outerWindowSize',
     function() {
-      let innerWindowSize = this.get('innerWindowSize');
-      let outerWindowSize = this.get('outerWindowSize');
-      let totalPages = this.get('totalPages');
-      let pageNumber = this.get('pageNumber');
-      let lastInnerPageNumber = pageNumber + innerWindowSize;
-      var firstOuterRightPageNumber = totalPages - outerWindowSize;
+      const innerWindowSize = this.get('innerWindowSize');
+      const outerWindowSize = this.get('outerWindowSize');
+      const totalPages = this.get('totalPages');
+      const pageNumber = this.get('pageNumber');
+      const lastInnerPageNumber = pageNumber + innerWindowSize;
+      const firstOuterRightPageNumber = totalPages - outerWindowSize;
 
       return lastInnerPageNumber < firstOuterRightPageNumber;
     }
   ),
 
   actions: {
-    moveToPage: function(pageNumber) {
+    moveToPreviousPage() {
+      const pageNumber = this.get('pageNumber');
+
+      if (pageNumber > 1) {
+        this.get('moveToPage')(pageNumber - 1);
+      }
+    },
+
+    moveToNextPage() {
+      const pageNumber = this.get('pageNumber');
+      const totalPages = this.get('totalPages');
+
+      if (pageNumber < totalPages) {
+        this.get('moveToPage')(pageNumber + 1);
+      }
+    },
+
+    moveToPage(pageNumber) {
       if (pageNumber >= 1) {
         this.get('moveToPage')(pageNumber);
       }
