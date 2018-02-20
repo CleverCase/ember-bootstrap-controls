@@ -3,7 +3,7 @@
     {{yield
       (hash
         label=(component control.label for=control.inputId srOnly=srOnly label=label)
-        input=(component 'bootstrap/-input'
+        input=(component 'bootstrap/-checkbox'
           checked=isChecked
           onClick=(action "change")
           elementId=control.inputId
