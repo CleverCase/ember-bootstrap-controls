@@ -5,7 +5,7 @@
         label=(component control.label for=control.inputId srOnly=srOnly label=label)
         input=(component 'bootstrap/-checkbox'
           checked=isChecked
-          onclick=(action "change")
+          onClick=(action "change")
           elementId=control.inputId
           type='checkbox'
           placeholder=placeholder
@@ -24,7 +24,7 @@
     {{bootstrap/-checkbox
       tabindex=tabindex
       checked=isChecked
-      onclick=(action "change")
+      onClick=(action "change")
       elementId=control.inputId
       type='checkbox'
       placeholder=placeholder
