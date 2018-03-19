@@ -1,19 +1,74 @@
 {{#section.subsection name="Pagination"}}
-  {{#freestyle-annotation}}
-    {{bootstrap-input
-      label='Page Size Option'
-      value=pageSize}}
-  {{/freestyle-annotation}}
-  {{#freestyle-usage "pagination" title="Pagination"}}
-    {{bootstrap-pagination-nav
-      pageNumber=pageNumber
-      pageSize=pageSize
-      totalPages=totalPages
-      moveToPage=(action (mut pageNumber))}}
-  {{/freestyle-usage}}
-  <ol>
-    {{#each elements as |element|}}
-      <li>Item {{element}}</li>
-    {{/each}}
-  </ol>
+  {{#freestyle-collection title='Pagination' defaultKey='pagination-default' as |collection|}}
+    {{#freestyle-annotation}}
+      {{bootstrap-input
+        label='Page Size Option'
+        value=pageSize
+      }}
+      <ol>
+        {{#each elements as |element|}}
+          <li>Item {{element}}</li>
+        {{/each}}
+      </ol>
+    {{/freestyle-annotation}}
+    {{#collection.variant key="pagination-default"}}
+      {{#freestyle-usage "pagination-default" title="Default Pagination"}}
+        {{bootstrap-pagination-nav
+          pageNumber=pageNumber
+          pageSize=pageSize
+          totalPages=totalPages
+          moveToPage=(action (mut pageNumber))
+        }}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant title="Custom" key="pagination-custom"}}
+      {{#freestyle-usage "pagination-custom" title="Custom Pagination"}}
+        {{#bootstrap-pagination-nav
+          pageNumber=pageNumber
+          pageSize=pageSize
+          totalPages=totalPages
+          moveToPage=(action (mut pageNumber))
+          as |pagination attributes|
+        }}
+          {{#pagination.pageItem
+            disabled=(lte pageNumber 1)
+            as |pageItem|
+          }}
+            {{#pageItem.pageLink aria-label="Previous" tabindex="-1" action=pagination.moveToPreviousPage}}
+              <span>Previous</span>
+            {{/pageItem.pageLink}}
+          {{/pagination.pageItem}}
+
+          {{#each attributes.visibleOuterLeftPageNumbers as |num|}}
+            {{pagination.pageItem pageNumber=num active=(eq num pageNumber) action=(action pagination.moveToPage num)}}
+          {{/each}}
+
+          {{#if attributes.hasLeftGap}}
+            {{pagination.pageItem pageNumber="etc" disabled=true}}
+          {{/if}}
+
+          {{#each attributes.visibleInnerPageNumbers as |num|}}
+            {{pagination.pageItem pageNumber=num active=(eq num pageNumber) action=(action pagination.moveToPage num)}}
+          {{/each}}
+
+          {{#if attributes.hasRightGap}}
+            {{pagination.pageItem pageNumber="etc" disabled=true}}
+          {{/if}}
+
+          {{#each attributes.visibleOuterRightPageNumbers as |num|}}
+            {{pagination.pageItem pageNumber=num active=(eq num pageNumber) action=(action pagination.moveToPage num)}}
+          {{/each}}
+
+          {{#pagination.pageItem
+            disabled=(gte pageNumber totalPages)
+            as |pageItem|
+          }}
+            {{#pageItem.pageLink aria-label="Next" action=pagination.moveToNextPage}}
+              <span>Next</span>
+            {{/pageItem.pageLink}}
+          {{/pagination.pageItem}}
+        {{/bootstrap-pagination-nav}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
 {{/section.subsection}}
