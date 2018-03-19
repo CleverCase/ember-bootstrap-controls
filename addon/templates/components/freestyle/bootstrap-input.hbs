@@ -34,9 +34,23 @@
             {{control.input}}
             <div class="input-group-addon">.00</div>
           </div>
-          <span class="help-block">
-            This is some help text
-          </span>
+        {{/bootstrap-input}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='input-text-help'}}
+      {{#freestyle-usage "input-text-help" title="Input with Help Text"}}
+        {{#bootstrap-input
+          value=value
+          placeholder="Something"
+          label="Complicated Input"
+          srOnly=true
+          as |control|
+        }}
+          {{control.label}}
+          {{control.input aria-describedby="help-text-id"}}
+          <small id="help-text-id" class="form-text text-muted">
+            Some help text.
+          </small>
         {{/bootstrap-input}}
       {{/freestyle-usage}}
     {{/collection.variant}}
