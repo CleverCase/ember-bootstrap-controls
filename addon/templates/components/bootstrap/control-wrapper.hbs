@@ -1,6 +1,6 @@
 {{yield (hash label=(component 'bootstrap/-label' classNames=(if srOnly 'control-label sr-only' 'control-label')) inputId=inputId)}}
 {{#if errors}}
-  <div class="alert alert-danger" role="alert">
+  <div class="invalid-feedback">
     {{#each errors as |error|}}
       <span>{{error.message}}</span>
     {{/each}}
