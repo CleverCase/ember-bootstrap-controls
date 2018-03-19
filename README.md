@@ -7,6 +7,10 @@ This README outlines the details of using and collaborating on this Ember addon.
 Checkout our [Changelog](CHANGELOG.md) for what has changed.
 
 ## Upgrade Instructions
+
+### 0.18.1 - v1.0.0-alpha.x
+ - Updated to bootstrap 4, still an alpha release, public API/class names are subject to change before a 1.0 release.
+ 
 ### 0.14.0 - 0.15.0
  - `keyPress`, `keyDown`, `keyUp` events were all renamed to `key-press`, `key-down`, and `key-up` respectively. This was to prevent it from conflicting with Ember.Component `keyPress`, `keyDown`, and `keyUp` events. An assert is thrown to help the developer identify and fix these issues, but it is further recommeneded to do a project find, and replace where used.
 
