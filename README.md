@@ -798,6 +798,10 @@ If you are running [ember-freestyle](https://github.com/chrislopresto/ember-free
 {{/freestyle-guide}}
 ```
 
+## Deploying Documentation
+
+Run `npm run deploy-documentation`
+
 ## Running
 
 * `ember server`
