@@ -1,8 +1,9 @@
-{{#bootstrap/control-wrapper errors=errors classNames=classNames as |control|}}
+{{#bootstrap/control-wrapper classNames=classNames as |control|}}
   {{#if hasBlock}}
     {{yield
       (hash
         label=(component control.label for=control.inputId label=label srOnly=srOnly)
+        invalid=(component control.invalid errors=errors)
         input=(component 'masked-input'
           elementId=control.inputId
           classNames="form-control"
@@ -49,5 +50,6 @@
       key-press=key-press
       key-up=key-up
     }}
+    {{control.invalid errors=errors}}
   {{/if}}
 {{/bootstrap/control-wrapper}}

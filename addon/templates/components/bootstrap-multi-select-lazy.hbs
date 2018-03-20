@@ -1,4 +1,4 @@
-{{#bootstrap/control-wrapper classNames=classNames errors=errors as |control|}}
+{{#bootstrap/control-wrapper classNames=classNames as |control|}}
   {{control.label elementId=control.inputId srOnly=srOnly label=label}}
   {{#power-select-multiple
     ariaLabelledBy=control.inputId
@@ -26,4 +26,5 @@
   }}
     {{yield option}}
   {{/power-select-multiple}}
+  {{control.invalid errors=errors}}
 {{/bootstrap/control-wrapper}}

@@ -1,15 +1,16 @@
-{{#bootstrap/control-wrapper classNames=classNames errors=errors srOnly=srOnly label=label as |control|}}
-  {{input
+{{#bootstrap/control-wrapper classNames=classNames errors=errors as |control|}}
+  {{control.label for=control.inputId label=label srOnly=srOnly}}
+  {{bootstrap/-input
     tabindex=tabindex
     value=_value
     elementId=control.inputId
     type=type
     placeholder=placeholder
-    classNames="form-control"
     readonly=readonly
     disabled=disabled
     key-press=key-press
     key-up=(perform valueChanged)
     key-down=key-down
     required=required}}
+  {{control.invalid errors=errors}}
 {{/bootstrap/control-wrapper}}

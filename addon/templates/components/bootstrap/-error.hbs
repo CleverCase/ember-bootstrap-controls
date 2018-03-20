@@ -1,0 +1,9 @@
+{{#if hasBlock}}
+  {{yield errors}}
+{{else}}
+  {{#if errors}}
+    {{#each errors as |error|}}
+      <span>{{error.message}}</span>
+    {{/each}}
+  {{/if}}
+{{/if}}
