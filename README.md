@@ -8,6 +8,43 @@ Checkout our [Changelog](CHANGELOG.md) for what has changed.
 
 ## Upgrade Instructions
 
+### v1.0.0-alpha.1 - v1.0.0-alpha.5
+ - Update all uses of the contextual form components to render `invalid`. The default use case still works, just when getting fancy and yielding and manually rendering a contextual label and input, an `invalid` field now is no longer implicitly rendered and must also be rendered inside of the yield. Ex:
+ ```
+{{#bootstrap-input
+  value=value
+  placeholder="Some Number"
+  label="Dollars"
+  srOnly=true
+  as |control|
+}}
+  {{control.label}}
+  <div class="input-group">
+    <div class="input-group-addon">$</div>
+    {{control.input}}
+    <div class="input-group-addon">.00</div>
+  </div>
+{{/bootstrap-input}}
+ ```
+Needs updated to:
+```
+{{#bootstrap-input
+  value=value
+  placeholder="Some Number"
+  label="Dollars"
+  srOnly=true
+  as |control|
+}}
+  {{control.label}}
+  <div class="input-group">
+    <div class="input-group-addon">$</div>
+    {{control.input}}
+    <div class="input-group-addon">.00</div>
+  </div>
+  {{control.invalid}}
+{{/bootstrap-input}}
+```
+
 ### 0.18.1 - v1.0.0-alpha.x
  - Updated to bootstrap 4, still an alpha release, public API/class names are subject to change before a 1.0 release.
  
