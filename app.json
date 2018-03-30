@@ -1,0 +1,9 @@
+
+{
+  "name": "Ember Bootstrap Controls",
+  "description": "Wildland's component library",
+  "repository": "https://github.com/wildland/ember-bootstrap-controls",
+  "buildpacks": [
+    { "url": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/emberjs.tgz" }
+  ]
+}
