@@ -13,7 +13,8 @@ export default Ember.Component.extend({
   disabled: undefined,
   active: undefined,
 
-  click() {
+  click(e) {
+    e.preventDefault();
     const disabled = this.get('disabled');
     const active = this.get('active');
 
