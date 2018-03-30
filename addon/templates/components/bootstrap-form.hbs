@@ -1,8 +1,18 @@
-{{#if errors}}
-  <div class="alert alert-danger" role="alert">
-    {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-    {{/each}}
-  </div>
-{{/if}}
-{{yield}}
+{{yield
+  (hash
+    isEditing=(readonly isEditing)
+    isSaving=(readonly _isSaving)
+    isCanceling=(readonly _isCanceling)
+    isRunning=(or (readonly _isSaving) (readonly _isCanceling))
+    controls=(component 'bootstrap/-form-controls'
+      isSaving=(readonly _isSaving)
+      isCanceling=(readonly _isCanceling)
+      isRunning=(or (readonly _isSaving) (readonly _isCanceling))
+      isEditing=(readonly isEditing)
+      save=(action 'save')
+      cancel=(action 'cancel')
+      edit=(action 'edit')
+    )
+    body=(component 'bootstrap/-form-body')
+  )
+}}

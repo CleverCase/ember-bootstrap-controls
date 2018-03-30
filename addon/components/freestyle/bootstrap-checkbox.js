@@ -12,7 +12,7 @@ export default Ember.Component.extend({
     checkboxChange(/*newChecked, oldChecked*/) {
     },
     toggleFavorite(favorite){
-    	console.log(`Favorite Triggered: ${favorite.toString()}`);
+      Ember.Logger.info(`Favorite Triggered: ${favorite.toString()}`);
     }
   },
 });
