@@ -4,13 +4,13 @@ Ember-bootstrap-controls is a small library for quickly creating EmberJS forms t
 
 This README outlines the details of using and collaborating on this Ember addon.
 
-Checkout our [Changelog](CHANGELOG.md) for what has changed.
+Checkout our [Releases](/releases/latest) or [Changelog](CHANGELOG.md) for what has changed.
 
 ## Upgrade Instructions
 
 ### 0.18.1 - v1.0.0-alpha.x
  - Updated to bootstrap 4, still an alpha release, public API/class names are subject to change before a 1.0 release.
- 
+
 ### 0.14.0 - 0.15.0
  - `keyPress`, `keyDown`, `keyUp` events were all renamed to `key-press`, `key-down`, and `key-up` respectively. This was to prevent it from conflicting with Ember.Component `keyPress`, `keyDown`, and `keyUp` events. An assert is thrown to help the developer identify and fix these issues, but it is further recommeneded to do a project find, and replace where used.
 
@@ -36,7 +36,6 @@ Move into your root ember directory and run:
 ## Usage
 See the [live documentation](http://wildland.github.io/ember-bootstrap-controls/).
 
-- [`bootstrap-form` form helper](#bootstrap-form)
 - [`bootstrap-debounce-input` input field helper](#bootstrap-debounce-input)
 - [`bootstrap-input` input field helper](#bootstrap-input)
 - [`bootstrap-mask-input` input field helper](#bootstrap-mask-input)
@@ -50,12 +49,6 @@ See the [live documentation](http://wildland.github.io/ember-bootstrap-controls/
 - [`bootstrap-multi-select` multi-select tag helper](#bootstrap-multi-select)
 - [`bootstrap-pagination-nav` pagination navigation helper](#bootstrap-pagination-nav)
 - [`bootstrap-data-table` table helper](#bootstrap-data-table)
-
----
-
-### Bootstrap Form
-
-> We should write some documentation for this.
 
 ---
 
