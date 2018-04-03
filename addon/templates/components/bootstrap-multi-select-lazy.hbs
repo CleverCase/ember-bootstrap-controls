@@ -1,5 +1,11 @@
-{{#bootstrap/control-wrapper classNames=classNames errors=errors as |control|}}
-  {{control.label elementId=control.inputId srOnly=srOnly label=label}}
+{{#bootstrap/control-wrapper
+  errors=errors
+  classNames=classNames
+  srOnly=srOnly
+  label=label
+  as |control|
+}}
+  {{control.label}}
   {{#power-select-multiple
     ariaLabelledBy=control.inputId
     selected=selected
