@@ -5,7 +5,6 @@ export default Ember.Component.extend({
   layout,
 
   tagName: 'label',
-  classNames: ['control-label'],
   classNameBindings: ['srOnly:sr-only'],
   attributeBindings: ['for'],
 });
