@@ -1,4 +1,12 @@
-{{yield (hash label=(component 'bootstrap/-label' classNames=(if srOnly 'control-label sr-only' 'control-label')) inputId=inputId)}}
+{{yield
+  (hash
+    label=(component 'bootstrap/-label'
+      label=label
+      srOnly=srOnly
+      inputId=inputId
+    )
+  )
+}}
 {{#if errors}}
   <div class="invalid-feedback">
     {{#each errors as |error|}}
