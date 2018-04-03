@@ -1,12 +1,11 @@
 {{#bootstrap/control-wrapper
   errors=errors
   classNames=classNames
-  ariaLabelledBy=true
   srOnly=srOnly
   label=label
   as |control|
 }}
-  {{control.label}}
+  {{control.label elementId=control.inputId}}
   {{#power-select
     ariaLabelledBy=control.inputId
     selected=selected

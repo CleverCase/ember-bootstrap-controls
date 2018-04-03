@@ -1,31 +1,38 @@
-<div class="{{concat-class-names classNames}} form-group {{multiSelectClassName}} {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
-  {{#if hasBlock}}
-    {{#if label}}
-      <label for="{{inputId}}" class="control-label">{{label}}</label>
-    {{/if}}
-    {{#power-select-multiple
-      selected=selected
-      options=options
-      placeholder=placeholder
-      onchange=onChange
-      allowClear=allowClear
-      searchEnabled=searchEnabled
-      searchField=searchField
-      allowClear=allowClear
-      disabled=disabled
-      required=required
-      renderInPlace=renderInPlace
-      as |option|}}
-      {{yield option}}
-    {{/power-select-multiple}}
-    {{#if errors}}
-      <div class="alert alert-danger" role="alert">
-        {{#each errors as |error|}}
-          <span>{{error.message}}</span>
-        {{/each}}
-      </div>
-    {{/if}}
-  {{else}}
-    <span>Missing block syntax for power select</span>
-  {{/if}}
-</div>
+{{#bootstrap/control-wrapper
+  errors=errors
+  classNames=classNames
+  srOnly=srOnly
+  label=label
+  as |control|
+}}
+  {{control.label elementId=control.inputId}}
+  {{#power-select-multiple
+    ariaLabelledBy=control.inputId
+    selected=selected
+    options=options
+    matcher=matcher
+    placeholder=placeholder
+    loadingMessage=loadingMessage
+    noMatchesMessage=noMatchesMessage
+    onchange=onChange
+    allowClear=allowClear
+    search=search
+    searchEnabled=searchEnabled
+    searchField=searchField
+    searchMessage=searchMessage
+    allowClear=allowClear
+    disabled=disabled
+    required=required
+    renderInPlace=renderInPlace
+    afterOptionsComponent=afterOptionsComponent
+    beforeOptionsComponent=beforeOptionsComponent
+    optionsComponent=optionsComponent
+    groupComponent=groupComponent
+    triggerComponent=triggerComponent
+    searchMessageComponent=searchMessageComponent
+    placeholderComponent=placeholderComponent
+    as |option|
+  }}
+    {{yield option}}
+  {{/power-select-multiple}}
+{{/bootstrap/control-wrapper}}
