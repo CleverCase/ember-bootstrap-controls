@@ -4,58 +4,29 @@ import { task, timeout, didCancel, restartable } from 'ember-concurrency';
 
 export default Ember.Component.extend({
   layout,
-  nickname: null,
-  _persistedNickname: null,
 
-  saveNicknameTask: task(function * (name) {
-    this.set('_persistedNickname', name);
+  fakeActionTask: task(function * () {
   }).restartable(),
 
-  slowSaveNicknameTask: task(function * (name) {
+  fakeSlowActionTask: task(function * () {
     yield timeout(1000);
-    this.set('_persistedNickname', name);
-  }).restartable(),
-
-  resetNickname: task(function * () {
-    this.set('nickname', this.get('_persistedNickname'));
-  }).restartable(),
-
-  slowResetNickname: task(function * () {
-    yield timeout(1000);
-    this.set('nickname', this.get('_persistedNickname'));
   }).restartable(),
 
   actions: {
-    simpleSave(name) {
-      return this.get('saveNicknameTask').perform(name).catch(e => {
+    simpleAction() {
+      return this.get('fakeActionTask').perform().catch(e => {
         if (!didCancel(e)) {
           throw e;
         }
       });
     },
 
-    slowSave(name) {
-      return this.get('slowSaveNicknameTask').perform(name).catch(e => {
+    slowAction() {
+      return this.get('fakeSlowActionTask').perform().catch(e => {
         if (!didCancel(e)) {
           throw e;
         }
       });
     },
-
-    simpleCancel() {
-      return this.get('resetNickname').perform().catch(e => {
-        if (!didCancel(e)) {
-          throw e;
-        }
-      });
-    },
-
-    slowCancel() {
-      return this.get('slowResetNickname').perform().catch(e => {
-        if (!didCancel(e)) {
-          throw e;
-        }
-      });
-    }
   },
 });

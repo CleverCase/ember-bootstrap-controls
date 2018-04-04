@@ -8,19 +8,13 @@
     {{#collection.variant key='TL;DR'}}
       {{#freestyle-usage "TL;DR" title='Quick Example'}}
         {{#bootstrap-form
-          save=(action 'simpleSave' nicname)
-          cancel=(action 'simpleCancel')
+          save=(action 'simpleAction')
+          cancel=(action 'simpleAction')
           as |form|
         }}
           {{#form.body}}
-            <p>Persisted Nickname: {{_persistedNickname}}</p>
-            <!-- add form body here -->
-            {{bootstrap-input
-              label="Nickname"
-              placeholder="pick your nickname"
-              disabled=(not form.isEditing)
-              value=nickname
-            }}
+            <!-- add form body here like inputs and stuff -->
+            <p>A form</p>
           {{/form.body}}
           {{form.controls}}
         {{/bootstrap-form}}
@@ -29,19 +23,13 @@
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-bootstrap-form-usage' title='Basic Usage'}}
         {{#bootstrap-form
-          save=(action 'simpleSave' nickname)
-          cancel=(action 'simpleCancel')
+          save=(action 'simpleAction')
+          cancel=(action 'simpleAction')
           as |form|
         }}
           {{#form.body}}
-            <p>Persisted Nickname: {{_persistedNickname}}</p>
-            <!-- add form body here -->
-            {{bootstrap-input
-              label="Nickname"
-              placeholder="pick your nickname"
-              disabled=(not form.isEditing)
-              value=nickname
-            }}
+            <!-- add form body here like inputs and stuff -->
+            <p>A form</p>
           {{/form.body}}
           {{form.controls}}
         {{/bootstrap-form}}
@@ -59,8 +47,8 @@
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-form-usage' title='Advanced Usage'}}
       {{#bootstrap-form
-        save=(action 'slowSave' nickname)
-        cancel=(action 'slowCancel')
+        save=(action 'slowAction')
+        cancel=(action 'slowAction')
         as |form|
       }}
         {{#form.controls as |controls|}}
@@ -80,11 +68,8 @@
                 <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
               </div>
             {{else}}
-              <h3>Really Long Form</h3>
-              {{bootstrap-input
-                label="Fax Address"
-              }}
-              <h3>Lots More Fields</h3>
+              <!-- add form body here like inputs and stuff -->
+              <p>A really long form</p>
             {{/if}}
           {{/if}}
         {{/form.body}}
