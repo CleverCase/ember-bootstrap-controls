@@ -1,10 +1,10 @@
 import Ember from 'ember';
 import layout from '../../templates/components/freestyle/bootstrap-button';
-import { task, timeout, didCancel, restartable } from 'ember-concurrency';
+import { task, timeout, didCancel, restartable } from 'ember-concurrency'; // eslint-disable-line no-unused-vars
 
 export default Ember.Component.extend({
   layout,
-  fakeSimpleClickTask: task(function * (name) {
+  fakeSimpleClickTask: task(function * (name) { // eslint-disable-line require-yield
     alert(`You clicked the ${name} button`);
   }).restartable(),
 
