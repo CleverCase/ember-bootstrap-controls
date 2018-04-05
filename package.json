@@ -1,6 +1,6 @@
 {
   "name": "ember-bootstrap-controls",
-  "version": "1.0.0-alpha.5",
+  "version": "1.0.0-alpha.6",
   "description": "Ember bootstrap form components.",
   "private": true,
   "keywords": [
@@ -21,13 +21,14 @@
   },
   "dependencies": {
     "ember-bootstrap-datepicker": "~2.0.2",
-    "ember-cli-babel": "^6.3.0",
+    "ember-cli-babel": "^6.12.0",
     "ember-cli-htmlbars": "^2.0.1",
-    "ember-concurrency": "0.8.7",
+    "ember-concurrency": "0.8.16",
     "ember-freestyle": "~0.6.1",
     "ember-power-select": "~1.9.6",
-    "ember-truth-helpers": "~1.3.0",
-    "ember-text-mask-addons": "~5.0.0"
+    "ember-prop-types": "~7.0.2",
+    "ember-text-mask-addons": "~5.0.0",
+    "ember-truth-helpers": "~1.3.0"
   },
   "devDependencies": {
     "bootstrap": "^4.0.0-beta.2",
@@ -58,6 +59,7 @@
     "node": "^4.5 || 6.* || >= 7.*"
   },
   "ember-addon": {
-    "configPath": "tests/dummy/config"
+    "configPath": "tests/dummy/config",
+    "demoURL": "http://wildland.github.io/ember-bootstrap-controls/"
   }
 }

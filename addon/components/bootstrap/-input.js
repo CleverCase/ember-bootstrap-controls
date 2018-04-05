@@ -5,10 +5,10 @@ export default Ember.TextField.extend({
   attributeBindings: ['aria-describedby'],
 
   click() {
-  	const onClick = this.get('onClick');
+    const onClick = this.get('onClick');
 
-  	if (onClick) {
-  		onClick(...arguments);
-  	}
+    if (onClick) {
+      onClick(...arguments);
+    }
   }
 });
