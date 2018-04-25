@@ -4,10 +4,11 @@
       label=label
       srOnly=srOnly
     )
+    errors=errors
   )
 }}
 {{#if errors}}
-  <div class="invalid-feedback">
+  <div class="alert alert-danger" role="alert">
     {{#each errors as |error|}}
       <span>{{error.message}}</span>
     {{/each}}
