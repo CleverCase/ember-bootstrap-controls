@@ -1,7 +1,6 @@
 import Ember from 'ember';
 import layout from '../../templates/components/freestyle/bootstrap-button';
-import { task, timeout, didCancel, restartable } from 'ember-concurrency'; // eslint-disable-line no-unused-vars
-
+import { task, timeout, didCancel } from 'ember-concurrency';
 export default Ember.Component.extend({
   layout,
   fakeSimpleClickTask: task(function * (name) { // eslint-disable-line require-yield
