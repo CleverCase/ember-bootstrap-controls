@@ -1,0 +1,52 @@
+{{#bootstrap/control-wrapper
+  classNames=classNames
+  errors=errors
+  srOnly=srOnly
+  label=label
+  as |control|
+}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        label=(component control.label for=control.inputId)
+        control=control
+        input=(component 'bootstrap/-input'
+          value=value
+          elementId=control.inputId
+          type='email'
+          autocomplete=autocomplete
+          maxlength=maxlength
+          minlength=minlength
+          multiple=multiple
+          pattern=pattern
+          placeholder=placeholder
+          readonly=readonly
+          required=required
+          srOnly=srOnly
+          tabindex=tabindex
+        )
+      )
+    }}
+  {{else}}
+    {{control.label for=control.inputId}}
+    {{bootstrap/-input
+      value=value
+      elementId=control.inputId
+      type='email'
+      autocomplete=autocomplete
+      maxlength=maxlength
+      minlength=minlength
+      multiple=multiple
+      pattern=pattern
+      placeholder=placeholder
+      readonly=readonly
+      required=required
+      srOnly=srOnly
+      tabindex=tabindex
+      helpId=control.helpId
+    }}
+    {{#if help}}
+      <small id={{control.helpId}} class='text-muted'>{{help}}</small>
+    {{/if}}
+  {{/if}}
+{{/bootstrap/control-wrapper}}

@@ -1,4 +1,11 @@
-{{#bootstrap/control-wrapper classNames=classNames errors=errors srOnly=srOnly label=label as |control|}}
+{{#bootstrap/control-wrapper
+  classNames=classNames
+  errors=errors
+  srOnly=srOnly
+  label=label
+  as |control|
+}}
+  {{control.label for=control.inputId}}
   {{input
     tabindex=tabindex
     value=_value

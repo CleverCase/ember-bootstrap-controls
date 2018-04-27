@@ -1,0 +1,19 @@
+<dl>
+  <dt>Value Options</dt>
+  <dd>
+    <ul>
+      {{#each options as |option|}}
+        <li>{{option}}</li>
+      {{/each}}
+    </ul>
+  </dd>
+</dl>
+{{#bootstrap-radio-group
+  label=propDefinition.name
+  selected=dataValue
+  options=options
+  onChange=(action 'optionSelected')
+  as |option|
+}}
+    <span>{{option}}</span>
+{{/bootstrap-radio-group}}

@@ -15,7 +15,7 @@ export default Component.extend(InputableMixin, {
   value: null,
   readonly: null,
   type: null,
-  srOnly: null,
+  srOnly: false,
   tabindex: 0,
   required: true,
 

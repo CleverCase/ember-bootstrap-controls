@@ -26,4 +26,8 @@ export default Ember.Mixin.create({
   inputId: Ember.computed(function() {
     return `bootstrap-control-input-${Ember.guidFor(this)}`;
   }),
+
+  helpId: Ember.computed(function() {
+    return `${Ember.guidFor(this)}-help`;
+  }),
 });
