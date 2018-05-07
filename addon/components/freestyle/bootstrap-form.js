@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../../templates/components/freestyle/bootstrap-form';
-import { task, timeout, didCancel, restartable } from 'ember-concurrency';
+import { task, timeout, didCancel } from 'ember-concurrency';
 
 export default Ember.Component.extend({
   layout,
