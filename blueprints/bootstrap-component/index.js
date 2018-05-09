@@ -11,10 +11,10 @@ module.exports = {
       paths: [path.resolve(__dirname, '..')]
     });
 
-    return ComponentBlueprint.install(options).then(() => {
-      return ComponentTestBlueprint.install(options);
-    }).then(() => {
+    // return ComponentBlueprint.install(options).then(() => {
+    //   return ComponentTestBlueprint.install(options);
+    // }).then(() => {
       return FreestyleComponentBlueprint.install(options);
-    });
+    // });
   }
 };
