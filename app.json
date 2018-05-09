@@ -1,5 +1,9 @@
 
 {
+  "env": {
+  "EMBER_ENV": {
+    "required": true
+  },
   "name": "Ember Bootstrap Controls",
   "description": "Wildland's component library",
   "repository": "https://github.com/wildland/ember-bootstrap-controls",
