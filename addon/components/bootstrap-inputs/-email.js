@@ -9,6 +9,10 @@ export const propDefinitions = {
     description: 'Indicates whether the value can be automatically completed by the browser.',
     type: PropTypes.oneOf(['off', 'email']),
   },
+  disabled: {
+    description: 'Indicates whether the control is disabled',
+    type: PropTypes.bool,
+  },
   errors: {
     description: 'An array of EmberData errors to display.',
     type: PropTypes.arrayOf(PropTypes.string),
