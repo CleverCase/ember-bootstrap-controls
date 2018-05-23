@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "ember-bootstrap-datepicker": "~2.0.2",
+    "ember-bootstrap": "^1.0.0-rc.2",
     "ember-cli-babel": "^6.12.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-concurrency": "0.8.16",
@@ -31,6 +32,7 @@
     "ember-truth-helpers": "~1.3.0"
   },
   "devDependencies": {
+    "bootstrap-sass": "^3.3.7",
     "broccoli-asset-rev": "^2.4.5",
     "ember-a11y-testing": "^0.5.0",
     "ember-ajax": "^3.0.0",

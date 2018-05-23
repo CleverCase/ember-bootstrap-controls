@@ -1,0 +1,9 @@
+{{#bs-modal/body}}
+  <div class="generic-modal-body-wrap">
+    {{#if hasBlock}}
+      {{yield}}
+    {{else}}
+      {{content}}
+    {{/if}}
+  </div>
+{{/bs-modal/body}}

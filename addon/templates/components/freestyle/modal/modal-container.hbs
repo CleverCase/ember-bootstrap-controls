@@ -1,0 +1,27 @@
+{{#section.subsection name='modal Container'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-modal-container' name='Basic EmberBootstrapControls'}}
+
+        {{modal/modal-container
+          isOpen=isModalOpen
+          title="Simple Modal"
+          modalBodyContent=sampleContent
+          acceptAction=(action 'closeModal')}}
+
+        <button class="btn btn-sm btn-primary" {{action 'openModal'}}>Open Modal</button>
+
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-modal-container' name='Advanced EmberBootstrapControls'}}
+        {{modal/modal-container}}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}
