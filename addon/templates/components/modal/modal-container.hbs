@@ -1,32 +1,18 @@
-{{#bs-modal
-  size="md"
-  footer=false
-  body=false
-  header=false
-  open=isOpen
-  autoClose=false
-  closeAction=(action 'closeModal')
-  backdropClose=false
-  classNames="generic-modal-content-wrapper"
-as |modal|}}
-    {{#if hasBlock}}
-      {{yield (x-hash
-        isOpen=isOpen
-        toggle=(action 'toggleModal')
-        close=(action 'closeModal')
-        save=(action (queue acceptAction (action (mut isOpen) false)))
-        header=(component 'modal/modal-header' title=title)
-        body=(component 'modal/modal-body' content=modalBodyContent)
-        footer=(component 'modal/modal-footer'
-          acceptAction=acceptAction
-          cancelAction=(action 'closeModal')
-        )
-      )}}
-    {{else}}
-      {{modal/modal-header title=title}}
-      {{modal/modal-body content=modalBodyContent}}
-      {{modal/modal-footer
-        acceptAction=acceptAction
-        cancelAction=(action 'closeModal')}}
-    {{/if}}
-{{/bs-modal}}
+<div class="modal fade" id="{{modalId}}" tabindex="-1" role="dialog" aria-labelledby="{{modalId}}Label" aria-hidden="true">
+
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      {{modal/modal-header
+        title=title
+        showClose=showCloseInHeader
+        closeAction=closeAction}}
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

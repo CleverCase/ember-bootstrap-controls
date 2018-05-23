@@ -4,11 +4,11 @@ import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
 export const propDefinitions = {
-  // shown: {
-  //   default: 'email',
-  //   description: 'Indicates whether the value can be automatically completed by the browser.',
-  //   type: PropTypes.oneOf(['off', 'email']),
-  // },
+  showClose: {
+    default: false,
+    description: 'Indicates whether the header has a close button in the top left corner',
+    type: PropTypes.bool,
+  },
 };
 
 export default Ember.Component.extend({
@@ -20,4 +20,15 @@ export default Ember.Component.extend({
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)
   },
+
+  actions: {
+    closeModal() {
+      let closeAction = this.get('closeAction')
+
+      if (closeAction) {
+        closeAction();
+      }
+    },
+  }
+
 });
