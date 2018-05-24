@@ -54,11 +54,6 @@ export const propDefinitions = {
 
 export default Ember.Component.extend({
 
-  init() {
-    this._super(...arguments);
-    this.addObserver('isOpen', this, 'isOpenChange');
-  },
-
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
 
@@ -72,7 +67,9 @@ export default Ember.Component.extend({
     return $('#' + this.get('modalId'));
   }),
 
-  isOpenChange(sender, key, value, rev) {
+  didUpdateAttrs() {
+    this._super(...arguments);
+
     let isOpen = this.get('isOpen');
     let modalObj = this.get('modalObj');
 
