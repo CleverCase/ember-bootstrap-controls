@@ -15,11 +15,12 @@ export default Ember.Component.extend({
 
   actions: {
     closeModal() {
-      console.log('freestyle: closeModal');
+      alert('freestyle: closeModal');
     },
 
     acceptModal() {
-      console.log('freestyle: acceptModal');
+      alert('freestyle: acceptModal');
+      this.set('isModalOpen', false);
     },
 
     openModal() {

@@ -50,11 +50,6 @@ export const propDefinitions = {
     description: 'Indicates whether the header has a close button in the top left corner',
     type: PropTypes.bool,
   },
-  closeOnAccept: {
-    default: false,
-    description: 'Indicates whether the modal will close on the accept action',
-    type: PropTypes.bool,
-  },
 };
 
 export default Ember.Component.extend({
@@ -91,18 +86,15 @@ export default Ember.Component.extend({
     }
   },
 
-  modalTask: task(function * (type) {
-    const takeAction = (type == 'close') ? this.get('closeAction') : this.get('acceptAction');
-    const closeAfterAction = (type == 'close') ? true : this.get('closeOnAccept');
+  closeModalTask: task(function * () {
+    const takeAction = this.get('closeAction');
     let rval;
 
     if (takeAction) {
       rval = yield takeAction();
     }
 
-    if (closeAfterAction) {
-      this.set('isOpen', false);
-    }
+    this.set('isOpen', false);
 
     return rval;
   }),
@@ -113,11 +105,7 @@ export default Ember.Component.extend({
 
   actions: {
     modalClose() {
-      return this.get('modalTask').perform('close');
-    },
-
-    modalAccept() {
-      return this.get('modalTask').preform('accept');
+      return this.get('closeModalTask').perform();
     },
 
     toggleModal() {

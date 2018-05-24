@@ -10,7 +10,6 @@
         {{modal/modal-container
           isOpen=isModalOpen
           title="Simple Modal"
-          showCloseInHeader=true
           modalBodyContent=sampleContent
           acceptAction=(action 'acceptModal')}}
 
@@ -20,7 +19,22 @@
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-modal-container' name='Advanced EmberBootstrapControls'}}
-        {{modal/modal-container}}
+
+        {{modal/modal-container
+          isOpen=isModalOpen
+          title="Simple Modal"
+          btnAcceptLabel="Ok"
+          btnAcceptStyle="success"
+          btnCloseLabel="Cancel"
+          btnCloseStyle="danger"
+          showCloseInHeader=true
+          modalBodyContent=sampleContent
+          acceptAction=(action 'acceptModal')
+          closeAction=(action 'closeModal')
+        }}
+
+        <button class="btn btn-sm btn-primary" {{action 'openModal'}}>Open Modal</button>
+
         {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
     {{/collection.variant}}
