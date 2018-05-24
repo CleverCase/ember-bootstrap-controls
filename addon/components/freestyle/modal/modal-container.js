@@ -11,10 +11,15 @@ export default Ember.Component.extend({
   }),
 
   isModalOpen: false,
+  sampleContent: 'Example Modal',
 
   actions: {
     closeModal() {
-      this.set('isModalOpen', false);
+      console.log('freestyle: closeModal');
+    },
+
+    acceptModal() {
+      console.log('freestyle: acceptModal');
     },
 
     openModal() {

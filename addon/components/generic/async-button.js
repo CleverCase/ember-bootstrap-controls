@@ -23,6 +23,9 @@ export default Ember.Component.extend({
   }),
 
   click() {
-    return this.get('asyncTask').perform(this.get('action'));
+    let action = this.get('action');
+    if (action) {
+      return this.get('asyncTask').perform(action);
+    }
   },
 });

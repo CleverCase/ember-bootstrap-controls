@@ -21,7 +21,6 @@
   },
   "dependencies": {
     "ember-bootstrap-datepicker": "~2.0.2",
-    "ember-bootstrap": "^1.0.0-rc.2",
     "ember-cli-babel": "^6.12.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-concurrency": "0.8.16",

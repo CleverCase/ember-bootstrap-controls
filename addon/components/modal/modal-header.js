@@ -23,10 +23,10 @@ export default Ember.Component.extend({
 
   actions: {
     closeModal() {
-      let closeAction = this.get('closeAction')
+      let modalClose = this.get('modalClose')
 
-      if (closeAction) {
-        closeAction();
+      if (modalClose) {
+        modalClose();
       }
     },
   }

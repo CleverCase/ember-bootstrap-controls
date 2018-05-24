@@ -1,10 +1,17 @@
-{{#bs-modal/footer tagName=footerTag as |footer|}}
-  <div class="generic-modal-footer-wrap">
-    {{#if hasBlock}}
-      {{yield}}
-    {{else}}
-      {{#generic/async-button classNames="btn-link cancel-link" action=cancelAction}}Cancel{{/generic/async-button}}
-      {{#generic/async-button classNames=(concat "btn-xs " "btn-" (if btnStyle btnStyle "primary")) action=acceptAction}}{{acceptBtnLabel}}{{/generic/async-button}}
-    {{/if}}
-  </div>
-{{/bs-modal/footer}}
+<div class="modal-footer">
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    {{#bootstrap-button
+      classNames=(concat "btn-" (if btnCloseStyle btnCloseStyle "secondary"))
+      action=modalClose}}
+      {{btnCloseLabel}}
+    {{/bootstrap-button}}
+
+    {{#bootstrap-button
+      classNames=(concat "btn-" (if btnAcceptStyle btnAcceptStyle "primary"))
+      action=modalAccept}}
+      {{btnAcceptLabel}}
+    {{/bootstrap-button}}
+  {{/if}}
+</div>

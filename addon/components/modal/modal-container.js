@@ -15,10 +15,30 @@ export const propDefinitions = {
     description: 'The top level title for the modal dialog',
     type: PropTypes.string.isRequired,
   },
+  btnAcceptLabel: {
+    default: 'Accept',
+    description: 'The text used on the accept button of the modal',
+    type: PropTypes.string,
+  },
+  btnAcceptStyle: {
+    default: 'primary',
+    description: 'Bootstrap style name of the accept button type',
+    type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link']),
+  },
+  btnCloseLabel: {
+    default: 'Close',
+    description: 'The text used on the close button of the modal',
+    type: PropTypes.string,
+  },
+  btnCloseStyle: {
+    default: 'secondary',
+    description: 'Bootstrap style name of the close button type',
+    type: PropTypes.oneOf(['primary', 'secondary', 'success', 'danger', 'warning', 'info', 'light', 'dark', 'link']),
+  },
   acceptAction: {
     default: null,
     description: 'The callback function for the modal.',
-    type: PropTypes.func.isRequired,
+    type: PropTypes.func,
   },
   closeAction: {
     default: null,
@@ -30,9 +50,20 @@ export const propDefinitions = {
     description: 'Indicates whether the header has a close button in the top left corner',
     type: PropTypes.bool,
   },
+  closeOnAccept: {
+    default: false,
+    description: 'Indicates whether the modal will close on the accept action',
+    type: PropTypes.bool,
+  },
 };
 
 export default Ember.Component.extend({
+
+  init() {
+    this._super(...arguments);
+    this.addObserver('isOpen', this, 'isOpenChange');
+  },
+
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
 
@@ -46,26 +77,12 @@ export default Ember.Component.extend({
     return $('#' + this.get('modalId'));
   }),
 
-  didRender() {
-    const com_ref = this;
-    let modalObj = com_ref.get('modalObj');
-
-    com_ref._super(...arguments);
-    //t his is a failsafe to catch situations when the elements use [data-dismiss="modal"]
-    modalObj.on('hidden.bs.modal', function (e) {
-      if (com_ref.get('isOpen')) {
-        com_ref.get('closeModalTask').perform();
-      }
-    });
-  },
-
-  didUpdateAttrs() {
-    this._super(...arguments);
+  isOpenChange(sender, key, value, rev) {
     let isOpen = this.get('isOpen');
+    let modalObj = this.get('modalObj');
 
-    if (this.get('isOpen')) {
-      let modalObj = this.get('modalObj');
-      if (modalObj && isOpen) {
+    if (modalObj && modalObj.modal) {
+      if (isOpen) {
         modalObj.modal("show");
       }
       else {
@@ -74,14 +91,19 @@ export default Ember.Component.extend({
     }
   },
 
-  closeModalTask: task(function * () {
-    const closeAction = this.get('closeAction');
+  modalTask: task(function * (type) {
+    const takeAction = (type == 'close') ? this.get('closeAction') : this.get('acceptAction');
+    const closeAfterAction = (type == 'close') ? true : this.get('closeOnAccept');
     let rval;
 
-    if (closeAction) {
-      rval = yield closeAction();
+    if (takeAction) {
+      rval = yield takeAction();
     }
-    this.set('isOpen', false);
+
+    if (closeAfterAction) {
+      this.set('isOpen', false);
+    }
+
     return rval;
   }),
 
@@ -90,8 +112,12 @@ export default Ember.Component.extend({
   },
 
   actions: {
-    closeModal() {
-      return this.get('closeModalTask').perform();
+    modalClose() {
+      return this.get('modalTask').perform('close');
+    },
+
+    modalAccept() {
+      return this.get('modalTask').preform('accept');
     },
 
     toggleModal() {
