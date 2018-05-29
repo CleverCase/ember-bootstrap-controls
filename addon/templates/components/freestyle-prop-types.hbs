@@ -1,11 +1,10 @@
 <h2>Component Options</h2>
 <hr>
-<ul>
+<dl>
   {{#each options as |option|}}
-    <li>
+    <dt>{{option.name}}</dt>
+    <dd>
       <dl>
-        <dt>Name</dt>
-        <dd>{{option.name}}</dd>
         <dt>Description</dt>
         <dd>{{option.description}}</dd>
         <dt>Type</dt>
@@ -20,6 +19,6 @@
         {{/if}}
       </dl>
       {{component option.componentName propDefinition=option data=data}}
-    </li>
+    </dd>
   {{/each}}
-</ul>
+</dl>
