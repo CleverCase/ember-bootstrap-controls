@@ -1,0 +1,36 @@
+{{#section.subsection name='Email Input'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-email-input' name='Basic Email Input'}}
+        {{bootstrap-inputs/-email
+          label="Super Cool Email"
+          value=basicValue
+        }}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-email-input' name='Advanced Email Input'}}
+        {{bootstrap-inputs/-email
+          autocomplete=data.autocomplete
+          help=data.help
+          disabled=data.disabled
+          label=data.label
+          maxlength=data.maxlength
+          minlength=data.minlength
+          multiple=data.multiple
+          placeholder=data.placeholder
+          readonly=data.readonly
+          required=data.required
+          srOnly=data.srOnly
+          tabIndex=data.tabIndex
+          value=data.value
+        }}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}

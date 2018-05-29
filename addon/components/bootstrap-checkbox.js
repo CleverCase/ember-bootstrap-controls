@@ -17,7 +17,7 @@ export default Ember.Component.extend({
   tabindex: 0,
 
   isChecked: false,
-  srOnly: null,
+  srOnly: false,
 
   // Actions
   onclick: null,

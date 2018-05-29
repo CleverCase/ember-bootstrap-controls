@@ -1,0 +1,17 @@
+<div class="container">
+  {{#bootstrap-form
+    save=(action 'simpleAction')
+    cancel=(action 'simpleAction')
+    as |form|
+  }}
+    {{#form.body}}
+      {{bootstrap-inputs/-email
+        label="Email"
+        value=basicValue
+        autocomplete='email'
+        disabled=(not form.isEditing)
+      }}
+    {{/form.body}}
+    {{form.controls}}
+  {{/bootstrap-form}}
+</div>
