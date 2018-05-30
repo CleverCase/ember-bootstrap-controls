@@ -59,8 +59,7 @@ Run `npm run deploy-documentation`
 
 ## Running
 
-* `ember server`
-* Visit your app at http://localhost:4200.
+To run the dummy app, from the root directory, simply run `npm install` then `npm start`. You'll then find the style-guide application at http://localhost:4200.
 
 ## Running Tests
 
