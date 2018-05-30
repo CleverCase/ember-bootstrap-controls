@@ -58,6 +58,7 @@ export default Ember.Component.extend({
   propTypes: BuilderForPropTypes(propDefinitions),
 
   tagName: '',
+  classNames: '',
 
   modalId: Ember.computed(function() {
     return `${Ember.guidFor(this)}_modal`;
