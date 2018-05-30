@@ -7,7 +7,7 @@ export const propDefinitions = {
   autocomplete: {
     default: 'current-password',
     description: 'Indicates whether the value can be automatically completed by the browser.',
-    type: PropTypes.oneOf(['off', 'current-password']),
+    type: PropTypes.oneOf(['off', 'current-password', 'new-password']),
   },
   disabled: {
     description: 'Indicates whether the control is disabled',
