@@ -5,12 +5,12 @@
     as |collection|
   }}
     {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-<%= dasherizedModuleName %>' name='Basic <%= classifiedPackageName %>'}}
+      {{#freestyle-usage 'basic-<%= entity.freestyleName %>' name='Basic <%= classifiedPackageName %>'}}
         {{<%= dasherizedModuleName %>}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-<%= dasherizedModuleName %>' name='Advanced <%= classifiedPackageName %>'}}
+      {{#freestyle-usage 'advanced-<%= entity.freestyleName %>' name='Advanced <%= classifiedPackageName %>'}}
         {{<%= dasherizedModuleName %>}}
         {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}

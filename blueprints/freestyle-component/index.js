@@ -5,6 +5,11 @@ const stringUtils = require('ember-cli-string-utils');
 module.exports = {
   description: 'adds extra boilerplate files',
 
+  locals(options) {
+    options.entity.freestyleName = options.entity.name.replace(/\//g, "-");
+    return options;
+  },
+
   afterInstall(options) {
     let ui = options.ui;
     ui.writeLine(
