@@ -4,7 +4,7 @@ Ember-bootstrap-controls is a small library for quickly creating EmberJS forms t
 
 This README outlines the details of using and collaborating on this Ember addon.
 
-Checkout our [Releases](/releases/latest) or [Changelog](CHANGELOG.md) for what has changed.
+Checkout our [Releases](../../releases/latest) or [Changelog](CHANGELOG.md) for what has changed.
 
 Issues or ideas? Checkout our [contributing guide](CONTRIBUTING.md) for how to help contribute to this project.
 
