@@ -66,6 +66,9 @@ To run the dummy app, from the root directory, simply run `npm install` then `np
 * `ember test`
 * `ember test --server`
 
+- Troubleshooting:
+  - Node Sass does not yet support your current environment => `npm rebuild node-sass`
+
 ## Building
 
 * `ember build`
