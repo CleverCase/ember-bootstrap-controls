@@ -13,13 +13,7 @@ module.exports = {
   afterInstall(options) {
     let ui = options.ui;
     ui.writeLine(
-      chalk.red('-----------------YOU MUST DO ONE STEP-----------------')
-    );
-    ui.writeLine(
-      chalk.red(
-        'Add your freestyle/' +
-        stringUtils.dasherize(options.entity.name) +
-        ' component to ember-bootstrap-controls-freestyle.hbs' )
+      chalk.red('↓---------------↓YOU MUST DO ONE STEP↓---------------↓')
     );
     ui.writeLine(
       'Add your '+
