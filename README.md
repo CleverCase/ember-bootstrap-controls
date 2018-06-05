@@ -61,7 +61,7 @@ Run `npm run deploy-documentation`
 
 To run the dummy app, from the root directory, simply run `npm install` then `npm start`. You'll then find the style-guide application at http://localhost:4200.
 
-## Troubleshooting:
+## Troubleshooting
 * Node Sass does not yet support your current environment => `npm rebuild node-sass`
 
 ## Running Tests
