@@ -6,8 +6,9 @@ All notable changes to this project will be documented in this file.
   * [#142](https://github.com/wildland/ember-bootstrap-controls/issues/142): Added contribution guidelines and documentations. Also added blueprints. ([@jweakley][])
   * [#145](https://github.com/wildland/ember-bootstrap-controls/issues/145): Added new email type input. ([@jweakley][])
   * [#146](https://github.com/wildland/ember-bootstrap-controls/issues/146): Added new password type input. ([@Nathan-O][])
-  * [#157](https://github.com/wildland/ember-bootstrap-controls/issues/1578): Added new url type input. ([@jweakley][])
+  * [#157](https://github.com/wildland/ember-bootstrap-controls/issues/157): Added new url type input. ([@jweakley][])
   * Updated route mixin to better handle adjustable page sizes and associated documentation. ([@jweakley][])
+  * [#155](https://github.com/wildland/ember-bootstrap-controls/issues/155): Added new tel type input. ([@Nathan-O][])
 ### Changed
   * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
 ### Deprecated
