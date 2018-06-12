@@ -7,6 +7,7 @@ All notable changes to this project will be documented in this file.
   * [#145](https://github.com/wildland/ember-bootstrap-controls/issues/145): Added new email type input. ([@jweakley][])
   * [#146](https://github.com/wildland/ember-bootstrap-controls/issues/146): Added new password type input. ([@Nathan-O][])
   * [#157](https://github.com/wildland/ember-bootstrap-controls/issues/1578): Added new url type input. ([@jweakley][])
+  * Updated route mixin to better handle adjustable page sizes and associated documentation. ([@jweakley][])
 ### Changed
 ### Deprecated
 ### Removed
