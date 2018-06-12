@@ -9,6 +9,7 @@ All notable changes to this project will be documented in this file.
   * [#157](https://github.com/wildland/ember-bootstrap-controls/issues/1578): Added new url type input. ([@jweakley][])
   * Updated route mixin to better handle adjustable page sizes and associated documentation. ([@jweakley][])
 ### Changed
+  * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
 ### Deprecated
 ### Removed
 ### Fixed
