@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
   * [#146](https://github.com/wildland/ember-bootstrap-controls/issues/146): Added new password type input. ([@Nathan-O][])
   * [#157](https://github.com/wildland/ember-bootstrap-controls/issues/1578): Added new url type input. ([@jweakley][])
 ### Changed
+  * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
 ### Deprecated
 ### Removed
 ### Fixed
