@@ -1,4 +1,37 @@
 {{#section.subsection name="Pagination"}}
+  {{#freestyle-usage 'pagination-mixin-helper' title='Ember Route Mixin'}}
+    <p>There is a handy route mixin that is compatible with <a href='https://github.com/wildland/api_me'>api_me</a> <em>v0.5.0 or higher</em> to help with this control.</p>
+    <p>
+      It will add the following variables to your controller for use in the view:
+      <dl>
+        <dt>pageNumber</dt>
+        <dd>The current page number</dd>
+        <dt>pageSize</dt>
+        <dd>The current page size</dd>
+        <dt>totalPages</dt>
+        <dd>The total number of pages</dd>
+        <dt>totalRecords</dt>
+        <dd>The total number of records <em>v0.9.2 or higher</em></dd>
+        <dt>currentIterationCount</dt>
+        <dd>The index of the first record of the page <em>v0.9.2 or higher</em></dd>
+      </dl>
+    </p>
+  {{/freestyle-usage}}
+  {{#freestyle-note "pagination-mixin-helper"}}
+    routes/your_router.js
+    ```js
+    import PaginatedRouteMixin from 'ember-bootstrap-controls/mixins/routes/pagination';
+    export default Ember.Route.extend(PaginatedRouteMixin, {
+      afterModel: function(model) {
+        this._super(...arguments); // Needed to use the afterModel from the mixin
+      },
+
+      setupController: function(controller) {
+        this._super(...arguments); // Needed to use the afterModel from the mixin
+      },
+    })
+    ```
+  {{/freestyle-note}}
   {{#freestyle-collection title='Pagination' defaultKey='pagination-default' as |collection|}}
     {{#freestyle-annotation}}
       {{bootstrap-input

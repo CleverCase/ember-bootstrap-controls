@@ -25,6 +25,8 @@ export default Ember.Mixin.create({
       pageNumber: results.get('meta.page.offset'),
       pageSize: results.get('meta.page.size'),
       totalPages: results.get('meta.page.total_pages'),
+      totalRecords: results.get('meta.page.total_records'),
+      currentIterationCount: results.get('meta.page.current_iteration_count')
     });
 
     return this._super(...arguments);
@@ -36,7 +38,9 @@ export default Ember.Mixin.create({
     controller.setProperties({
       pageNumber: parseInt(this.get('pageNumber')),
       pageSize: parseInt(this.get('pageSize')),
-      totalPages: parseInt(this.get('totalPages'))
+      totalPages: parseInt(this.get('totalPages')),
+      totalRecords: parseInt(this.get('totalRecords')),
+      currentIterationCount: parseInt(this.get('currentIterationCount')),
     });
   },
 
