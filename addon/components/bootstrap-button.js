@@ -7,7 +7,7 @@ export default Ember.Component.extend(PropTypeMixin, {
   layout,
   tagName: 'button',
   classNames: ['btn'],
-  attributeBindings: ['disabledButton:disabled', 'type'],
+  attributeBindings: ['disabledButton:disabled', 'type', 'aria-label'],
 
   propTypes: {
     action: PropTypes.func.isRequired,

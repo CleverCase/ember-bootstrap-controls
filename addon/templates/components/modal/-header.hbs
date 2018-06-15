@@ -4,9 +4,12 @@
   <h5 class="modal-title">
     {{title}}
   </h5>
-  {{#if showClose}}
-    <button type="button" class="close" aria-label="Close" {{action 'closeModal'}}>
+  {{#if showCloseInHeader}}
+    {{#bootstrap-button
+      classNames="close"
+      aria-label="Close"
+      action=(action 'closeModal')}}
       <span aria-hidden="true">&times;</span>
-    </button>
+    {{/bootstrap-button}}
   {{/if}}
 {{/if}}
