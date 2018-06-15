@@ -1,0 +1,39 @@
+<div class="modal-dialog" role="document">
+  <div class="modal-content">
+    {{#if hasBlock}}
+      {{yield (hash
+        isOpen=isOpen
+        toggle=(action 'toggleModal')
+        close=(action 'modalClose')
+        accept=acceptAction
+        header=(component 'modal/-header'
+          title=title
+          showClose=showCloseInHeader
+          modalClose=(action 'modalClose')
+        )
+        body=(component 'modal/-body' content=modalBodyContent)
+        footer=(component 'modal/-footer'
+          btnAcceptLabel=btnAcceptLabel
+          btnAcceptStyle=btnAcceptStyle
+          btnCloseLabel=btnCloseLabel
+          btnCloseStyle=btnCloseStyle
+          acceptAction=acceptAction
+          modalClose=(action 'modalClose')
+        )
+      )}}
+    {{else}}
+      {{modal/-header
+        title=title
+        showClose=showCloseInHeader
+        modalClose=(action 'modalClose')}}
+      {{modal/-body content=modalBodyContent}}
+      {{modal/-footer
+        btnAcceptLabel=btnAcceptLabel
+        btnAcceptStyle=btnAcceptStyle
+        btnCloseLabel=btnCloseLabel
+        btnCloseStyle=btnCloseStyle
+        acceptAction=acceptAction
+        modalClose=(action 'modalClose')}}
+    {{/if}}
+  </div>
+</div>

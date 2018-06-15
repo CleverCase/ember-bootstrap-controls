@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../../templates/components/modal/modal-header';
+import layout from '../../templates/components/modal/-header';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
@@ -15,7 +15,7 @@ export default Ember.Component.extend({
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
 
-  tagName: '',
+  classNames: ['modal-header'],
 
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)

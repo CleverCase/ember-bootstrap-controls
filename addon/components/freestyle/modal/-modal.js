@@ -1,7 +1,7 @@
 import Ember from 'ember';
-import layout from '../../../templates/components/freestyle/modal/modal-container';
+import layout from '../../../templates/components/freestyle/modal/-modal';
 import { BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
-import { propDefinitions } from '../../modal/modal-container';
+import { propDefinitions } from '../../modal/-modal';
 
 export default Ember.Component.extend({
   layout,

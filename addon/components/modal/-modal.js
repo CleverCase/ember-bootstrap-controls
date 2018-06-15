@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../../templates/components/modal/modal-container';
+import layout from '../../templates/components/modal/-modal';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { task } from 'ember-concurrency';
@@ -57,20 +57,16 @@ export default Ember.Component.extend({
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
 
-  tagName: '',
-  classNames: '',
-
-  modalId: Ember.computed(function() {
-    return `${Ember.guidFor(this)}_modal`;
-  }),
+  attributeBindings: ['role'],
+  classNames: 'modal',
+  role: 'dialog',
 
   modalObj: Ember.computed(function() {
-    return $('#' + this.get('modalId'));
+    return $('#' + Ember.guidFor(this));
   }),
 
   didUpdateAttrs() {
     this._super(...arguments);
-
     let isOpen = this.get('isOpen');
     let modalObj = this.get('modalObj');
 
@@ -107,7 +103,7 @@ export default Ember.Component.extend({
     },
 
     toggleModal() {
-      Ember.Logger.warn('`toggle` on `{{modal/modal-container}}` is deprecated and will be removed');
+      Ember.Logger.warn('`toggle` on `{{modal/-modal}}` is deprecated and will be removed');
       this.toggleProperty('isOpen');
     }
   }

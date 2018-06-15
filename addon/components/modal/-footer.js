@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../../templates/components/modal/modal-footer';
+import layout from '../../templates/components/modal/-footer';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
@@ -29,8 +29,7 @@ export const propDefinitions = {
 export default Ember.Component.extend({
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
-
-  tagName: '',
+  classNames: ['modal-footer'],
 
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)

@@ -5,9 +5,9 @@
     as |collection|
   }}
     {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-modal-container' name='BasicEmberBootstrapControls'}}
+      {{#freestyle-usage 'basic-modal' name='BasicEmberBootstrapControls'}}
 
-        {{modal/modal-container
+        {{modal/-modal
           isOpen=isModalOpen
           title="Simple Modal"
           modalBodyContent=sampleContent
@@ -18,9 +18,9 @@
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-modal-container' name='AdvancedEmberBootstrapControls'}}
+      {{#freestyle-usage 'advanced-modal' name='AdvancedEmberBootstrapControls'}}
 
-        {{modal/modal-container
+        {{modal/-modal
           isOpen=isModalOpen
           title="Simple Modal"
           btnAcceptLabel="Ok"
@@ -40,17 +40,17 @@
     {{/collection.variant}}
 
     {{#collection.variant key='Custom Sub Components'}}
-      {{#freestyle-usage 'advanced-modal-container' name='CustomEmberBootstrapControls'}}
+      {{#freestyle-usage 'advanced-modal' name='CustomEmberBootstrapControls'}}
 
-        {{#modal/modal-container isOpen=isModalOpen as |modal|}}
+        {{#modal/-modal isOpen=isModalOpen as |modal|}}
           {{modal.header title="Block Modal" showCloseInHeader=true}}
-          {{#modal/modal-body}}
+          {{#modal/-body}}
             <div>
             <h1>Content!</h1>
             <p>Some important stuff to read.</p>
             <p class="text-danger">Some Red text to read</p>
             </div>
-          {{/modal/modal-body}}
+          {{/modal/-body}}
           {{modal.footer
             btnAcceptLabel="Save"
             btnAcceptStyle="info"
@@ -58,7 +58,7 @@
             btnCloseStyle="link"
             acceptAction=(action 'acceptModal')
             closeAction=(action 'closeModal')}}
-        {{/modal/modal-container}}
+        {{/modal/-modal}}
 
         <button class="btn btn-sm btn-primary" {{action 'openModal'}}>Open Modal</button>
       {{/freestyle-usage}}

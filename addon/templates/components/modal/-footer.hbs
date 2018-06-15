@@ -1,0 +1,15 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  {{#bootstrap-button
+    classNames=(concat "btn-" (if btnCloseStyle btnCloseStyle "secondary"))
+    action=modalClose}}
+    {{btnCloseLabel}}
+  {{/bootstrap-button}}
+
+  {{#bootstrap-button
+    classNames=(concat "btn-" (if btnAcceptStyle btnAcceptStyle "primary"))
+    action=acceptAction}}
+    {{btnAcceptLabel}}
+  {{/bootstrap-button}}
+{{/if}}
