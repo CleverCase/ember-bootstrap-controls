@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
+  * [#165](https://github.com/wildland/ember-bootstrap-controls/issues/165): Added bootstrap modal. ([@chadzink)
   * [#142](https://github.com/wildland/ember-bootstrap-controls/issues/142): Added contribution guidelines and documentations. Also added blueprints. ([@jweakley][])
   * [#145](https://github.com/wildland/ember-bootstrap-controls/issues/145): Added new email type input. ([@jweakley][])
 ### Changed
