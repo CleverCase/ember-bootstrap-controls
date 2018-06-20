@@ -9,8 +9,8 @@
   {{#if hasBlock}}
     {{yield
       (hash
-        label=(component control.label for=control.inputId)
-        help=(component control.help helpId=conrol.helpId help=control.help )
+        label=(component control.label)
+        help=(component control.help)
         control=control
         input=(component 'bootstrap/-input'
           value=value
