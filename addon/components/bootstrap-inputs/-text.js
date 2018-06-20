@@ -2,23 +2,13 @@ import Ember from 'ember';
 import layout from '../../templates/components/bootstrap-inputs/-text';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
-
-const autocompleteTypes = ['off', 'on', 'name', 'honorific-prefix',
-  'given-name', 'additional-name', 'family-name', 'honorific-suffix',
-  'nickname', 'username', 'organization-title', 'organization',
-  'street-address', 'address-line1',
-  'address-line2', 'address-line3', 'address-level4', 'address-level3',
-  'address-level2', 'address-level1', 'country', 'country-name', 'postal-code',
-  'cc-name', 'cc-given-name', 'cc-additional-name', 'cc-family-name',
-  'cc-number', 'cc-exp', 'cc-exp-month', 'cc-exp-year', 'cc-csc', 'cc-type',
-  'transaction-currency', 'transaction-amount', 'language', 'bday', 'bday-day',
-  'bday-month', 'bday-year', 'sex'];
+import autoCompleteTypes from '../../utils/auto-complete-types';
 
 export const propDefinitions = {
   autocomplete: {
     default: 'on',
     description: 'Indicates whether the value can be automatically completed by the browser.',
-    type: PropTypes.oneOf(autocompleteTypes),
+    type: PropTypes.oneOf(autoCompleteTypes),
   },
   disabled: {
     description: 'Indicates whether the control is disabled',
@@ -33,6 +23,7 @@ export const propDefinitions = {
     type: PropTypes.string,
   },
   label: {
+    default: 'Text',
     description: 'The label for the input.',
     type: PropTypes.string,
   },
@@ -75,11 +66,6 @@ export const propDefinitions = {
     description: 'A string that is the value for the control.',
     type: PropTypes.string.isRequired,
   },
-  label: {
-    default: 'Text',
-    description: 'The label shown above the input box.',
-    type: PropTypes.string,
-  }
 };
 
 export default Ember.Component.extend({
