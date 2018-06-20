@@ -1,0 +1,19 @@
+{{#section.subsection name='Search Input'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-bootstrap-inputs--search' name='Basic Search Input'}}
+        {{bootstrap-inputs/-search}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-bootstrap-inputs-search' name='Advanced Search Input'}}
+        {{bootstrap-inputs/-search}}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}
