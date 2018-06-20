@@ -12,8 +12,7 @@ const autocompleteTypes = ['off', 'on', 'name', 'honorific-prefix',
   'cc-name', 'cc-given-name', 'cc-additional-name', 'cc-family-name',
   'cc-number', 'cc-exp', 'cc-exp-month', 'cc-exp-year', 'cc-csc', 'cc-type',
   'transaction-currency', 'transaction-amount', 'language', 'bday', 'bday-day',
-  'bday-month', 'bday-year', 'sex', 'tel', 'tel-country-code', 'tel-national',
-  'tel-area-code', 'tel-local', 'tel-local-prefix', 'tel-local-suffix', 'tel-extension'];
+  'bday-month', 'bday-year', 'sex'];
 
 export const propDefinitions = {
   autocomplete: {
