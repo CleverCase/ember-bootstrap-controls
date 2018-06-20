@@ -3,12 +3,14 @@
   errors=errors
   srOnly=srOnly
   label=label
+  help=help
   as |control|
 }}
   {{#if hasBlock}}
     {{yield
       (hash
         label=(component control.label for=control.inputId)
+        help=(component control.help helpId=conrol.helpId help=control.help )
         control=control
         input=(component 'bootstrap/-input'
           value=value
@@ -29,7 +31,7 @@
       )
     }}
   {{else}}
-    {{control.label for=control.inputId}}
+    {{control.label}}
     {{bootstrap/-input
       value=value
       elementId=control.inputId
@@ -47,8 +49,7 @@
       tabindex=tabindex
       helpId=control.helpId
     }}
-    {{#if help}}
-      <small id={{control.helpId}} class='text-muted'>{{help}}</small>
-    {{/if}}
+    {{control.help}}
   {{/if}}
+
 {{/bootstrap/control-wrapper}}
