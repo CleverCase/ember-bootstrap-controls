@@ -25,7 +25,7 @@ export const propDefinitions = {
   label: {
     default: 'Search',
     description: 'The label for the input.',
-    type: PropTypes.string,
+    type: PropTypes.string.isRequired,
   },
   maxlength: {
     description: 'The maximum number of characters (in UTF-16 code units) that the user can enter.',
