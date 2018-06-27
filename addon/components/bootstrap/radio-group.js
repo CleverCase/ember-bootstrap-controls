@@ -16,11 +16,6 @@ export const propDefinitions = {
     description: 'Additonal text to provide additional context to the user that is displayed below the input.',
     type: PropTypes.string,
   },
-  readonly: {
-    default: false,
-    description: 'Indicates that the user cannot modify the value of the control.',
-    type: PropTypes.bool,
-  },
   inline: {
     default: false,
     description: 'Adds `form-check-inline` to all radio inputs to create an inline group.',
