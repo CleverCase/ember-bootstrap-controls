@@ -2,7 +2,16 @@ import Ember from 'ember';
 import layout from '../../templates/components/bootstrap-inputs/-search';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
-import autoCompleteTypes from '../../utils/auto-complete-types';
+const autoCompleteTypes = ['off', 'on', 'name', 'honorific-prefix',
+  'given-name', 'additional-name', 'family-name', 'honorific-suffix',
+  'nickname', 'username', 'organization-title', 'organization',
+  'street-address', 'address-line1',
+  'address-line2', 'address-line3', 'address-level4', 'address-level3',
+  'address-level2', 'address-level1', 'country', 'country-name', 'postal-code',
+  'cc-name', 'cc-given-name', 'cc-additional-name', 'cc-family-name',
+  'cc-number', 'cc-exp', 'cc-exp-month', 'cc-exp-year', 'cc-csc', 'cc-type',
+  'transaction-currency', 'transaction-amount', 'language', 'bday', 'bday-day',
+  'bday-month', 'bday-year', 'sex'];
 
 export const propDefinitions = {
   autocomplete: {
