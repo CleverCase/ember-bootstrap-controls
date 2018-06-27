@@ -1,0 +1,37 @@
+<legend id="{{labelId}}">{{label}}</legend>
+{{radioClassNames}}
+{{#each options as |option|}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        radio=(component
+          'bootstrap-inputs/-radio'
+          inline=inline
+          value=(eq option value)
+          label=option
+          groupId=inputId
+          srOnly=srOnly
+          onClick=(action onChange option)
+          role='radio'
+        )
+      )
+    }}
+  {{else}}
+    {{bootstrap-inputs/-radio
+      inline=inline
+      value=(eq option value)
+      label=option
+      groupId=inputId
+      srOnly=srOnly
+      onClick=(action onChange option)
+    }}
+  {{/if}}
+{{/each}}
+{{bootstrap/-help help=help id=helpId}}
+{{#if errors}}
+  <div class="alert alert-danger" role="alert">
+    {{#each errors as |error|}}
+      <span>{{error.message}}</span>
+    {{/each}}
+  </div>
+{{/if}}
