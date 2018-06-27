@@ -1,4 +1,4 @@
-<legend id="{{labelId}}">{{label}}</legend>
+<legend class={{if srOnly 'srOnly'}} id="{{labelId}}">{{label}}</legend>
 {{radioClassNames}}
 {{#each options as |option|}}
   {{#if hasBlock}}
@@ -10,7 +10,6 @@
           value=(eq option value)
           label=option
           groupId=inputId
-          srOnly=srOnly
           onClick=(action onChange option)
           role='radio'
         )
@@ -22,7 +21,6 @@
       value=(eq option value)
       label=option
       groupId=inputId
-      srOnly=srOnly
       onClick=(action onChange option)
     }}
   {{/if}}
