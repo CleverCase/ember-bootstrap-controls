@@ -32,10 +32,6 @@ export const propDefinitions = {
     description: 'Additonal text to provide additional context to the user that is displayed below the input.',
     type: PropTypes.string,
   },
-  label: {
-    description: 'The label for the input.',
-    type: PropTypes.string,
-  },
   maxlength: {
     description: 'The maximum number of characters (in UTF-16 code units) that the user can enter.',
     type: PropTypes.number,
