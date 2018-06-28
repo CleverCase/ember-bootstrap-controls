@@ -20,6 +20,7 @@ All notable changes to this project will be documented in this file.
 ### Removed
 ### Fixed
   * Updated instructions on running the Dummy App locally. ([@Nathan-O][])
+  * Updated npm packages. ([@jweakley][])
 ### Security
 
 [@jweakley]: https://github.com/jweakley
