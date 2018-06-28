@@ -1,0 +1,19 @@
+{{#section.subsection name='bootstrapInputsColor'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-bootstrap-inputs--color' name='Basic EmberBootstrapControls'}}
+        {{bootstrap-inputs/-color}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-bootstrap-inputs--color' name='Advanced EmberBootstrapControls'}}
+        {{bootstrap-inputs/-color}}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}
