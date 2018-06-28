@@ -66,6 +66,11 @@ To run the dummy app, from the root directory, simply run `npm install` then `np
 
 ## Running Tests
 
+### Browser
+* `npm start`
+* `localhost:4200/tests`
+
+### Cli
 * `ember test`
 * `ember test --server`
 

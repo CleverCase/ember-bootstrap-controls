@@ -7,8 +7,14 @@ All notable changes to this project will be documented in this file.
   * [#145](https://github.com/wildland/ember-bootstrap-controls/issues/145): Added new email type input. ([@jweakley][])
   * [#146](https://github.com/wildland/ember-bootstrap-controls/issues/146): Added new password type input. ([@Nathan-O][])
   * [#157](https://github.com/wildland/ember-bootstrap-controls/issues/157): Added new url type input. ([@jweakley][])
-  * Updated route mixin to better handle adjustable page sizes and associated documentation. ([@jweakley][])
+  * [#148](https://github.com/wildland/ember-bootstrap-controls/issues/148): Added new text type input. ([@harokevin][])
+  * [#154](https://github.com/wildland/ember-bootstrap-controls/issues/154): Added new range type input. ([@flarinerin][])
+  * [#147](https://github.com/wildland/ember-bootstrap-controls/issues/147): Added new search type input. ([@harokevin][])
+  * [#153](https://github.com/wildland/ember-bootstrap-controls/issues/153): Added new radio and radio group inputs. ([@jweakley][])
+  * [#149](https://github.com/wildland/ember-bootstrap-controls/issues/149): Added new checkbox input. ([@jweakley][])
+  * [#155](https://github.com/wildland/ember-bootstrap-controls/issues/155): Added new tel type input. ([@Nathan-O][])
   * [#152](https://github.com/wildland/ember-bootstrap-controls/issues/152): Added new number type input. ([@jweakley][])
+  * Updated route mixin to better handle adjustable page sizes and associated documentation. ([@jweakley][])
 ### Changed
   * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
 ### Deprecated
@@ -19,3 +25,5 @@ All notable changes to this project will be documented in this file.
 
 [@jweakley]: https://github.com/jweakley
 [@Nathan-O]: https://github.com/Nathan-O
+[@harokevin]: https://github.com/harokevin
+[@flarinerin]: http://github.com/flarinerin

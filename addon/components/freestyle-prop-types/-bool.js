@@ -9,7 +9,6 @@ export default Ember.Component.extend({
   },
   actions: {
     booleanUpdated(value) {
-      this.set('dataValue', value);
       this.set(`data.${this.get('propDefinition.name')}`, value)
     }
   },

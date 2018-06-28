@@ -1,0 +1,43 @@
+
+{{#if hasBlock}}
+  {{yield
+    (hash
+      label=(component 'bootstrap/-label'
+        classNames='form-check-label'
+        label=label
+        srOnly=srOnly
+        for=inputId
+      )
+      inputId=inputId
+      input=(component 'bootstrap/-checkbox'
+        checked=value
+        elementId=inputId
+        name=groupId
+        type='checkbox'
+        disabled=disabled
+        required=required
+        srOnly=srOnly
+        tabindex=tabindex
+        onClick=onClick
+      )
+    )
+  }}
+{{else}}
+  {{bootstrap/-checkbox
+    checked=value
+    elementId=inputId
+    name=groupId
+    type='checkbox'
+    disabled=disabled
+    required=required
+    srOnly=srOnly
+    tabindex=tabindex
+    onClick=onClick
+  }}
+  {{bootstrap/-label
+    classNames='form-check-label'
+    label=label
+    srOnly=srOnly
+    for=inputId
+  }}
+{{/if}}

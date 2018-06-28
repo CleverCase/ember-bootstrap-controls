@@ -5,7 +5,7 @@
   label=label
   as |control|
 }}
-  {{control.label elementId=control.inputId}}
+  {{control.label for=null elementId=control.inputId}}
   {{#power-select-multiple
     ariaLabelledBy=control.inputId
     selected=selected
