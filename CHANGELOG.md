@@ -8,6 +8,7 @@ All notable changes to this project will be documented in this file.
   * [#146](https://github.com/wildland/ember-bootstrap-controls/issues/146): Added new password type input. ([@Nathan-O][])
   * [#157](https://github.com/wildland/ember-bootstrap-controls/issues/157): Added new url type input. ([@jweakley][])
   * [#148](https://github.com/wildland/ember-bootstrap-controls/issues/148): Added new text type input. ([@harokevin][])
+  * [#154](https://github.com/wildland/ember-bootstrap-controls/issues/154): Added new range type input. ([@flarinerin][])
   * Updated route mixin to better handle adjustable page sizes and associated documentation. ([@jweakley][])
   * [#153](https://github.com/wildland/ember-bootstrap-controls/issues/153): Added new radio and radio group inputs. ([@jweakley][])
   * [#149](https://github.com/wildland/ember-bootstrap-controls/issues/149): Added new checkbox input. ([@jweakley][])
@@ -22,3 +23,4 @@ All notable changes to this project will be documented in this file.
 [@jweakley]: https://github.com/jweakley
 [@Nathan-O]: https://github.com/Nathan-O
 [@harokevin]: https://github.com/harokevin
+[@flarinerin]: http://github.com/flarinerin
