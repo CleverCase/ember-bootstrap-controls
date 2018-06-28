@@ -1,8 +1,0 @@
-{{#if isChecked}}
-  <input name='{{groupName}}' checked='true' type='radio' onclick={{action onChange option}}>
-  {{yield option}}
-{{else}}
-  <input name='{{groupName}}' type='radio' onclick={{action onChange option}}>
-  {{yield option}}
-{{/if}}
-
