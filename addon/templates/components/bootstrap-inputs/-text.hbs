@@ -3,6 +3,7 @@
   errors=errors
   srOnly=srOnly
   label=label
+  help=help
   as |control|
 }}
   {{#if hasBlock}}
@@ -14,7 +15,7 @@
         input=(component 'bootstrap/-input'
           value=value
           elementId=control.inputId
-          type='password'
+          type='text'
           disabled=disabled
           autocomplete=autocomplete
           maxlength=maxlength
@@ -25,6 +26,7 @@
           required=required
           srOnly=srOnly
           tabindex=tabindex
+          helpId=control.helpId
         )
       )
     }}
@@ -33,7 +35,7 @@
     {{bootstrap/-input
       value=value
       elementId=control.inputId
-      type='password'
+      type='text'
       disabled=disabled
       autocomplete=autocomplete
       maxlength=maxlength

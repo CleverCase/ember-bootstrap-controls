@@ -1,14 +1,9 @@
 import Ember from 'ember';
-import layout from '../../templates/components/bootstrap-inputs/-url';
+import layout from '../../templates/components/bootstrap/radio-group';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
 export const propDefinitions = {
-  autocomplete: {
-    default: 'url',
-    description: 'Indicates whether the value can be automatically completed by the browser.',
-    type: PropTypes.oneOf(['off', 'url']),
-  },
   disabled: {
     description: 'Indicates whether the control is disabled',
     type: PropTypes.bool,
@@ -21,30 +16,9 @@ export const propDefinitions = {
     description: 'Additonal text to provide additional context to the user that is displayed below the input.',
     type: PropTypes.string,
   },
-  label: {
-    default: 'Url',
-    description: 'The label for the input.',
-    type: PropTypes.string.isRequired,
-  },
-  maxlength: {
-    description: 'The maximum number of characters (in UTF-16 code units) that the user can enter.',
-    type: PropTypes.number,
-  },
-  minlength: {
-    description: 'The minimum number of characters (in UTF-16 code units) that the user can enter.',
-    type: PropTypes.number,
-  },
-  pattern: {
-    description: "A regular expression that the control's value is checked against.",
-    type: PropTypes.instanceOf(RegExp),
-  },
-  placeholder: {
-    description: 'A hint to the user of what can be entered in the control. This is displayed in the empty input.',
-    type: PropTypes.string,
-  },
-  readonly: {
+  inline: {
     default: false,
-    description: 'Indicates that the user cannot modify the value of the control.',
+    description: 'Adds `form-check-inline` to all radio inputs to create an inline group.',
     type: PropTypes.bool,
   },
   required: {
@@ -57,21 +31,44 @@ export const propDefinitions = {
     description: 'Indicated that the label should be hidden to all devices except screen readers',
     type: PropTypes.bool,
   },
-  tabindex: {
-    description: 'The position of the element in the tabbing navigation order for the current document.',
-    type: PropTypes.number,
-  },
   value: {
     description: 'A string that is the value for the control.',
     type: PropTypes.string.isRequired,
   },
+  label: {
+    default: 'Text',
+    description: 'The label shown above the input box.',
+    type: PropTypes.string,
+  },
+  options: {
+    description: 'A collection of option values for each radio button.',
+    type: PropTypes.arrayOf(PropTypes.object).isRequired,
+  },
+  onChange: {
+    description: 'A function that is called when the radio is changed.',
+    type: PropTypes.func.isRequired,
+  },
 };
 
 export default Ember.Component.extend({
+  tagName: 'fieldset',
+  attributeBindings: ['disabled', 'role', 'labelId:aria-labelledby'],
+  role: 'radiogroup',
   layout,
+
   propTypes: BuilderForPropTypes(propDefinitions),
 
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)
   },
+
+  inputId: Ember.computed(function() {
+    return `bootstrap-control-input-${Ember.guidFor(this)}`;
+  }),
+  helpId: Ember.computed(function() {
+    return `${Ember.guidFor(this)}-help`;
+  }),
+  labelId: Ember.computed(function() {
+    return `${Ember.guidFor(this)}-group-label`;
+  }),
 });

@@ -1,25 +1,23 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('bootstrap-checkbox-group', 'Integration | Component | bootstrap checkbox group', {
+moduleForComponent('bootstrap-inputs/-radio', 'Integration | Component | bootstrap inputs/ radio', {
   integration: true
 });
 
 test('it renders', function(assert) {
-  assert.expect(2);
-
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{bootstrap-checkbox-group}}`);
+  this.render(hbs`{{bootstrap-inputs/-radio}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#bootstrap-checkbox-group}}
+    {{#bootstrap-inputs/-radio}}
       template block text
-    {{/bootstrap-checkbox-group}}
+    {{/bootstrap-inputs/-radio}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');

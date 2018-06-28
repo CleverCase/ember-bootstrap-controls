@@ -1,14 +1,9 @@
 import Ember from 'ember';
-import layout from '../../templates/components/bootstrap-inputs/-password';
+import layout from '../../templates/components/bootstrap-inputs/-range';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
 export const propDefinitions = {
-  autocomplete: {
-    default: 'current-password',
-    description: 'Indicates whether the value can be automatically completed by the browser.',
-    type: PropTypes.oneOf(['off', 'current-password', 'new-password']),
-  },
   disabled: {
     description: 'Indicates whether the control is disabled',
     type: PropTypes.bool,
@@ -22,25 +17,16 @@ export const propDefinitions = {
     type: PropTypes.string,
   },
   label: {
-    default: 'Password',
     description: 'The label for the input.',
     type: PropTypes.string.isRequired,
   },
-  maxlength: {
-    description: 'The maximum number of characters (in UTF-16 code units) that the user can enter.',
+  max: {
+    description: 'The maximum value for this item, which must not be less than its minimum (min attribute) value.',
     type: PropTypes.number,
   },
-  minlength: {
-    description: 'The minimum number of characters (in UTF-16 code units) that the user can enter.',
+  min: {
+    description: 'The minimum value for this item, which must not be greater than its maximum (max attribute) value.',
     type: PropTypes.number,
-  },
-  pattern: {
-    description: "A regular expression that the control's value is checked against.",
-    type: PropTypes.instanceOf(RegExp),
-  },
-  placeholder: {
-    description: 'A hint to the user of what can be entered in the control. This is displayed in the empty input.',
-    type: PropTypes.string,
   },
   readonly: {
     default: false,
@@ -57,13 +43,18 @@ export const propDefinitions = {
     description: 'Indicated that the label should be hidden to all devices except screen readers',
     type: PropTypes.bool,
   },
+  step: {
+    default: 1,
+    description: 'Works with the min and max attributes to limit the increments at which a value can be set. It can be the string any or a positive floating point number. If this attribute is not set to any, the control accepts only values at multiples of the step value greater than the minimum.',
+    type: PropTypes.number,
+  },
   tabindex: {
     description: 'The position of the element in the tabbing navigation order for the current document.',
     type: PropTypes.number,
   },
   value: {
-    description: 'A string that is the value for the control.',
-    type: PropTypes.string.isRequired,
+    description: 'A number that is the value for the control.',
+    type: PropTypes.number.isRequired,
   },
 };
 
@@ -72,6 +63,7 @@ export default Ember.Component.extend({
   propTypes: BuilderForPropTypes(propDefinitions),
 
   getDefaultProps() {
-    return BuilderForPropDefaults(propDefinitions);
+    return BuilderForPropDefaults(propDefinitions)
   },
+
 });

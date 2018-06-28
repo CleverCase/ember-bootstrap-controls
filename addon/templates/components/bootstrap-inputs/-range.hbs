@@ -3,6 +3,7 @@
   errors=errors
   srOnly=srOnly
   label=label
+  help=help
   as |control|
 }}
   {{#if hasBlock}}
@@ -14,16 +15,14 @@
         input=(component 'bootstrap/-input'
           value=value
           elementId=control.inputId
-          type='password'
+          type='range'
           disabled=disabled
-          autocomplete=autocomplete
-          maxlength=maxlength
-          minlength=minlength
-          pattern=pattern
-          placeholder=placeholder
+          max=max
+          min=min
           readonly=readonly
           required=required
           srOnly=srOnly
+          step=step
           tabindex=tabindex
         )
       )
@@ -33,19 +32,17 @@
     {{bootstrap/-input
       value=value
       elementId=control.inputId
-      type='password'
+      type='range'
       disabled=disabled
-      autocomplete=autocomplete
-      maxlength=maxlength
-      minlength=minlength
-      pattern=pattern
-      placeholder=placeholder
+      max=max
+      min=min
       readonly=readonly
       required=required
       srOnly=srOnly
+      step=step
       tabindex=tabindex
-      helpId=control.helpId
     }}
     {{control.help}}
   {{/if}}
+
 {{/bootstrap/control-wrapper}}
