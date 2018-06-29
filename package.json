@@ -19,7 +19,7 @@
     "test": "ember try:each"
   },
   "dependencies": {
-    "ember-bootstrap-datepicker": "git://github.com/wildland/ember-bootstrap-datepicker.git#config-in-tree-for-vendor",
+    "ember-bootstrap-datepicker": "git://github.com/wildland/ember-bootstrap-datepicker.git",
     "ember-cli-babel": "^6.3.0",
     "ember-cli-htmlbars": "^2.0.1",
     "ember-concurrency": "0.8.7",
