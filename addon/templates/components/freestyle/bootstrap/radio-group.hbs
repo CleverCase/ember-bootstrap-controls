@@ -37,9 +37,22 @@
           label=data.label
           options=options
           onChange=(action (mut data.value))
-          as |radioGroup|
+          as |radioGroup index|
         }}
-          {{radioGroup.radio}}
+          {{#radioGroup.radio as |radio|}}
+            {{radio.input}}
+            {{#if (eq index 0)}}
+              {{#radio.label as |label|}}
+                <span class="text-danger">{{label}}</span>
+              {{/radio.label}}
+            {{else if radioGroup.last}}
+              {{#radio.label as |label|}}
+                <span class="text-success">{{label}}</span>
+              {{/radio.label}}
+            {{else}}
+              {{radio.label}}
+            {{/if}}
+          {{/radioGroup.radio}}
         {{/bootstrap/radio-group}}
         {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
