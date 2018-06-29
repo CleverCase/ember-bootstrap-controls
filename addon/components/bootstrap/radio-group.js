@@ -62,6 +62,10 @@ export default Ember.Component.extend({
     return BuilderForPropDefaults(propDefinitions)
   },
 
+  lastIndex: Ember.computed('options', function() {
+    return this.get('options.length') - 1;
+  }),
+
   inputId: Ember.computed(function() {
     return `bootstrap-control-input-${Ember.guidFor(this)}`;
   }),
