@@ -1,6 +1,6 @@
 {
   "name": "ember-bootstrap-controls",
-  "version": "0.18.5",
+  "version": "0.18.3-alpha.1",
   "description": "The default blueprint for ember-cli addons.",
   "private": true,
   "keywords": [
