@@ -1,0 +1,11 @@
+<select id={{control.inputId}} class="{{if bootstrapCustomClass 'custom-select'}}" onchange={{action onChange value="target.value"}} autofocus={{autofocus}} disabled={{disabled}} multiple={{multiple}} required={{required}}>
+  {{#each options as |option|}}
+    <option value={{option}} selected={{eq option value}}>
+      {{#if hasBlock}}
+        {{yield option}}
+      {{else}}
+        {{option}}
+      {{/if}}
+    </option>
+  {{/each}}
+</select>

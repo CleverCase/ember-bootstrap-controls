@@ -13,6 +13,7 @@ All notable changes to this project will be documented in this file.
   * [#153](https://github.com/wildland/ember-bootstrap-controls/issues/153): Added new radio and radio group inputs. ([@jweakley][])
   * [#149](https://github.com/wildland/ember-bootstrap-controls/issues/149): Added new checkbox input. ([@jweakley][])
   * [#155](https://github.com/wildland/ember-bootstrap-controls/issues/155): Added new tel type input. ([@Nathan-O][])
+  * Added new simple select. ([@jweakley][])
   * Updated route mixin to better handle adjustable page sizes and associated documentation. ([@jweakley][])
 ### Changed
   * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
