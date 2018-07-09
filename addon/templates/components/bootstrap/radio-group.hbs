@@ -1,5 +1,5 @@
 <legend class={{if srOnly 'sr-only'}} id="{{labelId}}">{{label}}</legend>
-{{#each options as |option|}}
+{{#each options as |option index|}}
   {{#if hasBlock}}
     {{yield
       (hash
@@ -12,7 +12,11 @@
           onClick=(action onChange option)
           role='radio'
         )
+        index=index
+        first=(eq index 0)
+        last=(eq index lastIndex)
       )
+      index
     }}
   {{else}}
     {{bootstrap-inputs/-radio

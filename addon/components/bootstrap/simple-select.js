@@ -1,9 +1,19 @@
 import Ember from 'ember';
-import layout from '../../templates/components/bootstrap/radio-group';
+import layout from '../../templates/components/bootstrap/simple-select';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
 export const propDefinitions = {
+  autofocus: {
+    default: false,
+    description: 'This Boolean attribute lets you specify that a form control should have input focus when the page loads. Only one form element in a document can have the autofocus attribute.',
+    type: PropTypes.bool,
+  },
+  bootstrapCustomClass: {
+    default: false,
+    description: 'This Boolean attribute lets you specify custom-select class should be applied to the select.',
+    type: PropTypes.bool,
+  },
   disabled: {
     description: 'Indicates whether the control is disabled',
     type: PropTypes.bool,
@@ -16,9 +26,9 @@ export const propDefinitions = {
     description: 'Additonal text to provide additional context to the user that is displayed below the input.',
     type: PropTypes.string,
   },
-  inline: {
+  multiple: {
     default: false,
-    description: 'Adds `form-check-inline` to all radio inputs to create an inline group.',
+    description: 'This Boolean attribute indicates that multiple options can be selected in the list. If it is not specified, then only one option can be selected at a time. When multiple is specified, most browsers will show a scrolling list box instead of a single line dropdown.',
     type: PropTypes.bool,
   },
   required: {
@@ -51,28 +61,10 @@ export const propDefinitions = {
 };
 
 export default Ember.Component.extend({
-  tagName: 'fieldset',
-  attributeBindings: ['disabled', 'role', 'labelId:aria-labelledby'],
-  role: 'radiogroup',
   layout,
-
   propTypes: BuilderForPropTypes(propDefinitions),
 
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)
   },
-
-  lastIndex: Ember.computed('options', function() {
-    return this.get('options.length') - 1;
-  }),
-
-  inputId: Ember.computed(function() {
-    return `bootstrap-control-input-${Ember.guidFor(this)}`;
-  }),
-  helpId: Ember.computed(function() {
-    return `${Ember.guidFor(this)}-help`;
-  }),
-  labelId: Ember.computed(function() {
-    return `${Ember.guidFor(this)}-group-label`;
-  }),
 });

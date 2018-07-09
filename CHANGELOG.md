@@ -14,6 +14,7 @@ All notable changes to this project will be documented in this file.
   * [#149](https://github.com/wildland/ember-bootstrap-controls/issues/149): Added new checkbox input. ([@jweakley][])
   * [#155](https://github.com/wildland/ember-bootstrap-controls/issues/155): Added new tel type input. ([@Nathan-O][])
   * [#152](https://github.com/wildland/ember-bootstrap-controls/issues/152): Added new number type input. ([@jweakley][])
+  * Added new simple select. ([@jweakley][])
   * Updated route mixin to better handle adjustable page sizes and associated documentation. ([@jweakley][])
 ### Changed
   * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
@@ -21,6 +22,7 @@ All notable changes to this project will be documented in this file.
 ### Removed
 ### Fixed
   * Updated instructions on running the Dummy App locally. ([@Nathan-O][])
+  * Updated npm packages. ([@jweakley][])
 ### Security
 
 [@jweakley]: https://github.com/jweakley
