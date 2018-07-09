@@ -9,43 +9,44 @@
   {{#if hasBlock}}
     {{yield
       (hash
-        label=(component control.label)
-        help=(component control.help)
         control=control
         input=(component 'bootstrap/-input'
-          value=value
           elementId=control.inputId
-          type='url'
+          helpId=control.helpId
+          type='number'
           disabled=disabled
-          autocomplete=autocomplete
-          maxlength=maxlength
-          minlength=minlength
-          pattern=pattern
+          inputmode=inputmode
+          max=max
+          min=min
           placeholder=placeholder
           readonly=readonly
           required=required
+          step=step
           tabindex=tabindex
-          helpId=control.helpId
+          value=value
         )
       )
     }}
+
   {{else}}
-    {{control.label}}
+    {{control.label for=control.inputId}}
     {{bootstrap/-input
-      value=value
       elementId=control.inputId
-      type='url'
+      helpId=control.helpId
+      type='number'
       disabled=disabled
-      autocomplete=autocomplete
-      maxlength=maxlength
-      minlength=minlength
-      pattern=pattern
+      inputmode=inputmode
+      max=max
+      min=min
       placeholder=placeholder
       readonly=readonly
       required=required
+      step=step
       tabindex=tabindex
-      helpId=control.helpId
+      value=value
     }}
-    {{control.help}}
+    {{#if help}}
+      {{control.help}}
+    {{/if}}
   {{/if}}
 {{/bootstrap/control-wrapper}}
