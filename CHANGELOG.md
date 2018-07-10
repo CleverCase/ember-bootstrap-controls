@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
   * [#152](https://github.com/wildland/ember-bootstrap-controls/issues/152): Added new number type input. ([@jweakley][])
   * Added new simple select. ([@jweakley][])
   * Updated route mixin to better handle adjustable page sizes and associated documentation. ([@jweakley][])
+  * [#151](https://github.com/wildland/ember-bootstrap-controls/issues/151): Added new date type input. ([@Nathan-O][])
 ### Changed
   * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
 ### Deprecated
