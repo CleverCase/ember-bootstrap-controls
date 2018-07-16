@@ -62,6 +62,10 @@ export const propDefinitions = {
     description: 'Indicates that the label should be hidden to all devices except screen readers',
     type: PropTypes.bool,
   },
+  step: {
+    description: 'Works with the min and max attributes to limit the increments at which a value can be set. If this attribute is not set to any, the control accepts only values at multiples of the step value greater than the minimum.',
+    type: PropTypes.number,
+  },
   tabindex: {
     description: 'The position of the element in the tabbing navigation order for the current document.',
     type: PropTypes.number,
@@ -69,26 +73,6 @@ export const propDefinitions = {
   value: {
     description: 'A formatted string that is the value for the control.',
     type: PropTypes.date.isRequired,
-  },
-  autoclose: {
-    default: false,
-    description: 'Indicates whether or not the pop-up calander closes automatically after date selection',
-    type: PropTypes.bool,
-  },
-  clearBtn: {
-    default: true,
-    description: 'Indicates whether or not the date value can be cleared after selection',
-    type: PropTypes.bool,
-  },
-  todayBtn: {
-    default: true,
-    description: 'Indicate whether or not the current day will be highlighted in the calandar',
-    type: PropTypes.bool,
-  },
-  todayHighlight: {
-    default: true,
-    description: 'Indicate whether or not the current day will be highlighted in the calandar',
-    type: PropTypes.bool,
   },
 };
 

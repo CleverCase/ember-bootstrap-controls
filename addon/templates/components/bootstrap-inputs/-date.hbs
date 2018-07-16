@@ -11,25 +11,21 @@
         label=(component control.label for=control.inputId)
         control=control
         input=(component 'bootstrap/-input'
-        value=value
-        elementId=control.inputId
-        type='date'
-        disabled=disabled
-        autocomplete=autocomplete
-        maxlength=maxlength
-        minlength=minlength
-        multiple=multiple
-        pattern=pattern
-        placeholder=placeholder
-        readonly=readonly
-        required=required
-        srOnly=srOnly
-        tabindex=tabindex
-        helpId=control.helpId
-        autoclose=autoclose
-        clearBtn=clearBtn
-        todayBtn=todayBtn
-        todayHighlight=todayHighlight
+          value=value
+          elementId=control.inputId
+          type='date'
+          helpId=control.helpId
+          autocomplete=autocomplete
+          disabled=disabled
+          max=max
+          min=min
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          readonly=readonly
+          required=required
+          srOnly=srOnly
+          step=step
+          tabindex=tabindex
+          change=onChange
         )
       )
     }}
@@ -39,25 +35,21 @@
       value=value
       elementId=control.inputId
       type='date'
-      disabled=disabled
+      helpId=control.helpId
       autocomplete=autocomplete
-      maxlength=maxlength
-      minlength=minlength
-      multiple=multiple
-      pattern=pattern
-      placeholder=placeholder
+      disabled=disabled
+      max=max
+      min=min
+      pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
       readonly=readonly
       required=required
       srOnly=srOnly
+      step=step
       tabindex=tabindex
-      helpId=control.helpId
-      autoclose=autoclose
-      clearBtn=clearBtn
-      todayBtn=todayBtn
-      todayHighlight=todayHighlight
+      change=onChange
     }}
     {{#if help}}
-      <small id={{control.helpId}} class='text-muted'>{{help}}</small>
+      {{control.help}}
     {{/if}}
   {{/if}}
 {{/bootstrap/control-wrapper}}

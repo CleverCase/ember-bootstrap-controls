@@ -13,25 +13,20 @@
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-date-input' name='Advanced Date Input'}}
+        {{data.placeholder}}
         {{bootstrap-inputs/-date
+          autocomplete=data.autocomplete
           value=data.value
           disabled=data.disabled
-          autocomplete=data.autocomplete
-          maxlength=data.maxlength
-          minlength=data.minlength
-          multiple=data.multiple
-          pattern=data.pattern
-          placeholder=data.placeholder
+          max=data.max
+          min=data.min
           readonly=data.readonly
           required=data.required
           srOnly=data.srOnly
+          step=data.step
           tabindex=data.tabindex
           help=data.help
-          autoclose=data.autoclose
-          clearBtn=data.clearBtn
-          todayBtn=data.todayBtn
-          todayHighlight=data.todayHighlight}}
-          
+        }}
         {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
     {{/collection.variant}}
