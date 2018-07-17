@@ -1,5 +1,5 @@
 import Ember from 'ember';
-import layout from '../../templates/components/modal/-modal';
+import layout from '../../templates/components/modal/modal-container';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { task } from 'ember-concurrency';
@@ -103,7 +103,6 @@ export default Ember.Component.extend({
     },
 
     toggleModal() {
-      Ember.Logger.warn('`toggle` on `{{modal/-modal}}` is deprecated and will be removed');
       this.toggleProperty('isOpen');
     }
   }

@@ -7,7 +7,7 @@
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-modal' name='BasicEmberBootstrapControls'}}
 
-        {{modal/-modal
+        {{modal/modal-container
           isOpen=isModalOpen
           title="Simple Modal"
           modalBodyContent=sampleContent
@@ -20,7 +20,7 @@
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-modal' name='AdvancedEmberBootstrapControls'}}
 
-        {{modal/-modal
+        {{modal/modal-container
           isOpen=isModalOpen
           title="Simple Modal"
           btnAcceptLabel="Ok"
@@ -42,7 +42,7 @@
     {{#collection.variant key='Custom Sub Components'}}
       {{#freestyle-usage 'advanced-modal' name='CustomEmberBootstrapControls'}}
 
-        {{#modal/-modal isOpen=isModalOpen as |modal|}}
+        {{#modal/modal-container isOpen=isModalOpen as |modal|}}
           {{modal.header title="Block Modal" showCloseInHeader=true}}
           {{#modal/-body}}
             <div>
@@ -58,7 +58,7 @@
             btnCloseStyle="link"
             acceptAction=(action 'acceptModal')
             closeAction=(action 'closeModal')}}
-        {{/modal/-modal}}
+        {{/modal/modal-container}}
 
         <button class="btn btn-sm btn-primary" {{action 'openModal'}}>Open Modal</button>
       {{/freestyle-usage}}
