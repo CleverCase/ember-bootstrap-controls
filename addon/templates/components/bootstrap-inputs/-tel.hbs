@@ -1,0 +1,49 @@
+{{#bootstrap/control-wrapper
+  classNames=classNames
+  errors=errors
+  srOnly=srOnly
+  label=label
+  as |control|
+}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        control=control
+        input=(component 'bootstrap/-input'
+          value=value
+          elementId=control.inputId
+          type='tel'
+          disabled=disabled
+          autocomplete=autocomplete
+          maxlength=maxlength
+          minlength=minlength
+          pattern=pattern
+          placeholder=placeholder
+          readonly=readonly
+          required=required
+          srOnly=srOnly
+          tabindex=tabindex
+        )
+      )
+    }}
+  {{else}}
+    {{control.label}}
+    {{bootstrap/-input
+      value=value
+      elementId=control.inputId
+      type='tel'
+      disabled=disabled
+      autocomplete=autocomplete
+      maxlength=maxlength
+      minlength=minlength
+      pattern=pattern
+      placeholder=placeholder
+      readonly=readonly
+      required=required
+      srOnly=srOnly
+      tabindex=tabindex
+      helpId=control.helpId
+    }}
+    {{control.help}}
+  {{/if}}
+{{/bootstrap/control-wrapper}}

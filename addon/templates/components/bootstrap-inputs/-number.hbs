@@ -1,0 +1,52 @@
+{{#bootstrap/control-wrapper
+  classNames=classNames
+  errors=errors
+  srOnly=srOnly
+  label=label
+  help=help
+  as |control|
+}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        control=control
+        input=(component 'bootstrap/-input'
+          elementId=control.inputId
+          helpId=control.helpId
+          type='number'
+          disabled=disabled
+          inputmode=inputmode
+          max=max
+          min=min
+          placeholder=placeholder
+          readonly=readonly
+          required=required
+          step=step
+          tabindex=tabindex
+          value=value
+        )
+      )
+    }}
+
+  {{else}}
+    {{control.label for=control.inputId}}
+    {{bootstrap/-input
+      elementId=control.inputId
+      helpId=control.helpId
+      type='number'
+      disabled=disabled
+      inputmode=inputmode
+      max=max
+      min=min
+      placeholder=placeholder
+      readonly=readonly
+      required=required
+      step=step
+      tabindex=tabindex
+      value=value
+    }}
+    {{#if help}}
+      {{control.help}}
+    {{/if}}
+  {{/if}}
+{{/bootstrap/control-wrapper}}

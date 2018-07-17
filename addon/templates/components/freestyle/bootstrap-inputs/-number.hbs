@@ -1,0 +1,36 @@
+{{#section.subsection name='Number Input'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-bootstrap-inputs-number' name='Basic EmberBootstrapControls'}}
+        {{bootstrap-inputs/-number
+          label='Basic Number Input'
+          value=basicValue
+        }}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-bootstrap-inputs-number' name='Advanced EmberBootstrapControls'}}
+        {{bootstrap-inputs/-number
+          label=data.label
+          help=data.help
+          srOnly=data.srOnly
+          disabled=data.disabled
+          inputmode=data.inputmode
+          max=data.max
+          min=data.min
+          placeholder=data.placeholder
+          readonly=data.readonly
+          required=data.required
+          step=data.step
+          tabindex=data.tabindex
+          value=data.value
+        }}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}

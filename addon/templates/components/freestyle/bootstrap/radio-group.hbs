@@ -1,0 +1,61 @@
+{{#section.subsection name='Radio Input Group'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-bootstrap-radio-group' name='Basic Radio Group'}}
+        <p>Most Favorite: {{mostFavorite}}</p>
+        <p>Least Favorite: {{leastFavorite}}</p>
+        {{bootstrap/radio-group
+          label="Most Favorite Number"
+          inline=true
+          options=options
+          value=mostFavorite
+          onChange=(action (mut mostFavorite))
+        }}
+        {{bootstrap/radio-group
+          label="Lest Favorite Number"
+          options=options
+          value=leastFavorite
+          onChange=(action (mut leastFavorite))
+        }}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-bootstrap-radio-group' name='Advanced Radio Group'}}
+        {{#bootstrap/radio-group
+          disabled=data.disabled
+          errors=data.errors
+          help=data.help
+          inline=data.inline
+          readonly=data.readonly
+          required=data.required
+          srOnly=data.srOnly
+          value=data.value
+          label=data.label
+          options=options
+          onChange=(action (mut data.value))
+          as |radioGroup index|
+        }}
+          {{#radioGroup.radio as |radio|}}
+            {{radio.input}}
+            {{#if (eq index 0)}}
+              {{#radio.label as |label|}}
+                <span class="text-danger">{{label}}</span>
+              {{/radio.label}}
+            {{else if radioGroup.last}}
+              {{#radio.label as |label|}}
+                <span class="text-success">{{label}}</span>
+              {{/radio.label}}
+            {{else}}
+              {{radio.label}}
+            {{/if}}
+          {{/radioGroup.radio}}
+        {{/bootstrap/radio-group}}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}

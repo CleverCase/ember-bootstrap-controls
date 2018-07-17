@@ -1,4 +1,3 @@
-
 {
   "env": {
   "EMBER_ENV": {
@@ -8,6 +7,9 @@
   "description": "Wildland's component library",
   "repository": "https://github.com/wildland/ember-bootstrap-controls",
   "buildpacks": [
-    { "url": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/emberjs.tgz" }
-  ]
+      {
+        "url": "https://codon-buildpacks.s3.amazonaws.com/buildpacks/heroku/emberjs.tgz"
+      }
+    ]
+  }
 }

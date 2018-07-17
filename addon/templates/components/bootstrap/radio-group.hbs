@@ -1,0 +1,38 @@
+<legend class={{if srOnly 'sr-only'}} id="{{labelId}}">{{label}}</legend>
+{{#each options as |option index|}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        radio=(component
+          'bootstrap-inputs/-radio'
+          inline=inline
+          value=(eq option value)
+          label=option
+          groupId=inputId
+          onClick=(action onChange option)
+          role='radio'
+        )
+        index=index
+        first=(eq index 0)
+        last=(eq index lastIndex)
+      )
+      index
+    }}
+  {{else}}
+    {{bootstrap-inputs/-radio
+      inline=inline
+      value=(eq option value)
+      label=option
+      groupId=inputId
+      onClick=(action onChange option)
+    }}
+  {{/if}}
+{{/each}}
+{{bootstrap/-help help=help id=helpId}}
+{{#if errors}}
+  <div class="alert alert-danger" role="alert">
+    {{#each errors as |error|}}
+      <span>{{error.message}}</span>
+    {{/each}}
+  </div>
+{{/if}}
