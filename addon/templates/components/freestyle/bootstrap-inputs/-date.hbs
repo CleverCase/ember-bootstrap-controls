@@ -1,0 +1,34 @@
+{{#section.subsection name='Date Input'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-date-input' name='Basic Date Input'}}
+        {{bootstrap-inputs/-date
+          label="Pick Date"
+          value=basicValue}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-date-input' name='Advanced Date Input'}}
+        {{data.placeholder}}
+        {{bootstrap-inputs/-date
+          autocomplete=data.autocomplete
+          value=data.value
+          disabled=data.disabled
+          max=data.max
+          min=data.min
+          readonly=data.readonly
+          required=data.required
+          srOnly=data.srOnly
+          step=data.step
+          tabindex=data.tabindex
+          help=data.help
+        }}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}

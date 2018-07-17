@@ -1,6 +1,6 @@
 import Ember from 'ember';
 import layout from '../templates/components/freestyle-prop-types';
-const definedTypes = ['arrayOf', 'bool', 'instanceOf', 'number', 'oneOf', 'string'];
+const definedTypes = ['arrayOf', 'bool', 'instanceOf', 'number', 'oneOf', 'string', 'date'];
 
 export default Ember.Component.extend({
   layout,
