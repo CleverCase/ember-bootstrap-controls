@@ -1,6 +1,6 @@
 # Ember-bootstrap-controls
 
-Ember-bootstrap-controls is a small library for quickly creating EmberJS forms that utilize the Bootstrap form and input stylings.
+WildlandUX is a library for quickly creating EmberJS forms that utilize the Bootstrap4 form and input styles and HTML &mdash; it includes accessiblity.
 
 This README outlines the details of using and collaborating on this Ember addon.
 
