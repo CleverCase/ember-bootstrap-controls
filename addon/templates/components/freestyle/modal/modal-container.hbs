@@ -5,21 +5,29 @@
     as |collection|
   }}
     {{#collection.variant key='Basic Usage'}}
+      {{#bootstrap-button
+        classNames='btn-primary'
+        action=(action 'openModal')
+      }}
+        Open Modal
+      {{/bootstrap-button}}
       {{#freestyle-usage 'basic-modal' name='BasicEmberBootstrapControls'}}
-
         {{modal/modal-container
           isOpen=isModalOpen
           title="Simple Modal"
           modalBodyContent=sampleContent
-          acceptAction=(action 'acceptModal')}}
-
-        <button class="btn btn-sm btn-primary" {{action 'openModal'}}>Open Modal</button>
-
+          acceptAction=(action 'acceptModal')
+        }}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
+      {{#bootstrap-button
+        classNames='btn-primary'
+        action=(action 'openModal')
+      }}
+        Open Modal
+      {{/bootstrap-button}}
       {{#freestyle-usage 'advanced-modal' name='AdvancedEmberBootstrapControls'}}
-
         {{modal/modal-container
           isOpen=isModalOpen
           title="Simple Modal"
@@ -32,16 +40,17 @@
           acceptAction=(action 'acceptModal')
           closeAction=(action 'closeModal')
         }}
-
-        <button class="btn btn-sm btn-primary" {{action 'openModal'}}>Open Modal</button>
-
-        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
+      {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-
     {{#collection.variant key='Custom Sub Components'}}
+      {{#bootstrap-button
+        classNames='btn-primary'
+        action=(action 'openModal')
+      }}
+        Open Modal
+      {{/bootstrap-button}}
       {{#freestyle-usage 'advanced-modal' name='CustomEmberBootstrapControls'}}
-
         {{#modal/modal-container isOpen=isModalOpen as |modal|}}
           {{modal.header title="Block Modal" showCloseInHeader=true}}
           {{#modal/-body}}
@@ -59,8 +68,6 @@
             acceptAction=(action 'acceptModal')
             closeAction=(action 'closeModal')}}
         {{/modal/modal-container}}
-
-        <button class="btn btn-sm btn-primary" {{action 'openModal'}}>Open Modal</button>
       {{/freestyle-usage}}
     {{/collection.variant}}
 
