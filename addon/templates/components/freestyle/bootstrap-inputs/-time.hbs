@@ -1,17 +1,19 @@
-{{#section.subsection name='bootstrapInputsTime'}}
+{{#section.subsection name='Time Input'}}
   {{#freestyle-collection
     defaultKey='Basic Usage'
     inline=false
     as |collection|
   }}
     {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-inputs--time' name='Basic EmberBootstrapControls'}}
-        {{bootstrap-inputs/-time}}
+      {{#freestyle-usage 'basic-bootstrap-inputs-time' name='Basic Time Input'}}
+        {{bootstrap-inputs/-time
+          label="Time"}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-inputs--time' name='Advanced EmberBootstrapControls'}}
-        {{bootstrap-inputs/-time}}
+      {{#freestyle-usage 'advanced-bootstrap-inputs-time' name='Advanced Time Input'}}
+        {{bootstrap-inputs/-time
+          label="Time"}}
         {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
     {{/collection.variant}}

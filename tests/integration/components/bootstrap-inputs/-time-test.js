@@ -2,7 +2,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-time', 'Integration | Component | bootstrap button', {
+moduleForComponent('bootstrap-inputs/-time', 'Integration | Component | Time', {
   integration: true
 });
 
@@ -18,7 +18,9 @@ test('it renders', function(assert) {
 
   // Template block usage:
   this.render(hbs`
-    {{#bootstrap-inputs/-time}}
+    {{#bootstrap-inputs/-time
+      title="Time"
+    }}
       template block text
     {{/bootstrap-inputs/-time}}
   `);
