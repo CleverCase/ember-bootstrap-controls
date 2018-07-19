@@ -1,4 +1,4 @@
-<img src="img/WL-LOGO-bear-500px-300dpi.png" width="200px">
+<img src="img/wildlanduxlogo.png" width="300px">
 
 WildlandUX is a library for quickly creating EmberJS forms that utilize the Bootstrap4 form and input styles and HTML &mdash; it includes accessiblity.
 
