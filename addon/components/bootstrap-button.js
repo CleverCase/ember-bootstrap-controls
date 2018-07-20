@@ -9,6 +9,11 @@ export default Ember.Component.extend(PropTypeMixin, {
   classNames: ['btn'],
   attributeBindings: ['disabledButton:disabled', 'type'],
 
+  init() {
+    Ember.Logger.warn('DEPRECATION: bootstrap-button component is being replaced by bootstrap/button in an upcoming version of ember-bootstrap-controls.');
+    this._super(...arguments);
+  },
+
   propTypes: {
     action: PropTypes.func.isRequired,
     disabled: PropTypes.bool,
