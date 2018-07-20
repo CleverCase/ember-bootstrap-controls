@@ -1,12 +1,12 @@
 {{#section.subsection name='Simple Select'}}
   {{#freestyle-collection
-    defaultKey='Advanced Usage'
+    defaultKey='Basic Usage'
     inline=false
     as |collection|
   }}
     {{#collection.variant key='Basic Usage'}}
+      <p>Most Favorite number: {{mostFavorite}}</p>
       {{#freestyle-usage 'basic-bootstrap-select' name='Basic Select'}}
-        <p>Most Favorite number: {{mostFavorite}}</p>
         {{bootstrap/simple-select
           label="Most Favorite Number"
           options=options
@@ -16,8 +16,8 @@
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
+      <p>You are: {{data.value}}</p>
       {{#freestyle-usage 'advanced-bootstrap-select' name='Advanced Select'}}
-        <p>You are: {{data.value}}</p>
         {{#bootstrap/simple-select
           autofocus=data.autofocus
           bootstrapCustomClass=data.bootstrapCustomClass
@@ -34,13 +34,63 @@
           as |simpleSelect|
         }}
           {{simpleSelect.label}}
-          {{#simpleSelect.select as |option|}}
-            {{option}} Cool
+          {{#simpleSelect.select as |select|}}
+            {{select.option}} Cool
           {{/simpleSelect.select}}
           {{simpleSelect.hint}}
         {{/bootstrap/simple-select}}
-        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
+      {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+    {{/collection.variant}}
+    {{#collection.variant key='Custom Child Components'}}
+      <p>Most Favorite number: {{mostFavorite}}</p>
+      {{#freestyle-usage 'child-components-bootstrap-simple-select' name='Custom Child Components'}}
+        {{#bootstrap/simple-select
+          label="How Cool Are You?"
+          options=options
+          value=mostFavorite
+          help="Don't worry. This won't effect your social standing and is just for self reflection."
+          onChange=(action (mut mostFavorite))
+          as |simpleSelect|
+        }}
+          {{simpleSelect.label}}
+          {{#simpleSelect.select as |selectOption index|}}
+            {{#if (eq index 0)}}
+              Least Cool
+            {{else if selectOption.last}}
+              Most Cool
+            {{else}}
+              {{selectOption.option}} Cool
+            {{/if}}
+          {{/simpleSelect.select}}
+          {{simpleSelect.help}}
+        {{/bootstrap/simple-select}}
+      {{/freestyle-usage}}
+      {{#freestyle-note "child-components-bootstrap-simple-select--notes"}}
+        The simple-select a component yields 3 properties `label`, `select`, and `hint`.
+
+        `{{label}}`
+        This is the label for the select. It yields the text for the label if you need additional customization.
+
+        `{{help}}`
+        This is the help for the select. It yields the text for help if you need additional customization.
+
+        `{{select}}`
+        This is a component that represents the select and it has 1 child component `selectOption` and 1 property `index`.
+
+        `{{selectOption.index}}`
+        This is an integer that is the index of the current select option.
+
+        `{{selectOption.first}}`
+        This is a boolean the is true if this is the first option.
+
+        `{{selectOption.last}}`
+        This is a boolean the is true if this is the last option.
+
+        `{{selectOption.option}}`
+        This is the current option value.
+
+      {{/freestyle-note}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}

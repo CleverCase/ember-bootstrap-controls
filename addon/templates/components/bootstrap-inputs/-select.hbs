@@ -1,8 +1,16 @@
 <select id={{control.inputId}} class="{{if bootstrapCustomClass 'custom-select'}}" onchange={{action onChange value="target.value"}} autofocus={{autofocus}} disabled={{disabled}} multiple={{multiple}} required={{required}}>
-  {{#each options as |option|}}
+  {{#each options as |option index|}}
     <option value={{option}} selected={{eq option value}}>
       {{#if hasBlock}}
-        {{yield option}}
+        {{yield
+          (hash
+            option=option
+            index=index
+            first=(eq index 0)
+            last=(eq index lastIndex)
+          )
+          index
+        }}
       {{else}}
         {{option}}
       {{/if}}
