@@ -1,9 +1,11 @@
 {{#if hasBlock}}
-  {{yield}}
+  {{yield (hash
+    title=(component 'modal/-title' title=title)
+  )}}
 {{else}}
-  <h5 class="modal-title">
+  {{#modal/-title}}
     {{title}}
-  </h5>
+  {{/modal/-title}}
   {{#if showCloseInHeader}}
     {{#bootstrap-button
       classNames="close"

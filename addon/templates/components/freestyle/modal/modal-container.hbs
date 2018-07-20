@@ -53,13 +53,19 @@
         Open Custom Block Modal
       {{/bootstrap-button}}
 
-      {{#freestyle-usage 'advanced-modal' name='CustomEmberBootstrapControls'}}
+      {{#freestyle-usage 'custom-block-modal' name='CustomEmberBootstrapControls'}}
         {{#modal/modal-container isOpen=isModalOpenCustomSub as |modal|}}
-          {{modal.header
-            title="Block Modal"
-            showCloseInHeader=true
-            closeAction=(action 'closeModalCustomSub')
-          }}
+          {{#modal.header as |header|}}
+            {{#header.title tagName="span"}}
+              <strong>Title:</strong> Block Modal
+            {{/header.title}}
+            {{#bootstrap-button
+              classNames="close"
+              aria-label="Close"
+              action=(action 'closeModalCustomSub')}}
+              <span aria-hidden="true">&times;</span>
+            {{/bootstrap-button}}
+          {{/modal.header}}
           {{#modal.body}}
             <div>
             <h1>Content!</h1>
@@ -71,7 +77,7 @@
             {{#bootstrap-button
               classNames="btn-danger"
               action=(action 'closeModalCustomSub')}}
-              X
+              Undo
             {{/bootstrap-button}}
             {{#bootstrap-button
               classNames="btn-info"
