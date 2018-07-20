@@ -67,7 +67,7 @@
             <p class="text-danger">Some Red text to read</p>
             </div>
           {{/modal.body}}
-          {{#modal.footer as |footer|}}
+          {{#modal.footer}}
             {{#bootstrap-button
               classNames="btn-danger"
               action=(action 'closeModalCustomSub')}}
