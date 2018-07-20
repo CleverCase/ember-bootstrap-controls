@@ -2,7 +2,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap/simple-select', 'Integration | Component | bootstrap button', {
+moduleForComponent('bootstrap/simple-select', 'Integration | Component | Simple Select', {
   integration: true
 });
 
