@@ -11,6 +11,7 @@
       }}
         Open Modal
       {{/bootstrap-button}}
+
       {{#freestyle-usage 'basic-modal' name='BasicEmberBootstrapControls'}}
         {{modal/modal-container
           isOpen=isModalOpen
@@ -20,53 +21,64 @@
         }}
       {{/freestyle-usage}}
     {{/collection.variant}}
+
     {{#collection.variant key='Advanced Usage'}}
       {{#bootstrap-button
         classNames='btn-primary'
-        action=(action 'openModal')
+        action=(action 'openModalAdvanced')
       }}
-        Open Modal
+        Open Advanced Modal
       {{/bootstrap-button}}
+
       {{#freestyle-usage 'advanced-modal' name='AdvancedEmberBootstrapControls'}}
         {{modal/modal-container
-          isOpen=isModalOpen
-          title="Simple Modal"
+          isOpen=isModalOpenAdvanced
+          title="Advanced Modal"
           btnAcceptLabel="Ok"
-          btnAcceptStyle="success"
           btnCloseLabel="Cancel"
-          btnCloseStyle="danger"
           showCloseInHeader=true
           modalBodyContent=sampleContent
-          acceptAction=(action 'acceptModal')
-          closeAction=(action 'closeModal')
+          acceptAction=(action 'acceptModalAdvanced')
+          closeAction=(action 'closeModalAdvanced')
         }}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
+
     {{#collection.variant key='Custom Sub Components'}}
       {{#bootstrap-button
         classNames='btn-primary'
-        action=(action 'openModal')
+        action=(action 'openModalCustomSub')
       }}
-        Open Modal
+        Open Custom Block Modal
       {{/bootstrap-button}}
+
       {{#freestyle-usage 'advanced-modal' name='CustomEmberBootstrapControls'}}
-        {{#modal/modal-container isOpen=isModalOpen as |modal|}}
-          {{modal.header title="Block Modal" showCloseInHeader=true}}
-          {{#modal/-body}}
+        {{#modal/modal-container isOpen=isModalOpenCustomSub as |modal|}}
+          {{modal.header
+            title="Block Modal"
+            showCloseInHeader=true
+            closeAction=(action 'closeModalCustomSub')
+          }}
+          {{#modal.body}}
             <div>
             <h1>Content!</h1>
             <p>Some important stuff to read.</p>
             <p class="text-danger">Some Red text to read</p>
             </div>
-          {{/modal/-body}}
-          {{modal.footer
-            btnAcceptLabel="Save"
-            btnAcceptStyle="info"
-            btnCloseLabel="X"
-            btnCloseStyle="link"
-            acceptAction=(action 'acceptModal')
-            closeAction=(action 'closeModal')}}
+          {{/modal.body}}
+          {{#modal.footer as |footer|}}
+            {{#bootstrap-button
+              classNames="btn-danger"
+              action=(action 'closeModalCustomSub')}}
+              X
+            {{/bootstrap-button}}
+            {{#bootstrap-button
+              classNames="btn-info"
+              action=(action 'acceptModalCustomSub')}}
+              SAVE
+            {{/bootstrap-button}}
+          {{/modal.footer}}
         {{/modal/modal-container}}
       {{/freestyle-usage}}
     {{/collection.variant}}

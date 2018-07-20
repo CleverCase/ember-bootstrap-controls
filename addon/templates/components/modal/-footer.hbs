@@ -2,13 +2,12 @@
   {{yield}}
 {{else}}
   {{#bootstrap-button
-    classNames=(concat "btn-" (if btnCloseStyle btnCloseStyle "secondary"))
-    action=modalClose}}
+    classNames="btn-secondary"
+    action=closeAction}}
     {{btnCloseLabel}}
   {{/bootstrap-button}}
-
   {{#bootstrap-button
-    classNames=(concat "btn-" (if btnAcceptStyle btnAcceptStyle "primary"))
+    classNames="btn-primary"
     action=acceptAction}}
     {{btnAcceptLabel}}
   {{/bootstrap-button}}

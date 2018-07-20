@@ -11,6 +11,9 @@ export default Ember.Component.extend({
   }),
 
   isModalOpen: false,
+  isModalOpenAdvanced: false,
+  isModalOpenCustomSub: false,
+
   sampleContent: 'Example Modal',
 
   actions: {
@@ -18,13 +21,40 @@ export default Ember.Component.extend({
       alert('freestyle: closeModal');
     },
 
+    closeModalAdvanced() {
+      alert('freestyle: closeModalAdvanced');
+    },
+
+    closeModalCustomSub() {
+      alert('freestyle: closeModalCustomSub');
+      this.set('isModalOpenCustomSub', false);
+    },
+
     acceptModal() {
       alert('freestyle: acceptModal');
       this.set('isModalOpen', false);
     },
 
+    acceptModalAdvanced() {
+      alert('freestyle: acceptModalAdvanced');
+      this.set('isModalOpenAdvanced', false);
+    },
+
+    acceptModalCustomSub() {
+      alert('freestyle: acceptModalCustomSub');
+      this.set('isModalOpenCustomSub', false);
+    },
+
     openModal() {
       this.set('isModalOpen', true);
+    },
+
+    openModalAdvanced() {
+      this.set('isModalOpenAdvanced', true);
+    },
+
+    openModalCustomSub() {
+      this.set('isModalOpenCustomSub', true);
     },
   },
 });

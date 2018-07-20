@@ -4,36 +4,32 @@
       {{yield (hash
         isOpen=isOpen
         toggle=(action 'toggleModal')
-        close=(action 'modalClose')
+        close=(action 'closeAction')
         accept=acceptAction
         header=(component 'modal/-header'
           title=title
           showCloseInHeader=showCloseInHeader
-          modalClose=(action 'modalClose')
+          closeAction=(action 'closeAction')
         )
         body=(component 'modal/-body' content=modalBodyContent)
         footer=(component 'modal/-footer'
           btnAcceptLabel=btnAcceptLabel
-          btnAcceptStyle=btnAcceptStyle
           btnCloseLabel=btnCloseLabel
-          btnCloseStyle=btnCloseStyle
           acceptAction=acceptAction
-          modalClose=(action 'modalClose')
+          closeAction=(action 'closeAction')
         )
       )}}
     {{else}}
       {{modal/-header
         title=title
         showCloseInHeader=showCloseInHeader
-        modalClose=(action 'modalClose')}}
+        closeAction=(action 'closeAction')}}
       {{modal/-body content=modalBodyContent}}
       {{modal/-footer
         btnAcceptLabel=btnAcceptLabel
-        btnAcceptStyle=btnAcceptStyle
         btnCloseLabel=btnCloseLabel
-        btnCloseStyle=btnCloseStyle
         acceptAction=acceptAction
-        modalClose=(action 'modalClose')}}
+        closeAction=(action 'closeAction')}}
     {{/if}}
   </div>
 </div>
