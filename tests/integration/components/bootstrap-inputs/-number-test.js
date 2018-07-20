@@ -2,7 +2,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-number', 'Integration | Component | Number Input', {
+moduleForComponent('bootstrap-inputs/-number', 'Integration | Component | Bootstrap Inputs | Number', {
   integration: true
 });
 
