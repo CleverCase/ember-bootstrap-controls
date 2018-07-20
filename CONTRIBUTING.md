@@ -9,6 +9,7 @@ do so.
 When creating a new component:
 * Use `ember g bootstrap-component <name>` to create the correct boilerplate stubs.
 * Ensure your documentation is clear.
+* Ensure you document your component in freestyle. They are required to have a the following sections: Basic Usage, Advanced Usage, and optionally Custom Child Components if it is a complex component that yields child components.
 * Ensure you use [ember-prop-types][7] to document your components properties and defaults.
 * Ensure your tests include [ember-a11y-testing][8] to test accessibility.
 
