@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('bootstrap/-input', 'Integration | Component | bootstrap/ input', {
+moduleForComponent('bootstrap/-input', 'Integration | Component | Bootstrap | Input', {
   integration: true
 });
 
@@ -16,9 +16,8 @@ test('it renders', function(assert) {
   // Template block usage:
   this.render(hbs`
     {{#bootstrap/-input}}
-      template block text
     {{/bootstrap/-input}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), '');
 });
