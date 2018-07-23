@@ -8,14 +8,14 @@ moduleForComponent('bootstrap/-form-controls/cancel-button', 'Integration | Comp
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{bootstrap/-form-controls/cancel-button}}`);
+  this.set('noop', () => {});
+  this.render(hbs`{{bootstrap/-form-controls/cancel-button action=noop}}`);
 
   assert.equal(this.$().text().trim(), 'Cancel');
 
   // Template block usage:
   this.render(hbs`
-    {{#bootstrap/-form-controls/cancel-button}}
+    {{#bootstrap/-form-controls/cancel-button action=noop}}
       template block text
     {{/bootstrap/-form-controls/cancel-button}}
   `);

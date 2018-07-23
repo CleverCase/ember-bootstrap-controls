@@ -8,14 +8,14 @@ moduleForComponent('bootstrap/-form-controls/edit-button', 'Integration | Compon
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{bootstrap/-form-controls/edit-button}}`);
+  this.set('noop', () => {});
+  this.render(hbs`{{bootstrap/-form-controls/edit-button action=noop}}`);
 
   assert.equal(this.$().text().trim(), 'Edit');
 
   // Template block usage:
   this.render(hbs`
-    {{#bootstrap/-form-controls/edit-button}}
+    {{#bootstrap/-form-controls/edit-button action=noop}}
       template block text
     {{/bootstrap/-form-controls/edit-button}}
   `);

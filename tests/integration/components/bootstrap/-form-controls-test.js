@@ -8,14 +8,14 @@ moduleForComponent('bootstrap/-form-controls', 'Integration | Component | Bootst
 test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
-
-  this.render(hbs`{{bootstrap/-form-controls}}`);
+  this.set('noop', () => {});
+  this.render(hbs`{{bootstrap/-form-controls cancel=noop save=noop edit=noop}}`);
 
   assert.equal(this.$().text().trim(), 'Edit');
 
   // Template block usage:
   this.render(hbs`
-    {{#bootstrap/-form-controls}}
+    {{#bootstrap/-form-controls cancel=noop save=noop edit=noop}}
       template block text
     {{/bootstrap/-form-controls}}
   `);
