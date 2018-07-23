@@ -2,7 +2,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-password', 'Integration | Component | bootstrap inputs/ password', {
+moduleForComponent('bootstrap-inputs/-password', 'Integration | Component | Bootstrap Inputs | Password', {
   integration: true
 });
 
@@ -14,9 +14,9 @@ test('it renders', function(assert) {
   // this.render(hbs`{{bootstrap-input/-email action=noop}}`);
   this.set('label', 'Some Label');
   this.set('value', 'password');
-  this.render(hbs`{{bootstrap-input/-password label=label value=value}}`);
+  this.render(hbs`{{bootstrap-inputs/-password label=label value=value}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), this.get('label'));
 
   // Template block usage:
   this.render(hbs`
@@ -26,7 +26,7 @@ test('it renders', function(assert) {
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');
-  
+
   return a11yAudit(this.$()).then(() => {
     assert.ok(true, 'no a11y errors found!');
   });

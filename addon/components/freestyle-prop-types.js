@@ -18,7 +18,7 @@ export default Ember.Component.extend({
         } else if (typeof(propDefinitions[key].type) === 'function') {
           type = propDefinitions[key].type();
         } else {
-          console.warn("Unknown type: " + type + " at key " + key + ". Double check your PropTypes");
+          window.alert("Unknown type: " + type + " at key " + key + ". Double check your PropTypes");
         }
         if (definedTypes.includes(type.type)) {
           componentName = `freestyle-prop-types/-${type.type.replace(/([a-z])([A-Z])/g, '$1-$2').toLowerCase()}`;

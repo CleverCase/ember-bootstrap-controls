@@ -16,7 +16,7 @@
   "scripts": {
     "build": "ember build",
     "start": "ember server",
-    "test": "ember try:each",
+    "test": "ember test",
     "deploy-documentation": "ember build && ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\" && git push origin gh-pages:gh-pages"
   },
   "dependencies": {
@@ -51,7 +51,6 @@
     "ember-export-application-global": "^2.0.0",
     "ember-load-initializers": "^1.1.0",
     "ember-resolver": "^4.5.6",
-    "ember-source": "~2.15.0",
     "loader.js": "^4.7.0",
     "popper.js": "^1.14.3"
   },

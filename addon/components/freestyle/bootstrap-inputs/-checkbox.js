@@ -14,7 +14,7 @@ export default Ember.Component.extend({
   basicValue: false,
   actions: {
     simpleClick(newValue, oldValue, eventArguments) {
-      console.log(`Going from ${oldValue} to ${newValue} from Event: ${eventArguments}`)
+      window.alert(`Going from ${oldValue} to ${newValue} from Event: ${eventArguments}`);
     }
   },
 });

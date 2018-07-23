@@ -2,7 +2,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-tel', 'Integration | Component | bootstrap button', {
+moduleForComponent('bootstrap-inputs/-tel', 'Integration | Component |  Bootstrap Inputs | Telephone', {
   integration: true
 });
 
@@ -13,19 +13,19 @@ test('it renders', function(assert) {
   // this.set('noop', () => {});
   // this.render(hbs`{{bootstrap-inputs/-tel action=noop}}`);
   this.set('label', 'Phone Label');
-  this.set('value', '(555) 555-5555');
+  this.set('value', '5555555555'); //555 555 5555
   this.render(hbs`{{bootstrap-inputs/-tel value=value label=label}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), this.get('label'));
 
   // Template block usage:
   this.render(hbs`
     {{#bootstrap-inputs/-tel}}
-      template block text
+      {{label}}
     {{/bootstrap-inputs/-tel}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.equal(this.$().text().trim(), this.get('label'));
 
   return a11yAudit(this.$()).then(() => {
     assert.ok(true, 'no a11y errors found!');

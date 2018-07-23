@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('freestyle-prop-types/-date', 'Integration | Component | freestyle prop types/ date', {
+moduleForComponent('freestyle-prop-types/-date', 'Integration | Component | Freestyle Prop Types | Date', {
   integration: true
 });
 
@@ -20,5 +20,5 @@ test('it renders', function(assert) {
     {{/freestyle-prop-types/-date}}
   `);
 
-  assert.equal(this.$().text().trim(), 'template block text');
+  assert.ok(true, this.$().text().trim().includes('template block text'));
 });
