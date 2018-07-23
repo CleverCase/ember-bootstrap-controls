@@ -12,7 +12,7 @@
         Open Modal
       {{/bootstrap-button}}
 
-      {{#freestyle-usage 'basic-modal' name='BasicEmberBootstrapControls'}}
+      {{#freestyle-usage 'basic-modal' name='Basic Modal'}}
         {{modal/modal-container
           isOpen=isModalOpen
           title="Simple Modal"
@@ -30,7 +30,7 @@
         Open Advanced Modal
       {{/bootstrap-button}}
 
-      {{#freestyle-usage 'advanced-modal' name='AdvancedEmberBootstrapControls'}}
+      {{#freestyle-usage 'advanced-modal' name='Advanced Modal'}}
         {{modal/modal-container
           isOpen=isModalOpenAdvanced
           title="Advanced Modal"
@@ -45,7 +45,7 @@
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
 
-    {{#collection.variant key='Custom Sub Components'}}
+    {{#collection.variant key='Custom Child Components'}}
       {{#bootstrap-button
         classNames='btn-primary'
         action=(action 'openModalCustomSub')
@@ -53,7 +53,7 @@
         Open Custom Block Modal
       {{/bootstrap-button}}
 
-      {{#freestyle-usage 'custom-block-modal' name='CustomEmberBootstrapControls'}}
+      {{#freestyle-usage 'child-components-modal' name='Custom Child Components'}}
         {{#modal/modal-container isOpen=isModalOpenCustomSub as |modal|}}
           {{#modal.header as |header|}}
             {{#header.title tagName="span"}}
