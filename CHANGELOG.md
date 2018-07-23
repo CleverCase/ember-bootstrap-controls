@@ -23,7 +23,9 @@ All notable changes to this project will be documented in this file.
 ### Removed
 ### Fixed
   * Updated instructions on running the Dummy App locally. ([@Nathan-O][])
+  * Updated testing instructions in README.md. ([@jweakley][])
   * Updated npm packages. ([@jweakley][])
+  * [#190](https://github.com/wildland/ember-bootstrap-controls/issues/190): Updated tests. ([@harokevin][])
 ### Security
 
 [@jweakley]: https://github.com/jweakley
