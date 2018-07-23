@@ -20,6 +20,8 @@ All notable changes to this project will be documented in this file.
   * [#156](https://github.com/wildland/ember-bootstrap-controls/issues/156): Added new time type input. ([@harokevin][])
 ### Changed
   * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
+  * Updated bootstrap-inputs documentation to clarify how to use inputs. ([@flarinerin][])
+  * Updated branding to better reflect Wildland UX style - favicon, colors, fonts ([@flarinerin][])
 ### Deprecated
 ### Removed
 ### Fixed
