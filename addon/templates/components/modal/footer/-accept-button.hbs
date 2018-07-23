@@ -1,0 +1,10 @@
+{{#bootstrap-button
+  classNames="btn-primary"
+  action=action
+}}
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    Accept
+  {{/if}}
+{{/bootstrap-button}}

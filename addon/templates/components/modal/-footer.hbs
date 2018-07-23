@@ -1,14 +1,13 @@
 {{#if hasBlock}}
-  {{yield}}
+  {{yield
+    (hash
+      acceptAction=acceptAction
+      acceptButton=(component 'modal/footer/-accept-button' action=acceptAction)
+      closeAction=closeAction
+      closeButton=(component 'modal/footer/-close-button' action=closeAction)
+    )
+  }}
 {{else}}
-  {{#bootstrap-button
-    classNames="btn-secondary"
-    action=closeAction}}
-    {{btnCloseLabel}}
-  {{/bootstrap-button}}
-  {{#bootstrap-button
-    classNames="btn-primary"
-    action=acceptAction}}
-    {{btnAcceptLabel}}
-  {{/bootstrap-button}}
+  {{modal/footer/-close-button action=closeAction}}
+  {{modal/footer/-accept-button action=acceptAction}}
 {{/if}}

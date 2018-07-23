@@ -3,18 +3,7 @@ import layout from '../../templates/components/modal/-footer';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
-export const propDefinitions = {
-  btnAcceptLabel: {
-    default: 'Accept',
-    description: 'The text used on the accept button of the modal',
-    type: PropTypes.string,
-  },
-  btnCloseLabel: {
-    default: 'Close',
-    description: 'The text used on the close button of the modal',
-    type: PropTypes.string,
-  },
-};
+export const propDefinitions = {};
 
 export default Ember.Component.extend({
   layout,

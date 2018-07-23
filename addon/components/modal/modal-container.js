@@ -15,14 +15,8 @@ export const propDefinitions = {
     description: 'The top level title for the modal dialog',
     type: PropTypes.string.isRequired,
   },
-  btnAcceptLabel: {
-    default: 'Accept',
-    description: 'The text used on the accept button of the modal',
-    type: PropTypes.string,
-  },
-  btnCloseLabel: {
-    default: 'Close',
-    description: 'The text used on the close button of the modal',
+  body: {
+    description: 'The text used for the body of the modal',
     type: PropTypes.string,
   },
   acceptAction: {
