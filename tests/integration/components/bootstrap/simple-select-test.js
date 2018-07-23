@@ -12,13 +12,14 @@ test('it renders', function(assert) {
   // Example if your component had an `action` that it required:
   // this.set('noop', () => {});
   // this.render(hbs`{{bootstrap/simple-select action=noop}}`);
-  this.render(hbs`{{bootstrap/simple-select}}`);
+  this.set('fakeOnChange', () => {});
+  this.render(hbs`{{bootstrap/simple-select onChange=(action fakeOnChange)}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#bootstrap/simple-select}}
+    {{#bootstrap/simple-select onChange=(action fakeOnChange)}}
       template block text
     {{/bootstrap/simple-select}}
   `);
