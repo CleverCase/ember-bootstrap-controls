@@ -16,7 +16,7 @@ test('it renders', function(assert) {
   this.set('value', 'email');
   this.render(hbs`{{bootstrap-inputs/-url label=label value=value}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), this.get('label'));
 
   // Template block usage:
   this.render(hbs`
