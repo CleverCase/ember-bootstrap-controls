@@ -13,7 +13,6 @@
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-date-input' name='Advanced Date Input'}}
-        {{data.placeholder}}
         {{bootstrap-inputs/-date
           autocomplete=data.autocomplete
           value=data.value
@@ -27,8 +26,8 @@
           tabindex=data.tabindex
           help=data.help
         }}
-        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
+      {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}

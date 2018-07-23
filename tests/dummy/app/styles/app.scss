@@ -1,2 +1,24 @@
 @import "ember-power-select";
 @import "ember-cli-bootstrap-4/bootstrap";
+
+body {
+  font-family: 'Roboto', sans-serif;
+  p {
+    margin: 16px;
+  }
+}
+
+.FreestyleGuide-header {
+  border-bottom: none;
+  background-color: #904274;
+  color: #ffffff;
+
+  svg {
+    fill: #ffffff;
+  }
+}
+
+.FreestyleGuide-nav {
+  border-right: none;
+  background-color: rgba(249,249,249, 1);
+}
