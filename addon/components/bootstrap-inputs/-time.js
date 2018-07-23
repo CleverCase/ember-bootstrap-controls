@@ -2,16 +2,7 @@ import Ember from 'ember';
 import layout from '../../templates/components/bootstrap-inputs/-time';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
-const autoCompleteTypes = ['off', 'on', 'name', 'honorific-prefix',
-  'given-name', 'additional-name', 'family-name', 'honorific-suffix',
-  'nickname', 'username', 'organization-title', 'organization',
-  'street-address', 'address-line1',
-  'address-line2', 'address-line3', 'address-level4', 'address-level3',
-  'address-level2', 'address-level1', 'country', 'country-name', 'postal-code',
-  'cc-name', 'cc-given-name', 'cc-additional-name', 'cc-family-name',
-  'cc-number', 'cc-exp', 'cc-exp-month', 'cc-exp-year', 'cc-csc', 'cc-type',
-  'transaction-currency', 'transaction-amount', 'language', 'bday', 'bday-day',
-  'bday-month', 'bday-year', 'sex'];
+const autoCompleteTypes = ['off', 'on'];
 
 export const propDefinitions = {
   autocomplete: {
@@ -35,17 +26,13 @@ export const propDefinitions = {
     description: 'The label for the input.',
     type: PropTypes.string.isRequired,
   },
-  maxlength: {
-    description: 'The maximum number of characters (in UTF-16 code units) that the user can enter.',
+  max: {
+    description: 'The maximum value for the input. Must not be less than its minimum (min attribute) value.',
     type: PropTypes.number,
   },
-  minlength: {
-    description: 'The minimum number of characters (in UTF-16 code units) that the user can enter.',
+  min: {
+    description: 'The minimum value for this input, which must not be greater than its maximum (max attribute) value.',
     type: PropTypes.number,
-  },
-  pattern: {
-    description: "A regular expression that the control's value is checked against.",
-    type: PropTypes.instanceOf(RegExp),
   },
   placeholder: {
     description: 'A hint to the user of what can be entered in the control. This is displayed in the empty input.',
@@ -65,6 +52,10 @@ export const propDefinitions = {
     default: false,
     description: 'Indicated that the label should be hidden to all devices except screen readers',
     type: PropTypes.bool,
+  },
+  step: {
+    description: 'Works with the min and max attributes to limit the increments at which a value can be set. It can be the string any or a positive floating point number. If this attribute is not set to any, the control accepts only values at multiples of the step value greater than the minimum.',
+    type: PropTypes.number,
   },
   tabindex: {
     description: 'The position of the element in the tabbing navigation order for the current document.',

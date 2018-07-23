@@ -8,6 +8,7 @@ export default Ember.Component.extend({
   propDefinitions,
   data: Object.assign(BuilderForPropDefaults(propDefinitions), {
     value: '',
+    label: 'Time',
   }),
 
   basicValue: '',
