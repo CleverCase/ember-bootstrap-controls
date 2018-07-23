@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('bootstrap/-form-controls', 'Integration | Component | bootstrap/ form controls', {
+moduleForComponent('bootstrap/-form-controls', 'Integration | Component | Bootstrap | Form Controls', {
   integration: true
 });
 
@@ -11,7 +11,7 @@ test('it renders', function(assert) {
 
   this.render(hbs`{{bootstrap/-form-controls}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), 'Edit');
 
   // Template block usage:
   this.render(hbs`
