@@ -1,7 +1,7 @@
 import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 
-moduleForComponent('bootstrap-multi-select-lazy', 'Integration | Component | bootstrap multi select lazy', {
+moduleForComponent('bootstrap-multi-select-lazy', 'Integration | Component | Bootstrap Multi Select Lazy', {
   integration: true
 });
 
