@@ -14,11 +14,13 @@ export default PSOptionsComponent.extend({
 
   loadMore() {
     const select = this.get('select');
-    const searchAction = Ember.get(select, 'actions.search');
-    const searchText = Ember.get(select, 'searchText');
+    if (select) {
+      const searchAction = Ember.get(select, 'actions.search');
+      const searchText = Ember.get(select, 'searchText');
 
-    if (searchAction && searchText) {
-      return searchAction(searchText);
+      if (searchAction && searchText) {
+        return searchAction(searchText);
+      }
     }
   },
 

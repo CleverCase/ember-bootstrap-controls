@@ -9,13 +9,20 @@ test('it renders', function(assert) {
   // Set any properties with this.set('myProperty', 'value');
   // Handle any actions with this.on('myAction', function(val) { ... });
 
-  this.render(hbs`{{power-select/lazy-options}}`);
+  this.set('fakeSelectSearchAction', {
+    actions: {
+     search: () => {},
+     scrollTo: () => {}
+    }
+  });
+
+  this.render(hbs`{{power-select/lazy-options select=fakeSelectSearchAction}}`);
 
   assert.equal(this.$().text().trim(), '');
 
   // Template block usage:
   this.render(hbs`
-    {{#power-select/lazy-options}}
+    {{#power-select/lazy-options select=fakeSelectSearchAction}}
       template block text
     {{/power-select/lazy-options}}
   `);
