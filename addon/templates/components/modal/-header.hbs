@@ -1,17 +1,15 @@
 {{#if hasBlock}}
-  {{yield (hash
-    title=(component 'modal/-title' title=title)
-  )}}
+  {{yield
+    (hash
+      title=(component 'modal/header/-title' title=title)
+      closeAction=closeAction
+      closeButton=(component 'modal/header/-close-button' action=closeAction)
+      showCloseInHeader=showCloseInHeader
+    )
+  }}
 {{else}}
-  {{#modal/-title}}
-    {{title}}
-  {{/modal/-title}}
+  {{modal/header/-title title=title}}
   {{#if showCloseInHeader}}
-    {{#bootstrap-button
-      classNames="close"
-      aria-label="Close"
-      action=(action 'closeAction')}}
-      <span aria-hidden="true">&times;</span>
-    {{/bootstrap-button}}
+    {{modal/header/-close-button action=closeAction}}
   {{/if}}
 {{/if}}

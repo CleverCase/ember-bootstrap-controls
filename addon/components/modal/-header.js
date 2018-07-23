@@ -20,15 +20,4 @@ export default Ember.Component.extend({
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)
   },
-
-  actions: {
-    closeAction() {
-      let closeAction = this.get('closeAction')
-
-      if (closeAction) {
-        closeAction();
-      }
-    },
-  }
-
 });

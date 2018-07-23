@@ -1,35 +1,35 @@
 <div class="modal-dialog" role="document">
   <div class="modal-content">
     {{#if hasBlock}}
-      {{yield (hash
-        isOpen=isOpen
-        toggle=(action 'toggleModal')
-        close=(action 'closeAction')
-        accept=acceptAction
-        header=(component 'modal/-header'
-          title=title
-          showCloseInHeader=showCloseInHeader
-          closeAction=(action 'closeAction')
+      {{yield
+        (hash
+          isOpen=isOpen
+          toggle=(action 'toggleModal')
+          close=(action 'closeAction')
+          accept=acceptAction
+          header=(component 'modal/-header'
+            title=title
+            showCloseInHeader=showCloseInHeader
+            closeAction=(action 'closeAction')
+          )
+          body=(component 'modal/-body' content=body)
+          footer=(component 'modal/-footer'
+            acceptAction=acceptAction
+            closeAction=(action 'closeAction')
+          )
         )
-        body=(component 'modal/-body' content=modalBodyContent)
-        footer=(component 'modal/-footer'
-          btnAcceptLabel=btnAcceptLabel
-          btnCloseLabel=btnCloseLabel
-          acceptAction=acceptAction
-          closeAction=(action 'closeAction')
-        )
-      )}}
+      }}
     {{else}}
       {{modal/-header
         title=title
         showCloseInHeader=showCloseInHeader
-        closeAction=(action 'closeAction')}}
-      {{modal/-body content=modalBodyContent}}
+        closeAction=(action 'closeAction')
+      }}
+      {{modal/-body content=body}}
       {{modal/-footer
-        btnAcceptLabel=btnAcceptLabel
-        btnCloseLabel=btnCloseLabel
         acceptAction=acceptAction
-        closeAction=(action 'closeAction')}}
+        closeAction=(action 'closeAction')
+      }}
     {{/if}}
   </div>
 </div>
