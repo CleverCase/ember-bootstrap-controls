@@ -10,6 +10,16 @@ export const propDefinitions = {
     description: 'toggles the dialog as open or closed',
     type: PropTypes.bool,
   },
+  centered: {
+    default: false,
+    description: 'set the class of the dialog to be centered vertically on the screen',
+    type: PropTypes.bool,
+  },
+  fade: {
+    default: false,
+    description: 'use the fade in and out visual for the modal',
+    type: PropTypes.bool,
+  },
   title: {
     default: '',
     description: 'The top level title for the modal dialog',
@@ -34,6 +44,16 @@ export const propDefinitions = {
     description: 'Indicates whether the header has a close button in the top left corner',
     type: PropTypes.bool,
   },
+  closeOnEsc: {
+    default: false,
+    description: 'Indicates whether the modal closes using the keyboard escape key',
+    type: PropTypes.bool,
+  },
+  backdrop: {
+    default: "true",
+    description: "Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the modal on click.",
+    type: PropTypes.string,
+  },
 };
 
 export default Ember.Component.extend({
@@ -41,9 +61,25 @@ export default Ember.Component.extend({
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
 
-  attributeBindings: ['role'],
+  ariaHidden: "true",
+  attributeBindings: ['role', 'labelId:aria-labelledby', 'ariaHidden:aria-hidden'],
+  classNameBindings: ['fade'],
   classNames: 'modal',
   role: 'dialog',
+  fade: false,
+  centered: false,
+  closeOnEsc: false,
+  backdrop: "true",
+
+  didRender() {
+    this._super(...arguments);
+    let compRef = this;
+    let modalObj = this.get('modalObj');
+
+    modalObj.on('hidden.bs.modal', function (e) {
+      compRef.set('isOpen', false);
+    });
+  },
 
   modalObj: Ember.computed(function() {
     return $('#' + Ember.guidFor(this));
@@ -52,11 +88,17 @@ export default Ember.Component.extend({
   didUpdateAttrs() {
     this._super(...arguments);
     let isOpen = this.get('isOpen');
+    let closeOnEsc = this.get('closeOnEsc');
+    let backdrop = this.get('backdrop');
     let modalObj = this.get('modalObj');
 
     if (modalObj && modalObj.modal) {
       if (isOpen) {
-        modalObj.modal("show");
+        modalObj.modal({
+          backdrop: (backdrop == "true" || backdrop == "false") ? (backdrop == "true") : backdrop,
+          keyboard: closeOnEsc,
+          "show": true
+        });
       }
       else {
         modalObj.modal("hide");
