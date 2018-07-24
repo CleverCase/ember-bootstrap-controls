@@ -8,7 +8,8 @@
       {{#freestyle-usage 'basic-bootstrap-inputs-text' name='Basic Text Input'}}
         {{bootstrap-inputs/-text
           label="Text"
-        }}
+          floatingLabel=true
+          placeholder='Text'}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
@@ -18,6 +19,7 @@
           help=data.help
           disabled=data.disabled
           label=data.label
+          floatingLabel=data.floatingLabel
           maxlength=data.maxlength
           minlength=data.minlength
           placeholder=data.placeholder

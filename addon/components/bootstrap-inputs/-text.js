@@ -27,6 +27,11 @@ export const propDefinitions = {
     description: 'An array of EmberData errors to display.',
     type: PropTypes.arrayOf(PropTypes.string),
   },
+  floatingLabel: {
+    description: '',
+    type: PropTypes.bool,
+    default: false,
+  },
   help: {
     description: 'Additonal text to provide additional context to the user that is displayed below the input.',
     type: PropTypes.string,
