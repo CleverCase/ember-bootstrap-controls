@@ -1,8 +1,8 @@
 /*eslint no-console: ["error", { allow: ["log"] }] */
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../../templates/components/freestyle/bootstrap-mask-input';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout: layout,
 
   value: null,
@@ -10,8 +10,10 @@ export default Ember.Component.extend({
   type: "text",
   readonly: false,
   disabled: false,
-
-  myMask: ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+  init() {
+    this.myMask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+    this._super(...arguments);
+  },
 
   actions: {
     keyPress() {

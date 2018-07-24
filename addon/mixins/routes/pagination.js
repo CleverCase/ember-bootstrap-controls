@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Mixin from '@ember/object/mixin';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   queryParams: {
     pageNumber: { refreshModel: true },
     pageSize: { refreshModel: true },

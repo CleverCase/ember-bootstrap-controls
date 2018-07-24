@@ -1,14 +1,16 @@
-import Ember from 'ember';
+import { assert } from '@ember/debug';
+import { A } from '@ember/array';
+import EmberObject, { computed } from '@ember/object';
 import { task, didCancel, timeout } from 'ember-concurrency';
 
-export default Ember.Object.extend({
+export default EmberObject.extend({
   lastSearchTerm: undefined,
-  resolvedOptions: Ember.A([]),
+  resolvedOptions: A([]),
   page: undefined,
   pageCount: undefined,
   isLoading: false,
 
-  canLoadMore: Ember.computed('page', 'pageCount', function() {
+  canLoadMore: computed('page', 'pageCount', function() {
     return this.get('page') < this.get('pageCount');
   }),
 
@@ -24,7 +26,7 @@ export default Ember.Object.extend({
 
       this.set('pageCount', pageCount);
 
-      const resolvedOptions = Ember.A([]);
+      const resolvedOptions = A([]);
 
       if (Array.isArray(options)) {
         resolvedOptions.addObjects(options);
@@ -80,7 +82,7 @@ export default Ember.Object.extend({
   search(term, searchAction, debounceMS = 250) {
     const lastSearchTerm = this.get('lastSearchTerm');
 
-    Ember.assert('Must pass a search action to `search` on LazySelectState', searchAction);
+    assert('Must pass a search action to `search` on LazySelectState', searchAction);
 
     if (term === lastSearchTerm) {
       return this.get('loadMoreFetch').perform(term, searchAction);

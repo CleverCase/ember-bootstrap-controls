@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 import RoutePaginationMixin from 'ember-bootstrap-controls/mixins/routes/pagination';
 
-var PaginationRoute = Ember.Route.extend(RoutePaginationMixin);
+var PaginationRoute = Route.extend(RoutePaginationMixin);
 
 export default PaginationRoute;

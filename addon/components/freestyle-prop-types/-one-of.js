@@ -1,10 +1,15 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../../templates/components/freestyle-prop-types/-one-of';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   dataValue: '',
-  options: [],
+
+  init() {
+    this.options = [];
+    this._super(...arguments);
+  },
+
   didReceiveAttrs() {
     this.set('options', this.get('propDefinition.type.valueOptions'));
     this.set('dataValue', this.get(`data.${this.get('propDefinition.name')}`));

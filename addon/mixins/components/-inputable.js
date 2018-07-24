@@ -1,6 +1,9 @@
-import Ember from 'ember';
+import { guidFor } from '@ember/object/internals';
+import { computed } from '@ember/object';
+import { alias } from '@ember/object/computed';
+import Mixin from '@ember/object/mixin';
 
-export default Ember.Mixin.create({
+export default Mixin.create({
   classNames: ['form-group'],
   classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'showError:has-error'],
 
@@ -9,25 +12,25 @@ export default Ember.Mixin.create({
   hasWarning: undefined,
   disabled: undefined,
 
-  hasError: Ember.computed.alias('errors.length'),
+  hasError: alias('errors.length'),
 
-  hasValue: Ember.computed('value', function() {
+  hasValue: computed('value', function() {
     const value = this.get('value');
 
     return value ? true : false;
   }),
 
-  showError: Ember.computed('hasError', function() {
+  showError: computed('hasError', function() {
     const hasError = this.get('hasError');
 
     return !!hasError;
   }),
 
-  inputId: Ember.computed(function() {
-    return `bootstrap-control-input-${Ember.guidFor(this)}`;
+  inputId: computed(function() {
+    return `bootstrap-control-input-${guidFor(this)}`;
   }),
 
-  helpId: Ember.computed(function() {
-    return `${Ember.guidFor(this)}-help`;
+  helpId: computed(function() {
+    return `${guidFor(this)}-help`;
   }),
 });

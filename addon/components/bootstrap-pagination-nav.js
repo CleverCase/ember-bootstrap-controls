@@ -1,9 +1,10 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/bootstrap-pagination-nav';
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'nav',
-  className: ['bootstrap-pagination-nav-component'],
+  classNames: ['bootstrap-pagination-nav-component'],
   classNameBindings: ['aria-label'],
   layout: layout,
 
@@ -17,7 +18,7 @@ export default Ember.Component.extend({
   // Actions
   moveToPage: null,
 
-  _innerPageNumbers: Ember.computed('innerWindowSize', 'pageNumber', function() {
+  _innerPageNumbers: computed('innerWindowSize', 'pageNumber', function() {
     const innerWindowSize = this.get('innerWindowSize');
     const arraySize = innerWindowSize * 2 + 1; // double the length plus the middle "pageNumber"
     const pageNumber = this.get('pageNumber');
@@ -27,7 +28,7 @@ export default Ember.Component.extend({
     });
   }),
 
-  _outerLeftPageNumbers: Ember.computed('outerWindowSize', function() {
+  _outerLeftPageNumbers: computed('outerWindowSize', function() {
     const outerWindowSize = this.get('outerWindowSize');
 
     return Array.apply(null, Array(outerWindowSize)).map((n, index) => {
@@ -35,7 +36,7 @@ export default Ember.Component.extend({
     });
   }),
 
-  _outerRightPageNumbers: Ember.computed('outerWindowSize', 'totalPages', function() {
+  _outerRightPageNumbers: computed('outerWindowSize', 'totalPages', function() {
     const outerWindowSize = this.get('outerWindowSize');
     const totalPages = this.get('totalPages');
 
@@ -44,7 +45,7 @@ export default Ember.Component.extend({
     });
   }),
 
-  visibleOuterLeftPageNumbers: Ember.computed('_outerLeftPageNumbers', 'totalPages', function() {
+  visibleOuterLeftPageNumbers: computed('_outerLeftPageNumbers', 'totalPages', function() {
     const totalPages = this.get('totalPages');
     const _outerLeftPageNumbers = this.get('_outerLeftPageNumbers');
 
@@ -53,7 +54,7 @@ export default Ember.Component.extend({
     });
   }),
 
-  visibleOuterRightPageNumbers: Ember.computed('_outerRightPageNumbers', 'visibleOuterLeftPageNumbers', function() {
+  visibleOuterRightPageNumbers: computed('_outerRightPageNumbers', 'visibleOuterLeftPageNumbers', function() {
     const _outerRightPageNumbers = this.get('_outerRightPageNumbers');
     const visibleOuterLeftPageNumbers = this.get('visibleOuterLeftPageNumbers');
 
@@ -62,7 +63,7 @@ export default Ember.Component.extend({
     });
   }),
 
-  visibleInnerPageNumbers: Ember.computed(
+  visibleInnerPageNumbers: computed(
     '_innerPageNumbers',
     'visibleOuterLeftPageNumbers',
     'visibleOuterRightPageNumbers',
@@ -82,7 +83,7 @@ export default Ember.Component.extend({
     }
   ),
 
-  hasLeftGap: Ember.computed(
+  hasLeftGap: computed(
     'pageNumber',
     'innerWindowSize',
     'outerWindowSize',
@@ -96,7 +97,7 @@ export default Ember.Component.extend({
     }
   ),
 
-  hasRightGap: Ember.computed(
+  hasRightGap: computed(
     'pageNumber',
     'totalPages',
     'innerWindowSize',

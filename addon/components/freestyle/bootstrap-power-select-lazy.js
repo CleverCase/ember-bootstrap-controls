@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { Promise } from 'rsvp';
+import Component from '@ember/component';
 import layout from '../../templates/components/freestyle/bootstrap-power-select-lazy';
 
 const { setTimeout } = window;
@@ -51,7 +52,7 @@ function fuzzySearch(array, searchString) {
   });
 }
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
 
   pageSize: 10,
@@ -74,7 +75,7 @@ export default Ember.Component.extend({
     const pageSize = this.get('pageSize');
 
 
-    return new Ember.RSVP.Promise((resolve) => {
+    return new Promise((resolve) => {
       setTimeout(() => {
         const fuzzyColors = fuzzySearch(COLORS, searchString);
         const pageColors = fuzzyColors.slice((page - 1) * pageSize, page * pageSize);

@@ -1,7 +1,10 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap-inputs/-search';
 import { PropTypes } from 'ember-prop-types';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 const autoCompleteTypes = ['off', 'on', 'name', 'honorific-prefix',
   'given-name', 'additional-name', 'family-name', 'honorific-suffix',
   'nickname', 'username', 'organization-title', 'organization',
@@ -77,7 +80,7 @@ export const propDefinitions = {
   },
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
 

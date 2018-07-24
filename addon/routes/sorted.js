@@ -1,6 +1,6 @@
-import Ember from 'ember';
+import Route from '@ember/routing/route';
 import RouteSortedMixin from 'ember-bootstrap-controls/mixins/routes/sorted';
 
-var SortedRoute = Ember.Route.extend(RouteSortedMixin);
+var SortedRoute = Route.extend(RouteSortedMixin);
 
 export default SortedRoute;

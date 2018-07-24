@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
 
 export function concatClassNames([classNames = []]/*, hash*/) {
   if (classNames.join) {
@@ -8,4 +8,4 @@ export function concatClassNames([classNames = []]/*, hash*/) {
   return classNames;
 }
 
-export default Ember.Helper.helper(concatClassNames);
+export default buildHelper(concatClassNames);

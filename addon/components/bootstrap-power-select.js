@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/bootstrap-power-select';
 
 export const POWER_SELECT_CLASS_NAME = 'bootstrap-power-select-component';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout: layout,
 
   classNames: [POWER_SELECT_CLASS_NAME],

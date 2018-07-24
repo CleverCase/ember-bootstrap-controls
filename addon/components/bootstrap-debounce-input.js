@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/bootstrap-debounce-input';
 import { task, timeout } from 'ember-concurrency';
 import { INPUT_CLASS_NAME } from './bootstrap-input';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout: layout,
   tagName: '',
 

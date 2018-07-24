@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { assert } from '@ember/debug';
+import { dasherize } from '@ember/string';
 
 export default function asserIfUsingRenamedEvents(component) {
   const keyPress = component.get('keyPress');
@@ -18,6 +19,6 @@ export default function asserIfUsingRenamedEvents(component) {
 }
 
 function assertEvent(eventName) {
-  const dasherizedEventName = Ember.String.dasherize(eventName);
-  Ember.assert(`This event has been renamed from "${eventName}" to "${dasherizedEventName}", please rename occordingly`);
+  const dasherizedEventName = dasherize(eventName);
+  assert(`This event has been renamed from "${eventName}" to "${dasherizedEventName}", please rename occordingly`);
 }

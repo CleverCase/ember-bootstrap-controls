@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/freestyle-prop-types';
 const definedTypes = ['arrayOf', 'bool', 'instanceOf', 'number', 'oneOf', 'string', 'date'];
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   options: null,
   didReceiveAttrs() {
