@@ -1,5 +1,5 @@
 /* global $ */
-import Ember from 'ember';
+import { get } from '@ember/object';
 import layout from '../../templates/components/power-select/lazy-options';
 import PSOptionsComponent from 'ember-power-select/components/power-select/options';
 
@@ -15,8 +15,8 @@ export default PSOptionsComponent.extend({
   loadMore() {
     const select = this.get('select');
     if (select) {
-      const searchAction = Ember.get(select, 'actions.search');
-      const searchText = Ember.get(select, 'searchText');
+      const searchAction = get(select, 'actions.search');
+      const searchText = get(select, 'searchText');
 
       if (searchAction && searchText) {
         return searchAction(searchText);

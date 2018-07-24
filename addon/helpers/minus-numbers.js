@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
 
 export function minusNumbers(params) {
   var result = params[0];
@@ -10,4 +10,4 @@ export function minusNumbers(params) {
   return result;
 }
 
-export default Ember.Helper.helper(minusNumbers);
+export default buildHelper(minusNumbers);

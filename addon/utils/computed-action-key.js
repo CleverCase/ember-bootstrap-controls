@@ -1,8 +1,9 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import { camelize } from '@ember/string';
 export default function computedActionKey(dependentActionKey) {
-  var camelCaseActionKey = Ember.String.camelize(dependentActionKey);
+  var camelCaseActionKey = camelize(dependentActionKey);
 
-  return Ember.computed(dependentActionKey, function() {
+  return computed(dependentActionKey, function() {
     return this.get(dependentActionKey) ? camelCaseActionKey : null;
   });
 }

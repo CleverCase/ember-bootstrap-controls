@@ -42,7 +42,9 @@
       step=step
       tabindex=tabindex
     }}
-    {{control.help}}
+    {{#if help}}
+      {{control.help}}
+    {{/if}}
   {{/if}}
 
 {{/bootstrap/control-wrapper}}

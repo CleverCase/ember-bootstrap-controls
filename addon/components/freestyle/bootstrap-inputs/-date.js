@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../../../templates/components/freestyle/bootstrap-inputs/-date';
 import { BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { propDefinitions } from '../../bootstrap-inputs/-date';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   propDefinitions,
 

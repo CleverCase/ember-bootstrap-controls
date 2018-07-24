@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
 
 export function addNumbers(params) {
   let result = params[0];
@@ -9,4 +9,4 @@ export function addNumbers(params) {
   return result;
 }
 
-export default Ember.Helper.helper(addNumbers);
+export default buildHelper(addNumbers);

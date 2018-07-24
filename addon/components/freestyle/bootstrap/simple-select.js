@@ -1,9 +1,9 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../../../templates/components/freestyle/bootstrap/simple-select';
 import { BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { propDefinitions } from '../../bootstrap/simple-select';
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   propDefinitions,
   data: Object.assign(BuilderForPropDefaults(propDefinitions), {

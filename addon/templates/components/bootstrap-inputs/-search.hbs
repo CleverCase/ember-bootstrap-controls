@@ -48,6 +48,8 @@
       tabindex=tabindex
       helpId=control.helpId
     }}
-    {{control.help}}
+    {{#if help}}
+      {{control.help}}
+    {{/if}}
   {{/if}}
 {{/bootstrap/control-wrapper}}
