@@ -5,9 +5,8 @@
     as |collection|
   }}
     {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-radio-group' name='Basic Radio Group'}}
-        <p>Most Favorite: {{mostFavorite}}</p>
-        <p>Least Favorite: {{leastFavorite}}</p>
+      <p>Most Favorite: {{mostFavorite}}</p>
+      {{#freestyle-usage 'basic-inline-bootstrap-radio-group' name='Basic Inline Radio Group'}}
         {{bootstrap/radio-group
           label="Most Favorite Number"
           inline=true
@@ -15,8 +14,11 @@
           value=mostFavorite
           onChange=(action (mut mostFavorite))
         }}
+      {{/freestyle-usage}}
+      <p>Least Favorite: {{leastFavorite}}</p>
+      {{#freestyle-usage 'basic-bootstrap-radio-group' name='Basic Radio Group'}}
         {{bootstrap/radio-group
-          label="Lest Favorite Number"
+          label="Least Favorite Number"
           options=options
           value=leastFavorite
           onChange=(action (mut leastFavorite))
@@ -54,8 +56,56 @@
             {{/if}}
           {{/radioGroup.radio}}
         {{/bootstrap/radio-group}}
-        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
+      {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+    {{/collection.variant}}
+    {{#collection.variant key='Custom Child Components'}}
+      {{#freestyle-usage 'child-components-bootstrap-radio-group' name='Custom Child Components'}}
+        {{#bootstrap/radio-group
+          inline=true
+          value=customChild
+          label="How Cool Are You?"
+          options=options
+          onChange=(action (mut data.value))
+          as |radioGroup index|
+        }}
+          {{#radioGroup.radio as |radio|}}
+            {{radio.input}}
+            {{#if (eq index 0)}}
+              {{#radio.label as |label|}}
+                <span class="text-danger">{{label}}</span>
+              {{/radio.label}}
+            {{else if radioGroup.last}}
+              {{#radio.label as |label|}}
+                <span class="text-success">{{label}}</span>
+              {{/radio.label}}
+            {{else}}
+              {{radio.label}}
+            {{/if}}
+          {{/radioGroup.radio}}
+        {{/bootstrap/radio-group}}
+      {{/freestyle-usage}}
+      {{#freestyle-note "child-components-bootstrap-radio-group--notes"}}
+        The radio-group component yields 2 properties `radioGroup` and `index`. It represents each radio in the group.
+
+        `{{index}}`
+        This is the index of the current radio.
+
+        `{{radioGroup}}`
+        This is the radio group element and it has 2 child components `radio` and `index`. It alsohas 2 convenience booleans: `first` and `last` which become true if the current iteration is the first or last radio, respectively.
+
+        `{{radioGroup.index}}`
+        This is an integer that is the index of the current radio.
+
+        `{{radioGroup.radio}}`
+        This component represents each radio button in the group. It has 2 child components `input` and `label`.
+
+        `{{radioGroup.radio.input}}`
+        This is the radio input.
+
+        `{{radioGroup.radio.label}}`
+        This is the label for the radio input. It yields the text for the label if you need additional customization.
+      {{/freestyle-note}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}

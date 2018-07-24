@@ -13,4 +13,5 @@ export default Ember.Component.extend({
   options: Array(10).fill().map((item, index) => 1 + index),
   mostFavorite: 1,
   leastFavorite: 2,
+  customChild: 5,
 });
