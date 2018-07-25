@@ -41,10 +41,14 @@
   width: 100%;
   margin-bottom: 0; /* Override default `<label>` margin */
   line-height: 1.5;
-  color: #495057;
+  color: grey;
   border: 1px solid transparent;
   border-radius: .25rem;
   transition: all .1s ease-in-out;
+}
+
+.form-label-group > input.form-control {
+  height: 2.85rem;
 }
 
 .form-label-group input::-webkit-input-placeholder {
