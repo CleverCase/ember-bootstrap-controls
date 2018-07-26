@@ -2,7 +2,7 @@ import { moduleForComponent, test } from 'ember-qunit';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-url', 'Integration | Component | bootstrap button', {
+moduleForComponent('bootstrap-inputs/-url', 'Integration | Component | Bootstrap Inputs | Url', {
   integration: true
 });
 
@@ -14,15 +14,15 @@ test('it renders', function(assert) {
   // this.render(hbs`{{bootstrap-input/-email action=noop}}`);
   this.set('label', 'Some Label');
   this.set('value', 'email');
-  this.render(hbs`{{bootstrap-input/-url label=label value=value}}`);
+  this.render(hbs`{{bootstrap-inputs/-url label=label value=value}}`);
 
-  assert.equal(this.$().text().trim(), '');
+  assert.equal(this.$().text().trim(), this.get('label'));
 
   // Template block usage:
   this.render(hbs`
-    {{#bootstrap-input/-url}}
+    {{#bootstrap-inputs/-url}}
       template block text
-    {{/bootstrap-input/-url}}
+    {{/bootstrap-inputs/-url}}
   `);
 
   assert.equal(this.$().text().trim(), 'template block text');

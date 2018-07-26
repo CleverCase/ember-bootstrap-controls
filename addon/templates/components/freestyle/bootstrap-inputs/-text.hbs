@@ -7,7 +7,8 @@
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-bootstrap-inputs-text' name='Basic Text Input'}}
         {{bootstrap-inputs/-text
-          label="Text"}}
+          label="Text"
+        }}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
@@ -26,8 +27,8 @@
           tabIndex=data.tabIndex
           value=data.value
         }}
-        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
+      {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}

@@ -1,0 +1,55 @@
+{{#bootstrap/control-wrapper
+  classNames=classNames
+  errors=errors
+  srOnly=srOnly
+  label=label
+  as |control|
+}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        label=(component control.label for=control.inputId)
+        control=control
+        input=(component 'bootstrap/-input'
+          value=value
+          elementId=control.inputId
+          type='date'
+          helpId=control.helpId
+          autocomplete=autocomplete
+          disabled=disabled
+          max=max
+          min=min
+          pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+          readonly=readonly
+          required=required
+          srOnly=srOnly
+          step=step
+          tabindex=tabindex
+          change=onChange
+        )
+      )
+    }}
+  {{else}}
+    {{control.label for=control.inputId}}
+    {{bootstrap/-input
+      value=value
+      elementId=control.inputId
+      type='date'
+      helpId=control.helpId
+      autocomplete=autocomplete
+      disabled=disabled
+      max=max
+      min=min
+      pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}"
+      readonly=readonly
+      required=required
+      srOnly=srOnly
+      step=step
+      tabindex=tabindex
+      change=onChange
+    }}
+    {{#if help}}
+      {{control.help}}
+    {{/if}}
+  {{/if}}
+{{/bootstrap/control-wrapper}}

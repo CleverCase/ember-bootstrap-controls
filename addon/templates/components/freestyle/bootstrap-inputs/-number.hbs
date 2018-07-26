@@ -5,7 +5,7 @@
     as |collection|
   }}
     {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-inputs-number' name='Basic EmberBootstrapControls'}}
+      {{#freestyle-usage 'basic-bootstrap-inputs-number' name='Basic Number Input'}}
         {{bootstrap-inputs/-number
           label='Basic Number Input'
           value=basicValue
@@ -13,7 +13,7 @@
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-inputs-number' name='Advanced EmberBootstrapControls'}}
+      {{#freestyle-usage 'advanced-bootstrap-inputs-number' name='Advanced Number Input'}}
         {{bootstrap-inputs/-number
           label=data.label
           help=data.help
@@ -29,8 +29,8 @@
           tabindex=data.tabindex
           value=data.value
         }}
-        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
+      {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}

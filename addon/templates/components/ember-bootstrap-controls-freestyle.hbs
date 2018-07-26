@@ -1,14 +1,17 @@
-{{#freestyle-section name='Bootstrap Controls' as |section|}}
+{{#freestyle-section name='Legacy Bootstrap Controls' as |section|}}
   {{freestyle/bootstrap-button section=section}}
   {{freestyle/bootstrap-date-picker section=section}}
   {{freestyle/bootstrap-debounce-input section=section}}
-  {{freestyle/bootstrap-form section=section}}
   {{freestyle/bootstrap-input section=section}}
   {{freestyle/bootstrap-mask-input section=section}}
   {{freestyle/bootstrap-pagination-nav section=section}}
   {{freestyle/bootstrap-power-select section=section}}
+  {{freestyle/bootstrap-form section=section}}
+{{/freestyle-section}}
+{{#freestyle-section name='Bootstrap Controls' as |section|}}
   {{freestyle/bootstrap/simple-select section=section}}
   {{freestyle/bootstrap/radio-group section=section}}
+
   {{freestyle/bootstrap-inputs/-email section=section}}
   {{freestyle/bootstrap-inputs/-password section=section}}
   {{freestyle/bootstrap-inputs/-url section=section}}
@@ -18,5 +21,9 @@
   {{freestyle/bootstrap-inputs/-search section=section}}
   {{freestyle/bootstrap-inputs/-range section=section}}
   {{freestyle/bootstrap-inputs/-checkbox section=section}}
+  
+  {{freestyle/bootstrap-inputs/-date section=section}}
+  {{freestyle/bootstrap-inputs/-time section=section}}
+  
   {{freestyle/bootstrap/modal/-modal section=section}}
 {{/freestyle-section}}

@@ -17,7 +17,7 @@ test('it renders', function(assert) {
 
   // Template block usage:
   this.render(hbs`
-    {{#bootstrap-data-table}}
+    {{#bootstrap-data-table title="template block text"}}
       template block text
     {{/bootstrap-data-table}}
   `);
