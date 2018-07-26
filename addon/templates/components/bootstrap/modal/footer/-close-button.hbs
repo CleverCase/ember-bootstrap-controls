@@ -1,0 +1,10 @@
+{{#bootstrap-button
+  classNames="btn-secondary"
+  action=action
+}}
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    Close
+  {{/if}}
+{{/bootstrap-button}}

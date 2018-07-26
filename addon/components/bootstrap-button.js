@@ -7,7 +7,7 @@ export default Ember.Component.extend(PropTypeMixin, {
   layout,
   tagName: 'button',
   classNames: ['btn'],
-  attributeBindings: ['disabledButton:disabled', 'type'],
+  attributeBindings: ['disabledButton:disabled', 'type', 'aria-label'],
 
   init() {
     Ember.Logger.warn('DEPRECATION: bootstrap-button component is being replaced by bootstrap/button in an upcoming version of ember-bootstrap-controls.');

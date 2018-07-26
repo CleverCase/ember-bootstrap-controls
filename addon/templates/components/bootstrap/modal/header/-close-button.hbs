@@ -1,0 +1,11 @@
+{{#bootstrap-button
+  classNames="close"
+  aria-label="Close"
+  action=action
+}}
+  {{#if hasBlock}}
+    {{yield}}
+  {{else}}
+    <span aria-hidden="true">&times;</span>
+  {{/if}}
+{{/bootstrap-button}}

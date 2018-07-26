@@ -1,0 +1,15 @@
+{{#if hasBlock}}
+  {{yield
+    (hash
+      title=(component 'bootstrap/modal/header/-title' title=title)
+      closeAction=closeAction
+      closeButton=(component 'bootstrap/modal/header/-close-button' action=closeAction)
+      showCloseInHeader=showCloseInHeader
+    )
+  }}
+{{else}}
+  {{bootstrap/modal/header/-title title=title}}
+  {{#if showCloseInHeader}}
+    {{bootstrap/modal/header/-close-button action=closeAction}}
+  {{/if}}
+{{/if}}

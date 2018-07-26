@@ -1,0 +1,115 @@
+{{#section.subsection name='Modal Base'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#bootstrap-button classNames='btn-primary' action=(action 'openModal')}}
+        Open Modal
+      {{/bootstrap-button}}
+      {{#freestyle-usage 'basic-modal' name='Basic Modal'}}
+        {{bootstrap/modal/-modal
+          isOpen=isModalOpen
+          title="Simple Modal"
+          body=sampleContent
+          acceptAction=(action 'acceptModal')
+        }}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#bootstrap-button
+        classNames='btn-primary'
+        action=(action 'openModalAdvanced')
+      }}
+        Open Advanced Modal
+      {{/bootstrap-button}}
+      {{#freestyle-usage 'advanced-modal' name='Advanced Modal'}}
+        {{bootstrap/modal/-modal
+          isOpen=data.isOpen
+          title=data.title
+          showCloseInHeader=data.showCloseInHeader
+          body=data.body
+          fade=data.fade
+          centered=data.centered
+          closeOnEsc=data.closeOnEsc
+          backdrop=data.backdrop
+          acceptAction=(action 'acceptModalAdvanced')
+          closeAction=(action 'closeModalAdvanced')
+        }}
+      {{/freestyle-usage}}
+      {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+    {{/collection.variant}}
+    {{#collection.variant key='Custom Child Components'}}
+      {{#bootstrap-button
+        classNames='btn-primary'
+        action=(action 'openModalCustomSub')
+      }}
+        Open Custom Block Modal
+      {{/bootstrap-button}}
+      {{#freestyle-usage 'child-components-modal' name='Custom Child Components'}}
+        {{#bootstrap/modal/-modal
+          isOpen=isModalOpenCustomSub
+          acceptAction=(action 'acceptModalCustomSub')
+          closeAction=(action 'closeModalCustomSub')
+          as |modal|
+        }}
+          {{#modal.header as |header|}}
+            {{#header.title tagName="span"}}
+              <strong>Title:</strong> Block Modal
+            {{/header.title}}
+            {{header.closeButton}}
+          {{/modal.header}}
+          {{#modal.body}}
+            <div>
+            <h1>Content!</h1>
+            <p>Some important stuff to read.</p>
+            <p class="text-danger">Some Red text to read</p>
+            </div>
+          {{/modal.body}}
+          {{#modal.footer as |footer|}}
+            {{#bootstrap-button
+              classNames="btn-danger"
+              action=footer.closeAction}}
+              Undo
+            {{/bootstrap-button}}
+            {{#footer.acceptButton}}
+              SAVE
+            {{/footer.acceptButton}}
+          {{/modal.footer}}
+        {{/bootstrap/modal/-modal}}
+      {{/freestyle-usage}}
+      {{#freestyle-note "child-components-modal--notes"}}
+        The modal-container a component yields 3 child components `header`, `body`, and `footer`.
+
+        `{{header}}`
+        This is the header for the modal. The `header` yields 2 child components `title` and `closeButton`. It also yields the `closeAction` property.
+
+        `{{header.closeAction}}`
+        This is the close action. You can use this if you want to create a custom button.
+
+        `{{header.closeButton}}`
+        This is the close button for the modal header. It yields to the contents of the button if you need to change the text.
+
+        `{{header.title}}`
+        This is the title of the modal. It yields the text for title if you need additional customization.
+
+        `{{body}}`
+        This is the body for the modal. It yields the text for body if you need additional customization.
+
+        `{{footer}}`
+        This is the footer for the modal. It yields 2 child components `acceptButton` and `closeButton`. It also yields 2 properties `acceptAction` and `closeAction`.
+
+        `{{footer.acceptAction}}` and `{{footer.closeAction}}`
+        These are the actions for the buttons. You can use these if you want to create custom buttons.
+
+        `{{footer.acceptButton}}`
+        This is the accept button for the modal footer. It yields to the contents of the button if you need to change the text.
+
+        `{{footer.closeButton}}`
+        This is the close button for the modal footer. It yields to the contents of the button if you need to change the text.
+
+      {{/freestyle-note}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}
