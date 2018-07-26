@@ -26,16 +26,16 @@ export default PSOptionsComponent.extend({
 
   attachCheckVisibilty() {
     const checkVisibility = () => {
-      if ($(this.element).find('.ember-power-select-option--load-more').checkInView(true)) {
+      if ($(this.element).find('.ember-power-select-option--load-more').checkInView(true)) { // eslint-disable-line ember/no-global-jquery
         this.loadMore();
       }
     };
 
-    $(this.element).on('scroll', checkVisibility);
+    $(this.element).on('scroll', checkVisibility); // eslint-disable-line ember/no-global-jquery
   },
 
   removeCheckVisibility() {
-    $(this.element).off('scroll');
+    $(this.element).off('scroll'); // eslint-disable-line ember/no-global-jquery
   },
 
   didInsertElement() {
