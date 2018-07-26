@@ -19,6 +19,7 @@ All notable changes to this project will be documented in this file.
   * Updated route mixin to better handle adjustable page sizes and associated documentation. ([@jweakley][])
   * [#151](https://github.com/wildland/ember-bootstrap-controls/issues/151): Added new date type input. ([@Nathan-O][])
   * [#156](https://github.com/wildland/ember-bootstrap-controls/issues/156): Added new time type input. ([@harokevin][])
+  * Added a new floating label input based on text input. ([@flarinerin][])
 ### Changed
   * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
   * Updated bootstrap-inputs documentation to clarify how to use inputs. ([@flarinerin][])
