@@ -1,7 +1,12 @@
-import Ember from 'ember';
+import { guidFor } from '@ember/object/internals';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../../../templates/components/bootstrap/modal/-modal';
 import { PropTypes } from 'ember-prop-types';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { task } from 'ember-concurrency';
 
 export const propDefinitions = {
@@ -56,7 +61,7 @@ export const propDefinitions = {
   },
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
 
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
@@ -81,8 +86,8 @@ export default Ember.Component.extend({
     });
   },
 
-  modalObj: Ember.computed(function() {
-    return $('#' + Ember.guidFor(this));
+  modalObj: computed(function() {
+    return $('#' + guidFor(this)); // eslint-disable-line ember/no-global-jquery, no-undef
   }),
 
   didUpdateAttrs() {

@@ -2495,9 +2495,9 @@ ember-power-select@^2.0.4:
     ember-text-measurer "^0.4.0"
     ember-truth-helpers "^2.0.0"
 
-ember-prop-types@wildland/ember-prop-types#babel-updates:
+ember-prop-types@wildland/ember-prop-types:
   version "7.0.4"
-  resolved "https://codeload.github.com/wildland/ember-prop-types/tar.gz/a263545b9e4925a657cb8cf178b51a4d0cff4420"
+  resolved "https://codeload.github.com/wildland/ember-prop-types/tar.gz/cbf08e773e6e4db3d06551ce5a48005fe9b2b102"
   dependencies:
     ember-cli-babel "^6.0.0"
     ember-get-config "^0.2.4"
