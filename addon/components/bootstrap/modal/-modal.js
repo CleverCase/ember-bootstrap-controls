@@ -52,7 +52,7 @@ export const propDefinitions = {
   backdrop: {
     default: "true",
     description: "Includes a modal-backdrop element. Alternatively, specify static for a backdrop which doesn't close the modal on click.",
-    type: PropTypes.string,
+    type: PropTypes.oneOf(["true", "false", "static"]),
   },
 };
 

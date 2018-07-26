@@ -8,13 +8,13 @@ export default Ember.Component.extend({
   propDefinitions,
   data: Object.assign(BuilderForPropDefaults(propDefinitions), {
     value: '',
+    title: 'Advanced Modal',
+    body: 'Advanced Example Modal Body Text',
   }),
 
   isModalOpen: false,
   isModalOpenAdvanced: false,
   isModalOpenCustomSub: false,
-
-  sampleContent: 'Example Modal',
 
   actions: {
     closeModal() {
@@ -37,7 +37,7 @@ export default Ember.Component.extend({
 
     acceptModalAdvanced() {
       alert('freestyle: acceptModalAdvanced');
-      this.set('isModalOpenAdvanced', false);
+      this.set('data.isOpen', false);
     },
 
     acceptModalCustomSub() {
@@ -50,7 +50,7 @@ export default Ember.Component.extend({
     },
 
     openModalAdvanced() {
-      this.set('isModalOpenAdvanced', true);
+      this.set('data.isOpen', true);
     },
 
     openModalCustomSub() {

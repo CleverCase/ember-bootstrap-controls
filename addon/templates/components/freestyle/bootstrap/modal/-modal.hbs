@@ -25,26 +25,18 @@
         Open Advanced Modal
       {{/bootstrap-button}}
       {{#freestyle-usage 'advanced-modal' name='Advanced Modal'}}
-        {{#bootstrap/modal/-modal
-          isOpen=isModalOpenAdvanced
-          title="Advanced Modal"
-          showCloseInHeader=true
-          body=sampleContent
-          fade=true
-          centered=true
-          closeOnEsc=true
-          backdrop='static'
+        {{bootstrap/modal/-modal
+          isOpen=data.isOpen
+          title=data.title
+          showCloseInHeader=data.showCloseInHeader
+          body=data.body
+          fade=data.fade
+          centered=data.centered
+          closeOnEsc=data.closeOnEsc
+          backdrop=data.backdrop
           acceptAction=(action 'acceptModalAdvanced')
           closeAction=(action 'closeModalAdvanced')
-          as |modal|
         }}
-          {{modal.header}}
-          {{modal.body}}
-          {{#modal.footer as |footer|}}
-            {{#footer.closeButton}}Cancel{{/footer.closeButton}}
-            {{footer.acceptButton}}
-          {{/modal.footer}}
-        {{/bootstrap/modal/-modal}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
