@@ -76,7 +76,7 @@ export default Ember.Component.extend({
     let compRef = this;
     let modalObj = this.get('modalObj');
 
-    modalObj.on('hidden.bs.modal', function (e) {
+    modalObj.on('hidden.bs.modal', function (/*e*/) {
       compRef.set('isOpen', false);
     });
   },
