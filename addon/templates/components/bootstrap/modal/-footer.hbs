@@ -1,0 +1,13 @@
+{{#if hasBlock}}
+  {{yield
+    (hash
+      acceptAction=acceptAction
+      acceptButton=(component 'bootstrap/modal/footer/-accept-button' action=acceptAction)
+      closeAction=closeAction
+      closeButton=(component 'bootstrap/modal/footer/-close-button' action=closeAction)
+    )
+  }}
+{{else}}
+  {{bootstrap/modal/footer/-close-button action=closeAction}}
+  {{bootstrap/modal/footer/-accept-button action=acceptAction}}
+{{/if}}
