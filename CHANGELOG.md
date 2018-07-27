@@ -35,6 +35,7 @@ All notable changes to this project will be documented in this file.
   * [#199](https://github.com/wildland/ember-bootstrap-controls/issues/199): Added `yarn` for dependency management. ([@jweakley][])
   * Updated npm packages. ([@jweakley][])
   * [#190](https://github.com/wildland/ember-bootstrap-controls/issues/190): Updated tests. ([@harokevin][])
+  * [#207](https://github.com/wildland/ember-bootstrap-controls/issues/207): Temporary fix for performance. ([@jweakley][])
 ### Security
 
 [@jweakley]: https://github.com/jweakley
