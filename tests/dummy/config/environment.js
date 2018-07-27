@@ -19,6 +19,7 @@ module.exports = function(environment) {
 
     ['ember-a11y-testing']: {
       componentOptions: {
+        turnAuditOff: true,
         axeOptions: {
           rules: {
             'color-contrast': { enabled: false },
