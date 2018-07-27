@@ -12,23 +12,27 @@
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-inputs-text' name='Advanced Text Input'}}
+      {{#freestyle-dynamic 'dynamic-properties'
+        dynamicProperties=dynamicProperties
+        title='Text Advanced'
+        componentName='-text'
+        as |dynamic|
+      }}
         {{bootstrap-inputs/-text
-          autocomplete=data.autocomplete
-          help=data.help
-          disabled=data.disabled
-          label=data.label
-          maxlength=data.maxlength
-          minlength=data.minlength
-          placeholder=data.placeholder
-          readonly=data.readonly
-          required=data.required
-          srOnly=data.srOnly
-          tabIndex=data.tabIndex
-          value=data.value
+          autocomplete=dynamic.autocomplete
+          help=dynamic.help
+          disabled=dynamic.disabled
+          label=dynamic.label
+          maxlength=dynamic.maxlength
+          minlength=dynamic.minlength
+          placeholder=dynamic.placeholder
+          readonly=dynamic.readonly
+          required=dynamic.required
+          srOnly=dynamic.srOnly
+          tabIndex=dynamic.tabIndex
+          value=dynamic.value
         }}
-      {{/freestyle-usage}}
-      {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-dynamic}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}
