@@ -23,34 +23,42 @@ export const propDefinitions = {
     type: PropTypes.oneOf(autoCompleteTypes),
   },
   disabled: {
+    default: false,
     description: 'Indicates whether the control is disabled',
     type: PropTypes.bool,
   },
   errors: {
+    dynamicExampleValue: [],
     description: 'An array of EmberData errors to display.',
     type: PropTypes.arrayOf(PropTypes.string),
   },
   help: {
+    dynamicExampleValue: 'This is some help text',
     description: 'Additonal text to provide additional context to the user that is displayed below the input.',
     type: PropTypes.string,
   },
   label: {
+    dynamicExampleValue: 'Text Input',
     description: 'The label for the input.',
     type: PropTypes.string.isRequired,
   },
   maxlength: {
+    dynamicExampleValue: 100,
     description: 'The maximum number of characters (in UTF-16 code units) that the user can enter.',
     type: PropTypes.number,
   },
   minlength: {
+    dynamicExampleValue: 1,
     description: 'The minimum number of characters (in UTF-16 code units) that the user can enter.',
     type: PropTypes.number,
   },
   pattern: {
+    dynamicExampleValue: '',
     description: "A regular expression that the control's value is checked against.",
     type: PropTypes.instanceOf(RegExp),
   },
   placeholder: {
+    dynamicExampleValue: '',
     description: 'A hint to the user of what can be entered in the control. This is displayed in the empty input.',
     type: PropTypes.string,
   },
@@ -70,10 +78,12 @@ export const propDefinitions = {
     type: PropTypes.bool,
   },
   tabindex: {
+    dynamicExampleValue: 1,
     description: 'The position of the element in the tabbing navigation order for the current document.',
     type: PropTypes.number,
   },
   value: {
+    dynamicExampleValue: '',
     description: 'A string that is the value for the control.',
     type: PropTypes.string.isRequired,
   },
