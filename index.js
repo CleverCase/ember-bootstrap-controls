@@ -1,4 +1,3 @@
-/* eslint-env node */
 'use strict';
 
 module.exports = {
@@ -9,10 +8,10 @@ module.exports = {
   },
 
   included(app, parentAddon) {
-  	this._super.included.apply(this, arguments);
+    this._super.included.apply(this, arguments);
 
-  	const target = (parentAddon || app);
+    const target = (parentAddon || app);
 
-  	target.import('vendor/ember-bootstrap-controls.css');
+    target.import('vendor/ember-bootstrap-controls.css');
   }
 };

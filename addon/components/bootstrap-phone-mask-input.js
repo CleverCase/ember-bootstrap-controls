@@ -1,9 +1,7 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/bootstrap-phone-mask-input';
 import InputableMixin from '../mixins/components/inputable';
 import asserIfUsingRenamedEvents from '../utils/assert-if-using-renamed-events';
-
-const { Component } = Ember;
 
 export default Component.extend(InputableMixin, {
   classNames: ['form-group', 'bootstrap-input-component'],
@@ -19,7 +17,11 @@ export default Component.extend(InputableMixin, {
   tabindex: 0,
   required: true,
 
-  phoneMask: ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/],
+
+  init() {
+    this.phoneMask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+    this._super(...arguments);
+  },
 
   didReceiveAttrs() {
     this._super(...arguments);

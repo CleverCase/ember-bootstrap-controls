@@ -20,15 +20,19 @@ All notable changes to this project will be documented in this file.
   * [#151](https://github.com/wildland/ember-bootstrap-controls/issues/151): Added new date type input. ([@Nathan-O][])
   * [#156](https://github.com/wildland/ember-bootstrap-controls/issues/156): Added new time type input. ([@harokevin][])
   * [#202](https://github.com/wildland/ember-bootstrap-controls/issues/202): Added a new floating label input based on text input. ([@flarinerin][])
+  * [#199](https://github.com/wildland/ember-bootstrap-controls/issues/199): Added yarn support. ([@jweakley][])
 ### Changed
   * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
   * Updated bootstrap-inputs documentation to clarify how to use inputs. ([@flarinerin][])
   * Updated branding to better reflect Wildland UX style - favicon, colors, fonts ([@flarinerin][])
 ### Deprecated
+  * Added a deprecation warning to `bootstrap-button` in favor of a new upcoming button. ([@jweakley][])
 ### Removed
 ### Fixed
   * Updated instructions on running the Dummy App locally. ([@Nathan-O][])
   * Updated testing instructions in README.md. ([@jweakley][])
+  * Updated install instructions in README.md. ([@jweakley][])
+  * [#199](https://github.com/wildland/ember-bootstrap-controls/issues/199): Added `yarn` for dependency management. ([@jweakley][])
   * Updated npm packages. ([@jweakley][])
   * [#190](https://github.com/wildland/ember-bootstrap-controls/issues/190): Updated tests. ([@harokevin][])
 ### Security

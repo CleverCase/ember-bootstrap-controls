@@ -1,10 +1,13 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../../../templates/components/bootstrap/modal/-body';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
 export const propDefinitions = {};
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
 

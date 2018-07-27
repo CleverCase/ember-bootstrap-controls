@@ -1,7 +1,12 @@
-import Ember from 'ember';
+import { guidFor } from '@ember/object/internals';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap-inputs/-checkbox';
 import { PropTypes } from 'ember-prop-types';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
 export const propDefinitions = {
   disabled: {
@@ -32,11 +37,11 @@ export const propDefinitions = {
   },
   onChange: {
     description: 'A function that is called when the checkbox is changed.',
-    type: PropTypes.func.isRequired,
+    type: PropTypes.func,
   },
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   classNames: ['form-check'],
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
@@ -45,7 +50,7 @@ export default Ember.Component.extend({
     return BuilderForPropDefaults(propDefinitions)
   },
 
-  inputId: Ember.computed(function() {
-    return `bootstrap-control-input-${Ember.guidFor(this)}`;
+  inputId: computed(function() {
+    return `bootstrap-control-input-${guidFor(this)}`;
   }),
 });

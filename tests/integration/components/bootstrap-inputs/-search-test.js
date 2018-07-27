@@ -14,8 +14,7 @@ test('it renders', function(assert) {
   // this.render(hbs`{{bootstrap-inputs/-search action=noop}}`);
   this.set('label', 'Seach for Things and Stuff');
   this.set('value', 'Bird');
-  this.set('help', 'Search for anything. It is okay');
-  this.render(hbs`{{bootstrap-inputs/-search label=label value=value help=help}}`);
+  this.render(hbs`{{bootstrap-inputs/-search label=label value=value}}`);
 
   assert.ok(true, this.$().text().trim().includes(this.get('label')));
 
@@ -23,11 +22,7 @@ test('it renders', function(assert) {
   this.render(hbs`
     {{#bootstrap-inputs/-search label=label value=value as |component|}}
       {{component.label}}
-      {{component.help}}
       {{component.input}}
-      {{component.value}}
-      {{component.control.value}}
-      {{component.control.input}}
     {{/bootstrap-inputs/-search}}
   `);
 

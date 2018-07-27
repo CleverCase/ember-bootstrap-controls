@@ -1,8 +1,8 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../templates/components/bootstrap-textarea';
 import InputableMixin from '../mixins/components/inputable';
 
-export default Ember.Component.extend(InputableMixin, {
+export default Component.extend(InputableMixin, {
   layout: layout,
 
   classNames: ['form-group', 'bootstrap-textarea-component'],

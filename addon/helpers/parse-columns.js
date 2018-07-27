@@ -1,4 +1,5 @@
-import Ember from 'ember';
+import { helper as buildHelper } from '@ember/component/helper';
+import { htmlSafe } from '@ember/template';
 
 export function parseColumns(params/*, hash*/) {
   let record = params[0];
@@ -6,8 +7,8 @@ export function parseColumns(params/*, hash*/) {
   if (record && attrName) {
     let result = record.get(attrName);
 
-    return new Ember.String.htmlSafe(result);
+    return new htmlSafe(result);
   }
 }
 
-export default Ember.Helper.helper(parseColumns);
+export default buildHelper(parseColumns);

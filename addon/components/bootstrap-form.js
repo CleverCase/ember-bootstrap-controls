@@ -1,13 +1,13 @@
-import Ember from 'ember';
+import { assert } from '@ember/debug';
+import Component from '@ember/component';
 import { task, didCancel } from 'ember-concurrency';
 import layout from '../templates/components/bootstrap-form';
 import PropTypeMixin, { PropTypes } from 'ember-prop-types';
 
-export default Ember.Component.extend(PropTypeMixin, {
+export default Component.extend(PropTypeMixin, {
   layout,
   tagName: 'form',
-
-  propTypes: {
+  propTypes: { // eslint-disable-line ember/avoid-leaking-state-in-ember-objects
     isEditing: PropTypes.bool,
     save: PropTypes.func.isRequired,
     cancel: PropTypes.func,
@@ -32,7 +32,7 @@ export default Ember.Component.extend(PropTypeMixin, {
 
         return rval;
       } else {
-        Ember.assert('Save function required');
+        assert('Save function required');
       }
     } finally {
       this.set('_isSaving', false);

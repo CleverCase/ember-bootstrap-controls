@@ -14,5 +14,7 @@
 }}
   {{text.input}}
   {{text.label}}
-  {{text.help}}
+  {{#if help}}
+    {{text.help}}
+  {{/if}}
 {{/bootstrap-inputs/-text}}

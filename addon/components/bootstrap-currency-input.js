@@ -1,10 +1,9 @@
-import Ember from 'ember';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../templates/components/bootstrap-currency-input';
 import InputableMixin from '../mixins/components/inputable';
 import asserIfUsingRenamedEvents from '../utils/assert-if-using-renamed-events';
 import { createNumberMask } from 'ember-text-mask-addons';
-
-const { Component } = Ember;
 
 export default Component.extend(InputableMixin, {
   tagName: '',
@@ -21,7 +20,7 @@ export default Component.extend(InputableMixin, {
 
   currencyMask: createNumberMask({ prefix: '$', allowDecimal: true, decimalLimit: 2 }),
 
-  hasValue: Ember.computed('value', function() {
+  hasValue: computed('value', function() {
     const value = this.get('value');
 
     return value ? true : false;

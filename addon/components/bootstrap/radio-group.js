@@ -1,7 +1,12 @@
-import Ember from 'ember';
+import { guidFor } from '@ember/object/internals';
+import { computed } from '@ember/object';
+import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap/radio-group';
 import { PropTypes } from 'ember-prop-types';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
 export const propDefinitions = {
   disabled: {
@@ -50,7 +55,7 @@ export const propDefinitions = {
   },
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   tagName: 'fieldset',
   attributeBindings: ['disabled', 'role', 'labelId:aria-labelledby'],
   role: 'radiogroup',
@@ -62,17 +67,17 @@ export default Ember.Component.extend({
     return BuilderForPropDefaults(propDefinitions)
   },
 
-  lastIndex: Ember.computed('options', function() {
+  lastIndex: computed('options', function() {
     return this.get('options.length') - 1;
   }),
 
-  inputId: Ember.computed(function() {
-    return `bootstrap-control-input-${Ember.guidFor(this)}`;
+  inputId: computed(function() {
+    return `bootstrap-control-input-${guidFor(this)}`;
   }),
-  helpId: Ember.computed(function() {
-    return `${Ember.guidFor(this)}-help`;
+  helpId: computed(function() {
+    return `${guidFor(this)}-help`;
   }),
-  labelId: Ember.computed(function() {
-    return `${Ember.guidFor(this)}-group-label`;
+  labelId: computed(function() {
+    return `${guidFor(this)}-group-label`;
   }),
 });
