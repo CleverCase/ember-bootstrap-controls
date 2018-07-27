@@ -1,4 +1,4 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap-inputs/-floating-label-input';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
@@ -52,7 +52,7 @@ export const propDefinitions = {
   },
 };
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   tagName: '',
   propTypes: BuilderForPropTypes(propDefinitions),
