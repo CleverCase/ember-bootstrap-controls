@@ -10,13 +10,13 @@ export default Component.extend(PropTypeMixin, {
   tagName: 'button',
   classNames: ['btn'],
   attributeBindings: ['disabledButton:disabled', 'type', 'aria-label'],
+  propTypes: { // eslint-disable-line ember/avoid-leaking-state-in-ember-objects
+    action: PropTypes.func.isRequired,
+    disabled: PropTypes.bool,
+  },
 
   init() {
     Ember.Logger.warn('DEPRECATION: bootstrap-button component is being replaced by bootstrap/button in an upcoming version of ember-bootstrap-controls.');
-    this.propTypes = {
-      action: PropTypes.func.isRequired,
-      disabled: PropTypes.bool,
-    };
     this._super(...arguments);
   },
 

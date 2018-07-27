@@ -7,16 +7,11 @@ export default Component.extend({
   tagName: 'label',
   classNameBindings: ['srOnly:sr-only'],
   attributeBindings: ['for'],
-  
-  init() {
-    this.propTypes = {
-      for: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-      srOnly: PropTypes.bool,
-    };
-    this._super(...arguments);
+  propTypes: { // eslint-disable-line ember/avoid-leaking-state-in-ember-objects
+    for: PropTypes.string.isRequired,
+    label: PropTypes.string.isRequired,
+    srOnly: PropTypes.bool,
   },
-
 
   getDefaultProps() {
     return {

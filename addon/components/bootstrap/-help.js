@@ -7,14 +7,8 @@ export default Component.extend({
   tagName: 'small',
   classNames: ['text-muted'],
   attributeBindings: ['id'],
-
-  init() {
-    this.propTypes = {
-      id: PropTypes.string.isRequired,
-      help: PropTypes.string.isRequired,
-    };
-    this._super(...arguments);
+  propTypes: { // eslint-disable-line ember/avoid-leaking-state-in-ember-objects
+    id: PropTypes.string.isRequired,
+    help: PropTypes.string.isRequired,
   },
-
-
 });

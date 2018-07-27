@@ -7,14 +7,10 @@ import PropTypeMixin, { PropTypes } from 'ember-prop-types';
 export default Component.extend(PropTypeMixin, {
   layout,
   tagName: 'form',
-
-  init() {
-    this.propTypes = {
-      isEditing: PropTypes.bool,
-      save: PropTypes.func.isRequired,
-      cancel: PropTypes.func,
-    };
-    this._super(...arguments);
+  propTypes: { // eslint-disable-line ember/avoid-leaking-state-in-ember-objects
+    isEditing: PropTypes.bool,
+    save: PropTypes.func.isRequired,
+    cancel: PropTypes.func,
   },
 
   getDefaultProps() {
