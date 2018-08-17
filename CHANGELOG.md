@@ -9,9 +9,18 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 ### Security
 
+## [1.0.0-beta.1] - 2018-27-08
+### Added
+  * [#219](https://github.com/wildland/ember-bootstrap-controls/issues/219): Added an edit form that can self manage state for you. ([@jweakley][])
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [1.0.0-beta.0] - 2018-09-08
 ### Added
-  * [#165](https://github.com/wildland/ember-bootstrap-controls/issues/165): Added bootstrap modal. ([@chadzink][])
+  * [#165](https://github.com/wildland/ember-bootstrap-controls/issues/165): Added bootstrap modal. ([@chadzink][], [@jweakley][])
   * [#142](https://github.com/wildland/ember-bootstrap-controls/issues/142): Added contribution guidelines and documentations. Also added blueprints. ([@jweakley][])
   * [#145](https://github.com/wildland/ember-bootstrap-controls/issues/145): Added new email type input. ([@jweakley][])
   * [#146](https://github.com/wildland/ember-bootstrap-controls/issues/146): Added new password type input. ([@Nathan-O][])

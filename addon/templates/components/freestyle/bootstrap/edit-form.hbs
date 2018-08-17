@@ -1,0 +1,150 @@
+{{#section.subsection name='Bootstrap Edit Form'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    For more input documentation and examples see {{#link-to (query-params f=null s="Bootstrap Inputs" ss=null)}}here{{/link-to}}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-bootstrap-edit-form' name='Basic EmberBootstrapControls'}}
+        {{#bootstrap/edit-form
+          save=(action 'slowAction' 1000 'save')
+          cancel=(action 'slowAction' 1000 'cancel')
+          as |form|
+        }}
+          {{form.inputs.text label="Name"}}
+          {{form.inputs.number label="Number of Doughnuts"}}
+          {{form.inputs.checkbox label="Rocket Doughnut Delivery?"}}
+          {{form.controls}}
+        {{/bootstrap/edit-form}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-bootstrap-edit-form' name='Advanced EmberBootstrapControls'}}
+        {{#bootstrap/edit-form
+          isEditing=true
+          save=(action 'slowAction' 3000 'order')
+          cancel=(action 'slowAction' 1000 'cancel')
+          as |form|
+        }}
+          <h1>Doughnut Express!</h1>
+          {{#if form.isEditing}}
+            {{form.inputs.number label="Number of Doughnuts"}}
+          {{/if}}
+          {{#if form.isSaving}}
+            <div class="progress">
+              <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                Launching Doughnut Drones!
+              </div>
+            </div>
+          {{/if}}
+          {{#form.controls as |controls|}}
+            {{#if controls.isEditing}}
+              {{#controls.saveButton
+                classNames='btn-success'
+                as |save|
+              }}
+                Order Now!
+              {{/controls.saveButton}}
+              {{controls.cancelButton classNames='btn-danger'}}
+            {{else}}
+              {{#controls.editButton
+                classNames='btn-success'
+                as |edit|
+              }}
+                Create Order
+              {{/controls.editButton}}
+            {{/if}}
+          {{/form.controls}}
+        {{/bootstrap/edit-form}}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Custom Child Components'}}
+      {{#freestyle-usage 'edit-form-child-components' name='Edit Form'}}
+        {{#bootstrap/edit-form
+          isEditing=true
+          save=(action 'slowAction' 3000 'order')
+          cancel=(action 'slowAction' 1000 'cancel')
+          as |form|
+        }}
+          <h1>Doughnut Express!</h1>
+          {{#if form.isEditing}}
+            {{form.inputs.number label="Number of Doughnuts"}}
+          {{/if}}
+          {{#if form.isSaving}}
+            <div class="progress">
+              <div class="progress-bar bg-success progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%">
+                Launching Doughnut Drones!
+              </div>
+            </div>
+          {{/if}}
+          {{#form.controls as |controls|}}
+            {{#if controls.isEditing}}
+              {{#controls.saveButton
+                classNames='btn-success'
+                as |save|
+              }}
+                Order Now!
+              {{/controls.saveButton}}
+              {{controls.cancelButton classNames='btn-danger'}}
+            {{else}}
+              {{#controls.editButton
+                classNames='btn-success'
+                as |edit|
+              }}
+                Create Order
+              {{/controls.editButton}}
+            {{/if}}
+          {{/form.controls}}
+        {{/bootstrap/edit-form}}
+      {{/freestyle-usage}}
+      {{#freestyle-note "edit-form-child-components--notes"}}
+        The checkbox component yields 2 child components `controls` and `inputs`. It also has 5 properties `isEditing`, `isSaving`, `isCanceling`, `isRunning`, and `isDisabled`.
+
+        `{{isEditing}}`
+        This is a boolean that is true if the form is in an editing state.
+
+        `{{isSaving}}`
+        This is a boolean that is true if the form is running the save action.
+
+        `{{isCanceling}}`
+        This is a boolean that is true if the form is running the cancel action.
+
+        `{{isRunning}}`
+        This is a boolean that is true if the form is running either the save or the cancel action.
+
+        `{{isDisabled}}`
+        This is a boolean that is true if the form inputs should be in a disabled state because the form is editing or running an action.
+
+        `{{controls}}`
+        This subcomponent represents the controls for the form. It has 3 child components `cancelButton`, `saveButton`, and `editButton`. It also has 4 properties `isEditing`, `isSaving`, `isCanceling`, and `isRunning`.
+
+        `{{controls.isEditing}}`
+        This is a boolean that is true if the form is in an editing state.
+
+        `{{controls.isSaving}}`
+        This is a boolean that is true if the form is running the save action.
+
+        `{{controls.isCanceling}}`
+        This is a boolean that is true if the form is running the cancel action.
+
+        `{{controls.isRunning}}`
+        This is a boolean that is true if the form is running either the save or the cancel action.
+
+        `{{controls.cancelButton}}`
+        This is the cancel button for the form
+
+        `{{controls.editButton}}`
+        This is the edit button for the form.
+
+        `{{controls.saveButton}}`
+        This is the save button for the form.
+
+
+        `{{inputs}}`
+        These are the inputs for the form.
+      {{/freestyle-note}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}

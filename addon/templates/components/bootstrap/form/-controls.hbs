@@ -1,6 +1,10 @@
 {{#if hasBlock}}
   {{yield
     (hash
+      isEditing=(readonly isEditing)
+      isSaving=(readonly isSaving)
+      isCanceling=(readonly isCanceling)
+      isRunning=(readonly isRunning)
       cancelButton=(component 'bootstrap-button'
         'bootstrap-button'
         classNames='btn-secondary'
@@ -24,14 +28,12 @@
   }}
 {{else}}
   {{#if isEditing}}
-    {{#if cancel}}
-      {{bootstrap-button
-        classNames='btn-secondary'
-        disabled=isRunning
-        action=cancel
-        buttonText='Cancel'
-      }}
-    {{/if}}
+    {{bootstrap-button
+      classNames='btn-secondary'
+      disabled=isRunning
+      action=cancel
+      buttonText='Cancel'
+    }}
     {{bootstrap-button
       classNames='btn-primary'
       disabled=isRunning
