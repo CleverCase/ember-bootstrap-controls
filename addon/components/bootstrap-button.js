@@ -26,11 +26,12 @@ export default Component.extend(PropTypeMixin, {
       return yield asyncTask();
   }).drop(),
 
-  click() {
-    return this.get('asyncTask').perform(this.get('action')).catch(e => {
-        if (!didCancel(e)) {
-          throw e;
-        }
-      });
+  click(e) {
+    e.preventDefault();
+    return this.get('asyncTask').perform(this.get('action')).catch(error => {
+      if (!didCancel(error)) {
+        throw error;
+      }
+    });
   },
 });

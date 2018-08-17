@@ -13,6 +13,11 @@ export default Component.extend(PropTypeMixin, {
     cancel: PropTypes.func,
   },
 
+  init() {
+    Ember.Logger.warn('DEPRECATION: bootstrap-form component is being replaced by bootstrap/simple-form in an upcoming version of ember-bootstrap-controls.');
+    this._super(...arguments);
+  },
+
   getDefaultProps() {
     return { isEditing: false };
   },
