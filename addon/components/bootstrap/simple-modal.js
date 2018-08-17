@@ -1,7 +1,7 @@
 import { guidFor } from '@ember/object/internals';
 import { computed } from '@ember/object';
 import Component from '@ember/component';
-import layout from '../../../templates/components/bootstrap/modal/-modal';
+import layout from '../../templates/components/bootstrap/simple-modal';
 import { PropTypes } from 'ember-prop-types';
 import {
   BuilderForPropTypes,

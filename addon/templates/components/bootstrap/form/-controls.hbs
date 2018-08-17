@@ -1,20 +1,20 @@
 {{#if hasBlock}}
   {{yield
     (hash
-      cancelButton=(component
+      cancelButton=(component 'bootstrap-button'
         'bootstrap-button'
         classNames='btn-secondary'
         disabled=isRunning
         action=cancel
         buttonText='Cancel'
       )
-      saveButton=(component
+      saveButton=(component 'bootstrap-button'
         classNames='btn-primary'
         disabled=isRunning
         action=save
         buttonText='Save'
       )
-      editButton=(component
+      editButton=(component 'bootstrap-button'
         classNames='btn-primary'
         action=edit
         disabled=isRunning

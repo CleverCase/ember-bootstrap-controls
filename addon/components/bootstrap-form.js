@@ -1,5 +1,6 @@
 import { assert } from '@ember/debug';
 import Component from '@ember/component';
+import Ember from 'ember';
 import { task, didCancel } from 'ember-concurrency';
 import layout from '../templates/components/bootstrap-form';
 import PropTypeMixin, { PropTypes } from 'ember-prop-types';

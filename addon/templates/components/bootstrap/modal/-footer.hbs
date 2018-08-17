@@ -2,12 +2,28 @@
   {{yield
     (hash
       acceptAction=acceptAction
-      acceptButton=(component 'bootstrap/modal/footer/-accept-button' action=acceptAction)
+      acceptButton=(component 'bootstrap-button'
+        classNames='btn-primary'
+        action=acceptAction
+        buttonText='Accept'
+      )
       closeAction=closeAction
-      closeButton=(component 'bootstrap/modal/footer/-close-button' action=closeAction)
+      closeButton=(component 'bootstrap-button'
+        classNames='btn-secondary'
+        action=closeAction
+        buttonText='Close'
+      )
     )
   }}
 {{else}}
-  {{bootstrap/modal/footer/-close-button action=closeAction}}
-  {{bootstrap/modal/footer/-accept-button action=acceptAction}}
+  {{bootstrap-button
+    classNames='btn-secondary'
+    action=closeAction
+    buttonText='Close'
+  }}
+  {{bootstrap-button
+    classNames='btn-primary'
+    action=closeAction
+    buttonText='Accept'
+  }}
 {{/if}}
