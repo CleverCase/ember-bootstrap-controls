@@ -37,6 +37,7 @@ All notable changes to this project will be documented in this file.
   * Updated npm packages. ([@jweakley][])
   * [#190](https://github.com/wildland/ember-bootstrap-controls/issues/190): Updated tests. ([@harokevin][])
   * [#207](https://github.com/wildland/ember-bootstrap-controls/issues/207): Temporary fix for performance. ([@jweakley][])
+  * [#214](https://github.com/wildland/ember-bootstrap-controls/issues/214): Now adds bootstrap 4 dependency on install. ([@jweakley][])
 ### Security
 
 [@jweakley]: https://github.com/jweakley
