@@ -6,31 +6,58 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-email-input' name='Basic Email Input'}}
-        {{bootstrap-inputs/-email
-          label="Super Cool Email"
-          value=basicValue
-        }}
+        {{#bootstrap/simple-form as |form|}}
+          {{form.inputs.email
+            label="Super Cool Email"
+            value=basicValue
+          }}
+        {{/bootstrap/simple-form}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-email-input' name='Advanced Email Input'}}
-        {{bootstrap-inputs/-email
-          autocomplete=data.autocomplete
-          help=data.help
-          disabled=data.disabled
-          label=data.label
-          maxlength=data.maxlength
-          minlength=data.minlength
-          multiple=data.multiple
-          placeholder=data.placeholder
-          readonly=data.readonly
-          required=data.required
-          srOnly=data.srOnly
-          tabIndex=data.tabIndex
-          value=data.value
-        }}
+        {{#bootstrap/simple-form as |form|}}
+          {{form.inputs.email
+            autocomplete=data.autocomplete
+            help=data.help
+            disabled=data.disabled
+            label=data.label
+            maxlength=data.maxlength
+            minlength=data.minlength
+            multiple=data.multiple
+            placeholder=data.placeholder
+            readonly=data.readonly
+            required=data.required
+            srOnly=data.srOnly
+            tabIndex=data.tabIndex
+            value=data.value
+          }}
+        {{/bootstrap/simple-form}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+    {{/collection.variant}}
+    {{#collection.variant key='Custom Child Components'}}
+      {{#freestyle-usage 'email-child-components' name='Email Input'}}
+        {{#bootstrap/simple-form as |form|}}
+          {{#form.inputs.email
+            label="Email"
+            value=basicValue
+            as |email|
+          }}
+            {{email.input}}
+            {{email.label}}
+          {{/form.inputs.email}}
+        {{/bootstrap/simple-form}}
+      {{/freestyle-usage}}
+      {{#freestyle-note "email-child-components--notes"}}
+        The checkbox component yields 2 child components `input` and `label`.
+
+        `{{input}}`
+        This is the input.
+
+        `{{label}}`
+        This is the label for the input. It yields the text for label if you need additional customization.
+      {{/freestyle-note}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}

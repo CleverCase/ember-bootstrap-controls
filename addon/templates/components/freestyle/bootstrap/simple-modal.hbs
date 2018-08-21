@@ -1,4 +1,4 @@
-{{#section.subsection name='Modal Base'}}
+{{#section.subsection name='Bootstrap Simple Modal'}}
   {{#freestyle-collection
     defaultKey='Basic Usage'
     inline=false
@@ -9,7 +9,7 @@
         Open Modal
       {{/bootstrap-button}}
       {{#freestyle-usage 'basic-modal' name='Basic Modal'}}
-        {{bootstrap/modal/-modal
+        {{bootstrap/simple-modal
           isOpen=isModalOpen
           title="Simple Modal"
           body="Simple content to display in a modal"
@@ -25,7 +25,7 @@
         Open Advanced Modal
       {{/bootstrap-button}}
       {{#freestyle-usage 'advanced-modal' name='Advanced Modal'}}
-        {{bootstrap/modal/-modal
+        {{bootstrap/simple-modal
           isOpen=data.isOpen
           title=data.title
           showCloseInHeader=data.showCloseInHeader
@@ -48,7 +48,7 @@
         Open Custom Block Modal
       {{/bootstrap-button}}
       {{#freestyle-usage 'child-components-modal' name='Custom Child Components'}}
-        {{#bootstrap/modal/-modal
+        {{#bootstrap/simple-modal
           isOpen=isModalOpenCustomSub
           acceptAction=(action 'acceptModalCustomSub')
           closeAction=(action 'closeModalCustomSub')
@@ -77,7 +77,7 @@
               SAVE
             {{/footer.acceptButton}}
           {{/modal.footer}}
-        {{/bootstrap/modal/-modal}}
+        {{/bootstrap/simple-modal}}
       {{/freestyle-usage}}
       {{#freestyle-note "child-components-modal--notes"}}
         The modal-container component yields 3 child components `header`, `body`, and `footer`.

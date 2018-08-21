@@ -1,5 +1,6 @@
 import { assert } from '@ember/debug';
 import Component from '@ember/component';
+import Ember from 'ember';
 import { task, didCancel } from 'ember-concurrency';
 import layout from '../templates/components/bootstrap-form';
 import PropTypeMixin, { PropTypes } from 'ember-prop-types';
@@ -11,6 +12,11 @@ export default Component.extend(PropTypeMixin, {
     isEditing: PropTypes.bool,
     save: PropTypes.func.isRequired,
     cancel: PropTypes.func,
+  },
+
+  init() {
+    Ember.Logger.warn('DEPRECATION: bootstrap-form component is being replaced by bootstrap/simple-form in an upcoming version of ember-bootstrap-controls.');
+    this._super(...arguments);
   },
 
   getDefaultProps() {

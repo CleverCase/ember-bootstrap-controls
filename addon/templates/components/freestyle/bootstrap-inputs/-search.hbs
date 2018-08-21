@@ -6,14 +6,44 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-bootstrap-inputs--search' name='Basic Search Input'}}
-        {{bootstrap-inputs/-search}}
+        {{#bootstrap/simple-form as |form|}}
+          {{form.inputs.search
+            label="Search"
+          }}
+        {{/bootstrap/simple-form}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-inputs-search' name='Advanced Search Input'}}
-        {{bootstrap-inputs/-search}}
+        {{#bootstrap/simple-form as |form|}}
+          {{form.inputs.search
+            label="Search"
+          }}
+        {{/bootstrap/simple-form}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+    {{/collection.variant}}
+    {{#collection.variant key='Custom Child Components'}}
+      {{#freestyle-usage 'search-child-components' name='Search Input'}}
+        {{#bootstrap/simple-form as |form|}}
+          {{#form.inputs.search
+            label="Search"
+            as |search|
+          }}
+            {{search.input}}
+            {{search.label}}
+          {{/form.inputs.search}}
+        {{/bootstrap/simple-form}}
+      {{/freestyle-usage}}
+      {{#freestyle-note "search-child-components--notes"}}
+        The checkbox component yields 2 child components `input` and `label`.
+
+        `{{input}}`
+        This is the input.
+
+        `{{label}}`
+        This is the label for the input. It yields the text for label if you need additional customization.
+      {{/freestyle-note}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}

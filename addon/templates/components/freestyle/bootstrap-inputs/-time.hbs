@@ -6,33 +6,57 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-bootstrap-inputs-time' name='Basic Time Input'}}
-        {{bootstrap-inputs/-time
-          label="Time"}}
+        {{#bootstrap/simple-form as |form|}}
+          {{form.inputs.time
+            label="Time"
+          }}
+        {{/bootstrap/simple-form}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-inputs-time' name='Advanced Time Input'}}
-        {{#bootstrap-inputs/-time
-          autocomplete=data.autocomplete
-          help=data.help
-          disabled=data.disabled
-          label=data.label
-          max=data.max
-          min=data.min
-          placeholder=data.placeholder
-          readonly=data.readonly
-          required=data.required
-          srOnly=data.srOnly
-          step=data.step
-          tabIndex=data.tabIndex
-          value=data.value
-          as |time|
-        }}
-          {{time.label}}
-          {{time.input}}
-        {{/bootstrap-inputs/-time}}
+        {{#bootstrap/simple-form as |form|}}
+          {{form.inputs.time
+            autocomplete=data.autocomplete
+            help=data.help
+            disabled=data.disabled
+            label=data.label
+            max=data.max
+            min=data.min
+            placeholder=data.placeholder
+            readonly=data.readonly
+            required=data.required
+            srOnly=data.srOnly
+            step=data.step
+            tabIndex=data.tabIndex
+            value=data.value
+          }}
+        {{/bootstrap/simple-form}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+    {{/collection.variant}}
+    {{#collection.variant key='Custom Child Components'}}
+      {{#freestyle-usage 'time-child-components' name='Time Input'}}
+        {{#bootstrap/simple-form as |form|}}
+          {{#form.inputs.time
+            label="Time"
+            value=basicValue
+            as |time|
+          }}
+            {{time.input}}
+            {{time.label}}
+          {{/form.inputs.time}}
+        {{/bootstrap/simple-form}}
+      {{/freestyle-usage}}
+      {{#freestyle-note "time-child-components--notes"}}
+        The checkbox component yields 2 child components `input` and `label`.
+
+        `{{input}}`
+        This is the input.
+
+        `{{label}}`
+        This is the label for the input. It yields the text for label if you need additional customization.
+      {{/freestyle-note}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}

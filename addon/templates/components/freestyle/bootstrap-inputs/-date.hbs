@@ -6,29 +6,56 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-date-input' name='Basic Date Input'}}
-        {{bootstrap-inputs/-date
-          label="Pick Date"
-          value=basicValue
-        }}
+        {{#bootstrap/simple-form as |form|}}
+          {{form.inputs.date
+            label="Pick Date"
+            value=basicValue
+          }}
+        {{/bootstrap/simple-form}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-date-input' name='Advanced Date Input'}}
-        {{bootstrap-inputs/-date
-          autocomplete=data.autocomplete
-          value=data.value
-          disabled=data.disabled
-          max=data.max
-          min=data.min
-          readonly=data.readonly
-          required=data.required
-          srOnly=data.srOnly
-          step=data.step
-          tabindex=data.tabindex
-          help=data.help
-        }}
+        {{#bootstrap/simple-form as |form|}}
+          {{form.inputs.date
+            autocomplete=data.autocomplete
+            value=data.value
+            disabled=data.disabled
+            max=data.max
+            min=data.min
+            readonly=data.readonly
+            required=data.required
+            srOnly=data.srOnly
+            step=data.step
+            tabindex=data.tabindex
+            help=data.help
+          }}
+        {{/bootstrap/simple-form}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+    {{/collection.variant}}
+    {{#collection.variant key='Custom Child Components'}}
+      {{#freestyle-usage 'date-child-components' name='Date Input'}}
+        {{#bootstrap/simple-form as |form|}}
+          {{#form.inputs.date
+            label="Date"
+            value=basicValue
+            as |date|
+          }}
+            {{date.input}}
+            {{date.label}}
+          {{/form.inputs.date}}
+        {{/bootstrap/simple-form}}
+      {{/freestyle-usage}}
+      {{#freestyle-note "date-child-components--notes"}}
+        The date component yields 2 child components `input` and `label`.
+
+        `{{input}}`
+        This is the input.
+
+        `{{label}}`
+        This is the label for the input. It yields the text for label if you need additional customization.
+      {{/freestyle-note}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}

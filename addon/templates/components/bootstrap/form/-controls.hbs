@@ -1,0 +1,49 @@
+{{#if hasBlock}}
+  {{yield
+    (hash
+      cancelButton=(component 'bootstrap-button'
+        'bootstrap-button'
+        classNames='btn-secondary'
+        disabled=isRunning
+        action=cancel
+        buttonText='Cancel'
+      )
+      saveButton=(component 'bootstrap-button'
+        classNames='btn-primary'
+        disabled=isRunning
+        action=save
+        buttonText='Save'
+      )
+      editButton=(component 'bootstrap-button'
+        classNames='btn-primary'
+        action=edit
+        disabled=isRunning
+        buttonText='Edit'
+      )
+    )
+  }}
+{{else}}
+  {{#if isEditing}}
+    {{#if cancel}}
+      {{bootstrap-button
+        classNames='btn-secondary'
+        disabled=isRunning
+        action=cancel
+        buttonText='Cancel'
+      }}
+    {{/if}}
+    {{bootstrap-button
+      classNames='btn-primary'
+      disabled=isRunning
+      action=save
+      buttonText='Save'
+    }}
+  {{else}}
+    {{bootstrap-button
+      classNames='btn-primary'
+      action=edit
+      disabled=isRunning
+      buttonText='Edit'
+    }}
+  {{/if}}
+{{/if}}

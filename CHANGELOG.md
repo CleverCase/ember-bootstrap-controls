@@ -3,7 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
-  * [#165](https://github.com/wildland/ember-bootstrap-controls/issues/165): Added bootstrap modal. ([@chadzink][])
+  * [#165](https://github.com/wildland/ember-bootstrap-controls/issues/165): Added bootstrap modal. ([@chadzink][], [@jweakley][])
   * [#142](https://github.com/wildland/ember-bootstrap-controls/issues/142): Added contribution guidelines and documentations. Also added blueprints. ([@jweakley][])
   * [#145](https://github.com/wildland/ember-bootstrap-controls/issues/145): Added new email type input. ([@jweakley][])
   * [#146](https://github.com/wildland/ember-bootstrap-controls/issues/146): Added new password type input. ([@Nathan-O][])
@@ -21,6 +21,7 @@ All notable changes to this project will be documented in this file.
   * [#156](https://github.com/wildland/ember-bootstrap-controls/issues/156): Added new time type input. ([@harokevin][])
   * [#202](https://github.com/wildland/ember-bootstrap-controls/issues/202): Added a new floating label input based on text input. ([@flarinerin][])
   * [#199](https://github.com/wildland/ember-bootstrap-controls/issues/199): Added yarn support. ([@jweakley][])
+  * [#215](https://github.com/wildland/ember-bootstrap-controls/issues/215): Added a simple-form component that contains all the inputs. ([@jweakley][])
 ### Changed
   * Updated `bootstrap-button` to reduce code and take advantage of `drop()` from ember concurrency. ([@jweakley][])
   * Updated bootstrap-inputs documentation to clarify how to use inputs. ([@flarinerin][])

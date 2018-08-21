@@ -1,0 +1,20 @@
+{{#section.subsection name='Bootstrap Simple Form'}}
+  For more input documentation and examples see {{#link-to (query-params f=null s="Bootstrap Inputs" ss=null)}}here{{/link-to}}
+  {{#freestyle-usage 'bootstrap-simple-form' name='Simple Form'}}
+    {{#bootstrap/simple-form as |form|}}
+      {{form.inputs.checkbox label="Checkbox" value=basicBoolean}}
+      {{form.inputs.date label="Date" value=basicDate}}
+      {{form.inputs.email label="Email" value=basicString}}
+      {{form.inputs.floatingLabelInput label="Floating Label Input" value=basicString}}
+      {{form.inputs.number label="Number" value=basicString}}
+      {{form.inputs.password label="Password" value=basicString}}
+      {{form.inputs.range label="Range" value=basicNumber}}
+      {{form.inputs.radioGroup label="Radio Group" inline=true options=radioOptions value=radioValue onChange=(action (mut radioValue))}}
+      {{form.inputs.search label="Search" value=basicString}}
+      {{form.inputs.tel label="Tel" value=basicString}}
+      {{form.inputs.text label="Text" value=basicString}}
+      {{form.inputs.time label="Time" value=basicString}}
+      {{form.inputs.url label="Url" value=basicString}}
+    {{/bootstrap/simple-form}}
+  {{/freestyle-usage}}
+{{/section.subsection}}
