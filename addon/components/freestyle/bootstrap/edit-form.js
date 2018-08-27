@@ -1,10 +1,10 @@
-import Ember from 'ember';
+import Component from '@ember/component';
 import layout from '../../../templates/components/freestyle/bootstrap/edit-form';
 import { BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { propDefinitions } from '../../bootstrap/edit-form';
-import { task, didCancel, restartable, timeout } from 'ember-concurrency';
+import { task, didCancel, restartable, timeout } from 'ember-concurrency'; // eslint-disable-line no-unused-vars
 
-export default Ember.Component.extend({
+export default Component.extend({
   layout,
   propDefinitions,
   data: Object.assign(BuilderForPropDefaults(propDefinitions), {
