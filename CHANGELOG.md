@@ -17,6 +17,7 @@ All notable changes to this project will be documented in this file.
 ### Removed
 ### Fixed
 ### Security
+  * Updated lodash
 
 ## [1.0.0-beta.0] - 2018-09-08
 ### Added
