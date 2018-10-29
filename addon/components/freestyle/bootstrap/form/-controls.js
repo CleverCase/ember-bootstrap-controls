@@ -3,4 +3,5 @@ import layout from '../../../templates/components/freestyle/bootstrap/form/-cont
 
 export default Component.extend({
   layout,
+  tagName: '',
 });
