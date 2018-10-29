@@ -37,14 +37,14 @@ export default Component.extend({
   },
 
   asyncSaveTask: task(function * (asyncTask) {
-      if(asyncTask) {
+      if (asyncTask) {
         yield asyncTask();
       }
       this.set('isEditing', false);
   }).drop(),
 
   asyncCancelTask: task(function * (asyncTask) {
-      if(asyncTask) {
+      if (asyncTask) {
         yield asyncTask();
       }
       this.set('isEditing', false);
