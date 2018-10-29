@@ -12,9 +12,11 @@
           cancel=(action 'slowAction' 1000 'cancel')
           as |form|
         }}
-          {{form.inputs.text label="Name"}}
-          {{form.inputs.number label="Number of Doughnuts"}}
-          {{form.inputs.checkbox label="Rocket Doughnut Delivery?"}}
+          {{#form.inputs as |inputs|}}
+            {{inputs.text label="Name"}}
+            {{inputs.number label="Number of Doughnuts"}}
+            {{inputs.checkbox label="Rocket Doughnut Delivery?"}}
+          {{/form.inputs}}
           {{form.controls}}
         {{/bootstrap/edit-form}}
       {{/freestyle-usage}}
@@ -29,7 +31,9 @@
         }}
           <h1>Doughnut Express!</h1>
           {{#if form.isEditing}}
-            {{form.inputs.number label="Number of Doughnuts"}}
+            {{#form.inputs as |inputs|}}
+              {{inputs.number label="Number of Doughnuts"}}
+            {{/form.inputs}}
           {{/if}}
           {{#if form.isSaving}}
             <div class="progress">
@@ -70,7 +74,9 @@
         }}
           <h1>Doughnut Express!</h1>
           {{#if form.isEditing}}
-            {{form.inputs.number label="Number of Doughnuts"}}
+            {{#form.inputs as |inputs|}}
+              {{inputs.number label="Number of Doughnuts"}}
+            {{/form.inputs}}
           {{/if}}
           {{#if form.isSaving}}
             <div class="progress">
@@ -143,7 +149,7 @@
 
 
         `{{inputs}}`
-        These are the inputs for the form.
+        This is a component that contains the inputs for the form.
       {{/freestyle-note}}
     {{/collection.variant}}
   {{/freestyle-collection}}
