@@ -1,32 +1,37 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test, skip } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, find, findAll } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-date', 'Integration | Component | Bootstrap Inputs | Date', {
-  integration: true
-});
+module('Integration | Component | Bootstrap Inputs | Date', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-  // Example if your component had an `action` that it required:
-  // this.set('noop', () => {});
-  // this.render(hbs`{{bootstrap-inputs/-date action=noop}}`);
-  this.set('value', new Date());
-  this.render(hbs`{{bootstrap-inputs/-date label="Label" value=value}}`);
+  test('it has no a11y errors', async function(assert) {
+    this.set('value', new Date());
+    await render(hbs`{{bootstrap-inputs/-date label='label' value=value}}`);
+    return a11yAudit(this.$()).then(() => {
+      assert.ok(true, 'no a11y errors found!');
+    });
+  });
 
-  // assert.equal(this.$().text().trim(), '');
+  test('it renders a label and datepicker', async function(assert) {
+    this.set('value', new Date());
+    await render(hbs`{{bootstrap-inputs/-date label='label' value=value}}`);
+    assert.equal(findAll('input[type="date"]').length, 1);
+    assert.equal(findAll('label').length, 1);
+  });
 
-  // Template block usage:
-  this.render(hbs`
-    {{#bootstrap-inputs/-date label="Label" value=value}}
-      template block text
-    {{/bootstrap-inputs/-date}}
-  `);
+  skip('it uses value', async function(assert) {
+    this.set('value', new Date());
+    await render(hbs`{{bootstrap-inputs/-date label='label' value=value}}`);
+    assert.equal(find('input[type="date"]').value, this.get('value'));
+  });
 
-  // assert.equal(this.$().text().trim(), 'template block text');
-
-  return a11yAudit(this.$()).then(() => {
-    assert.ok(true, 'no a11y errors found!');
+  test('it uses label', async function(assert) {
+    this.set('label', 'Some label');
+    this.set('value', new Date());
+    await render(hbs`{{bootstrap-inputs/-date label=label value=value}}`);
+    assert.equal(find('label').textContent.trim(), this.get('label'));
   });
 });

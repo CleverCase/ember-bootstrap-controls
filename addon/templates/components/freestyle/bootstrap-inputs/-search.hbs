@@ -6,34 +6,34 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-bootstrap-inputs--search' name='Basic Search Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.search
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.search
             label="Search"
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-inputs-search' name='Advanced Search Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.search
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.search
             label="Search"
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
     {{#collection.variant key='Custom Child Components'}}
       {{#freestyle-usage 'search-child-components' name='Search Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.search
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.search
             label="Search"
             as |search|
           }}
             {{search.input}}
             {{search.label}}
-          {{/form.inputs.search}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.search}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{#freestyle-note "search-child-components--notes"}}
         The checkbox component yields 2 child components `input` and `label`.

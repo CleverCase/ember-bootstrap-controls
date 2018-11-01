@@ -6,18 +6,18 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-bootstrap-inputs-url' name='Basic Url Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.url
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.url
             label="URL"
             value=basicValue
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-inputs-url' name='Advanced Url Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.url
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.url
             autocomplete=data.autocomplete
             help=data.help
             disabled=data.disabled
@@ -31,22 +31,22 @@
             tabIndex=data.tabIndex
             value=data.value
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
     {{#collection.variant key='Custom Child Components'}}
       {{#freestyle-usage 'url-child-components' name='Url Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.url
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.url
             label="URL"
             value=basicValue
             as |url|
           }}
             {{url.input}}
             {{url.label}}
-          {{/form.inputs.url}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.url}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{#freestyle-note "url-child-components--notes"}}
         The checkbox component yields 2 child components `input` and `label`.

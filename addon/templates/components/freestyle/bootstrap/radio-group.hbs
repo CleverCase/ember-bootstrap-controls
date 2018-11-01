@@ -7,32 +7,32 @@
     {{#collection.variant key='Basic Usage'}}
       <p>Most Favorite: {{mostFavorite}}</p>
       {{#freestyle-usage 'basic-inline-bootstrap-radio-group' name='Basic Inline Radio Group'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.radioGroup
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.radioGroup
             label="Most Favorite Number"
             inline=true
             options=options
             value=mostFavorite
             onChange=(action (mut mostFavorite))
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       <p>Least Favorite: {{leastFavorite}}</p>
       {{#freestyle-usage 'basic-bootstrap-radio-group' name='Basic Radio Group'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.radioGroup
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.radioGroup
             label="Least Favorite Number"
             options=options
             value=leastFavorite
             onChange=(action (mut leastFavorite))
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-radio-group' name='Advanced Radio Group'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.radioGroup
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.radioGroup
             disabled=data.disabled
             errors=data.errors
             help=data.help
@@ -60,15 +60,15 @@
                 {{radio.label}}
               {{/if}}
             {{/radioGroup.radio}}
-          {{/form.inputs.radioGroup}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.radioGroup}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
     {{#collection.variant key='Custom Child Components'}}
       {{#freestyle-usage 'child-components-bootstrap-radio-group' name='Custom Child Components'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.radioGroup
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.radioGroup
             inline=true
             value=customChild
             label="How Cool Are You?"
@@ -90,8 +90,8 @@
                 {{radio.label}}
               {{/if}}
             {{/radioGroup.radio}}
-          {{/form.inputs.radioGroup}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.radioGroup}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{#freestyle-note "child-components-bootstrap-radio-group--notes"}}
         The radio-group component yields 2 properties `radioGroup` and `index`. It represents each radio in the group.

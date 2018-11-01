@@ -8,8 +8,6 @@ export default Component.extend({
   propDefinitions,
 
   data: Object.assign(BuilderForPropDefaults(propDefinitions), {
-    value: '',
+    value: new Date(),
   }),
-
-  basicValue: null,
 });

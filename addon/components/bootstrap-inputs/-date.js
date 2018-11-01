@@ -74,6 +74,7 @@ export const propDefinitions = {
     type: PropTypes.number,
   },
   value: {
+    default: new Date(),
     description: 'A formatted string that is the value for the control.',
     type: PropTypes.date.isRequired,
   },

@@ -6,18 +6,18 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-bootstrap-inputs-number' name='Basic Number Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.number
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.number
             label='Basic Number Input'
             value=basicValue
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-inputs-number' name='Advanced Number Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.number
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.number
             label=data.label
             help=data.help
             srOnly=data.srOnly
@@ -32,22 +32,22 @@
             tabindex=data.tabindex
             value=data.value
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
     {{#collection.variant key='Custom Child Components'}}
       {{#freestyle-usage 'number-child-components' name='Number Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.number
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.number
             label="Number"
             value=basicValue
             as |number|
           }}
             {{number.input}}
             {{number.label}}
-          {{/form.inputs.number}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.number}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{#freestyle-note "number-child-components--notes"}}
         The checkbox component yields 2 child components `input` and `label`.

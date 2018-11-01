@@ -1,33 +1,35 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, find, findAll } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-url', 'Integration | Component | Bootstrap Inputs | Url', {
-  integration: true
-});
+module('Integration | Component | Bootstrap Inputs | Url', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-  // Example if your component had an `action` that it required:
-  // this.set('noop', () => {});
-  // this.render(hbs`{{bootstrap-input/-email action=noop}}`);
-  this.set('label', 'Some Label');
-  this.set('value', 'email');
-  this.render(hbs`{{bootstrap-inputs/-url label=label value=value}}`);
+  test('it has no a11y errors', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-url label='label' value='http://wild.land'}}`);
+    return a11yAudit(this.$()).then(() => {
+      assert.ok(true, 'no a11y errors found!');
+    });
+  });
 
-  // assert.equal(this.$().text().trim(), this.get('label'));
+  test('it renders a label and input', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-url label='label' value='http://wild.land'}}`);
+    assert.equal(findAll('input[type="url"]').length, 1);
+    assert.equal(findAll('label').length, 1);
+  });
 
-  // Template block usage:
-  this.render(hbs`
-    {{#bootstrap-inputs/-url label=label value=value}}
-      template block text
-    {{/bootstrap-inputs/-url}}
-  `);
+  test('it uses value', async function(assert) {
+    this.set('value', 'http://wild.land');
+    await render(hbs`{{bootstrap-inputs/-url label='label' value=value}}`);
 
-  // assert.equal(this.$().text().trim(), 'template block text');
+    assert.equal(find('input[type="url"]').value, this.get('value'));
+  });
 
-  return a11yAudit(this.$()).then(() => {
-    assert.ok(true, 'no a11y errors found!');
+  test('it uses label', async function(assert) {
+    this.set('label', 'Some label');
+    await render(hbs`{{bootstrap-inputs/-url label=label value='http://wild.land'}}`);
+    assert.equal(find('label').textContent.trim(), this.get('label'));
   });
 });
