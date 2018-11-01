@@ -6,18 +6,18 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-date-input' name='Basic Date Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.date
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.date
             label="Pick Date"
             value=basicValue
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-date-input' name='Advanced Date Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.date
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.date
             autocomplete=data.autocomplete
             value=data.value
             disabled=data.disabled
@@ -30,22 +30,22 @@
             tabindex=data.tabindex
             help=data.help
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
     {{#collection.variant key='Custom Child Components'}}
       {{#freestyle-usage 'date-child-components' name='Date Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.date
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.date
             label="Date"
             value=basicValue
             as |date|
           }}
             {{date.input}}
             {{date.label}}
-          {{/form.inputs.date}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.date}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{#freestyle-note "date-child-components--notes"}}
         The date component yields 2 child components `input` and `label`.

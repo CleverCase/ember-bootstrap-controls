@@ -1,35 +1,34 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, find, findAll } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-floating-label-input', 'Integration | Component | floating-label-input', {
-  integration: true
-});
+module('Integration | Component | Bootstrap Inputs | Floating Label Input', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-  // Example if your component had an `action` that it required:
-  // this.set('noop', () => {});
-  // this.render(hbs`{{bootstrap-inputs/-floating-label-input action=noop}}`);
-  this.set('value', '');
-  this.render(hbs`{{bootstrap-inputs/-floating-label-input label='exampleValue' value=value}}`);
+  test('it has no a11y errors', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-floating-label-input label='label' value='test@test.test'}}`);
+    return a11yAudit(this.$()).then(() => {
+      assert.ok(true, 'no a11y errors found!');
+    });
+  });
 
-  // assert.equal(this.$().text().trim(), '');
+  test('it renders a label and input', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-floating-label-input label='label' value='test@test.test'}}`);
+    assert.equal(findAll('input[type="text"]').length, 1);
+    assert.equal(findAll('label').length, 1);
+  });
 
-  // Template block usage:
-  this.render(hbs`
-    {{#bootstrap-inputs/-floating-label-input
-      label='exampleValue'
-      value=value
-    }}
-      template block text
-    {{/bootstrap-inputs/-floating-label-input}}
-  `);
+  test('it uses value', async function(assert) {
+    this.set('value', 'some text');
+    await render(hbs`{{bootstrap-inputs/-floating-label-input label='label' value=value}}`);
+    assert.equal(find('input[type="text"]').value, this.get('value'));
+  });
 
-  // assert.equal(this.$().text().trim(), 'template block text');
-
-  return a11yAudit(this.$()).then(() => {
-    assert.ok(true, 'no a11y errors found!');
+  test('it uses label', async function(assert) {
+    this.set('label', 'Some label');
+    await render(hbs`{{bootstrap-inputs/-floating-label-input label=label value='test@test.test'}}`);
+    assert.equal(find('label').textContent.trim(), this.get('label'));
   });
 });

@@ -6,18 +6,18 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-email-input' name='Basic Email Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.email
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.email
             label="Super Cool Email"
             value=basicValue
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-email-input' name='Advanced Email Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.email
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.email
             autocomplete=data.autocomplete
             help=data.help
             disabled=data.disabled
@@ -32,22 +32,22 @@
             tabIndex=data.tabIndex
             value=data.value
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
     {{#collection.variant key='Custom Child Components'}}
       {{#freestyle-usage 'email-child-components' name='Email Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.email
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.email
             label="Email"
             value=basicValue
             as |email|
           }}
             {{email.input}}
             {{email.label}}
-          {{/form.inputs.email}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.email}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{#freestyle-note "email-child-components--notes"}}
         The checkbox component yields 2 child components `input` and `label`.

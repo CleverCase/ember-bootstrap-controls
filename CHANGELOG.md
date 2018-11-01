@@ -3,21 +3,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
-### Changed
-### Deprecated
-### Removed
-### Fixed
-### Security
-
-## [1.0.0-beta.1] - 2018-27-08
-### Added
   * [#219](https://github.com/wildland/ember-bootstrap-controls/issues/219): Added an edit form that can self manage state for you. ([@jweakley][])
 ### Changed
+ * Updated tests to newest qunit patterns. ([@jweakley][])
+ * Forms now share inputs as a component. ([@jweakley][])
 ### Deprecated
 ### Removed
+ * Removed yarn. Updated to npm 6.4.x instead.
 ### Fixed
 ### Security
   * Updated lodash
+
 
 ## [1.0.0-beta.0] - 2018-09-08
 ### Added

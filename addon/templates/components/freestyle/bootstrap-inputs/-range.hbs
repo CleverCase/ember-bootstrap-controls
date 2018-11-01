@@ -6,18 +6,18 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-bootstrap-inputs--range' name='Basic Range Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.range
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.range
             label="volume"
             value=basicValue
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-inputs--range' name='Advanced Range Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.range
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.range
             value=data.value
             disabled=data.disabled
             max=data.max
@@ -31,22 +31,22 @@
             help=data.help
             errors=data.errors
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
     {{#collection.variant key='Custom Child Components'}}
       {{#freestyle-usage 'range-child-components' name='Range Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.range
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.range
             label="Range"
             value=basicValue
             as |range|
           }}
             {{range.input}}
             {{range.label}}
-          {{/form.inputs.range}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.range}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{#freestyle-note "password-child-components--notes"}}
         The checkbox component yields 2 child components `input` and `label`.

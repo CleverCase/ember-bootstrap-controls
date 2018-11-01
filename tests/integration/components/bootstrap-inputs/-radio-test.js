@@ -1,30 +1,36 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, find, findAll } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-radio', 'Integration | Component | bootstrap inputs | radio', {
-  integration: true
-});
+module('Integration | Component | bootstrap inputs | radio', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-  this.set('label', 'Some Label');
-  this.set('value', true);
-  this.render(hbs`{{bootstrap-inputs/-radio label=label value=value}}`);
+  test('it has no a11y errors', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-radio label='label' value=true}}`);
+    return a11yAudit(this.$()).then(() => {
+      assert.ok(true, 'no a11y errors found!');
+    });
+  });
 
-  // assert.equal(this.$().text().trim(), '');
+  test('it renders a label and input', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-radio label='label' value=true}}`);
+    assert.equal(findAll('input[type="radio"]').length, 1);
+    assert.equal(findAll('label').length, 1);
+  });
 
-  // Template block usage:
-  this.render(hbs`
-    {{#bootstrap-inputs/-radio label=label value=value}}
-      template block text
-    {{/bootstrap-inputs/-radio}}
-  `);
+  test('it uses value', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-radio label='label' value=true}}`);
+    assert.ok(find('input[type="radio"]:checked'));
 
-  // assert.equal(this.$().text().trim(), 'template block text');
+    await render(hbs`{{bootstrap-inputs/-radio label='label' value=false}}`);
+    assert.ok(find('input[type="radio"]:not(:checked)'));
+  });
 
-  return a11yAudit(this.$()).then(() => {
-    assert.ok(true, 'no a11y errors found!');
+  test('it uses label', async function(assert) {
+    this.set('label', 'Some label');
+    await render(hbs`{{bootstrap-inputs/-radio label=label value=true}}`);
+    assert.equal(find('label').textContent.trim(), this.get('label'));
   });
 });

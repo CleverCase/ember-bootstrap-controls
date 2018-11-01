@@ -7,18 +7,18 @@
     {{#collection.variant key='Basic Usage'}}
       <p>Checkbox Value: {{basicValue}}</p>
       {{#freestyle-usage 'basic-bootstrap-inputs-checkbox' name='Basic Checkbox Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.checkbox
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.checkbox
             label="Super Cool Checkbox"
             value=basicValue
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-inputs-checkbox' name='Advanced Checkbox Input'}}
-      {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.checkbox
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.checkbox
             disabled=data.disabled
             label=data.label
             readonly=data.readonly
@@ -31,23 +31,23 @@
           }}
             {{checkbox.input}}
             {{checkbox.label}}
-          {{/form.inputs.checkbox}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.checkbox}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
     {{#collection.variant key='Custom Child Components'}}
       {{#freestyle-usage 'checkbox-child-components' name='Checkbox Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.checkbox
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.checkbox
             label="Super Cool Checkbox"
             value=basicValue
             as |checkbox|
           }}
             {{checkbox.input}}
             {{checkbox.label}}
-          {{/form.inputs.checkbox}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.checkbox}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{#freestyle-note "checkbox-child-components--notes"}}
         The checkbox component yields 2 child components `input` and `label`.

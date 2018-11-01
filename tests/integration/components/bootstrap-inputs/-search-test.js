@@ -1,34 +1,34 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, find, findAll } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-search', 'Integration | Component | Bootstrap Inputs | Search', {
-  integration: true
-});
+module('Integration | Component | Bootstrap Inputs | Search', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-  // Example if your component had an `action` that it required:
-  // this.set('noop', () => {});
-  // this.render(hbs`{{bootstrap-inputs/-search action=noop}}`);
-  this.set('label', 'Seach for Things and Stuff');
-  this.set('value', 'Bird');
-  this.render(hbs`{{bootstrap-inputs/-search label=label value=value}}`);
+  test('it has no a11y errors', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-search label='label' value='Search Term'}}`);
+    return a11yAudit(this.$()).then(() => {
+      assert.ok(true, 'no a11y errors found!');
+    });
+  });
 
-  assert.ok(true, this.$().text().trim().includes(this.get('label')));
+  test('it renders a label and input', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-search label='label' value='Search Term'}}`);
+    assert.equal(findAll('input[type="search"]').length, 1);
+    assert.equal(findAll('label').length, 1);
+  });
 
-  // Template block usage:
-  this.render(hbs`
-    {{#bootstrap-inputs/-search label=label value=value as |component|}}
-      {{component.label}}
-      {{component.input}}
-    {{/bootstrap-inputs/-search}}
-  `);
+  test('it uses value', async function(assert) {
+    this.set('value', 'Search Term');
+    await render(hbs`{{bootstrap-inputs/-search label='label' value=value}}`);
+    assert.equal(find('input[type="search"]').value, this.get('value'));
+  });
 
-  assert.ok(true, this.$().text().trim().includes(this.get('help')));
-
-  return a11yAudit(this.$()).then(() => {
-    assert.ok(true, 'no a11y errors found!');
+  test('it uses label', async function(assert) {
+    this.set('label', 'Some label');
+    await render(hbs`{{bootstrap-inputs/-search label=label value='Search Term'}}`);
+    assert.equal(find('label').textContent.trim(), this.get('label'));
   });
 });

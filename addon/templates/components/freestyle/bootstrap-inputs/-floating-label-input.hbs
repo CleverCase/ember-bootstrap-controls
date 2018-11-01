@@ -6,18 +6,18 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-floating-label-input' name='Floating Label Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.floatingLabelInput
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.floatingLabelInput
             label="Basic Example"
             value=basicValue
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-floating-label-input' name='Advanced Text Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.floatingLabelInput
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.floatingLabelInput
             help=data.help
             disabled=data.disabled
             label=data.label
@@ -29,22 +29,22 @@
             tabIndex=data.tabIndex
             value=data.value
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
     {{#collection.variant key='Custom Child Components'}}
       {{#freestyle-usage 'floating-label-child-components' name='Floating Label Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.floatingLabelInput
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.floatingLabelInput
             label="Floating Label Input"
             value=basicValue
             as |floatingLabelInput|
           }}
             {{floatingLabelInput.input}}
             {{floatingLabelInput.label}}
-          {{/form.inputs.floatingLabelInput}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.floatingLabelInput}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{#freestyle-note "floating-label-child-components--notes"}}
         The checkbox component yields 2 child components `input` and `label`.

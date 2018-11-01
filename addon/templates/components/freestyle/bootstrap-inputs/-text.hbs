@@ -6,18 +6,18 @@
   }}
     {{#collection.variant key='Basic Usage'}}
       {{#freestyle-usage 'basic-bootstrap-inputs-text' name='Basic Text Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.text
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.text
             label="Text"
             placeholder='Text'
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-inputs-text' name='Advanced Text Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{form.inputs.text
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.text
             autocomplete=data.autocomplete
             help=data.help
             disabled=data.disabled
@@ -31,22 +31,22 @@
             tabIndex=data.tabIndex
             value=data.value
           }}
-        {{/bootstrap/simple-form}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
     {{#collection.variant key='Custom Child Components'}}
       {{#freestyle-usage 'text-child-components' name='Text Input'}}
-        {{#bootstrap/simple-form as |form|}}
-          {{#form.inputs.text
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{#inputs.text
             label="Text"
             value=basicValue
             as |text|
           }}
             {{text.input}}
             {{text.label}}
-          {{/form.inputs.text}}
-        {{/bootstrap/simple-form}}
+          {{/inputs.text}}
+        {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       {{#freestyle-note "text-child-components--notes"}}
         The checkbox component yields 2 child components `input` and `label`.

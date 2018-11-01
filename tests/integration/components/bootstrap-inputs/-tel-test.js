@@ -1,33 +1,34 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render, find, findAll } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap-inputs/-tel', 'Integration | Component |  Bootstrap Inputs | Telephone', {
-  integration: true
-});
+module('Integration | Component |  Bootstrap Inputs | Telephone', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
-  // Example if your component had an `action` that it required:
-  // this.set('noop', () => {});
-  // this.render(hbs`{{bootstrap-inputs/-tel action=noop}}`);
-  this.set('label', 'Phone Label');
-  this.set('value', '5555555555'); //555 555 5555
-  this.render(hbs`{{bootstrap-inputs/-tel value=value label=label}}`);
+  test('it has no a11y errors', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-tel label='label' value='555-555-5555'}}`);
+    return a11yAudit(this.$()).then(() => {
+      assert.ok(true, 'no a11y errors found!');
+    });
+  });
 
-  // assert.equal(this.$().text().trim(), this.get('label'));
+  test('it renders a label and input', async function(assert) {
+    await render(hbs`{{bootstrap-inputs/-tel label='label' value='555-555-5555'}}`);
+    assert.equal(findAll('input[type="tel"]').length, 1);
+    assert.equal(findAll('label').length, 1);
+  });
 
-  // Template block usage:
-  this.render(hbs`
-    {{#bootstrap-inputs/-tel value=value label=label}}
-      {{label}}
-    {{/bootstrap-inputs/-tel}}
-  `);
+  test('it uses value', async function(assert) {
+    this.set('value', '555-555-5555');
+    await render(hbs`{{bootstrap-inputs/-tel label='label' value=value}}`);
+    assert.equal(find('input[type="tel"]').value, this.get('value'));
+  });
 
-  // assert.equal(this.$().text().trim(), this.get('label'));
-
-  return a11yAudit(this.$()).then(() => {
-    assert.ok(true, 'no a11y errors found!');
+  test('it uses label', async function(assert) {
+    this.set('label', 'Some label');
+    await render(hbs`{{bootstrap-inputs/-tel label=label value='555-555-5555'}}`);
+    assert.equal(find('label').textContent.trim(), this.get('label'));
   });
 });
