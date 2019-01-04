@@ -1,9 +1,16 @@
 import Mixin from '@ember/object/mixin';
 
 export default Mixin.create({
-  queryParams: {
-    pageNumber: { refreshModel: true },
-    pageSize: { refreshModel: true },
+  init() {
+    this.queryParams = Object.assign(
+      {
+        pageNumber: { refreshModel: true },
+        pageSize: { refreshModel: true },
+      },
+      this.get('queryParams')
+    );
+    
+    return this._super(...arguments);
   },
 
   actions: {
@@ -33,8 +40,6 @@ export default Mixin.create({
   },
 
   setupController(controller) {
-    this._super(...arguments);
-
     controller.setProperties({
       pageNumber: parseInt(this.get('pageNumber')),
       pageSize: parseInt(this.get('pageSize')),
@@ -42,6 +47,7 @@ export default Mixin.create({
       totalRecords: parseInt(this.get('totalRecords')),
       currentIterationCount: parseInt(this.get('currentIterationCount')),
     });
+    return this._super(...arguments);
   },
 
   resetController(controller, isExiting) {
