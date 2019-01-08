@@ -12,6 +12,7 @@ All notable changes to this project will be documented in this file.
 ### Removed
  * Removed yarn. Updated to npm 6.4.x instead.
 ### Fixed
+  * [#226](https://github.com/wildland/ember-bootstrap-controls/issues/226): Fixed a bug where pagination mixin would not set queryParams. ([@jweakley][])
 ### Security
   * Updated lodash
 
