@@ -1,5 +1,7 @@
 import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap-inputs/-search';
+import { task, didCancel, timeout } from 'ember-concurrency';
+import { isPresent } from '@ember/utils';
 import { PropTypes } from 'ember-prop-types';
 import {
   BuilderForPropTypes,
@@ -47,6 +49,15 @@ export const propDefinitions = {
     description: 'The minimum number of characters (in UTF-16 code units) that the user can enter.',
     type: PropTypes.number,
   },
+  onInput: {
+    description: 'A function that is called when the value changes from a input event.',
+    type: PropTypes.func
+  },
+  onInputDebounce: {
+    default: 500,
+    description: 'The debounce in milliseconds for onInput before the action is called.',
+    type: PropTypes.number
+  },
   pattern: {
     description: "A regular expression that the control's value is checked against.",
     type: PropTypes.instanceOf(RegExp),
@@ -86,5 +97,31 @@ export default Component.extend({
 
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)
+  },
+
+  _value: undefined,
+
+  didReceiveAttrs() {
+    this.set('_value', this.get('value'));
+  },
+
+  onInputTask: task(function * (value) {
+    const onInput = yield this.get('onInput');
+    if(isPresent(onInput)) {
+      const debounce = yield this.get('onInputDebounce');
+      yield timeout(debounce);
+      return yield onInput(value);
+    } else {
+      return yield this.set('value', value)
+    }
+  }).restartable(),
+
+  actions: {
+    onInput(event) {
+      event.preventDefault();
+      return this.get('onInputTask').perform(this.get('_value')).catch(error => {
+        if (!didCancel(error)) { throw error; }
+      });
+    },
   },
 });

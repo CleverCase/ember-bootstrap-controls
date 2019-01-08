@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
+  * Search input now support `onInput`. ([@jweakley][])
   * [#219](https://github.com/wildland/ember-bootstrap-controls/issues/219): Added an edit form that can self manage state for you. ([@jweakley][])
   * [#227](https://github.com/wildland/ember-bootstrap-controls/issues/227): All inputs support onChange. ([@jweakley][])
 ### Changed

@@ -23,10 +23,13 @@ module('Integration | Component | Bootstrap Inputs | Search', function(hooks) {
   });
 
   test('it uses value', async function(assert) {
-    assert.expect(1);
+    assert.expect(2);
     this.set('value', 'Search Term');
+    this.set('newValue', 'Some Other Search Term');
     await render(hbs`{{bootstrap-inputs/-search label='label' value=value}}`);
     assert.equal(find('input[type="search"]').value, this.get('value'));
+    await fillIn('input', this.get('newValue'));
+    assert.equal(this.get('value'), this.get('newValue'));
   });
 
   test('it uses label', async function(assert) {
@@ -44,5 +47,15 @@ module('Integration | Component | Bootstrap Inputs | Search', function(hooks) {
     await render(hbs`{{bootstrap-inputs/-search onChange=onChange label='label' value='Search Term'}}`);
     await fillIn('input', 'Hello');
     await typeIn('input', 'There');
+  });
+
+  test('it supports onInput', async function(assert) {
+    assert.expect(1);
+    this.set('inputValue', 'How To Program');
+    this.set('onInput', (value) => {
+      assert.equal(value, this.get('inputValue'));
+    });
+    await render(hbs`{{bootstrap-inputs/-search onInput=onInput onInputDebounce=0 label='label' value='Search Term'}}`);
+    await fillIn('input', this.get('inputValue'));
   });
 });
