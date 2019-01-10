@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [1.0.0-beta.1] - 2019-01-10
+### Added
   * `bootstrap/simple-form` now has button components. ([@jweakley][])
   * Search input now support `onInput`. ([@jweakley][])
   * [#219](https://github.com/wildland/ember-bootstrap-controls/issues/219): Added an edit form that can self manage state for you. ([@jweakley][])
@@ -10,6 +18,7 @@ All notable changes to this project will be documented in this file.
 ### Changed
  * Updated tests to newest qunit patterns. ([@jweakley][])
  * Forms now share inputs as a component. ([@jweakley][])
+ * Updated various devDependencies. ([@jweakley][])
 ### Deprecated
 ### Removed
  * Removed yarn. Updated to npm 6.4.x instead.
