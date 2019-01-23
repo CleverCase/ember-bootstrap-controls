@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [1.0.0-beta.2] - 2019-01-23
+### Added
   * Added route actions for `sorted` and `pagination` Mixins. ([@jweakley][])
   * `bootstrap/simple-form` now supports disabled and delegates disabled status down to inputs. ([@jweakley][])
   * Most inputs now support `formDisabled` and `disabled`. ([@jweakley][])
