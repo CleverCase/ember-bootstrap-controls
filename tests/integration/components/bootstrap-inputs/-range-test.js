@@ -18,7 +18,7 @@ module('Integration | Component | Bootstrap Inputs | Range', function(hooks) {
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-range label='label' value=1}}`);
-    assert.equal(findAll('input[type="range"]').length, 1);
+    assert.equal(findAll('input[type="range"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -43,5 +43,17 @@ module('Integration | Component | Bootstrap Inputs | Range', function(hooks) {
     });
     await render(hbs`{{bootstrap-inputs/-range onChange=onChange label='label' value=1}}`);
     await fillIn('input', 2);
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-range label='label' value=1 disabled=true}}`);
+    assert.equal(findAll('input[type="range"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-range label='label' value=1 formDisabled=true}}`);
+    assert.equal(findAll('input[type="range"]:disabled').length, 1);
   });
 });

@@ -18,7 +18,7 @@ module('Integration | Component | Checkbox Input', function(hooks) {
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-checkbox label='label' value=true}}`);
-    assert.equal(findAll('input[type="checkbox"]').length, 1);
+    assert.equal(findAll('input[type="checkbox"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -45,5 +45,17 @@ module('Integration | Component | Checkbox Input', function(hooks) {
     });
     await render(hbs`{{bootstrap-inputs/-checkbox onChange=onChange label='Label' value=true}}`);
     await click('input');
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-checkbox label='label' value=true disabled=true}}`);
+    assert.equal(findAll('input[type="checkbox"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-checkbox label='label' value=true formDisabled=true}}`);
+    assert.equal(findAll('input[type="checkbox"]:disabled').length, 1);
   });
 });

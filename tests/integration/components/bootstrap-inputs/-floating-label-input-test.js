@@ -18,7 +18,7 @@ module('Integration | Component | Bootstrap Inputs | Floating Label Input', func
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-floating-label-input label='label' value='test@test.test'}}`);
-    assert.equal(findAll('input[type="text"]').length, 1);
+    assert.equal(findAll('input[type="text"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -44,5 +44,17 @@ module('Integration | Component | Bootstrap Inputs | Floating Label Input', func
     await render(hbs`{{bootstrap-inputs/-floating-label-input  onChange=onChange label='label' value='test@test.test'}}`);
     await fillIn('input', 'Hello');
     await typeIn('input', 'There');
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-floating-label-input label='label' value='test@test.test' disabled=true}}`);
+    assert.equal(findAll('input[type="text"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-floating-label-input label='label' value='test@test.test' formDisabled=true}}`);
+    assert.equal(findAll('input[type="text"]:disabled').length, 1);
   });
 });

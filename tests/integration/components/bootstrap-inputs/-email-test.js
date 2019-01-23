@@ -18,7 +18,7 @@ module('Integration | Component | Bootstrap Inputs | Email Input', function(hook
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-email label='label' value='test@test.test'}}`);
-    assert.equal(findAll('input[type="email"]').length, 1);
+    assert.equal(findAll('input[type="email"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -44,5 +44,17 @@ module('Integration | Component | Bootstrap Inputs | Email Input', function(hook
     await render(hbs`{{bootstrap-inputs/-email  onChange=onChange label='label' value='test@test.test'}}`);
     await fillIn('input', 'Hello@hi.com');
     await typeIn('input', 'There@hi.com');
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-email label='label' value='test@test.test' disabled=true}}`);
+    assert.equal(findAll('input[type="email"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-email label='label' value='test@test.test' formDisabled=true}}`);
+    assert.equal(findAll('input[type="email"]:disabled').length, 1);
   });
 });

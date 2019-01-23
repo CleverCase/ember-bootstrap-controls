@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap-inputs/-search';
 import { task, didCancel, timeout } from 'ember-concurrency';
 import { isPresent } from '@ember/utils';
+import { or } from '@ember/object/computed';
 import { PropTypes } from 'ember-prop-types';
 import {
   BuilderForPropTypes,
@@ -100,6 +101,7 @@ export default Component.extend({
   },
 
   _value: undefined,
+  _disabled: or('formDisabled', 'disabled'),
 
   didReceiveAttrs() {
     this.set('_value', this.get('value'));

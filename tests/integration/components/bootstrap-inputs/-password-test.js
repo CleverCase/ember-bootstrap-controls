@@ -18,7 +18,7 @@ module('Integration | Component | Bootstrap Inputs | Password', function(hooks) 
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-password label='label' value='Password'}}`);
-    assert.equal(findAll('input[type="password"]').length, 1);
+    assert.equal(findAll('input[type="password"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -44,5 +44,17 @@ module('Integration | Component | Bootstrap Inputs | Password', function(hooks) 
     await render(hbs`{{bootstrap-inputs/-password onChange=onChange label='label' value='Password'}}`);
     await fillIn('input', 'Hello');
     await typeIn('input', 'There');
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-password label='label' value='Password' disabled=true}}`);
+    assert.equal(findAll('input[type="password"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-password label='label' value='Password' formDisabled=true}}`);
+    assert.equal(findAll('input[type="password"]:disabled').length, 1);
   });
 });

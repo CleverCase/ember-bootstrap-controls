@@ -18,7 +18,7 @@ module('Integration | Component | Time', function(hooks) {
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-time label='label' value='12:12'}}`);
-    assert.equal(findAll('input[type="time"]').length, 1);
+    assert.equal(findAll('input[type="time"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -44,5 +44,17 @@ module('Integration | Component | Time', function(hooks) {
     await render(hbs`{{bootstrap-inputs/-time onChange=onChange label='label' value='12:12'}}`);
     await fillIn('input', '11:11');
     await typeIn('input', '10:10');
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-time label='label' value='12:12' disabled=true}}`);
+    assert.equal(findAll('input[type="time"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-time label='label' value='12:12' formDisabled=true}}`);
+    assert.equal(findAll('input[type="time"]:disabled').length, 1);
   });
 });

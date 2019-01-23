@@ -18,7 +18,7 @@ module('Integration | Component | Bootstrap Inputs | Url', function(hooks) {
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-url label='label' value='http://wild.land'}}`);
-    assert.equal(findAll('input[type="url"]').length, 1);
+    assert.equal(findAll('input[type="url"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -44,5 +44,17 @@ module('Integration | Component | Bootstrap Inputs | Url', function(hooks) {
     await render(hbs`{{bootstrap-inputs/-url onChange=onChange label='label' value='http://wild.land'}}`);
     await fillIn('input', 'http://wild.land/tests');
     await typeIn('input', 'http://wild.land/ember');
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-url label='label' value='http://wild.land' disabled=true}}`);
+    assert.equal(findAll('input[type="url"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-url label='label' value='http://wild.land' formDisabled=true}}`);
+    assert.equal(findAll('input[type="url"]:disabled').length, 1);
   });
 });
