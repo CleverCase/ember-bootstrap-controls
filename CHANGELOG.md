@@ -3,7 +3,12 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
+  * Added route actions for `sorted` and `pagination` Mixins. ([@jweakley][])
+  * `bootstrap/simple-form` now supports disabled and delegates disabled status down to inputs. ([@jweakley][])
+  * Most inputs now support `formDisabled` and `disabled`. ([@jweakley][])
+  * `bootstrap-date-picker` now supported `disabled`. ([@jweakley][])
 ### Changed
+  * Removed deprecation warning from `bootstrap-button`. ([@jweakley][])
 ### Deprecated
 ### Removed
 ### Fixed

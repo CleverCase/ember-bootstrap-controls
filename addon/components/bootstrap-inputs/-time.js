@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap-inputs/-time';
+import { or } from '@ember/object/computed';
 import { PropTypes } from 'ember-prop-types';
 import {
   BuilderForPropTypes,
@@ -73,6 +74,7 @@ export const propDefinitions = {
 export default Component.extend({
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
+  _disabled: or('formDisabled', 'disabled'),
 
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)

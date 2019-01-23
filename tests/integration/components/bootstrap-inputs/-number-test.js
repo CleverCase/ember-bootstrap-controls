@@ -18,7 +18,7 @@ module('Integration | Component | Bootstrap Inputs | Number', function(hooks) {
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-number label='label' value='42'}}`);
-    assert.equal(findAll('input[type="number"]').length, 1);
+    assert.equal(findAll('input[type="number"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -44,5 +44,17 @@ module('Integration | Component | Bootstrap Inputs | Number', function(hooks) {
     await render(hbs`{{bootstrap-inputs/-number  onChange=onChange label='label' value='42'}}`);
     await fillIn('input', '55');
     await typeIn('input', '69');
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-number label='label' value='42' disabled=true}}`);
+    assert.equal(findAll('input[type="number"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-number label='label' value='42' formDisabled=true}}`);
+    assert.equal(findAll('input[type="number"]:disabled').length, 1);
   });
 });

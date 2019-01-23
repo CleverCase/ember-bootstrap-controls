@@ -1,5 +1,6 @@
 import { guidFor } from '@ember/object/internals';
 import { computed } from '@ember/object';
+import { or } from '@ember/object/computed';
 import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap-inputs/-checkbox';
 import { PropTypes } from 'ember-prop-types';
@@ -45,6 +46,7 @@ export default Component.extend({
   classNames: ['form-check'],
   layout,
   propTypes: BuilderForPropTypes(propDefinitions),
+  _disabled: or('formDisabled', 'disabled'),
 
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)

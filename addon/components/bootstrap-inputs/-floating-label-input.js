@@ -1,5 +1,6 @@
 import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap-inputs/-floating-label-input';
+import { or } from '@ember/object/computed';
 import { PropTypes } from 'ember-prop-types';
 import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
@@ -56,6 +57,7 @@ export default Component.extend({
   layout,
   tagName: '',
   propTypes: BuilderForPropTypes(propDefinitions),
+  _disabled: or('formDisabled', 'disabled'),
 
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)

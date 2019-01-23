@@ -1,4 +1,5 @@
 import Mixin from '@ember/object/mixin';
+import { isPresent } from '@ember/utils';
 
 export default Mixin.create({
   init() {
@@ -9,15 +10,8 @@ export default Mixin.create({
       },
       this.get('queryParams')
     );
-    
-    return this._super(...arguments);
-  },
 
-  actions: {
-    loading() {
-      const router = this.router;
-      router.intermediateTransitionTo('loading');
-    },
+    return this._super(...arguments);
   },
 
   paginationParams(params) {
@@ -54,7 +48,18 @@ export default Mixin.create({
     if (isExiting) {
       controller.set('pageNumber', 1);
     }
-
     return this._super(...arguments);
   },
+
+  actions: {
+    onPage(pageNumber, pageSize) {
+      const controller = this.get('controller');
+      if(isPresent(controller)) {
+        controller.setProperties({
+          pageNumber: pageNumber,
+          pageSize: pageSize,
+        });
+      }
+    },
+  }
 });

@@ -20,7 +20,7 @@ module('Integration | Component | Bootstrap Inputs | Date', function(hooks) {
     assert.expect(2);
     this.set('value', new Date());
     await render(hbs`{{bootstrap-inputs/-date label='label' value=value}}`);
-    assert.equal(findAll('input[type="date"]').length, 1);
+    assert.equal(findAll('input[type="date"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -48,5 +48,19 @@ module('Integration | Component | Bootstrap Inputs | Date', function(hooks) {
     await render(hbs`{{bootstrap-inputs/-date onChange=onChange label='Label' value=value}}`);
     await fillIn('input', 'Hello');
     await typeIn('input', 'There');
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    this.set('value', new Date());
+    await render(hbs`{{bootstrap-inputs/-date label='label' value=value disabled=true}}`);
+    assert.equal(findAll('input[type="date"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    this.set('value', new Date());
+    await render(hbs`{{bootstrap-inputs/-date label='label' value=value formDisabled=true}}`);
+    assert.equal(findAll('input[type="date"]:disabled').length, 1);
   });
 });

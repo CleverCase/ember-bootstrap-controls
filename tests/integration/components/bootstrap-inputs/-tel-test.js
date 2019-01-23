@@ -18,7 +18,7 @@ module('Integration | Component |  Bootstrap Inputs | Telephone', function(hooks
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-tel label='label' value='555-555-5555'}}`);
-    assert.equal(findAll('input[type="tel"]').length, 1);
+    assert.equal(findAll('input[type="tel"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -44,5 +44,17 @@ module('Integration | Component |  Bootstrap Inputs | Telephone', function(hooks
     await render(hbs`{{bootstrap-inputs/-tel onChange=onChange label='label' value='555-555-5555'}}`);
     await fillIn('input', '123-456-7890');
     await typeIn('input', '098-765-4321');
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-tel label='label' value='555-555-5555' disabled=true}}`);
+    assert.equal(findAll('input[type="tel"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-tel label='label' value='555-555-5555' formDisabled=true}}`);
+    assert.equal(findAll('input[type="tel"]:disabled').length, 1);
   });
 });

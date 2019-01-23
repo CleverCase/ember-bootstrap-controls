@@ -18,7 +18,7 @@ module('Integration | Component | Bootstrap Inputs | Search', function(hooks) {
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-search label='label' value='Search Term'}}`);
-    assert.equal(findAll('input[type="search"]').length, 1);
+    assert.equal(findAll('input[type="search"]:enabled').length, 1);
     assert.equal(findAll('label').length, 1);
   });
 
@@ -57,5 +57,17 @@ module('Integration | Component | Bootstrap Inputs | Search', function(hooks) {
     });
     await render(hbs`{{bootstrap-inputs/-search onInput=onInput onInputDebounce=0 label='label' value='Search Term'}}`);
     await fillIn('input', this.get('inputValue'));
+  });
+
+  test('it supports disabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-search label='label' value='Search Term' disabled=true}}`);
+    assert.equal(findAll('input[type="search"]:disabled').length, 1);
+  });
+
+  test('it supports formDisabled', async function(assert) {
+    assert.expect(1);
+    await render(hbs`{{bootstrap-inputs/-search label='label' value='Search Term' formDisabled=true}}`);
+    assert.equal(findAll('input[type="search"]:disabled').length, 1);
   });
 });
