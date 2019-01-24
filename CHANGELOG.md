@@ -1,8 +1,9 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [1.0.0] - 2019-01-24
 ### Added
+  * Out of beta!
 ### Changed
 ### Deprecated
 ### Removed
