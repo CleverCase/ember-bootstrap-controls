@@ -1,6 +1,15 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+  * Added back Unreleased section to changelog. ([@jweakley][])
+### Security
+
 ## [1.0.0] - 2019-01-24
 ### Added
   * Out of beta!
