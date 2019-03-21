@@ -4,7 +4,7 @@ module.exports = {
   name: 'ember-bootstrap-controls',
 
   isDevelopingAddon() {
-    return true;
+    return false;
   },
 
   included(app, parentAddon) {

@@ -3,12 +3,17 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
+  * `bootstrap/simple-form` now supports `submitAction`. ([@jweakley][])
 ### Changed
+  * Set `isDevelopingAddon` to false. ([@jweakley][])
+  * Commented out failing freestyle examples. ([@jweakley][])
 ### Deprecated
 ### Removed
 ### Fixed
+  * Updated install instructions. ([@jweakley][])
   * Added back Unreleased section to changelog. ([@jweakley][])
 ### Security
+  * Updated dependencies.
 
 ## [1.0.0] - 2019-01-24
 ### Added

@@ -17,7 +17,7 @@ all the people who have contributed to the development of this library.
 
 Upgrading instead of Installing? Head over to our [upgrade instructions](#upgrade-instructions).
 
-Run `ember install ember-bootstrap-controls` to install this add-on.
+Run `ember install @wildland-labs/ember-bootstrap-controls` to install this add-on.
 
 ## Upgrade Instructions
 
