@@ -1,24 +1,20 @@
-import { moduleForComponent, test } from 'ember-qunit';
+import { module, test } from 'qunit';
+import { setupRenderingTest } from 'ember-qunit';
+import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
-moduleForComponent('bootstrap/simple-form/-controls', 'Integration | Component | bootstrap/simple form/ controls', {
-  integration: true
-});
+module('Integration | Component | bootstrap/simple form/ controls', function(hooks) {
+  setupRenderingTest(hooks);
 
-test('it renders', function(assert) {
-  // Set any properties with this.set('myProperty', 'value');
-  // Handle any actions with this.on('myAction', function(val) { ... });
+  test('it renders', async function(assert) {
+    assert.expect(2);
 
-  this.render(hbs`{{bootstrap/simple-form/-controls}}`);
+    await render(hbs`{{bootstrap/simple-form/-controls}}`);
+    assert.ok(true, 'No errors');
 
-  assert.equal(this.$().text().trim(), '');
-
-  // Template block usage:
-  this.render(hbs`
-    {{#bootstrap/simple-form/-controls}}
-      template block text
-    {{/bootstrap/simple-form/-controls}}
-  `);
-
-  assert.equal(this.$().text().trim(), 'template block text');
+    return a11yAudit(this.$()).then(() => {
+      assert.ok(true, 'no a11y errors found!');
+    });
+  });
 });
