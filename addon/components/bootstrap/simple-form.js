@@ -9,6 +9,12 @@ export const propDefinitions = {
     type: PropTypes.bool,
     default: false,
   },
+
+  submitAction: {
+    description: 'Function to be ran when the submit button is clicked',
+    type: PropTypes.function,
+    default: null,
+  },
 };
 
 export default Component.extend({

@@ -1,0 +1,18 @@
+{{#if hasBlock}}
+  {{yield
+    (hash
+      submitButton=(component 'bootstrap-button' classNames='btn-primary' action=(action 'submitForm') type='submit' buttonText='Submit')
+      resetButton=(component 'bootstrap-button' type='reset' buttonText='Reset')
+      normalButton=(component 'bootstrap-button' type='button')
+    )
+  }}
+{{else}}
+  {{#if submitAction}}
+    {{bootstrap-button
+      classNames='btn-primary'
+      action=submitAction
+      type='submit'
+      buttonText='Submit'
+    }}
+  {{/if}}
+{{/if}}
