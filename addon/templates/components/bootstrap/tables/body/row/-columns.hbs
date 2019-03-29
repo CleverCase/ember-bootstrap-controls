@@ -1,0 +1,24 @@
+{{#each columns as |column index|}}
+  {{#if hasBlock}}
+    {{yield (hash
+      columnIndex=index
+      rowData=rowData
+      columnKey=column.columnKey
+      cell=(component 'bootstrap/tables/body/row/-cell'
+        sortingEnabled=sortingEnabled
+        sortField=sortField
+        column=column
+        rowData=rowData
+        rowDataIsSaving=rowDataIsSaving
+      )
+    )}}
+  {{else}}
+    {{bootstrap/tables/body/row/-cell
+      sortingEnabled=sortingEnabled
+      sortField=sortField
+      column=column
+      rowData=rowData
+      rowDataIsSaving=rowDataIsSaving
+    }}
+  {{/if}}
+{{/each}}

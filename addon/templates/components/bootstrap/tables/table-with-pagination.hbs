@@ -1,0 +1,86 @@
+{{#if hasBlock}}
+  {{yield (hash
+      actionBarHeader=(component 'bootstrap/tables/-action-bar-header'
+        pageNumber=pageNumber
+        pageSize=pageSize
+        totalPages=totalPages
+        pageRecordsMeta=pageRecordsMeta
+        onPage=(action 'onPage')
+        paginationEnabled=true
+      )
+      pageRecordsMeta=pageRecordsMeta
+      paginationControls=(component 'bootstrap/tables/-pagination-control'
+        pageNumber=pageNumber
+        pageSize=pageSize
+        totalPages=totalPages
+        pageRecordsMeta=pageRecordsMeta
+        onPage=(action 'onPage')
+      )
+      table=(component 'bootstrap/tables/-table'
+        classNames=tableClassNames
+        columns=columns
+        rowsData=rowsData
+        reloadingRowsData=(or movingPages reloadingRowsData)
+        noRowsMessage=noRowsMessage
+
+        onArchive=onArchive
+        onEdit=onEdit
+        onDelete=onDelete
+        onShow=onShow
+
+        onSort=onSort
+      )
+    )}}
+{{else}}
+  {{#if paginationEnabled}}
+    {{bootstrap/tables/-pagination-control
+      pageNumber=pageNumber
+      pageSize=pageSize
+      totalPages=totalPages
+      pageRecordsMeta=pageRecordsMeta
+      onPage=(action 'onPage')
+    }}
+  {{/if}}
+  {{#if responsive}}
+    <div class="table-responsive">
+      {{bootstrap/tables/-table
+        classNames=tableClassNames
+        columns=columns
+        rowsData=rowsData
+        reloadingRowsData=(or movingPages reloadingRowsData)
+        noRowsMessage=noRowsMessage
+
+        onArchive=onArchive
+        onEdit=onEdit
+        onDelete=onDelete
+        onShow=onShow
+
+        onSort=onSort
+      }}
+    </div>
+  {{else}}
+    {{bootstrap/tables/-table
+      classNames=tableClassNames
+      columns=columns
+      rowsData=rowsData
+      reloadingRowsData=(or movingPages reloadingRowsData)
+      noRowsMessage=noRowsMessage
+
+      onArchive=onArchive
+      onEdit=onEdit
+      onDelete=onDelete
+      onShow=onShow
+
+      onSort=onSort
+    }}
+  {{/if}}
+  {{#if paginationEnabled}}
+    {{bootstrap/tables/-pagination-control
+      pageNumber=pageNumber
+      pageSize=pageSize
+      totalPages=totalPages
+      pageRecordsMeta=pageRecordsMeta
+      onPage=(action 'onPage')
+    }}
+  {{/if}}
+{{/if}}

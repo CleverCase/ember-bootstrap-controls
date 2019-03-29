@@ -1,0 +1,39 @@
+{{#section.subsection name='Simple button'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-bootstrap-buttons--button' name='Basic bootstrap button'}}
+        {{bootstrap/buttons/accept-button
+          action=(action 'simpleAction')  
+        }}
+
+        {{bootstrap/buttons/cancel-button
+          action=(action 'simpleAction')
+        }}
+
+        {{bootstrap/buttons/delete-button
+          action=(action 'simpleAction')
+        }}
+
+        {{bootstrap/buttons/close-button
+          action=(action 'simpleAction')
+        }}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-bootstrap-buttons--button' name='Advanced @wildlandLabs/emberBootstrapControls'}}
+        {{#bootstrap/buttons/-button
+          classNames='btn btn-info'
+          action=(action 'simpleAction')
+          disabled=true
+        }}
+          <h5 class="mb-0">{{buttonText}}</h5>
+        {{/bootstrap/buttons/-button}}
+      {{/freestyle-usage}}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}

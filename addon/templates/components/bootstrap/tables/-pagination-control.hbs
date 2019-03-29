@@ -1,0 +1,27 @@
+{{#if (or (and (eq totalPages 1) (gt pageRecordsMeta.countTotal 5)) (and (gt totalPages 1) pageRecordsMeta))}}
+  {{#bootstrap-power-select
+    classNames='col col-auto pagination_page-size'
+    label='Per Page'
+    selected=pageSize
+    options=validPageSizes
+    onChange=(action 'onPerPage')
+    allowClear=false
+    renderInPlace=true
+    searchEnabled=false
+    as |option|}}
+    <span>{{option}}</span>
+  {{/bootstrap-power-select}}
+  <div class='col col-auto'>
+    {{#if pageRecordsMeta}}
+      <span class='text-center'>
+        Showing {{pageRecordsMeta.countStart}} - {{pageRecordsMeta.countEnd}} of {{pageRecordsMeta.countTotal}}
+      </span>
+    {{/if}}
+    {{bootstrap-pagination-nav
+      pageNumber=pageNumber
+      pageSize=pageSize
+      totalPages=totalPages
+      moveToPage=(action 'moveToPage')
+    }}
+  </div>
+{{/if}}

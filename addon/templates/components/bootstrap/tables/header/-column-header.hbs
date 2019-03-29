@@ -1,0 +1,22 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  {{#if (and sortingEnabled columnSortingEnabled)}}
+    {{#bootstrap-button
+      classNames='btn-sm btn-primary'
+      aria-label="Sort by column"
+      action=(action onSort sortingCriteria nextSortDirection)
+    }}
+      {{#if activeSortColumn}}
+        {{#if sortReverse}}
+          <i class="fa fa-chevron-down" />
+        {{else}}
+          <i class="fa fa-chevron-up" />
+        {{/if}}
+      {{/if}}
+      {{label}}
+    {{/bootstrap-button}}
+  {{else}}
+    {{label}}
+  {{/if}}
+{{/if}}

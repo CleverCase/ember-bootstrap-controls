@@ -1,0 +1,65 @@
+{{#if hasBlock}}
+  {{yield (hash
+    header=(component 'bootstrap/tables/-header'
+      onSort=(action 'onSort')
+
+      sortField=sortField
+      sortReverse=sortReverse
+
+      columns=columns
+
+      sortingEnabled=(readonly sortingEnabled)
+      actionsEnabled=(readonly actionsEnabled)
+    )
+    body=(component 'bootstrap/tables/-body'
+      noRowsMessage=noRowsMessage
+
+      reloadingRowsData=(or sortingRows reloadingRowsData)
+
+      sortingEnabled=(readonly sortingEnabled)
+      actionsEnabled=(readonly actionsEnabled)
+
+      onArchive=onArchive
+      onEdit=onEdit
+      onShow=onShow
+      onDelete=onDelete
+
+      sortField=sortField
+      sortReverse=sortReverse
+
+      rowsData=rowsData
+      columns=columns
+    )
+  )}}
+{{else}}
+  {{bootstrap/tables/-header
+    onSort=(action 'onSort')
+
+    sortField=sortField
+    sortReverse=sortReverse
+
+    columns=columns
+
+    sortingEnabled=(readonly sortingEnabled)
+    actionsEnabled=(readonly actionsEnabled)
+  }}
+  {{bootstrap/tables/-body
+    noRowsMessage=noRowsMessage
+
+    reloadingRowsData=(or sortingRows reloadingRowsData)
+
+    sortingEnabled=(readonly sortingEnabled)
+    actionsEnabled=(readonly actionsEnabled)
+
+    onArchive=onArchive
+    onEdit=onEdit
+    onShow=onShow
+    onDelete=onDelete
+
+    sortField=sortField
+    sortReverse=sortReverse
+
+    rowsData=rowsData
+    columns=columns
+  }}
+{{/if}}
