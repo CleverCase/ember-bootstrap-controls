@@ -4,9 +4,12 @@ import { BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-defi
 import { propDefinitions } from '../../../bootstrap/tables/table-with-pagination';
 
 export default Component.extend({
-  init(){
-    this._super(...arguments);
-    this.set('columns',[
+  layout,
+  propDefinitions,
+  data: Object.assign(BuilderForPropDefaults(propDefinitions), {
+    value: '',
+    noRowsMessage: 'No Recent Tasks',
+    columns: [
       {
         headerLabel: '#',
         cellValueKey: 'number',
@@ -31,9 +34,8 @@ export default Component.extend({
         columnKey: 'handle',
         sortingCriteriaValue: 'handle',
       }
-    ]);
-
-    this.set('models',[
+    ],
+    models: [
       {
         number: 1,
         first: 'Mark',
@@ -52,12 +54,7 @@ export default Component.extend({
         last: 'Bird',
         handle: '@twitter'
       },
-    ]);
-  },
-  layout,
-  propDefinitions,
-  data: Object.assign(BuilderForPropDefaults(propDefinitions), {
-    value: '',
+    ]
   }),
 
   basicValue: '',

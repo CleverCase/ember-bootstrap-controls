@@ -50,6 +50,11 @@ export const propDefinitions = {
     description: 'The table data that will be rendered in the rows',
     type: PropTypes.arrayOf(PropTypes.EmberObject),
   },
+  noRowsMessage: {
+    default: 'No data',
+    description: 'The string to be displayed if the data has no rows.',
+    type: PropTypes.string,
+  },
   columns: {
     description: 'The table columns that will be rednered',
     type: PropTypes.arrayOf(PropTypes.shape({

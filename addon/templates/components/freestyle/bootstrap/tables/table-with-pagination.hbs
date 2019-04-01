@@ -1,4 +1,4 @@
-{{#section.subsection name='bootstrapTablesTableWithPagination'}}
+{{#section.subsection name='Table With Pagination'}}
   {{#freestyle-collection
     defaultKey='Basic Usage'
     inline=false
@@ -8,8 +8,8 @@
       {{#freestyle-usage 'basic-bootstrap-tables-table-with-pagination' name='Basic @wildlandLabs/emberBootstrapControls'}}
         {{bootstrap/tables/table-with-pagination
           tableClassNames="table-dark"
-          columns=columns
-          rowsData=models
+          columns=data.columns
+          rowsData=data.models
           onEdit=(action 'onEdit')
           onDelete=(action 'onDelete')
           paginationEnabled=true
@@ -18,44 +18,58 @@
     {{/collection.variant}}
     {{#collection.variant key='Advanced Usage'}}
       {{#freestyle-usage 'advanced-bootstrap-tables-table-with-pagination' name='Advanced @wildlandLabs/emberBootstrapControls'}}
-        {{#bootstrap/tables/table-with-pagination
-          columns=columns
-          rowsData=models
-          responsive=false
-          noRowsMessage='No Recent Tasks'
+        {{bootstrap/tables/table-with-pagination
+          columns=data.columns
+          rowsData=data.models
+          responsive=data.responsive
+          reloadingRowsData=data.reloadingRowsData
+          noRowsMessage=data.noRowsMessage
           onDelete=(action 'onDelete')
           onPage=(action 'simpleAction')
           onSort=(action 'sortAction')
-          as |paginatedTable|
         }}
-          {{#paginatedTable.table classNames='table table-sm table-striped' as |table|}}
-            {{table.header}}
-            {{#table.body as |body|}}
-              {{#body.row as |row|}}
-                {{#row.columns as |columns|}}
-                  {{#if (eq columns.columnKey 'number')}}
-                    {{#columns.cell as |cell|}}
-                      <div class="btn btn-link" {{action 'clickAction' cell.data}}>
-                        {{cell.data}}
-                      </div>
-                    {{/columns.cell}}
-                  {{else if (eq columns.columnIndex 3)}}
-                    {{#columns.cell as |cell|}}
-                      <div class="text-muted">
-                        {{cell.data}}
-                      </div>
-                    {{/columns.cell}}
-                  {{else}}
-                    {{columns.cell}}
-                  {{/if}}
-                {{/row.columns}}
-                {{row.actions}}
-              {{/body.row}}
-            {{/table.body}}
-          {{/paginatedTable.table}}
-        {{/bootstrap/tables/table-with-pagination}}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+    {{/collection.variant}}
+    {{#collection.variant key='Custom Child Components'}}
+      {{#freestyle-usage 'table-with-pagination-child-components' name='Custom @wildlandLabs/emberBootstrapControls'}}
+      {{#bootstrap/tables/table-with-pagination
+        columns=columns
+        rowsData=models
+        responsive=false
+        noRowsMessage='No Recent Tasks'
+        onDelete=(action 'onDelete')
+        onPage=(action 'simpleAction')
+        onSort=(action 'sortAction')
+        as |paginatedTable|
+      }}
+        {{#paginatedTable.table classNames='table table-sm table-striped' as |table|}}
+          {{table.header}}
+          {{#table.body as |body|}}
+            {{#body.row as |row|}}
+              {{#row.columns as |columns|}}
+                {{#if (eq columns.columnKey 'number')}}
+                  {{#columns.cell as |cell|}}
+                    <div class="btn btn-link" {{action 'clickAction' cell.data}}>
+                      {{cell.data}}
+                    </div>
+                  {{/columns.cell}}
+                {{else if (eq columns.columnIndex 3)}}
+                  {{#columns.cell as |cell|}}
+                    <div class="text-muted">
+                      {{cell.data}}
+                    </div>
+                  {{/columns.cell}}
+                {{else}}
+                  {{columns.cell}}
+                {{/if}}
+              {{/row.columns}}
+              {{row.actions}}
+            {{/body.row}}
+          {{/table.body}}
+        {{/paginatedTable.table}}
+      {{/bootstrap/tables/table-with-pagination}}
+    {{/freestyle-usage}}
     {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}
