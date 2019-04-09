@@ -2,6 +2,23 @@ import Component from '@ember/component';
 import layout from '../../../../templates/components/freestyle/bootstrap/tables/table-with-pagination';
 import { BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { propDefinitions } from '../../../bootstrap/tables/table-with-pagination';
+import faker from 'faker';
+
+var createFakeModels = function() {
+  return Array.from(
+    { length:10 },
+    ()=> (
+      {
+        number: faker.random.number(),
+        first: faker.name.firstName(),
+        last: faker.name.lastName(),
+        handle: `@${faker.internet.userName()}`,
+        email: faker.internet.email(),
+        phone: faker.phone.phoneNumber(),
+      }
+    )
+  );
+};
 
 export default Component.extend({
   layout,
@@ -33,31 +50,19 @@ export default Component.extend({
         cellValueKey: 'handle',
         columnKey: 'handle',
         sortingCriteriaValue: 'handle',
+      },
+      {
+        headerLabel: 'Email',
+        cellValueKey: 'email',
+        columnKey: 'email',
+        sortingCriteriaValue: 'email',
       }
     ],
-    models: [
-      {
-        number: 1,
-        first: 'Mark',
-        last: 'Otto',
-        handle: '@mdo'
-      },
-      {
-        number: 2,
-        first: 'Jacob',
-        last: 'Thornton',
-        handle: '@jet'
-      },
-      {
-        number: 3,
-        first: 'Larry',
-        last: 'Bird',
-        handle: '@twitter'
-      },
-    ]
+    models: createFakeModels(),
   }),
 
   basicValue: '',
+
   actions: {
     simpleAction() {
 
