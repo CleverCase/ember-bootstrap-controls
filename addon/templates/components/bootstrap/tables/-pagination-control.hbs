@@ -1,4 +1,4 @@
-{{#if (or (and (eq totalPages 1) (gt pageRecordsMeta.countTotal 5)) (and (gt totalPages 1) pageRecordsMeta))}}
+{{#if showPaginationNav}}
   {{#bootstrap-power-select
     classNames='col col-auto pagination_page-size'
     label='Per Page'

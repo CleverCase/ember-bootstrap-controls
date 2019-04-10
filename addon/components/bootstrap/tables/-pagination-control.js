@@ -1,4 +1,5 @@
 import Component from '@ember/component';
+import { computed } from '@ember/object';
 import layout from '../../../templates/components/bootstrap/tables/-pagination-control';
 import { task } from 'ember-concurrency';
 import { isPresent } from '@ember/utils';
@@ -7,6 +8,13 @@ import { A } from '@ember/array';
 export default Component.extend({
   layout,
   classNames: ['row','no-gutters'],
+  showPaginationNav: computed('totalPages', 'pageRecordsMeta', function() {
+    const onePage = this.get('totalPages') === 1;
+    const moreThanFiveRecords = this.get('pageRecordsMeta.countTotal') > 5;
+    const moreThanOnePage = this.get('totalPages') > 1;
+    return onePage && moreThanFiveRecords ||
+      moreThanOnePage && isPresent(this.get('pageRecordsMeta'));
+  }),
   onPageTask: task(function * (pageNumber, pageSize) {
     const onPage = yield this.get('onPage');
     this.setProperties({
