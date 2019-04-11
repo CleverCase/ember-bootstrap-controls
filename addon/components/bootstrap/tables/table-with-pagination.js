@@ -82,9 +82,9 @@ export default Component.extend({
 
   calculatePaginationTask: task(function * () {
     const rowsData = yield this.get('rowsData');
-    if(isPresent(rowsData)) {
+    if (isPresent(rowsData)) {
       const paginationInformation = yield get(rowsData, 'meta.page');
-      if(isPresent(paginationInformation)) {
+      if (isPresent(paginationInformation)) {
         const pageNumberString = yield get(paginationInformation, 'offset');
         const pageNumber = (isPresent(pageNumberString) ? Number.parseInt(pageNumberString) : null);
         const countEnd = yield get(paginationInformation, 'iteration_count_end');
@@ -109,7 +109,7 @@ export default Component.extend({
       pageNumber: pageNumber,
       pageSize: pageSize,
     });
-    if(isPresent(onPage)) {
+    if (isPresent(onPage)) {
       return yield onPage(pageNumber, pageSize);
     }
   }).restartable(),

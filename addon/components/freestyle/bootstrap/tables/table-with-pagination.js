@@ -3,6 +3,8 @@ import layout from '../../../../templates/components/freestyle/bootstrap/tables/
 import { BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { propDefinitions } from '../../../bootstrap/tables/table-with-pagination';
 import faker from 'faker';
+import ArrayProxy from '@ember/array/proxy';
+
 
 var createFakeModels = function() {
   return Array.from(
@@ -58,7 +60,21 @@ export default Component.extend({
         sortingCriteriaValue: 'email',
       }
     ],
-    models: createFakeModels(),
+    models: ArrayProxy.create({
+      content: createFakeModels(),
+      meta: {
+          page: {
+            current_iteration_count: -24,
+            iteration_count_end: 25,
+            iteration_count_start: 1,
+            offset: "1",
+            record_count: 25,
+            size: "25",
+            total_pages: 2,
+            total_records: 49,
+        }
+      }
+    }),
   }),
 
   basicValue: '',
