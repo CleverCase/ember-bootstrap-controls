@@ -1,0 +1,48 @@
+{{#if rowsDataLoaded}}
+  {{#each rowsData as |rowData index|}}
+    {{#if hasBlock}}
+      {{yield (hash
+        rowIndex=index
+        row=(component 'bootstrap/tables/body/-row'
+          sortingEnabled=sortingEnabled
+          actionsEnabled=actionsEnabled
+          sortField=sortField
+          rowData=rowData
+          rowDataIsSaving=rowData.isSaving
+          columns=columns
+          onArchive=onArchive
+          onEdit=onEdit
+          onDelete=onDelete
+          onShow=onShow
+        )
+      )}}
+    {{else}}
+      {{bootstrap/tables/body/-row
+        sortingEnabled=sortingEnabled
+        actionsEnabled=actionsEnabled
+        sortField=sortField
+        rowData=rowData
+        rowDataIsSaving=rowData.isSaving
+        columns=columns
+        onArchive=onArchive
+        onEdit=onEdit
+        onDelete=onDelete
+        onShow=onShow
+      }}
+    {{/if}}
+  {{else}}
+    <tr>
+      <td colspan={{totalColumnCount}}>
+        {{#if noRowsMessage}}
+          {{noRowsMessage}}
+        {{else}}
+          No Data
+        {{/if}}
+      </td>
+    </tr>
+  {{/each}}
+{{else}}
+  <tr>
+    <td colspan={{totalColumnCount}}>Loading...</td>
+  </tr>
+{{/if}}

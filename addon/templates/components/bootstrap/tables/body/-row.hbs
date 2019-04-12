@@ -1,0 +1,36 @@
+{{#if hasBlock}}
+  {{yield (hash
+    rowData=rowData
+    columns=(component 'bootstrap/tables/body/row/-columns'
+      columns=columns
+      sortingEnabled=sortingEnabled
+      sortField=sortField
+      rowData=rowData
+      rowDataIsSaving=rowDataIsSaving
+    )
+    actions=(component 'bootstrap/tables/body/row/-actions'
+      rowData=rowData
+      onArchive=onArchive
+      onShow=onShow
+      onDelete=onDelete
+      onEdit=onEdit
+    )
+  )}}
+{{else}}
+  {{bootstrap/tables/body/row/-columns
+    columns=columns
+    sortingEnabled=sortingEnabled
+    sortField=sortField
+    rowData=rowData
+    rowDataIsSaving=rowDataIsSaving
+  }}
+  {{#if actionsEnabled}}
+    {{bootstrap/tables/body/row/-actions
+      rowData=rowData
+      onArchive=onArchive
+      onShow=onShow
+      onDelete=onDelete
+      onEdit=onEdit
+    }}
+  {{/if}}
+{{/if}}

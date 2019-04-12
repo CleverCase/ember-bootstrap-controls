@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 ## [Unreleased]
 ### Added
   * `bootstrap/simple-form` now supports `submitAction`. ([@jweakley][])
+  * `bootstrap/buttons` ([@jir-f][]) 
+  * `bootstrap/tables` ([@jir-f][])
 ### Changed
   * Set `isDevelopingAddon` to false. ([@jweakley][])
   * Commented out failing freestyle examples. ([@jweakley][])
@@ -99,3 +101,4 @@ All notable changes to this project will be documented in this file.
 [@harokevin]: https://github.com/harokevin
 [@flarinerin]: http://github.com/flarinerin
 [@chadzink]: https://github.com/chadzink
+[@jir-f]: https://github.com/jir-f

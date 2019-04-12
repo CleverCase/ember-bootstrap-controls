@@ -1,0 +1,9 @@
+{{#if hasBlock}}
+  {{yield
+    (hash
+      isRunning=(readonly asyncTask.isRunning)
+    )
+  }}
+{{else}}
+  {{buttonText}}
+{{/if}}

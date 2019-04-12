@@ -1,0 +1,37 @@
+{{#if hasBlock}}
+  {{yield (hash
+    show=(component 'bootstrap/tables/body/row/actions/-show'
+      enabled=(readonly showEnabled)
+      action=(action 'onShow' rowData)
+    )
+    edit=(component 'bootstrap/tables/body/row/actions/-edit'
+      enabled=(readonly editEnabled)
+      action=(action 'onEdit' rowData)
+    )
+    archive=(component 'bootstrap/tables/body/row/actions/-archive'
+      enabled=(readonly archiveEnabled)
+      action=(action 'onArchive' rowData)
+    )
+    delete=(component 'bootstrap/tables/body/row/actions/-delete'
+      enabled=(readonly deleteEnabled)
+      action=(action 'onDelete' rowData)
+    )
+  )}}
+{{else}}
+  {{bootstrap/tables/body/row/actions/-show
+    enabled=(readonly showEnabled)
+    action=(action 'onShow' rowData)
+  }}
+  {{bootstrap/tables/body/row/actions/-edit
+    enabled=(readonly editEnabled)
+    action=(action 'onEdit' rowData)
+  }}
+  {{bootstrap/tables/body/row/actions/-archive
+    enabled=(readonly archiveEnabled)
+    action=(action 'onArchive' rowData)
+  }}
+  {{bootstrap/tables/body/row/actions/-delete
+    enabled=(readonly deleteEnabled)
+    action=(action 'onDelete' rowData)
+  }}
+{{/if}}

@@ -1,0 +1,19 @@
+{{#section.subsection name='bootstrapTablesThead'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-bootstrap-tables--thead' name='Basic @wildlandLabs/emberBootstrapControls'}}
+        {{bootstrap/tables/-thead}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-bootstrap-tables--thead' name='Advanced @wildlandLabs/emberBootstrapControls'}}
+        {{bootstrap/tables/-thead}}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}

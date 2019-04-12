@@ -1,0 +1,19 @@
+{{#section.subsection name='bootstrapTablesActionBarAction'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-bootstrap-tables-action-bar--action' name='Basic @wildlandLabs/emberBootstrapControls'}}
+        {{bootstrap/tables/action-bar/-action}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Advanced Usage'}}
+      {{#freestyle-usage 'advanced-bootstrap-tables-action-bar--action' name='Advanced @wildlandLabs/emberBootstrapControls'}}
+        {{bootstrap/tables/action-bar/-action}}
+        {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}

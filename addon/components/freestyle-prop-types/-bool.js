@@ -8,7 +8,8 @@ export default Component.extend({
     this.set('dataValue', this.get(`data.${this.get('propDefinition.name')}`));
   },
   actions: {
-    booleanUpdated(value) {
+    booleanUpdated(e) {
+      const value = e.target.checked;
       this.set(`data.${this.get('propDefinition.name')}`, value)
     }
   },

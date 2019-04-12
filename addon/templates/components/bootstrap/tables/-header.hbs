@@ -1,0 +1,18 @@
+{{#if hasBlock}}
+  {{yield}}
+{{else}}
+  <tr>
+    {{#each columns as |column|}}
+      {{bootstrap/tables/header/-column-header
+        column=column
+        onSort=onSort
+        sortField=sortField
+        sortReverse=sortReverse
+        sortingEnabled=sortingEnabled
+      }}
+    {{/each}}
+    {{#if actionsEnabled}}
+      <th />
+    {{/if}}
+  </tr>
+{{/if}}

@@ -1,0 +1,22 @@
+{{#if hasBlock}}
+  {{#if _hasCellValue}}
+    {{#if calculateCellDataTask.isRunning}}
+      Loading...
+    {{else if cellData}}
+      {{yield (hash
+        loading=(readonly calculateCellDataTask.isRunning)
+        data=cellData
+      )}}
+    {{else}}
+      {{cellData}}
+    {{/if}}
+  {{else}}
+    {{yield}}
+  {{/if}}
+{{else}}
+  {{#if calculateCellDataTask.isRunning}}
+    Loading...
+  {{else}}
+    {{cellData}}
+  {{/if}}
+{{/if}}
