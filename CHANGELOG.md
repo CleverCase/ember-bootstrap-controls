@@ -3,8 +3,16 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [1.1.0-beta] - 2019-04-12
+### Added
   * `bootstrap/simple-form` now supports `submitAction`. ([@jweakley][])
-  * `bootstrap/buttons` ([@jir-f][]) 
+  * `bootstrap/buttons` ([@jir-f][])
   * `bootstrap/tables` ([@jir-f][])
 ### Changed
   * Set `isDevelopingAddon` to false. ([@jweakley][])
