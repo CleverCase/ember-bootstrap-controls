@@ -1,0 +1,12 @@
+{{#modal.header closeButton=false}}
+  {{#if hasBlock}}
+    <h3>{{yield}}</h3>
+  {{else}}
+    <h3>{{title}}</h3>
+  {{/if}}
+  {{#if closeButton}}
+    {{modals/header/-close-button
+      action=closeAction
+    }}
+  {{/if}}
+{{/modal.header}}

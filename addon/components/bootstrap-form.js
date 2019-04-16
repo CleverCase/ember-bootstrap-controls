@@ -15,7 +15,7 @@ export default Component.extend(PropTypeMixin, {
   },
 
   init() {
-    Ember.Logger.warn('DEPRECATION: bootstrap-form component is being replaced by bootstrap/simple-form in an upcoming version of ember-bootstrap-controls.');
+    console.warn('DEPRECATION: bootstrap-form component is being replaced by bootstrap/simple-form in an upcoming version of ember-bootstrap-controls.');
     this._super(...arguments);
   },
 

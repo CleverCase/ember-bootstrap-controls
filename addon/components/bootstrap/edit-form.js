@@ -38,16 +38,22 @@ export default Component.extend({
 
   asyncSaveTask: task(function * (asyncTask) {
       if (asyncTask) {
-        yield asyncTask();
+        if (yield asyncTask()) {
+          this.set('isEditing', false);
+        };
+      } else {
+        this.set('isEditing', false);
       }
-      this.set('isEditing', false);
   }).drop(),
 
   asyncCancelTask: task(function * (asyncTask) {
-      if (asyncTask) {
-        yield asyncTask();
-      }
+    if (asyncTask) {
+      if (yield asyncTask()) {
+        this.set('isEditing', false);
+      };
+    } else {
       this.set('isEditing', false);
+    }
   }).drop(),
 
 

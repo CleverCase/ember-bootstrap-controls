@@ -1,0 +1,21 @@
+{{#modal.footer as |footer|}}
+  {{#if hasBlock}}
+    {{yield (hash
+      isSaving=isSaving
+      isCanceling=isCanceling
+      isRunningAsync=isRunningAsync
+      acceptButton=(component 'bootstrap/buttons/accept-button'
+        buttonText=acceptButtonText
+        action=acceptAction
+        disabled=isRunningAsync
+      )
+      cancelButton=(component 'bootstrap/buttons/cancel-button'
+        action=cancelAction
+        disabled=isRunningAsync
+      )
+    )}}
+  {{else}}
+    {{bootstrap/buttons/cancel-button action=cancelAction disabled=isRunningAsync}}
+    {{bootstrap/buttons/accept-button action=acceptAction disabled=isRunningAsync buttonText=acceptButtonText}}
+  {{/if}}
+{{/modal.footer}}

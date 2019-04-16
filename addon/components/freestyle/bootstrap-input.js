@@ -12,13 +12,25 @@ export default Component.extend({
 
   actions: {
     keyPress() {
-      Ember.Logger.debug('key pressed');
+      if (console.debug) {
+        console.debug('key pressed');
+      } else {
+        console.log('key pressed');
+      }
     },
     keyUp() {
-      Ember.Logger.debug('key up');
+      if (console.debug) {
+        console.debug('key up');
+      } else {
+        console.log('key up');
+      }
     },
     keyDown() {
-      Ember.Logger.debug('key down');
+      if (console.debug) {
+        console.debug('key down');
+      } else {
+        console.log('key down');
+      }
     },
   },
 });
