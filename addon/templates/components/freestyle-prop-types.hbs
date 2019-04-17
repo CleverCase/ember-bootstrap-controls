@@ -1,24 +1,23 @@
-<h2>Component Options</h2>
-<hr>
-<dl>
-  {{#each options as |option|}}
-    <dt>{{option.name}}</dt>
-    <dd>
-      <dl>
-        <dt>Description</dt>
-        <dd>{{option.description}}</dd>
-        <dt>Type</dt>
-        <dd>{{option.type.type}}</dd>
-        {{#unless (eq option.default undefined)}}
-          <dt>Default Value</dt>
-          <dd>{{option.default}}</dd>
-        {{/unless}}
-        {{#if option.required}}
-          <dt>Required</dt>
-          <dd>{{option.required}}</dd>
-        {{/if}}
-      </dl>
-      {{component option.componentName propDefinition=option data=data}}
-    </dd>
-  {{/each}}
-</dl>
+<div class="container-fluid">
+  <div class="row">
+    <div class="col">
+      <h2>Component Options</h2>
+      {{#each options as |option|}}
+        <div class="mt-2 mb-4">
+          <h4>{{option.name}}</h4>
+          <p class="h6 mt-1">{{option.description}}</p>
+          <p class="small my-0">Type: {{option.type.type}}</p>
+          {{#unless (eq option.default undefined)}}
+            <p class="small my-0">Default Value: {{option.default}}</p>
+          {{/unless}}
+          {{#if option.required}}
+            <p class="small my-0">Required: {{option.required}}{{option.required}}</p>
+          {{/if}}
+          <div class="card p-3 border-0 bg-light mt-2">
+            {{component option.componentName propDefinition=option data=data}}
+          </div>
+        </div>
+      {{/each}}
+    </div>
+  </div>
+</div>
