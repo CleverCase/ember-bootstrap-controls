@@ -1,10 +1,10 @@
 <div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <h2>Component Options</h2>
+  <div class="row flex-start">
+    <div class="col-12 col-xl-9">
+      <h3 class="mb-4">Component Options</h3>
       {{#each options as |option|}}
         <div class="mt-2 mb-4">
-          <h4>{{option.name}}</h4>
+          <h4 id={{option.name}}>{{option.name}}</h4>
           <p class="h6 mt-1">{{option.description}}</p>
           <p class="small my-0">Type: {{option.type.type}}</p>
           {{#unless (eq option.default undefined)}}
@@ -18,6 +18,15 @@
           </div>
         </div>
       {{/each}}
+    </div>
+    <div class="d-none d-xl-block col-xl-2">
+      <div class="sticky-top">
+        <ul class="section-nav list-group">
+          {{#each options as |option|}}
+            <li class="list-group-item border-top-0 border-bottom-0 border-right-0 rounded-0 py-0"><a href="#{{option.name}}" class="text-secondary">{{option.name}}</a></li>
+          {{/each}}
+        </ul>
+      </div>
     </div>
   </div>
 </div>
