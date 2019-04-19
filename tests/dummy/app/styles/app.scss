@@ -1,5 +1,7 @@
-@import "ember-power-select";
 @import "ember-cli-bootstrap-4/bootstrap";
+@import 'bootstrap-power-select/themes/bootstrap-4';
+@import 'ember-power-select';
+
 
 body {
   font-family: 'Roboto', sans-serif;
