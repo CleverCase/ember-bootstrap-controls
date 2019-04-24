@@ -3,6 +3,7 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
+  * `modals/ember-model` prototype added. ([@jweakley][])
 ### Changed
 ### Deprecated
 ### Removed
