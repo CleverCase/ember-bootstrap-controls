@@ -8,7 +8,7 @@ module.exports = function(defaults) {
       snippetSearchPaths: ['addon', 'tests/dummy/app']
     },
     'ember-bootstrap': {
-      bootstrapVersion: 3,
+      bootstrapVersion: 4,
       importBootstrapFont: true,
       importBootstrapCSS: false
     }
