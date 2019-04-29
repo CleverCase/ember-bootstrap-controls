@@ -17,17 +17,19 @@
   },
   "scripts": {
     "build": "ember build",
+    "deploy-documentation": "ember build && ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\" && git push origin gh-pages:gh-pages",
     "lint:js": "eslint .",
     "start": "ember serve",
     "test": "ember test",
     "test:all": "ember try:each",
-    "deploy-documentation": "ember build && ember github-pages:commit --message \"Deploy gh-pages from commit $(git rev-parse HEAD)\" && git push origin gh-pages:gh-pages",
-    "upgrade-interactive": "npm-check --update"
+    "upgrade-interactive": "npm-check --update",
+    "build-storybook": "ember build && build-storybook -p 9001 -s dist",
+    "storybook": "ember serve & start-storybook -p 9001 -s dist"
   },
   "dependencies": {
     "chalk": "^2.4.2",
     "ember-bootstrap-datepicker": "^2.0.9",
-    "ember-cli-babel": "^7.6.0",
+    "ember-cli-babel": "^7.7.3",
     "ember-cli-bootstrap-4": "^0.9.1",
     "ember-cli-htmlbars": "^2.0.5",
     "ember-cli-string-utils": "^1.1.0",
@@ -52,6 +54,7 @@
     "ember-cli-sass": "^8.0.1",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
+    "ember-cli-storybook": "^0.1.0",
     "ember-cli-uglify": "^2.0.0",
     "ember-disable-prototype-extensions": "^1.1.2",
     "ember-export-application-global": "^2.0.0",
@@ -70,10 +73,16 @@
     "loader.js": "^4.7.0",
     "npm-check": "^5.9.0",
     "popper.js": "^1.14.7",
-    "qunit-dom": "^0.8.4"
+    "qunit-dom": "^0.8.4",
+    "@storybook/ember": "^5.0.11",
+    "@storybook/addon-actions": "^5.0.11",
+    "@storybook/addon-links": "^5.0.11",
+    "@storybook/addons": "^5.0.11",
+    "@babel/core": "^7.4.4",
+    "babel-loader": "^8.0.5"
   },
   "engines": {
-    "node": "6.* || 8.* || ~ 10.13.*",
+    "node": "6.* || 8.* || ~ 10.15.*",
     "npm": ">= 5.2.0"
   },
   "ember-addon": {
