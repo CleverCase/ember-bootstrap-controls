@@ -38,7 +38,9 @@ export default Component.extend({
 
   asyncSaveTask: task(function * (asyncTask) {
       if (asyncTask) {
-        if (yield asyncTask()) {
+        const response = yield asyncTask();
+        const wasSuccessful = response || response === undefined;
+        if (wasSuccessful) {
           this.set('isEditing', false);
         };
       } else {
