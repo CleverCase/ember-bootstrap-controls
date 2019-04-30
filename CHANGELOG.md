@@ -3,6 +3,14 @@ All notable changes to this project will be documented in this file.
 
 ## [Unreleased]
 ### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+## [1.1.0-beta.2] - 2019-04-30
+### Added
   * `modals/ember-model` prototype added. ([@jweakley][])
 ### Changed
 ### Deprecated
