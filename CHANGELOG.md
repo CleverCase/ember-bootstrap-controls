@@ -9,6 +9,15 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 ### Security
 
+## [1.1.0-beta.2] - 2019-04-30
+### Added
+  * `modals/ember-model` prototype added. ([@jweakley][])
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
 ## [1.1.0-beta] - 2019-04-12
 ### Added
   * `bootstrap/simple-form` now supports `submitAction`. ([@jweakley][])

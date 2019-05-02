@@ -3,4 +3,6 @@
     padding: 0 1rem;
 }
 
-@import "ember-cli-bootstrap-4/bootstrap";
+@import "ember-bootstrap/bootstrap";
+
+@import "ember-power-select";

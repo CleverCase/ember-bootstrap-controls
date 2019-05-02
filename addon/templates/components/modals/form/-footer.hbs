@@ -1,0 +1,15 @@
+{{#modal.footer as |footer|}}
+  {{#if hasBlock}}
+    {{yield (hash
+      acceptButton=(component 'bootstrap/buttons/accept-button'
+        action=acceptAction
+      )
+      cancelButton=(component 'bootstrap/buttons/cancel-button'
+        action=cancelAction
+      )
+    )}}
+  {{else}}
+    {{bootstrap/buttons/cancel-button action=cancelAction}}
+    {{bootstrap/buttons/accept-button action=acceptAction}}
+  {{/if}}
+{{/modal.footer}}

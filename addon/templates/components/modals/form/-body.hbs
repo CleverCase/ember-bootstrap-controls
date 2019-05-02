@@ -1,0 +1,18 @@
+{{#modal.body}}
+  {{yield (hash
+    form=(component
+      'bootstrap/simple-form'
+      disabled=formDisabled
+    )
+    powerSelect=(component 'bootstrap-power-select'
+      disabled=formDisabled
+      renderInPlace=true
+    )
+  )}}
+  {{#if isSaving}}
+    {{progress-bars/async-bar label=savingProgressBarText}}
+  {{/if}}
+  {{#if isCanceling}}
+    {{progress-bars/async-bar label=cancelingProgressBarText}}
+  {{/if}}
+{{/modal.body}}

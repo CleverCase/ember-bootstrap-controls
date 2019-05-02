@@ -25,7 +25,7 @@ export default Component.extend({
   loadingMessage: undefined,
   noMatchesMessage: undefined,
   disabled: undefined,
-  renderInPlace: undefined,
+  renderInPlace: true,
   allowClear: true,
   search: undefined,
   searchEnabled: true,

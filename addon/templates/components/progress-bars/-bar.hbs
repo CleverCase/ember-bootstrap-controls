@@ -1,0 +1,10 @@
+{{#if hasBlock}}
+  {{yield (hash
+    minimumValue=(readonly minimumValue)
+    maximumValue=(readonly maximumValue)
+    currentValue=(readonly currentValue)
+    percentCompleted=(readonly percentCompleted)
+  )}}
+{{else}}
+  {{label}}
+{{/if}}
