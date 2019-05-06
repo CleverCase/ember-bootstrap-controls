@@ -28,7 +28,7 @@ export default Component.extend({
   classNames: ['btn'],
   attributeBindings: ['disabledButton:disabled', 'type', 'aria-label'],
   propTypes: BuilderForPropTypes(propDefinitions),
-  adisabledButton: or('asyncTask.isRunning', 'disabled'),
+  disabledButton: or('asyncTask.isRunning', 'disabled'),
 
   asyncTask: task(function * (asyncTask) {
       return yield asyncTask();
