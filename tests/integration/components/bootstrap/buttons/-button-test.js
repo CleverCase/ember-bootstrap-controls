@@ -17,11 +17,22 @@ module('Integration | Component | bootstrap/buttons/-button', function(hooks) {
     });
   });
 
+  test('it uses disabled', async function(assert) {
+    this.set('noop', () => {});
+    assert.expect(3);
+    await render(hbs`{{bootstrap/buttons/-button action=noop disabled=true}}`);
+    assert.equal(findAll('button').length, 1);
+    assert.equal(findAll('button:disabled').length, 1);
+    return a11yAudit(this.$()).then(() => {
+      assert.ok(true, 'no a11y errors found!');
+    });
+  });
+
   test('it renders in block syntax', async function(assert){
     this.set('noop', () => {});
     assert.expect(2);
     await this.render(hbs`
-      {{#bootstrap/buttons/-button 
+      {{#bootstrap/buttons/-button
         action=noop
       }}
         template block text

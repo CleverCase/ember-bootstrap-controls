@@ -9,6 +9,15 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 ### Security
 
+## [1.1.0-beta.3] - 2019-04-30
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+  * Buttons now properly support disabled. ([@jweakley][])
+### Security
+
 ## [1.1.0-beta.2] - 2019-04-30
 ### Added
   * `modals/ember-model` prototype added. ([@jweakley][])
