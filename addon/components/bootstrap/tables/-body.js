@@ -15,7 +15,7 @@ export default Component.extend({
     }
   }),
   totalColumnCount: computed('definedColumnCount', 'computedColumnCount', function() {
-    return this.get('definedColumnCount') + this.get('computedColumnCount');
+    return parseInt(this.get('definedColumnCount')) + parseInt(this.get('computedColumnCount'));
   }),
 
   arrayExists: computed('rowsData', function(){
