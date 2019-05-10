@@ -3,6 +3,7 @@
     {{#if hasBlock}}
       {{yield (hash
         rowIndex=index
+        rowData=rowData
         row=(component 'bootstrap/tables/body/-row'
           sortingEnabled=sortingEnabled
           actionsEnabled=actionsEnabled
