@@ -9,6 +9,16 @@ All notable changes to this project will be documented in this file.
 ### Fixed
 ### Security
 
+## [1.1.0-beta.4] - 2019-05-10
+### Added
+  * table body now additionally yields `rowData`. ([@jweakley][])
+### Changed
+### Deprecated
+### Removed
+### Fixed
+  * Fixed a bug where colspan on tables could be invalid. ([@jweakley][])
+### Security
+
 ## [1.1.0-beta.3] - 2019-04-30
 ### Added
 ### Changed
