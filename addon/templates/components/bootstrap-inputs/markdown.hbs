@@ -1,0 +1,39 @@
+{{#bootstrap/control-wrapper
+  classNames=classNames
+  errors=errors
+  srOnly=srOnly
+  label=label
+  help=help
+  as |control|
+}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        label=(component control.label)
+        help=(component control.help)
+        control=control
+        input=(component "tui-editor"
+          tabindex=tabindex
+          value=value
+          disabled=(readonly _disabled)
+          elementId=control.inputId
+          placeholder=placeholder
+          classNames="form-control"
+          helpId=control.helpId
+          rows=rows
+          cols=cols
+          required=required
+        )
+      )
+    }}
+  {{else}}
+    {{control.label}}
+    {{tui-editor
+      value="# Hello World"
+
+    }}
+    {{#if help}}
+      {{control.help}}
+    {{/if}}
+  {{/if}}
+{{/bootstrap/control-wrapper}}
