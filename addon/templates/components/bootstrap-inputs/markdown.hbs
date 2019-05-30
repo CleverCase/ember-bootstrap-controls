@@ -13,24 +13,26 @@
         help=(component control.help)
         control=control
         input=(component "tui-editor"
-          tabindex=tabindex
           value=value
-          disabled=(readonly _disabled)
-          elementId=control.inputId
-          placeholder=placeholder
-          classNames="form-control"
-          helpId=control.helpId
-          rows=rows
-          cols=cols
-          required=required
+          onChange=(action "valueChanged")
+          height=height
+          minHeight=minHeight
+          previewStyle=previewStyle
+          editType=editType
+          viewer=viewer
         )
       )
     }}
   {{else}}
     {{control.label}}
     {{tui-editor
-      value="# Hello World"
-
+      value=value
+      onChange=(action "valueChanged")
+      height=height
+      minHeight=minHeight
+      previewStyle=previewStyle
+      editType=editType
+      viewer=viewer
     }}
     {{#if help}}
       {{control.help}}

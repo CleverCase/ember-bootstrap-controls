@@ -8,6 +8,8 @@
       {{#freestyle-usage 'basic-tui-editor' name='Basic TUI Editor'}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.markdown
+            value="Some Value"
+            onChange=(action 'onChange')
           }}
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
@@ -16,6 +18,8 @@
       {{#freestyle-usage 'tui-viewer' name='TUI Viewer'}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.markdown
+            value="# Markdown"
+            viewer=true
           }}
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}

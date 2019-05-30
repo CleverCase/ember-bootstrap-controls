@@ -11,4 +11,10 @@ export default Component.extend({
   }),
 
   basicValue: '',
+
+  actions: {
+    onChange(value) {
+      alert(`Value changed to ${value}`);
+    },
+  }
 });
