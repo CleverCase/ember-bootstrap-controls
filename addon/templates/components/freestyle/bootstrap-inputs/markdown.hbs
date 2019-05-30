@@ -12,5 +12,13 @@
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
+    {{#collection.variant key='Viewer'}}
+      {{#freestyle-usage 'tui-viewer' name='TUI Viewer'}}
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.markdown
+          }}
+        {{/bootstrap/form/-inputs}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}
