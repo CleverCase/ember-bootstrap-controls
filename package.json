@@ -1,6 +1,6 @@
 {
   "name": "ember-bootstrap-controls",
-  "version": "1.1.0-beta.4",
+  "version": "1.1.0-beta.5",
   "description": "Ember bootstrap form components.",
   "private": false,
   "keywords": [
@@ -36,6 +36,7 @@
     "ember-source-channel-url": "^1.1.0",
     "ember-text-mask-addons": "^5.0.1",
     "ember-truth-helpers": "^2.1.0",
+    "ember-tui-editor": "^0.1.2",
     "lodash": ">=4.17.11"
   },
   "devDependencies": {

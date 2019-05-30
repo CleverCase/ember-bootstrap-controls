@@ -1,0 +1,28 @@
+{{#section.subsection name='TUI Editor'}}
+  {{#freestyle-collection
+    defaultKey='Basic Usage'
+    inline=false
+    as |collection|
+  }}
+    {{#collection.variant key='Basic Usage'}}
+      {{#freestyle-usage 'basic-tui-editor' name='Basic TUI Editor'}}
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.markdown
+            value="Some Value"
+            onChange=(action 'onChange')
+          }}
+        {{/bootstrap/form/-inputs}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+    {{#collection.variant key='Viewer'}}
+      {{#freestyle-usage 'tui-viewer' name='TUI Viewer'}}
+        {{#bootstrap/form/-inputs as |inputs|}}
+          {{inputs.markdown
+            value="# Markdown"
+            viewer=true
+          }}
+        {{/bootstrap/form/-inputs}}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}

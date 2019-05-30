@@ -1,0 +1,41 @@
+{{#bootstrap/control-wrapper
+  classNames=classNames
+  errors=errors
+  srOnly=srOnly
+  label=label
+  help=help
+  as |control|
+}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        label=(component control.label)
+        help=(component control.help)
+        control=control
+        input=(component "tui-editor"
+          value=value
+          onChange=(action "valueChanged")
+          height=height
+          minHeight=minHeight
+          previewStyle=previewStyle
+          editType=editType
+          viewer=viewer
+        )
+      )
+    }}
+  {{else}}
+    {{control.label}}
+    {{tui-editor
+      value=value
+      onChange=(action "valueChanged")
+      height=height
+      minHeight=minHeight
+      previewStyle=previewStyle
+      editType=editType
+      viewer=viewer
+    }}
+    {{#if help}}
+      {{control.help}}
+    {{/if}}
+  {{/if}}
+{{/bootstrap/control-wrapper}}
