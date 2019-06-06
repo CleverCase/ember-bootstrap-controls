@@ -1,7 +1,8 @@
-import Component from '@ember/component';
-import ButtonComponent from '../../bootstrap-button';
+import layout from '../../../templates/components/modals/header/-close-button';
+import ButtonComponent from '../../bootstrap/buttons/-button';
 
 export default ButtonComponent.extend({
+  layout,
   classNames: ['close'],
   attributeBindings: ['type', 'data-dismiss',  'aria-label'],
   type: 'button',
