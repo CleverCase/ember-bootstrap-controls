@@ -1,13 +1,28 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
-## [Unreleased]
+## [1.1.0] - 2019-06-27
 ### Added
+  * modals now supports `afterHidden`. ([@jweakley][])
+  * `bootstrap/simple-form` now supports `submitAction`. ([@jweakley][])
+  * `bootstrap/buttons` ([@jir-f][])
+  * `bootstrap/tables` ([@jir-f][])
+  * `modals/ember-model` prototype added. ([@jweakley][])
+  * table body now additionally yields `rowData`. ([@jweakley][])
+  * `bootstrap-inputs/markdown`. ([@jweakley][]) ([@flarinerin][])
 ### Changed
+  * Set `isDevelopingAddon` to false. ([@jweakley][])
+  * Commented out failing freestyle examples. ([@jweakley][])
 ### Deprecated
 ### Removed
 ### Fixed
+  * Updated install instructions. ([@jweakley][])
+  * Added back Unreleased section to changelog. ([@jweakley][])
+  * Buttons now properly support disabled. ([@jweakley][])
+  * Fixed a bug where colspan on tables could be invalid. ([@jweakley][])
+  * Fixed a bug where modal close button was not rendering. ([@jweakley][])
 ### Security
+  * Updated dependencies.
 
 ## [1.1.0-beta.4] - 2019-05-10
 ### Added
