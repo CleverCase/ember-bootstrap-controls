@@ -7,20 +7,8 @@ module('Integration | Component | bootstrap pagination nav/page link', function(
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.on('myAction', function(val) { ... });
-
+    assert.expect(1);
     await render(hbs`{{bootstrap-pagination-nav/page-link}}`);
-
-    assert.equal(this.$().text().trim(), '');
-
-    // Template block usage:
-    await render(hbs`
-      {{#bootstrap-pagination-nav/page-link}}
-        template block text
-      {{/bootstrap-pagination-nav/page-link}}
-    `);
-
-    assert.equal(this.$().text().trim(), 'template block text');
+    assert.ok(true, 'No errors');
   });
 });
