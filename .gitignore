@@ -9,12 +9,13 @@
 /node_modules/
 
 # misc
+/.env*
+/.pnp*
 /.sass-cache
 /connect.lock
 /coverage/
 /libpeerconnection.log
 /npm-debug.log*
-/tests/dummy/npm-debug.log*
 /testem.log
 /yarn-error.log
 .DS_Store
