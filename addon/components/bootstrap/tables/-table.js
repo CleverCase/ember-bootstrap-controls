@@ -1,6 +1,9 @@
 import Component from '@ember/component';
 import layout from '../../../templates/components/bootstrap/tables/-table';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { notEmpty, or, alias } from '@ember/object/computed';
 import { isPresent, isEqual } from '@ember/utils';
 import { task } from 'ember-concurrency';

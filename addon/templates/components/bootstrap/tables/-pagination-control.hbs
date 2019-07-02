@@ -1,19 +1,19 @@
 {{#if showPaginationNav}}
   {{#bootstrap-power-select
-    classNames='col col-auto pagination_page-size'
-    label='Per Page'
+    classNames="col col-auto pagination_page-size"
+    label="Per Page"
     selected=pageSize
     options=validPageSizes
-    onChange=(action 'onPerPage')
+    onChange=(action "onPerPage")
     allowClear=false
     renderInPlace=true
     searchEnabled=false
     as |option|}}
     <span>{{option}}</span>
   {{/bootstrap-power-select}}
-  <div class='col col-auto'>
+  <div class="col col-auto">
     {{#if pageRecordsMeta}}
-      <span class='text-center'>
+      <span class="text-center">
         Showing {{pageRecordsMeta.countStart}} - {{pageRecordsMeta.countEnd}} of {{pageRecordsMeta.countTotal}}
       </span>
     {{/if}}
@@ -21,7 +21,7 @@
       pageNumber=pageNumber
       pageSize=pageSize
       totalPages=totalPages
-      moveToPage=(action 'moveToPage')
+      moveToPage=(action "moveToPage")
     }}
   </div>
 {{/if}}

@@ -1,9 +1,9 @@
 {{#if hasBlock}}
   {{yield
     (hash
-      title=(component 'bootstrap/modal/header/-title' title=title)
+      title=(component "bootstrap/modal/header/-title" title=title)
       closeAction=closeAction
-      closeButton=(component 'bootstrap/modal/header/-close-button' action=closeAction)
+      closeButton=(component "bootstrap/modal/header/-close-button" action=closeAction)
       showCloseInHeader=showCloseInHeader
     )
   }}

@@ -1,22 +1,22 @@
 {{#if hasBlock}}
   {{yield (hash
-      actionBarHeader=(component 'bootstrap/tables/-action-bar-header'
+      actionBarHeader=(component "bootstrap/tables/-action-bar-header"
         pageNumber=pageNumber
         pageSize=pageSize
         totalPages=totalPages
         pageRecordsMeta=pageRecordsMeta
-        onPage=(action 'onPage')
+        onPage=(action "onPage")
         paginationEnabled=true
       )
       pageRecordsMeta=pageRecordsMeta
-      paginationControls=(component 'bootstrap/tables/-pagination-control'
+      paginationControls=(component "bootstrap/tables/-pagination-control"
         pageNumber=pageNumber
         pageSize=pageSize
         totalPages=totalPages
         pageRecordsMeta=pageRecordsMeta
-        onPage=(action 'onPage')
+        onPage=(action "onPage")
       )
-      table=(component 'bootstrap/tables/-table'
+      table=(component "bootstrap/tables/-table"
         classNames=tableClassNames
         columns=columns
         rowsData=rowsData
@@ -38,7 +38,7 @@
       pageSize=pageSize
       totalPages=totalPages
       pageRecordsMeta=pageRecordsMeta
-      onPage=(action 'onPage')
+      onPage=(action "onPage")
     }}
   {{/if}}
   {{#if responsive}}
@@ -80,7 +80,7 @@
       pageSize=pageSize
       totalPages=totalPages
       pageRecordsMeta=pageRecordsMeta
-      onPage=(action 'onPage')
+      onPage=(action "onPage")
     }}
   {{/if}}
 {{/if}}

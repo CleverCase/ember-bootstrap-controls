@@ -1,6 +1,6 @@
 {{#section.subsection name="Power Select"}}
-  {{#freestyle-collection title='Power Select' defaultKey='power-select-basic' inline=true as |collection|}}
-    {{#collection.variant key='power-select-basic'}}
+  {{#freestyle-collection title="Power Select" defaultKey="power-select-basic" inline=true as |collection|}}
+    {{#collection.variant key="power-select-basic"}}
       {{#freestyle-usage "power-select-basic" title="Basic Power Select"}}
         {{#bootstrap-power-select
           label="Name"
@@ -9,12 +9,12 @@
           searchEnabled=true
           onChange=(action "selectItem")
           as |option|}}
-            <span>{{option}}</span>
+          <span>{{option}}</span>
         {{/bootstrap-power-select}}
       {{/freestyle-usage}}
     {{/collection.variant}}
 
-    {{#collection.variant key='power-select-search'}}
+    {{#collection.variant key="power-select-search"}}
       {{#freestyle-usage "power-select-search" title="Power Select Search"}}
         {{#bootstrap-power-select
           label="Name"
@@ -24,12 +24,12 @@
           searchField="label"
           allowClear=true
           as |option|}}
-            <span>{{option.label}}</span>
+          <span>{{option.label}}</span>
         {{/bootstrap-power-select}}
       {{/freestyle-usage}}
     {{/collection.variant}}
 
-    {{#collection.variant key='power-select-advance-search'}}
+    {{#collection.variant key="power-select-advance-search"}}
       {{#freestyle-usage "power-select-advance-search" title="Power Select Advance Search"}}
         {{#bootstrap-power-select
           label="Name"
@@ -39,12 +39,12 @@
           search=(perform searchTask)
           allowClear=true
           as |option|}}
-            <span>{{option.label}}</span>
+          <span>{{option.label}}</span>
         {{/bootstrap-power-select}}
       {{/freestyle-usage}}
     {{/collection.variant}}
 
-    {{#collection.variant key='power-select-matcher'}}
+    {{#collection.variant key="power-select-matcher"}}
       {{#freestyle-usage "power-select-matcher" title="Power Select Matcher"}}
         {{#bootstrap-power-select
           label="Name"
@@ -54,7 +54,7 @@
           matcher=myMatcher
           allowClear=true
           as |option|}}
-            <span>{{option.label}} ({{option.value}})</span>
+          <span>{{option.label}} ({{option.value}})</span>
         {{/bootstrap-power-select}}
       {{/freestyle-usage}}
     {{/collection.variant}}

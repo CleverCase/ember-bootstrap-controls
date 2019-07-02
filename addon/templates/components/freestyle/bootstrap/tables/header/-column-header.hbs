@@ -1,16 +1,16 @@
-{{#section.subsection name='bootstrapTablesHeaderColumnHeader'}}
+{{#section.subsection name="bootstrapTablesHeaderColumnHeader"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-tables-header--column-header' name='Basic @wildlandLabs/emberBootstrapControls'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-bootstrap-tables-header--column-header" name="Basic @wildlandLabs/emberBootstrapControls"}}
         {{bootstrap/tables/header/-column-header}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-tables-header--column-header' name='Advanced @wildlandLabs/emberBootstrapControls'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-tables-header--column-header" name="Advanced @wildlandLabs/emberBootstrapControls"}}
         {{bootstrap/tables/header/-column-header}}
         {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}

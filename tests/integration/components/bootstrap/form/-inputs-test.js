@@ -12,7 +12,7 @@ module('Integration | Component | bootstrap/form/ inputs', function(hooks) {
 
     await render(hbs`{{bootstrap/form/-inputs}}`);
 
-    assert.equal(this.$().text().trim(), '');
+    assert.dom('*').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module('Integration | Component | bootstrap/form/ inputs', function(hooks) {
       {{/bootstrap/form/-inputs}}
     `);
 
-    assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom('*').hasText('template block text');
   });
 });

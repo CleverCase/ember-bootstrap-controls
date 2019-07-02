@@ -1,30 +1,30 @@
-{{#section.subsection name='Modal Base'}}
+{{#section.subsection name="Modal Base"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#bootstrap-button classNames='btn-primary' action=(action 'openModal')}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#bootstrap-button classNames="btn-primary" action=(action "openModal")}}
         Open Modal
       {{/bootstrap-button}}
-      {{#freestyle-usage 'basic-modal' name='Basic Modal'}}
+      {{#freestyle-usage "basic-modal" name="Basic Modal"}}
         {{bootstrap/modal/-modal
           isOpen=isModalOpen
           title="Simple Modal"
           body="Simple content to display in a modal"
-          acceptAction=(action 'acceptModal')
+          acceptAction=(action "acceptModal")
         }}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
+    {{#collection.variant key="Advanced Usage"}}
       {{#bootstrap-button
-        classNames='btn-primary'
-        action=(action 'openModalAdvanced')
+        classNames="btn-primary"
+        action=(action "openModalAdvanced")
       }}
         Open Advanced Modal
       {{/bootstrap-button}}
-      {{#freestyle-usage 'advanced-modal' name='Advanced Modal'}}
+      {{#freestyle-usage "advanced-modal" name="Advanced Modal"}}
         {{bootstrap/modal/-modal
           isOpen=data.isOpen
           title=data.title
@@ -34,24 +34,24 @@
           centered=data.centered
           closeOnEsc=data.closeOnEsc
           backdrop=data.backdrop
-          acceptAction=(action 'acceptModalAdvanced')
-          closeAction=(action 'closeModalAdvanced')
+          acceptAction=(action "acceptModalAdvanced")
+          closeAction=(action "closeModalAdvanced")
         }}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
+    {{#collection.variant key="Custom Child Components"}}
       {{#bootstrap-button
-        classNames='btn-primary'
-        action=(action 'openModalCustomSub')
+        classNames="btn-primary"
+        action=(action "openModalCustomSub")
       }}
         Open Custom Block Modal
       {{/bootstrap-button}}
-      {{#freestyle-usage 'child-components-modal' name='Custom Child Components'}}
+      {{#freestyle-usage "child-components-modal" name="Custom Child Components"}}
         {{#bootstrap/modal/-modal
           isOpen=isModalOpenCustomSub
-          acceptAction=(action 'acceptModalCustomSub')
-          closeAction=(action 'closeModalCustomSub')
+          acceptAction=(action "acceptModalCustomSub")
+          closeAction=(action "closeModalCustomSub")
           as |modal|
         }}
           {{#modal.header as |header|}}
@@ -62,9 +62,9 @@
           {{/modal.header}}
           {{#modal.body}}
             <div>
-            <h1>Content!</h1>
-            <p>Some important stuff to read.</p>
-            <p class="text-danger">Some Red text to read</p>
+              <h1>Content!</h1>
+              <p>Some important stuff to read.</p>
+              <p class="text-danger">Some Red text to read</p>
             </div>
           {{/modal.body}}
           {{#modal.footer as |footer|}}

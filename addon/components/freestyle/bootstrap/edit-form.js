@@ -2,7 +2,11 @@ import Component from '@ember/component';
 import layout from '../../../templates/components/freestyle/bootstrap/edit-form';
 import { BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { propDefinitions } from '../../bootstrap/edit-form';
-import { task, didCancel, restartable, timeout } from 'ember-concurrency'; // eslint-disable-line no-unused-vars
+import {
+  task,
+  didCancel,
+  timeout
+} from 'ember-concurrency'; // eslint-disable-line no-unused-vars
 
 export default Component.extend({
   layout,

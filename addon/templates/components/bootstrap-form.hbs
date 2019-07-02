@@ -4,15 +4,15 @@
     isSaving=(readonly _isSaving)
     isCanceling=(readonly _isCanceling)
     isRunning=(or (readonly _isSaving) (readonly _isCanceling))
-    controls=(component 'bootstrap/-form-controls'
+    controls=(component "bootstrap/-form-controls"
       isSaving=(readonly _isSaving)
       isCanceling=(readonly _isCanceling)
       isRunning=(or (readonly _isSaving) (readonly _isCanceling))
       isEditing=(readonly isEditing)
-      save=(action 'save')
-      cancel=(action 'cancel')
-      edit=(action 'edit')
+      save=(action "save")
+      cancel=(action "cancel")
+      edit=(action "edit")
     )
-    body=(component 'bootstrap/-form-body')
+    body=(component "bootstrap/-form-body")
   )
 }}

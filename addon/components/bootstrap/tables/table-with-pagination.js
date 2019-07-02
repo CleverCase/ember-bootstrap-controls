@@ -1,7 +1,10 @@
 import Component from '@ember/component';
 import layout from '../../../templates/components/bootstrap/tables/table-with-pagination';
 import { PropTypes } from 'ember-prop-types';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { notEmpty, alias } from '@ember/object/computed';
 import { get } from '@ember/object';
 import { task } from 'ember-concurrency';

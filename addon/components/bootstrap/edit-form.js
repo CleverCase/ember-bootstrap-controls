@@ -3,7 +3,10 @@ import { computed } from '@ember/object';
 import layout from '../../templates/components/bootstrap/edit-form';
 import { PropTypes } from 'ember-prop-types';
 import { task, didCancel } from 'ember-concurrency';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
 export const propDefinitions = {
   isEditing: {
@@ -42,7 +45,7 @@ export default Component.extend({
         const wasSuccessful = response || response === undefined;
         if (wasSuccessful) {
           this.set('isEditing', false);
-        };
+        }
       } else {
         this.set('isEditing', false);
       }
@@ -52,7 +55,7 @@ export default Component.extend({
     if (asyncTask) {
       if (yield asyncTask()) {
         this.set('isEditing', false);
-      };
+      }
     } else {
       this.set('isEditing', false);
     }

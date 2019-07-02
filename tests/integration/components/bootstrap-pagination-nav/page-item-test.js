@@ -12,7 +12,7 @@ module('Integration | Component | bootstrap pagination nav/page item', function(
 
     await render(hbs`{{bootstrap-pagination-nav/page-item}}`);
 
-    assert.equal(this.$().text().trim(), '');
+    assert.dom('*').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module('Integration | Component | bootstrap pagination nav/page item', function(
       {{/bootstrap-pagination-nav/page-item}}
     `);
 
-    assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom('*').hasText('template block text');
   });
 });

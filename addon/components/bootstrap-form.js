@@ -1,12 +1,12 @@
 import { assert } from '@ember/debug';
 import Component from '@ember/component';
-import Ember from 'ember';
 import { task, didCancel } from 'ember-concurrency';
 import layout from '../templates/components/bootstrap-form';
 import PropTypeMixin, { PropTypes } from 'ember-prop-types';
 
 export default Component.extend(PropTypeMixin, {
   layout,
+  console: window.console,
   tagName: 'form',
   propTypes: { // eslint-disable-line ember/avoid-leaking-state-in-ember-objects
     isEditing: PropTypes.bool,
@@ -15,7 +15,7 @@ export default Component.extend(PropTypeMixin, {
   },
 
   init() {
-    console.warn('DEPRECATION: bootstrap-form component is being replaced by bootstrap/simple-form in an upcoming version of ember-bootstrap-controls.');
+    this.console.warn('DEPRECATION: bootstrap-form component is being replaced by bootstrap/simple-form in an upcoming version of ember-bootstrap-controls.');
     this._super(...arguments);
   },
 

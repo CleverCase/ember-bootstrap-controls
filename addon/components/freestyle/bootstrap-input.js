@@ -1,7 +1,6 @@
 /*eslint no-console: ["error", { allow: ["log"] }] */
 import Component from '@ember/component';
 
-import Ember from 'ember';
 import layout from '../../templates/components/freestyle/bootstrap-input';
 
 export default Component.extend({
@@ -9,27 +8,28 @@ export default Component.extend({
   value: undefined,
   readonly: false,
   disabled: false,
+  console: window.console,
 
   actions: {
     keyPress() {
-      if (console.debug) {
-        console.debug('key pressed');
+      if (this.console.debug) {
+        this.console.debug('key pressed');
       } else {
-        console.log('key pressed');
+        this.console.log('key pressed');
       }
     },
     keyUp() {
-      if (console.debug) {
-        console.debug('key up');
+      if (this.console.debug) {
+        this.console.debug('key up');
       } else {
-        console.log('key up');
+        this.console.log('key up');
       }
     },
     keyDown() {
-      if (console.debug) {
-        console.debug('key down');
+      if (this.console.debug) {
+        this.console.debug('key down');
       } else {
-        console.log('key down');
+        this.console.log('key down');
       }
     },
   },

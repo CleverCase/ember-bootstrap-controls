@@ -1,12 +1,12 @@
-{{#section.subsection name='Checkbox Input'}}
+{{#section.subsection name="Checkbox Input"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
+    {{#collection.variant key="Basic Usage"}}
       <p>Checkbox Value: {{basicValue}}</p>
-      {{#freestyle-usage 'basic-bootstrap-inputs-checkbox' name='Basic Checkbox Input'}}
+      {{#freestyle-usage "basic-bootstrap-inputs-checkbox" name="Basic Checkbox Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.checkbox
             label="Super Cool Checkbox"
@@ -15,8 +15,8 @@
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-inputs-checkbox' name='Advanced Checkbox Input'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-inputs-checkbox" name="Advanced Checkbox Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.checkbox
             disabled=data.disabled
@@ -26,7 +26,7 @@
             srOnly=data.srOnly
             tabIndex=data.tabIndex
             value=data.value
-            onClick=(action 'simpleClick')
+            onClick=(action "simpleClick")
             as |checkbox|
           }}
             {{checkbox.input}}
@@ -36,8 +36,8 @@
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'checkbox-child-components' name='Checkbox Input'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "checkbox-child-components" name="Checkbox Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.checkbox
             label="Super Cool Checkbox"

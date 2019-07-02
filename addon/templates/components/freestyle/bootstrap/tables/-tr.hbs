@@ -1,16 +1,16 @@
-{{#section.subsection name='bootstrapTablesTr'}}
+{{#section.subsection name="bootstrapTablesTr"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-tables--tr' name='Basic @wildlandLabs/emberBootstrapControls'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-bootstrap-tables--tr" name="Basic @wildlandLabs/emberBootstrapControls"}}
         {{bootstrap/tables/-tr}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-tables--tr' name='Advanced @wildlandLabs/emberBootstrapControls'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-tables--tr" name="Advanced @wildlandLabs/emberBootstrapControls"}}
         {{bootstrap/tables/-tr}}
         {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}

@@ -7,9 +7,9 @@
           <h4 id={{option.name}}>{{option.name}}</h4>
           <p class="h6 mt-1">{{option.description}}</p>
           <p class="small my-0">Type: {{option.type.type}}</p>
-          {{#unless (eq option.default undefined)}}
+          {{#if (eq option.default defined)}}
             <p class="small my-0">Default Value: {{option.default}}</p>
-          {{/unless}}
+          {{/if}}
           {{#if option.required}}
             <p class="small my-0">Required: {{option.required}}{{option.required}}</p>
           {{/if}}

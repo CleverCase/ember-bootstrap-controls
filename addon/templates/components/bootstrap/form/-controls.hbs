@@ -5,47 +5,47 @@
       isSaving=(readonly isSaving)
       isCanceling=(readonly isCanceling)
       isRunning=(readonly isRunning)
-      cancelButton=(component 'bootstrap-button'
-        'bootstrap-button'
-        classNames='btn-secondary'
+      cancelButton=(component "bootstrap-button"
+        "bootstrap-button"
+        classNames="btn-secondary"
         disabled=isRunning
         action=cancel
-        buttonText='Cancel'
+        buttonText="Cancel"
       )
-      saveButton=(component 'bootstrap-button'
-        classNames='btn-primary'
+      saveButton=(component "bootstrap-button"
+        classNames="btn-primary"
         disabled=isRunning
         action=save
-        buttonText='Save'
+        buttonText="Save"
       )
-      editButton=(component 'bootstrap-button'
-        classNames='btn-primary'
+      editButton=(component "bootstrap-button"
+        classNames="btn-primary"
         action=edit
         disabled=isRunning
-        buttonText='Edit'
+        buttonText="Edit"
       )
     )
   }}
 {{else}}
   {{#if isEditing}}
     {{bootstrap-button
-      classNames='btn-secondary'
+      classNames="btn-secondary"
       disabled=isRunning
       action=cancel
-      buttonText='Cancel'
+      buttonText="Cancel"
     }}
     {{bootstrap-button
-      classNames='btn-primary'
+      classNames="btn-primary"
       disabled=isRunning
       action=save
-      buttonText='Save'
+      buttonText="Save"
     }}
   {{else}}
     {{bootstrap-button
-      classNames='btn-primary'
+      classNames="btn-primary"
       action=edit
       disabled=isRunning
-      buttonText='Edit'
+      buttonText="Edit"
     }}
   {{/if}}
 {{/if}}

@@ -5,15 +5,15 @@
     isCanceling=(readonly asyncCancelTask.isRunning)
     isRunning=(readonly isRunning)
     isDisabled=(readonly isDisabled)
-    controls=(component 'bootstrap/form/-controls'
+    controls=(component "bootstrap/form/-controls"
       isEditing=(readonly isEditing)
       isSaving=(readonly asyncSaveTask.isRunning)
       isCanceling=(readonly asyncCancelTask.isRunning)
       isRunning=(readonly isRunning)
-      save=(action 'save')
-      cancel=(action 'cancel')
-      edit=(action 'edit')
+      save=(action "save")
+      cancel=(action "cancel")
+      edit=(action "edit")
     )
-    inputs=(component 'bootstrap/form/-inputs' formDisabled=(readonly isDisabled))
+    inputs=(component "bootstrap/form/-inputs" formDisabled=(readonly isDisabled))
   )
 }}

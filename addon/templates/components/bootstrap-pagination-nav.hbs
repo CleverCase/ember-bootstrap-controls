@@ -2,10 +2,10 @@
   <ul class="pagination">
     {{yield
       (hash
-        pageItem=(component 'bootstrap-pagination-nav/page-item')
-        moveToPage=(action 'moveToPage')
-        moveToPreviousPage=(action 'moveToPreviousPage')
-        moveToNextPage=(action 'moveToNextPage')
+        pageItem=(component "bootstrap-pagination-nav/page-item")
+        moveToPage=(action "moveToPage")
+        moveToPreviousPage=(action "moveToPreviousPage")
+        moveToNextPage=(action "moveToNextPage")
       )
       (hash
         visibleOuterLeftPageNumbers=(readonly visibleOuterLeftPageNumbers )
@@ -22,31 +22,31 @@
       disabled=(lte pageNumber 1)
       as |pageItem|
     }}
-      {{#pageItem.pageLink aria-label="Previous" tabindex="-1" action=(action 'moveToPage' (minus-numbers pageNumber 1))}}
+      {{#pageItem.pageLink aria-label="Previous" tabindex="-1" action=(action "moveToPage" (minus-numbers pageNumber 1))}}
         <span aria-hidden="true">&laquo;</span>
         <span class="sr-only">Previous</span>
       {{/pageItem.pageLink}}
     {{/bootstrap-pagination-nav/page-item}}
     {{#each visibleOuterLeftPageNumbers as |num|}}
-      {{bootstrap-pagination-nav/page-item pageNumber=num active=(eq num pageNumber) action=(action 'moveToPage' num)}}
+      {{bootstrap-pagination-nav/page-item pageNumber=num active=(eq num pageNumber) action=(action "moveToPage" num)}}
     {{/each}}
-      {{#if hasLeftGap}}
-        {{bootstrap-pagination-nav/page-item pageNumber="..." disabled=true}}
-      {{/if}}
+    {{#if hasLeftGap}}
+      {{bootstrap-pagination-nav/page-item pageNumber="..." disabled=true}}
+    {{/if}}
     {{#each visibleInnerPageNumbers as |num|}}
-      {{bootstrap-pagination-nav/page-item pageNumber=num active=(eq num pageNumber) action=(action 'moveToPage' num)}}
+      {{bootstrap-pagination-nav/page-item pageNumber=num active=(eq num pageNumber) action=(action "moveToPage" num)}}
     {{/each}}
     {{#if hasRightGap}}
       {{bootstrap-pagination-nav/page-item pageNumber="..." disabled=true}}
     {{/if}}
     {{#each visibleOuterRightPageNumbers as |num|}}
-      {{bootstrap-pagination-nav/page-item pageNumber=num active=(eq num pageNumber) action=(action 'moveToPage' num)}}
+      {{bootstrap-pagination-nav/page-item pageNumber=num active=(eq num pageNumber) action=(action "moveToPage" num)}}
     {{/each}}
     {{#bootstrap-pagination-nav/page-item
       disabled=(gte pageNumber totalPages)
       as |pageItem|
     }}
-      {{#pageItem.pageLink aria-label="Next" action=(action 'moveToPage' (add-numbers pageNumber 1))}}
+      {{#pageItem.pageLink aria-label="Next" action=(action "moveToPage" (add-numbers pageNumber 1))}}
         <span aria-hidden="true">&raquo;</span>
         <span class="sr-only">Next</span>
       {{/pageItem.pageLink}}

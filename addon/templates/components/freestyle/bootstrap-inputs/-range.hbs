@@ -1,11 +1,11 @@
-{{#section.subsection name='Range Input'}}
+{{#section.subsection name="Range Input"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-inputs--range' name='Basic Range Input'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-bootstrap-inputs--range" name="Basic Range Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.range
             label="volume"
@@ -14,8 +14,8 @@
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-inputs--range' name='Advanced Range Input'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-inputs--range" name="Advanced Range Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.range
             value=data.value
@@ -35,8 +35,8 @@
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'range-child-components' name='Range Input'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "range-child-components" name="Range Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.range
             label="Range"

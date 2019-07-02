@@ -27,7 +27,7 @@ module('Integration | Component | bootstrap/simple-modal', function(hooks) {
       {{/bootstrap/simple-modal}}
     `);
 
-    assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom('*').hasText('template block text');
 
     return a11yAudit(this.$()).then(() => {
       assert.ok(true, 'no a11y errors found!');

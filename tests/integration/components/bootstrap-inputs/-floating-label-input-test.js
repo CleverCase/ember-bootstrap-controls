@@ -1,6 +1,10 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, find, findAll, fillIn, typeIn } from '@ember/test-helpers';
+import {
+  render,
+  fillIn,
+  typeIn
+} from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
@@ -18,22 +22,22 @@ module('Integration | Component | Bootstrap Inputs | Floating Label Input', func
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-floating-label-input label='label' value='test@test.test'}}`);
-    assert.equal(findAll('input[type="text"]:enabled').length, 1);
-    assert.equal(findAll('label').length, 1);
+    assert.dom('input[type="text"]:enabled').exists({ count: 1 });
+    assert.dom('label').exists({ count: 1 });
   });
 
   test('it uses value', async function(assert) {
     assert.expect(1);
     this.set('value', 'some text');
     await render(hbs`{{bootstrap-inputs/-floating-label-input label='label' value=value}}`);
-    assert.equal(find('input[type="text"]').value, this.get('value'));
+    assert.dom('input[type="text"]').hasValue(this.get('value'));
   });
 
   test('it uses label', async function(assert) {
     assert.expect(1);
     this.set('label', 'Some label');
     await render(hbs`{{bootstrap-inputs/-floating-label-input label=label value='test@test.test'}}`);
-    assert.equal(find('label').textContent.trim(), this.get('label'));
+    assert.dom('label').hasText(this.get('label'));
   });
 
   test('it supports onChange', async function(assert) {
@@ -49,12 +53,12 @@ module('Integration | Component | Bootstrap Inputs | Floating Label Input', func
   test('it supports disabled', async function(assert) {
     assert.expect(1);
     await render(hbs`{{bootstrap-inputs/-floating-label-input label='label' value='test@test.test' disabled=true}}`);
-    assert.equal(findAll('input[type="text"]:disabled').length, 1);
+    assert.dom('input[type="text"]').isDisabled();
   });
 
   test('it supports formDisabled', async function(assert) {
     assert.expect(1);
     await render(hbs`{{bootstrap-inputs/-floating-label-input label='label' value='test@test.test' formDisabled=true}}`);
-    assert.equal(findAll('input[type="text"]:disabled').length, 1);
+    assert.dom('input[type="text"]').isDisabled();
   });
 });

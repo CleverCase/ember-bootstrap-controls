@@ -1,6 +1,10 @@
 import { module, test, skip } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, find, findAll, fillIn, typeIn } from '@ember/test-helpers';
+import {
+  render,
+  fillIn,
+  typeIn
+} from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
@@ -20,15 +24,15 @@ module('Integration | Component | Bootstrap Inputs | Date', function(hooks) {
     assert.expect(2);
     this.set('value', new Date());
     await render(hbs`{{bootstrap-inputs/-date label='label' value=value}}`);
-    assert.equal(findAll('input[type="date"]:enabled').length, 1);
-    assert.equal(findAll('label').length, 1);
+    assert.dom('input[type="date"]:enabled').exists({ count: 1 });
+    assert.dom('label').exists({ count: 1 });
   });
 
   skip('it uses value', async function(assert) {
     assert.expect(1);
     this.set('value', new Date());
     await render(hbs`{{bootstrap-inputs/-date label='label' value=value}}`);
-    assert.equal(find('input[type="date"]').value, this.get('value'));
+    assert.dom('input[type="date"]').hasValue(this.get('value'));
   });
 
   test('it uses label', async function(assert) {
@@ -36,7 +40,7 @@ module('Integration | Component | Bootstrap Inputs | Date', function(hooks) {
     this.set('label', 'Some label');
     this.set('value', new Date());
     await render(hbs`{{bootstrap-inputs/-date label=label value=value}}`);
-    assert.equal(find('label').textContent.trim(), this.get('label'));
+    assert.dom('label').hasText(this.get('label'));
   });
 
   test('it supports onChange', async function(assert) {
@@ -54,13 +58,13 @@ module('Integration | Component | Bootstrap Inputs | Date', function(hooks) {
     assert.expect(1);
     this.set('value', new Date());
     await render(hbs`{{bootstrap-inputs/-date label='label' value=value disabled=true}}`);
-    assert.equal(findAll('input[type="date"]:disabled').length, 1);
+    assert.dom('input[type="date"]').isDisabled();
   });
 
   test('it supports formDisabled', async function(assert) {
     assert.expect(1);
     this.set('value', new Date());
     await render(hbs`{{bootstrap-inputs/-date label='label' value=value formDisabled=true}}`);
-    assert.equal(findAll('input[type="date"]:disabled').length, 1);
+    assert.dom('input[type="date"]').isDisabled();
   });
 });

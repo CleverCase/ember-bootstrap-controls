@@ -1,15 +1,15 @@
 {{#if enabled}}
   {{#if hasBlock}}
     {{yield (hash
-      button=(component 'bootstrap/buttons/edit-button'
-        classNames='btn-xs'
+      button=(component "bootstrap/buttons/edit-button"
+        classNames="btn-xs"
         aria-label="Edit Row"
         action=action
       )
     )}}
   {{else}}
     {{bootstrap/buttons/edit-button
-      classNames='btn-xs'
+      classNames="btn-xs"
       aria-label="Edit Row"
       action=action
     }}

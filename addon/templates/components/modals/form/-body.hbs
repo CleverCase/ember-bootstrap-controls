@@ -1,10 +1,10 @@
 {{#modal.body}}
   {{yield (hash
     form=(component
-      'bootstrap/simple-form'
+      "bootstrap/simple-form"
       disabled=formDisabled
     )
-    powerSelect=(component 'bootstrap-power-select'
+    powerSelect=(component "bootstrap-power-select"
       disabled=formDisabled
       renderInPlace=true
     )

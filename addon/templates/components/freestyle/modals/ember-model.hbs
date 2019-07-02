@@ -1,15 +1,15 @@
-{{#section.subsection name='Ember Model'}}
+{{#section.subsection name="Ember Model"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
+    {{#collection.variant key="Basic Usage"}}
       {{bootstrap/buttons/accept-button
         action=(action "toggleModal")
         buttonText="Open Modal"
       }}
-      {{#freestyle-usage 'basic-modal-ember-model' name='Basic Modal - Ember Model'}}
+      {{#freestyle-usage "basic-modal-ember-model" name="Basic Modal - Ember Model"}}
         {{#modals/ember-model
           isOpen=isBasicOpen
           beforeSave=(action "beforeSave")
@@ -54,12 +54,12 @@
         </dl>
       {{/freestyle-note}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
+    {{#collection.variant key="Advanced Usage"}}
       {{bootstrap/buttons/accept-button
         action=(action "toggleAdvancedModal")
         buttonText="Open Modal"
       }}
-      {{#freestyle-usage 'advanced-modal-ember-model' name='Advanced Modal - Ember Model'}}
+      {{#freestyle-usage "advanced-modal-ember-model" name="Advanced Modal - Ember Model"}}
         {{#modals/ember-model
           isOpen=isAdvancedOpen
           beforeSave=(action "beforeSave")
@@ -93,8 +93,8 @@
         {{/modals/ember-model}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'ember-model-child-components' name='Custom Child Components - Ember Model'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "ember-model-child-components" name="Custom Child Components - Ember Model"}}
         <h1>Todo</h1>
       {{/freestyle-usage}}
       {{#freestyle-note "ember-model-child-components--notes"}}
