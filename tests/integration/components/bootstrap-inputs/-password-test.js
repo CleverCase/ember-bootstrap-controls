@@ -1,6 +1,10 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, find, findAll, fillIn, typeIn } from '@ember/test-helpers';
+import {
+  render,
+  fillIn,
+  typeIn
+} from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
@@ -18,22 +22,22 @@ module('Integration | Component | Bootstrap Inputs | Password', function(hooks) 
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-password label='label' value='Password'}}`);
-    assert.equal(findAll('input[type="password"]:enabled').length, 1);
-    assert.equal(findAll('label').length, 1);
+    assert.dom('input[type="password"]:enabled').exists({ count: 1 });
+    assert.dom('label').exists({ count: 1 });
   });
 
   test('it uses value', async function(assert) {
     assert.expect(1);
     this.set('value', 'Password');
     await render(hbs`{{bootstrap-inputs/-password label='label' value=value}}`);
-    assert.equal(find('input[type="password"]').value, this.get('value'));
+    assert.dom('input[type="password"]').hasValue(this.get('value'));
   });
 
   test('it uses label', async function(assert) {
     assert.expect(1);
     this.set('label', 'Some label');
     await render(hbs`{{bootstrap-inputs/-password label=label value='Password'}}`);
-    assert.equal(find('label').textContent.trim(), this.get('label'));
+    assert.dom('label').hasText(this.get('label'));
   });
 
   test('it supports onChange', async function(assert) {
@@ -49,12 +53,12 @@ module('Integration | Component | Bootstrap Inputs | Password', function(hooks) 
   test('it supports disabled', async function(assert) {
     assert.expect(1);
     await render(hbs`{{bootstrap-inputs/-password label='label' value='Password' disabled=true}}`);
-    assert.equal(findAll('input[type="password"]:disabled').length, 1);
+    assert.dom('input[type="password"]').isDisabled();
   });
 
   test('it supports formDisabled', async function(assert) {
     assert.expect(1);
     await render(hbs`{{bootstrap-inputs/-password label='label' value='Password' formDisabled=true}}`);
-    assert.equal(findAll('input[type="password"]:disabled').length, 1);
+    assert.dom('input[type="password"]').isDisabled();
   });
 });

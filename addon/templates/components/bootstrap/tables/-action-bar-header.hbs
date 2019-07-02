@@ -1,9 +1,9 @@
 {{yield (hash
-  actionBar=(component 'bootstrap/tables/-action-bar')
+  actionBar=(component "bootstrap/tables/-action-bar")
 )}}
 {{#if paginationEnableed}}
   {{bootstrap/tables/-pagination-control
-    classNames='col col-auto my-2 order-1 order-md-2'
+    classNames="col col-auto my-2 order-1 order-md-2"
     pageNumber=pageNumber
     pageSize=pageSize
     totalPages=totalPages

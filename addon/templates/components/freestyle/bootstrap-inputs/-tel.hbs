@@ -1,11 +1,11 @@
-{{#section.subsection name='Telephone Input'}}
+{{#section.subsection name="Telephone Input"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-tel-input' name='Basic Telephone Input'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-tel-input" name="Basic Telephone Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.tel
             label="Phone #"
@@ -14,8 +14,8 @@
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-tel-input' name='Advanced Telephone Input'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-tel-input" name="Advanced Telephone Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.tel
             autocomplete=data.autocomplete
@@ -35,8 +35,8 @@
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'tel-child-components' name='Telephone Input'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "tel-child-components" name="Telephone Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.tel
             label="Telephone"

@@ -12,7 +12,7 @@ module('Integration | Component | bootstrap/control wrapper', function(hooks) {
 
     await render(hbs`{{bootstrap/control-wrapper}}`);
 
-    assert.equal(this.$().text().trim(), '');
+    assert.dom('*').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -21,6 +21,6 @@ module('Integration | Component | bootstrap/control wrapper', function(hooks) {
       {{/bootstrap/control-wrapper}}
     `);
 
-    assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom('*').hasText('template block text');
   });
 });

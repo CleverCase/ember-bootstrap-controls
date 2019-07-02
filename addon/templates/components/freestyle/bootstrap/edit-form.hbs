@@ -1,15 +1,15 @@
-{{#section.subsection name='Bootstrap Edit Form'}}
+{{#section.subsection name="Bootstrap Edit Form"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
     For more input documentation and examples see {{#link-to (query-params f=null s="Bootstrap Inputs" ss=null)}}here{{/link-to}}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-edit-form' name='Basic EmberBootstrapControls'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-bootstrap-edit-form" name="Basic EmberBootstrapControls"}}
         {{#bootstrap/edit-form
-          save=(action 'slowAction' 1000 'save')
-          cancel=(action 'slowAction' 1000 'cancel')
+          save=(action "slowAction" 1000 "save")
+          cancel=(action "slowAction" 1000 "cancel")
           as |form|
         }}
           {{#form.inputs as |inputs|}}
@@ -21,12 +21,12 @@
         {{/bootstrap/edit-form}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-edit-form' name='Advanced EmberBootstrapControls'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-edit-form" name="Advanced EmberBootstrapControls"}}
         {{#bootstrap/edit-form
           isEditing=true
-          save=(action 'slowAction' 3000 'order')
-          cancel=(action 'slowAction' 1000 'cancel')
+          save=(action "slowAction" 3000 "order")
+          cancel=(action "slowAction" 1000 "cancel")
           as |form|
         }}
           <h1>Doughnut Express!</h1>
@@ -45,15 +45,15 @@
           {{#form.controls as |controls|}}
             {{#if controls.isEditing}}
               {{#controls.saveButton
-                classNames='btn-success'
+                classNames="btn-success"
                 as |save|
               }}
                 Order Now!
               {{/controls.saveButton}}
-              {{controls.cancelButton classNames='btn-danger'}}
+              {{controls.cancelButton classNames="btn-danger"}}
             {{else}}
               {{#controls.editButton
-                classNames='btn-success'
+                classNames="btn-success"
                 as |edit|
               }}
                 Create Order
@@ -64,12 +64,12 @@
         {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'edit-form-child-components' name='Edit Form'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "edit-form-child-components" name="Edit Form"}}
         {{#bootstrap/edit-form
           isEditing=true
-          save=(action 'slowAction' 3000 'order')
-          cancel=(action 'slowAction' 1000 'cancel')
+          save=(action "slowAction" 3000 "order")
+          cancel=(action "slowAction" 1000 "cancel")
           as |form|
         }}
           <h1>Doughnut Express!</h1>
@@ -88,15 +88,15 @@
           {{#form.controls as |controls|}}
             {{#if controls.isEditing}}
               {{#controls.saveButton
-                classNames='btn-success'
+                classNames="btn-success"
                 as |save|
               }}
                 Order Now!
               {{/controls.saveButton}}
-              {{controls.cancelButton classNames='btn-danger'}}
+              {{controls.cancelButton classNames="btn-danger"}}
             {{else}}
               {{#controls.editButton
-                classNames='btn-success'
+                classNames="btn-success"
                 as |edit|
               }}
                 Create Order

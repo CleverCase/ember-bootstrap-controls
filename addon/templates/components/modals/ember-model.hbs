@@ -1,6 +1,6 @@
 {{#modals/-form
-  acceptAction=(action 'save')
-  onHide=(action 'close')
+  acceptAction=(action "save")
+  onHide=(action "close")
   formDisabled=disableForm
   isSaving=(readonly isSaving)
   isCanceling=(readonly isCanceling)
@@ -19,13 +19,13 @@
       isRunningAsync=(readonly isRunningAsync)
       header=modal.header
       body=modal.body
-      footer=(component 'modals/ember-model/-footer'
+      footer=(component "modals/ember-model/-footer"
         isNewModel=isNewModel
         modal=modal
         isSaving=(readonly isSaving)
         isCanceling=(readonly isCanceling)
         isRunningAsync=(readonly isRunningAsync)
-        acceptAction=(action 'save')
+        acceptAction=(action "save")
         cancelAction=modal.closeAction
       )
     )}}

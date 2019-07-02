@@ -2,7 +2,7 @@
   {{yield inputId}}
 {{else}}
   {{#if label}}
-    <label for="{{inputId}}" class="control-label {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
+    <label for={{inputId}} class="control-label {{if customLabelCss customLabelCss ""}} {{if srOnly "sr-only" ""}}">{{label}}</label>
   {{/if}}
   {{masked-input
     mask=phoneMask

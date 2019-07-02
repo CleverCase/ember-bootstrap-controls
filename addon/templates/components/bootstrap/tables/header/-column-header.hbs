@@ -3,7 +3,7 @@
 {{else}}
   {{#if (and sortingEnabled columnSortingEnabled)}}
     {{#bootstrap-button
-      classNames='btn-sm btn-primary'
+      classNames="btn-sm btn-primary"
       aria-label="Sort by column"
       action=(action onSort sortingCriteria nextSortDirection)
     }}

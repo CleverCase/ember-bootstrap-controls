@@ -1,21 +1,21 @@
-{{#section.subsection name='Number Input'}}
+{{#section.subsection name="Number Input"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-inputs-number' name='Basic Number Input'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-bootstrap-inputs-number" name="Basic Number Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.number
-            label='Basic Number Input'
+            label="Basic Number Input"
             value=basicValue
           }}
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-inputs-number' name='Advanced Number Input'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-inputs-number" name="Advanced Number Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.number
             label=data.label
@@ -36,8 +36,8 @@
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'number-child-components' name='Number Input'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "number-child-components" name="Number Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.number
             label="Number"

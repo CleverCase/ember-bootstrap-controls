@@ -1,6 +1,9 @@
 import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap/simple-form';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { PropTypes } from 'ember-prop-types';
 
 export const propDefinitions = {

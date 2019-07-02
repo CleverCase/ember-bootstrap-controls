@@ -12,10 +12,10 @@
         label=(component control.label)
         help=(component control.help)
         control=control
-        input=(component 'bootstrap/-input'
+        input=(component "bootstrap/-input"
           value=_value
           elementId=control.inputId
-          type='search'
+          type="search"
           disabled=(readonly _disabled)
           autocomplete=autocomplete
           maxlength=maxlength
@@ -28,7 +28,7 @@
           tabindex=tabindex
           helpId=control.helpId
           change=onChange
-          input=(action 'onInput')
+          input=(action "onInput")
         )
       )
     }}
@@ -37,7 +37,7 @@
     {{bootstrap/-input
       value=_value
       elementId=control.inputId
-      type='search'
+      type="search"
       disabled=(readonly _disabled)
       autocomplete=autocomplete
       maxlength=maxlength
@@ -50,7 +50,7 @@
       tabindex=tabindex
       helpId=control.helpId
       change=onChange
-      input=(action 'onInput')
+      input=(action "onInput")
     }}
     {{#if help}}
       {{control.help}}

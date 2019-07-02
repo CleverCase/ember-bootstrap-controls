@@ -20,9 +20,9 @@
     {{/component}}
   {{else}}
     <li class="ember-power-select-option"
-      aria-selected="{{ember-power-select-is-selected opt select.selected}}"
+      aria-selected={{ember-power-select-is-selected opt select.selected}}
       aria-disabled={{ember-power-select-true-string-if-present opt.disabled}}
-      aria-current="{{eq opt select.highlighted}}"
+      aria-current={{eq opt select.highlighted}}
       data-option-index="{{groupIndex}}{{index}}"
       role="option">
       {{yield opt select}}
@@ -34,5 +34,5 @@
     <li class="ember-power-select-option ember-power-select-option--loading-message" role="option">{{loadingMessage}}</li>
   {{/if}}
 {{else if lazyState.canLoadMore}}
-  <li class="ember-power-select-option ember-power-select-option--load-more" role="option" {{action 'loadMore'}}>Load More</li>
+  <li class="ember-power-select-option ember-power-select-option--load-more" role="option" {{action "loadMore"}}>Load More</li>
 {{/if}}

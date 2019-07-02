@@ -1,54 +1,54 @@
-{{#section.subsection name='Button'}}
+{{#section.subsection name="Button"}}
   {{#freestyle-collection
-    title='Buttons'
-    defaultKey='Basic Usage'
+    title="Buttons"
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='TL;DR'}}
-      {{#freestyle-usage "TL;DR" title='Quick Example'}}
+    {{#collection.variant key="TL;DR"}}
+      {{#freestyle-usage "TL;DR" title="Quick Example"}}
         {{#bootstrap-button
-          classNames='btn-primary'
-          action=(action 'simpleClick' 'Action')
+          classNames="btn-primary"
+          action=(action "simpleClick" "Action")
         }}
           Click Me
         {{/bootstrap-button}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-button-usage' title='Basic Usage'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-bootstrap-button-usage" title="Basic Usage"}}
         {{#bootstrap-button
-          classNames='btn-primary'
-          action=(action 'simpleClick' 'Simple Click btn-primary')
+          classNames="btn-primary"
+          action=(action "simpleClick" "Simple Click btn-primary")
         }}
           Click Me
         {{/bootstrap-button}}
-        {{#bootstrap-button classNames='btn-secondary' action=(action 'simpleClick' 'Simple Click btn-secondary')}}
+        {{#bootstrap-button classNames="btn-secondary" action=(action "simpleClick" "Simple Click btn-secondary")}}
           Click Me
         {{/bootstrap-button}}
-        {{#bootstrap-button classNames='btn-success' action=(action 'simpleClick' 'Simple Click btn-success')}}
+        {{#bootstrap-button classNames="btn-success" action=(action "simpleClick" "Simple Click btn-success")}}
           Click Me
         {{/bootstrap-button}}
-        {{#bootstrap-button classNames='btn-danger' action=(action 'simpleClick' 'Simple Click btn-danger')}}
+        {{#bootstrap-button classNames="btn-danger" action=(action "simpleClick" "Simple Click btn-danger")}}
           Click Me
         {{/bootstrap-button}}
-        {{#bootstrap-button classNames='btn-warning' action=(action 'simpleClick' 'Simple Click btn-warning')}}
+        {{#bootstrap-button classNames="btn-warning" action=(action "simpleClick" "Simple Click btn-warning")}}
           Click Me
         {{/bootstrap-button}}
-        {{#bootstrap-button classNames='btn-info' action=(action 'simpleClick' 'Simple Click btn-info')}}
+        {{#bootstrap-button classNames="btn-info" action=(action "simpleClick" "Simple Click btn-info")}}
           Click Me
         {{/bootstrap-button}}
-        {{#bootstrap-button classNames='btn-light' action=(action 'simpleClick' 'Simple Click btn-light')}}
+        {{#bootstrap-button classNames="btn-light" action=(action "simpleClick" "Simple Click btn-light")}}
           Click Me
         {{/bootstrap-button}}
-        {{#bootstrap-button classNames='btn-dark' action=(action 'simpleClick' 'Simple Click btn-dark')}}
+        {{#bootstrap-button classNames="btn-dark" action=(action "simpleClick" "Simple Click btn-dark")}}
           Click Me
         {{/bootstrap-button}}
-        {{#bootstrap-button classNames='btn-link' action=(action 'simpleClick' 'Simple Click btn-link')}}
+        {{#bootstrap-button classNames="btn-link" action=(action "simpleClick" "Simple Click btn-link")}}
           Click Me
         {{/bootstrap-button}}
       {{/freestyle-usage}}
-      {{#freestyle-note 'basic-bootstrap-button-usage--notes'}}
+      {{#freestyle-note "basic-bootstrap-button-usage--notes"}}
         **Required options:**
         - `action`: The action to be preformed on click. If this action is a promise then the button will disable while it is running.
         - `className`: The [bootstrap](https://getbootstrap.com/docs/4.0/components/buttons) className for the button. *Note: `btn` is automatically added.*
@@ -65,17 +65,17 @@
         - <span>btn-link</span>
       {{/freestyle-note}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-button-usage' title='Advanced Usage'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-button-usage" title="Advanced Usage"}}
         {{#bootstrap-button
-          classNames='btn-danger'
-          action=(action 'slowClick' 'Slow Action Click')
+          classNames="btn-danger"
+          action=(action "slowClick" "Slow Action Click")
         }}
           Slow Action Click
         {{/bootstrap-button}}
         {{#bootstrap-button
-          classNames='btn-danger'
-          action=(action 'slowClick' 'Slow Action Click')
+          classNames="btn-danger"
+          action=(action "slowClick" "Slow Action Click")
           as |button|
         }}
           {{#if button.isRunning}}
@@ -85,7 +85,7 @@
           {{/if}}
         {{/bootstrap-button}}
       {{/freestyle-usage}}
-      {{#freestyle-note 'advanced-bootstrap-button-usage--notes'}}
+      {{#freestyle-note "advanced-bootstrap-button-usage--notes"}}
         In this example `action` has a `1000ms` delay. This could be a long save or complicated computation.
 
         `bootstrap-button` automatically listens to the action promise and will disable itself while this action is running.

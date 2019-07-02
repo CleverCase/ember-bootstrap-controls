@@ -1,7 +1,7 @@
 {{#if hasBlock}}
   {{yield (hash
-    header=(component 'bootstrap/tables/-header'
-      onSort=(action 'onSort')
+    header=(component "bootstrap/tables/-header"
+      onSort=(action "onSort")
 
       sortField=sortField
       sortReverse=sortReverse
@@ -11,7 +11,7 @@
       sortingEnabled=(readonly sortingEnabled)
       actionsEnabled=(readonly actionsEnabled)
     )
-    body=(component 'bootstrap/tables/-body'
+    body=(component "bootstrap/tables/-body"
       noRowsMessage=noRowsMessage
 
       reloadingRowsData=(or sortingRows reloadingRowsData)
@@ -33,7 +33,7 @@
   )}}
 {{else}}
   {{bootstrap/tables/-header
-    onSort=(action 'onSort')
+    onSort=(action "onSort")
 
     sortField=sortField
     sortReverse=sortReverse

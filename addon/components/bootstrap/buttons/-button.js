@@ -3,7 +3,10 @@ import Component from '@ember/component';
 import { task, didCancel } from 'ember-concurrency';
 import layout from '../../../templates/components/bootstrap/buttons/-button';
 import { PropTypes } from 'ember-prop-types';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
 export const propDefinitions = {
   action: {

@@ -1,11 +1,11 @@
-{{#section.subsection name='Floating Label Input'}}
+{{#section.subsection name="Floating Label Input"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-floating-label-input' name='Floating Label Input'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-floating-label-input" name="Floating Label Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.floatingLabelInput
             label="Basic Example"
@@ -14,8 +14,8 @@
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-floating-label-input' name='Advanced Text Input'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-floating-label-input" name="Advanced Text Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.floatingLabelInput
             help=data.help
@@ -33,8 +33,8 @@
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'floating-label-child-components' name='Floating Label Input'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "floating-label-child-components" name="Floating Label Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.floatingLabelInput
             label="Floating Label Input"

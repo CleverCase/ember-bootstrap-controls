@@ -1,11 +1,11 @@
-{{#section.subsection name='Date Input'}}
+{{#section.subsection name="Date Input"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-date-input' name='Basic Date Input'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-date-input" name="Basic Date Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.date
             label="Pick Date"
@@ -14,8 +14,8 @@
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-date-input' name='Advanced Date Input'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-date-input" name="Advanced Date Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.date
             autocomplete=data.autocomplete
@@ -34,8 +34,8 @@
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'date-child-components' name='Date Input'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "date-child-components" name="Date Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.date
             label="Date"

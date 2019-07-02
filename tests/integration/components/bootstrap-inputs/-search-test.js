@@ -1,6 +1,10 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render, find, findAll, fillIn, typeIn } from '@ember/test-helpers';
+import {
+  render,
+  fillIn,
+  typeIn
+} from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 import a11yAudit from 'ember-a11y-testing/test-support/audit';
 
@@ -18,8 +22,8 @@ module('Integration | Component | Bootstrap Inputs | Search', function(hooks) {
   test('it renders a label and input', async function(assert) {
     assert.expect(2);
     await render(hbs`{{bootstrap-inputs/-search label='label' value='Search Term'}}`);
-    assert.equal(findAll('input[type="search"]:enabled').length, 1);
-    assert.equal(findAll('label').length, 1);
+    assert.dom('input[type="search"]:enabled').exists({ count: 1 });
+    assert.dom('label').exists({ count: 1 });
   });
 
   test('it uses value', async function(assert) {
@@ -27,7 +31,7 @@ module('Integration | Component | Bootstrap Inputs | Search', function(hooks) {
     this.set('value', 'Search Term');
     this.set('newValue', 'Some Other Search Term');
     await render(hbs`{{bootstrap-inputs/-search label='label' value=value}}`);
-    assert.equal(find('input[type="search"]').value, this.get('value'));
+    assert.dom('input[type="search"]').hasValue(this.get('value'));
     await fillIn('input', this.get('newValue'));
     assert.equal(this.get('value'), this.get('newValue'));
   });
@@ -36,7 +40,7 @@ module('Integration | Component | Bootstrap Inputs | Search', function(hooks) {
     assert.expect(1);
     this.set('label', 'Some label');
     await render(hbs`{{bootstrap-inputs/-search label=label value='Search Term'}}`);
-    assert.equal(find('label').textContent.trim(), this.get('label'));
+    assert.dom('label').hasText(this.get('label'));
   });
 
   test('it supports onChange', async function(assert) {
@@ -62,12 +66,12 @@ module('Integration | Component | Bootstrap Inputs | Search', function(hooks) {
   test('it supports disabled', async function(assert) {
     assert.expect(1);
     await render(hbs`{{bootstrap-inputs/-search label='label' value='Search Term' disabled=true}}`);
-    assert.equal(findAll('input[type="search"]:disabled').length, 1);
+    assert.dom('input[type="search"]').isDisabled();
   });
 
   test('it supports formDisabled', async function(assert) {
     assert.expect(1);
     await render(hbs`{{bootstrap-inputs/-search label='label' value='Search Term' formDisabled=true}}`);
-    assert.equal(findAll('input[type="search"]:disabled').length, 1);
+    assert.dom('input[type="search"]').isDisabled();
   });
 });

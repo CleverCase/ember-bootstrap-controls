@@ -15,7 +15,7 @@ module('Integration | Component | bootstrap button', function(hooks) {
     // this.render(hbs`{{bootstrap/simple-form action=noop}}`);
     await render(hbs`{{bootstrap/simple-form}}`);
 
-    assert.equal(this.$().text().trim(), '');
+    assert.dom('*').hasText('');
 
     // Template block usage:
     await render(hbs`
@@ -24,7 +24,7 @@ module('Integration | Component | bootstrap button', function(hooks) {
       {{/bootstrap/simple-form}}
     `);
 
-    assert.equal(this.$().text().trim(), 'template block text');
+    assert.dom('*').hasText('template block text');
 
     return a11yAudit(this.$()).then(() => {
       assert.ok(true, 'no a11y errors found!');

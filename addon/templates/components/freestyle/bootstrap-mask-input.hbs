@@ -1,6 +1,6 @@
 {{#section.subsection name="Masked Input"}}
-  {{#freestyle-collection title='Masked Input' defaultKey='input-mask-text' inline=true as |collection|}}
-    {{#collection.variant key='input-mask-text'}}
+  {{#freestyle-collection title="Masked Input" defaultKey="input-mask-text" inline=true as |collection|}}
+    {{#collection.variant key="input-mask-text"}}
       {{#freestyle-usage "input-mask-text" title="Masked Text Input"}}
         {{bootstrap-mask-input
           mask=myMask
@@ -12,9 +12,9 @@
           disabled=disabled
           label="Masked Text Input"
           required=false
-          key-press=(action 'keyPress')
-          key-down=(action 'keyDown')
-          focus-out=(action 'focusOut')}}
+          key-press=(action "keyPress")
+          key-down=(action "keyDown")
+          focus-out=(action "focusOut")}}
       {{/freestyle-usage}}
     {{/collection.variant}}
   {{/freestyle-collection}}

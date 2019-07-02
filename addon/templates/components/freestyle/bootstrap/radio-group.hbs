@@ -1,12 +1,12 @@
-{{#section.subsection name='Radio Input Group'}}
+{{#section.subsection name="Radio Input Group"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
+    {{#collection.variant key="Basic Usage"}}
       <p>Most Favorite: {{mostFavorite}}</p>
-      {{#freestyle-usage 'basic-inline-bootstrap-radio-group' name='Basic Inline Radio Group'}}
+      {{#freestyle-usage "basic-inline-bootstrap-radio-group" name="Basic Inline Radio Group"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.radioGroup
             label="Most Favorite Number"
@@ -18,7 +18,7 @@
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
       <p>Least Favorite: {{leastFavorite}}</p>
-      {{#freestyle-usage 'basic-bootstrap-radio-group' name='Basic Radio Group'}}
+      {{#freestyle-usage "basic-bootstrap-radio-group" name="Basic Radio Group"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.radioGroup
             label="Least Favorite Number"
@@ -29,8 +29,8 @@
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-radio-group' name='Advanced Radio Group'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-radio-group" name="Advanced Radio Group"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.radioGroup
             disabled=data.disabled
@@ -65,8 +65,8 @@
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'child-components-bootstrap-radio-group' name='Custom Child Components'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "child-components-bootstrap-radio-group" name="Custom Child Components"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.radioGroup
             inline=true

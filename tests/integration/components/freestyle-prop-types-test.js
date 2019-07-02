@@ -1,6 +1,6 @@
 import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
-import { render } from '@ember/test-helpers';
+import { render, find } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
 
 module('Integration | Component | Freestyle Prop Types', function(hooks) {
@@ -14,7 +14,7 @@ module('Integration | Component | Freestyle Prop Types', function(hooks) {
 
     await render(hbs`{{freestyle-prop-types options=fakeOptions}}`);
 
-    assert.ok(true, this.$().text().trim().includes(this.get('fakeOption')));
+    assert.ok(true, find('*').textContent.trim().includes(this.get('fakeOption')));
 
     // Template block usage:
     await render(hbs`
@@ -23,6 +23,6 @@ module('Integration | Component | Freestyle Prop Types', function(hooks) {
       {{/freestyle-prop-types}}
     `);
 
-    assert.ok(true, this.$().text().trim().includes('template block text'));
+    assert.ok(true, find('*').textContent.trim().includes('template block text'));
   });
 });

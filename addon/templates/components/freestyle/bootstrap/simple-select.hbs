@@ -1,12 +1,12 @@
-{{#section.subsection name='Select Input'}}
+{{#section.subsection name="Select Input"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
+    {{#collection.variant key="Basic Usage"}}
       <p>Most Favorite number: {{mostFavorite}}</p>
-      {{#freestyle-usage 'basic-bootstrap-select' name='Basic Select'}}
+      {{#freestyle-usage "basic-bootstrap-select" name="Basic Select"}}
         {{bootstrap/simple-select
           label="Most Favorite Number"
           options=options
@@ -15,9 +15,9 @@
         }}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
+    {{#collection.variant key="Advanced Usage"}}
       <p>You are: {{data.value}}</p>
-      {{#freestyle-usage 'advanced-bootstrap-select' name='Advanced Select'}}
+      {{#freestyle-usage "advanced-bootstrap-select" name="Advanced Select"}}
         {{#bootstrap/simple-select
           autofocus=data.autofocus
           bootstrapCustomClass=data.bootstrapCustomClass
@@ -42,9 +42,9 @@
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
+    {{#collection.variant key="Custom Child Components"}}
       <p>Most Favorite number: {{mostFavorite}}</p>
-      {{#freestyle-usage 'child-components-bootstrap-simple-select' name='Custom Child Components'}}
+      {{#freestyle-usage "child-components-bootstrap-simple-select" name="Custom Child Components"}}
         {{#bootstrap/simple-select
           label="How Cool Are You?"
           options=options

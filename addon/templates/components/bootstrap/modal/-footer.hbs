@@ -2,28 +2,28 @@
   {{yield
     (hash
       acceptAction=acceptAction
-      acceptButton=(component 'bootstrap-button'
-        classNames='btn-primary'
+      acceptButton=(component "bootstrap-button"
+        classNames="btn-primary"
         action=acceptAction
-        buttonText='Accept'
+        buttonText="Accept"
       )
       closeAction=closeAction
-      closeButton=(component 'bootstrap-button'
-        classNames='btn-secondary'
+      closeButton=(component "bootstrap-button"
+        classNames="btn-secondary"
         action=closeAction
-        buttonText='Close'
+        buttonText="Close"
       )
     )
   }}
 {{else}}
   {{bootstrap-button
-    classNames='btn-secondary'
+    classNames="btn-secondary"
     action=closeAction
-    buttonText='Close'
+    buttonText="Close"
   }}
   {{bootstrap-button
-    classNames='btn-primary'
+    classNames="btn-primary"
     action=closeAction
-    buttonText='Accept'
+    buttonText="Accept"
   }}
 {{/if}}

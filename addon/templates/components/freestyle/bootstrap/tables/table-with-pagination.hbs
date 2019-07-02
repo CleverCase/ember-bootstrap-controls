@@ -1,32 +1,32 @@
-{{#section.subsection name='Table With Pagination'}}
+{{#section.subsection name="Table With Pagination"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-tables-table-with-pagination' name='Basic @wildlandLabs/emberBootstrapControls'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-bootstrap-tables-table-with-pagination" name="Basic @wildlandLabs/emberBootstrapControls"}}
         {{bootstrap/tables/table-with-pagination
           tableClassNames="table-dark"
           columns=data.columns
           rowsData=data.models
-          onEdit=(action 'onEdit')
-          onDelete=(action 'onDelete')
+          onEdit=(action "onEdit")
+          onDelete=(action "onDelete")
           paginationEnabled=true
         }}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-tables-table-with-pagination' name='Advanced @wildlandLabs/emberBootstrapControls'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-tables-table-with-pagination" name="Advanced @wildlandLabs/emberBootstrapControls"}}
         {{bootstrap/tables/table-with-pagination
           columns=data.columns
           rowsData=data.models
           responsive=data.responsive
           reloadingRowsData=data.reloadingRowsData
           noRowsMessage=data.noRowsMessage
-          onDelete=(action 'onDelete')
-          onPage=(action 'simpleAction')
-          onSort=(action 'sortAction')
+          onDelete=(action "onDelete")
+          onPage=(action "simpleAction")
+          onSort=(action "sortAction")
         }}
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}

@@ -2,7 +2,10 @@ import Component from '@ember/component';
 import layout from '../../templates/components/bootstrap-inputs/-floating-label-input';
 import { or } from '@ember/object/computed';
 import { PropTypes } from 'ember-prop-types';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 
 export const propDefinitions = {
   disabled: {

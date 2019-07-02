@@ -1,87 +1,87 @@
-{{#section.subsection name='Form'}}
+{{#section.subsection name="Form"}}
   {{#freestyle-collection
-    title='Form'
-    defaultKey='Basic Usage'
+    title="Form"
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='TL;DR'}}
-      {{#freestyle-usage "TL;DR" title='Quick Example'}}
+    {{#collection.variant key="TL;DR"}}
+      {{#freestyle-usage "TL;DR" title="Quick Example"}}
         {{#bootstrap-form
-          save=(action 'simpleAction')
-          cancel=(action 'simpleAction')
+          save=(action "simpleAction")
+          cancel=(action "simpleAction")
           as |form|
         }}
           {{#form.body}}
-            <!-- add form body here like inputs and stuff -->
+            {{!-- add form body here like inputs and stuff --}}
             <p>A form</p>
           {{/form.body}}
           {{form.controls}}
         {{/bootstrap-form}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-form-usage' title='Basic Usage'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-bootstrap-form-usage" title="Basic Usage"}}
         {{#bootstrap-form
-          save=(action 'simpleAction')
-          cancel=(action 'simpleAction')
+          save=(action "simpleAction")
+          cancel=(action "simpleAction")
           as |form|
         }}
           {{#form.body}}
-            <!-- add form body here like inputs and stuff -->
+            {{!-- add form body here like inputs and stuff --}}
             <p>A form</p>
           {{/form.body}}
           {{form.controls}}
         {{/bootstrap-form}}
       {{/freestyle-usage}}
-      {{#freestyle-note 'basic-bootstrap-form-usage--notes'}}
-      **Required options:**
-      - `save`: The action to be preformed on save. If this action is a promise then the save/cancel buttons will disable while it is running.
+      {{#freestyle-note "basic-bootstrap-form-usage--notes"}}
+        **Required options:**
+        - `save`: The action to be preformed on save. If this action is a promise then the save/cancel buttons will disable while it is running.
 
-      **Optional options**
-      - `isEditing`: A boolean that will be changed depending on the state of the form. Good for if you want a parent of the form to be able to see if the form is editing.
-      - `cancel`: The action to be preformed on cancel. This will automatically set the form to `isEditing = false` after the cancel action finishes running.
-
+        **Optional options**
+        - `isEditing`: A boolean that will be changed depending on the state of the form. Good for if you want a parent of the form to be able to see if the form is editing.
+        - `cancel`: The action to be preformed on cancel. This will automatically set the form to `isEditing = false` after the cancel action finishes running.
       {{/freestyle-note}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-form-usage' title='Advanced Usage'}}
-      {{#bootstrap-form
-        save=(action 'slowAction')
-        cancel=(action 'slowAction')
-        as |form|
-      }}
-        {{#form.controls as |controls|}}
-          <!-- Need to customize buttons or actions? No problem, you can do that here and be fancy -->
-          {{#if form.isEditing}}
-            {{#controls.saveButton}}Send Fax{{/controls.saveButton}}
-            {{controls.cancelButton}}
-          {{else}}
-            {{#controls.editButton}}Create Fax{{/controls.editButton}}
-          {{/if}}
-        {{/form.controls}}
-        {{#form.body}}
-          {{#if form.isEditing}}
-            {{#if form.isSaving}}
-              <p>Sending fax...</p>
-              <div class="progress">
-                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
-              </div>
-            {{else}}
-              <!-- add form body here like inputs and stuff -->
-              <p>A really long form</p>
-            {{/if}}
-          {{/if}}
-        {{/form.body}}
-        {{#if (and form.isEditing (not form.isSaving))}} <!-- This form is so long that we want save/cancel buttons at the bottom. -->
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-form-usage" title="Advanced Usage"}}
+        {{#bootstrap-form
+          save=(action "slowAction")
+          cancel=(action "slowAction")
+          as |form|
+        }}
           {{#form.controls as |controls|}}
-            {{#controls.saveButton}}Send Fax{{/controls.saveButton}}
-            {{controls.cancelButton}}
+            {{!-- Need to customize buttons or actions? No problem, you can do that here and be fancy --}}
+            {{#if form.isEditing}}
+              {{#controls.saveButton}}Send Fax{{/controls.saveButton}}
+              {{controls.cancelButton}}
+            {{else}}
+              {{#controls.editButton}}Create Fax{{/controls.editButton}}
+            {{/if}}
           {{/form.controls}}
-        {{/if}}
-      {{/bootstrap-form}}
+          {{#form.body}}
+            {{#if form.isEditing}}
+              {{#if form.isSaving}}
+                <p>Sending fax...</p>
+                <div class="progress">
+                  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+                </div>
+              {{else}}
+                {{!-- add form body here like inputs and stuff --}}
+                <p>A really long form</p>
+              {{/if}}
+            {{/if}}
+          {{/form.body}}
+          {{#if (and form.isEditing (not form.isSaving))}}
+            {{!-- This form is so long that we want save/cancel buttons at the bottom. --}}
+            {{#form.controls as |controls|}}
+              {{#controls.saveButton}}Send Fax{{/controls.saveButton}}
+              {{controls.cancelButton}}
+            {{/form.controls}}
+          {{/if}}
+        {{/bootstrap-form}}
       {{/freestyle-usage}}
-      {{#freestyle-note 'advanced-bootstrap-form-usage--notes'}}
+      {{#freestyle-note "advanced-bootstrap-form-usage--notes"}}
         In this example `save` and `cancel` have a `1000ms` delay. These are long and complicated computations.
 
         This form represents an extremely long form that sends a fax.

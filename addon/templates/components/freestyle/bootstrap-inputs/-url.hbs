@@ -1,11 +1,11 @@
-{{#section.subsection name='Url Input'}}
+{{#section.subsection name="Url Input"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-bootstrap-inputs-url' name='Basic Url Input'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-bootstrap-inputs-url" name="Basic Url Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.url
             label="URL"
@@ -14,8 +14,8 @@
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-bootstrap-inputs-url' name='Advanced Url Input'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-bootstrap-inputs-url" name="Advanced Url Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.url
             autocomplete=data.autocomplete
@@ -35,8 +35,8 @@
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'url-child-components' name='Url Input'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "url-child-components" name="Url Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.url
             label="URL"

@@ -1,11 +1,11 @@
-{{#section.subsection name='Email Input'}}
+{{#section.subsection name="Email Input"}}
   {{#freestyle-collection
-    defaultKey='Basic Usage'
+    defaultKey="Basic Usage"
     inline=false
     as |collection|
   }}
-    {{#collection.variant key='Basic Usage'}}
-      {{#freestyle-usage 'basic-email-input' name='Basic Email Input'}}
+    {{#collection.variant key="Basic Usage"}}
+      {{#freestyle-usage "basic-email-input" name="Basic Email Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.email
             label="Super Cool Email"
@@ -14,8 +14,8 @@
         {{/bootstrap/form/-inputs}}
       {{/freestyle-usage}}
     {{/collection.variant}}
-    {{#collection.variant key='Advanced Usage'}}
-      {{#freestyle-usage 'advanced-email-input' name='Advanced Email Input'}}
+    {{#collection.variant key="Advanced Usage"}}
+      {{#freestyle-usage "advanced-email-input" name="Advanced Email Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{inputs.email
             autocomplete=data.autocomplete
@@ -36,8 +36,8 @@
       {{/freestyle-usage}}
       {{freestyle-prop-types data=data propDefinitions=propDefinitions}}
     {{/collection.variant}}
-    {{#collection.variant key='Custom Child Components'}}
-      {{#freestyle-usage 'email-child-components' name='Email Input'}}
+    {{#collection.variant key="Custom Child Components"}}
+      {{#freestyle-usage "email-child-components" name="Email Input"}}
         {{#bootstrap/form/-inputs as |inputs|}}
           {{#inputs.email
             label="Email"

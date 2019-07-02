@@ -1,6 +1,9 @@
 import ButtonComponent from './-button';
 import layout from '../../../templates/components/bootstrap/buttons/show-button';
-import { BuilderForPropTypes, BuilderForPropDefaults } from 'ember-bootstrap-controls/utils/prop-definition-tools';
+import {
+  BuilderForPropTypes,
+  BuilderForPropDefaults
+} from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { propDefinitions } from './-button';
 
 const { buttonText } = propDefinitions;

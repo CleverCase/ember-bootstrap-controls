@@ -1,6 +1,6 @@
 {{#section.subsection name="Pagination"}}
-  {{#freestyle-usage 'pagination-mixin-helper' title='Ember Route Mixin'}}
-    <p>There is a handy route mixin that is compatible with <a href='https://github.com/wildland/api_me'>api_me</a> <em>v0.5.0 or higher</em> to help with this control.</p>
+  {{#freestyle-usage "pagination-mixin-helper" title="Ember Route Mixin"}}
+    <p>There is a handy route mixin that is compatible with <a href="https://github.com/wildland/api_me">api_me</a> <em>v0.5.0 or higher</em> to help with this control.</p>
     <p>
       It will add the following variables to your controller for use in the view:
       <dl>
@@ -20,7 +20,7 @@
   {{#freestyle-note "pagination-mixin-helper"}}
     routes/your_router.js
     ```js
-    import PaginatedRouteMixin from 'ember-bootstrap-controls/mixins/routes/pagination';
+    import PaginatedRouteMixin from "ember-bootstrap-controls/mixins/routes/pagination";
     export default Ember.Route.extend(PaginatedRouteMixin, {
       afterModel: function(model) {
         this._super(...arguments); // Needed to use the afterModel from the mixin
@@ -32,10 +32,10 @@
     })
     ```
   {{/freestyle-note}}
-  {{#freestyle-collection title='Pagination' defaultKey='pagination-default' as |collection|}}
+  {{#freestyle-collection title="Pagination" defaultKey="pagination-default" as |collection|}}
     {{#freestyle-annotation}}
       {{bootstrap-input
-        label='Page Size Option'
+        label="Page Size Option"
         value=pageSize
       }}
       <ol>
