@@ -1,4 +1,20 @@
-/bower_components
+# compiled output
+/dist/
+/tmp/
+
+# dependencies
+/bower_components/
+
+# misc
+/.bowerrc
+/.editorconfig
+/.ember-cli
+/.eslintignore
+/.eslintrc.js
+/.gitignore
+/.watchmanconfig
+/.travis.yml
+/bower.json
 /config/ember-try.js
 /dist
 /tests
@@ -17,6 +33,6 @@ testem.js
 yarn.lock
 
 # ember-try
-.node_modules.ember-try/
-bower.json.ember-try
-package.json.ember-try
+/.node_modules.ember-try/
+/bower.json.ember-try
+/package.json.ember-try

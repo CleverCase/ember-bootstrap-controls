@@ -13,7 +13,8 @@ Issues or ideas? Checkout our [contributing guide](CONTRIBUTING.md) for how to h
 Here's a [list](https://github.com/wildland/ember-bootstrap-controls/graphs/contributors) of
 all the people who have contributed to the development of this library.
 
-## Installation
+Installation
+------------------------------------------------------------------------------
 
 Upgrading instead of Installing? Head over to our [upgrade instructions](#upgrade-instructions).
 
@@ -47,7 +48,7 @@ If you are running [ember-freestyle](https://github.com/chrislopresto/ember-free
 {{/freestyle-guide}}
 ```
 
-## Running
+### Linting
 
 To run the dummy app, from the root directory, simply run `npm install` then `npm start`. You'll then find the style-guide application at http://localhost:4200.
 
@@ -58,7 +59,7 @@ To run the dummy app, from the root directory, simply run `npm install` then `np
 
 Run `npm run deploy-documentation`
 
-## Running Tests
+### Running tests
 
 ### Browser
 * `npm start`
