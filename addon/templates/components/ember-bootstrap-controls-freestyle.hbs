@@ -1,12 +1,5 @@
-{{#freestyle-section name='Legacy Bootstrap Controls' as |section|}}
-  {{freestyle/bootstrap-button section=section}}
-  {{freestyle/bootstrap-date-picker section=section}}
-  {{freestyle/bootstrap-debounce-input section=section}}
-  {{freestyle/bootstrap-input section=section}}
-  {{freestyle/bootstrap-mask-input section=section}}
-  {{freestyle/bootstrap-pagination-nav section=section}}
-  {{freestyle/bootstrap-power-select section=section}}
-  {{freestyle/bootstrap-form section=section}}
+{{#freestyle-section name='Components' as |section|}}
+  {{freestyle/bootstrap/buttons/-button section=section}}
 {{/freestyle-section}}
 {{#freestyle-section name='Boostrap Modals' as |section|}}
   {{freestyle/modals/ember-model section=section}}
@@ -14,8 +7,6 @@
 {{#freestyle-section name='Bootstrap Forms' as |section|}}
   {{freestyle/bootstrap/edit-form section=section}}
   {{freestyle/bootstrap/simple-form section=section}}
-{{/freestyle-section}}
-{{#freestyle-section name='Bootstrap Inputs' as |section|}}
   {{freestyle/bootstrap-inputs/-checkbox section=section}}
   {{freestyle/bootstrap-inputs/-date section=section}}
   {{freestyle/bootstrap-inputs/-email section=section}}
@@ -31,9 +22,6 @@
   {{freestyle/bootstrap-inputs/-time section=section}}
   {{freestyle/bootstrap-inputs/-url section=section}}
   {{freestyle/bootstrap-inputs/markdown section=section}}
-{{/freestyle-section}}
-{{#freestyle-section name='Bootstrap Buttons' as |section|}}
-  {{freestyle/bootstrap/buttons/-button section=section}}
 {{/freestyle-section}}
 {{#freestyle-section name='Bootstrap tables' as |section|}}
   {{freestyle/bootstrap/tables/table-with-pagination section=section}}

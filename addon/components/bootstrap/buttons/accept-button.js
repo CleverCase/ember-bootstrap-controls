@@ -9,7 +9,7 @@ const newPropDefinitions = Object.assign({}, propDefinitions, { buttonText: newB
 
 export default ButtonComponent.extend({
   propTypes: BuilderForPropTypes(newPropDefinitions),
-  classNames: ['btn-primary'],
+  classNames: ['btn-success'],
 
   getDefaultProps() {
     return BuilderForPropDefaults(newPropDefinitions)
