@@ -4,7 +4,7 @@ import layout from '../../../templates/components/bootstrap/-form-controls/save-
 export default BootstrapButton.extend({
   layout,
   type: 'submit',
-  classNames: ['btn-primary'],
+  classNames: ['btn-success'],
 
   click(event) {
     event.preventDefault();
