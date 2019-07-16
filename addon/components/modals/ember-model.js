@@ -13,6 +13,7 @@ export default Component.extend({
   isRunningAsync: or('isSaving', 'isCanceling'),
   disableForm: or('isRunningAsync', 'disabled'),
   isNewModel: alias('model.isNew'),
+  afterHidden: null,
 
   saveTask: task(function * (beforeSave, afterSave) {
     if (isPresent(beforeSave)) {
