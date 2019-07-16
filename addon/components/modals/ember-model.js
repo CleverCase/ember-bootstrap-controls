@@ -2,7 +2,6 @@ import Component from '@ember/component';
 import layout from '../../templates/components/modals/ember-model';
 import { alias, or } from '@ember/object/computed';
 import { task, didCancel } from 'ember-concurrency';
-import { inject as service } from '@ember/service';
 import { isPresent, isBlank } from '@ember/utils';
 
 

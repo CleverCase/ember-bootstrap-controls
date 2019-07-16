@@ -42,7 +42,7 @@ export default Component.extend({
         const wasSuccessful = response || response === undefined;
         if (wasSuccessful) {
           this.set('isEditing', false);
-        };
+        }
       } else {
         this.set('isEditing', false);
       }
@@ -52,7 +52,7 @@ export default Component.extend({
     if (asyncTask) {
       if (yield asyncTask()) {
         this.set('isEditing', false);
-      };
+      }
     } else {
       this.set('isEditing', false);
     }

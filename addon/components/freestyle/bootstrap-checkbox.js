@@ -1,5 +1,4 @@
 import Component from '@ember/component';
-import Ember from 'ember';
 import layout from '../../templates/components/freestyle/bootstrap-checkbox';
 
 export default Component.extend({
@@ -11,9 +10,6 @@ export default Component.extend({
 
   actions: {
     checkboxChange(/*newChecked, oldChecked*/) {
-    },
-    toggleFavorite(favorite){
-      console.info(`Favorite Triggered: ${favorite.toString()}`);
     }
   },
 });

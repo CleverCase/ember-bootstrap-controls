@@ -7,28 +7,30 @@ export default Component.extend({
   isBasicOpen: false,
   isAdvancedOpen: false,
 
-  widget: {
-    label: '',
-    save: function() {
-      return true;
-    },
-    get: function() {
-      return false;
-    }
-  },
+  init() {
+    this.widget = {
+      label: '',
+      save: function() {
+        return true;
+      },
+      get: function() {
+        return false;
+      }
+    };
+    this.slowWidget = {
+      label: '',
+      save: function() {
+        const delay = 3000;
 
-  slowWidget: {
-    label: '',
-    save: function() {
-      const delay = 3000;
-
-      return new Promise((resolve) => {
-        setTimeout(() => { resolve(true); }, delay);
-      });
-    },
-    get: function() {
-      return false;
-    }
+        return new Promise((resolve) => {
+          setTimeout(() => { resolve(true); }, delay);
+        });
+      },
+      get: function() {
+        return false;
+      }
+    };
+    this._super(...arguments);
   },
 
   actions: {
