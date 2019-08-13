@@ -22,18 +22,4 @@ export default Component.extend({
   getDefaultProps() {
     return BuilderForPropDefaults(propDefinitions)
   },
-
-  valueChangedTask: task(function * (value) {
-    yield timeout(this.get('debounce'));
-
-    if (this.get('onChange')) {
-      this.get('onChange')(value);
-    }
-  }).restartable(),
-
-  actions: {
-    valueChanged(value) {
-      return this.get('valueChangedTask').perform(value);
-    }
-  }
 });
