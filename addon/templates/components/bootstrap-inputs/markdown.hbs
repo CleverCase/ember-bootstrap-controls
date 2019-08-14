@@ -14,7 +14,7 @@
         control=control
         input=(component "tui-editor"
           value=value
-          onChange=(action "valueChanged")
+          onChange=(action onChange)
           height=height
           minHeight=minHeight
           previewStyle=previewStyle
@@ -27,7 +27,7 @@
     {{control.label}}
     {{tui-editor
       value=value
-      onChange=(action "valueChanged")
+      onChange=(action onChange)
       height=height
       minHeight=minHeight
       previewStyle=previewStyle
