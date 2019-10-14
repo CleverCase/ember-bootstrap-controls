@@ -21,6 +21,22 @@ Run `ember install @wildland-labs/ember-bootstrap-controls` to install this add-
 
 ## Upgrade Instructions
 
+### v1.X.X -> v2.0.0
+  - `bootstrap-input-mask` mask attribute definitions:
+    - `9` : numeric
+    - `a` : alphabetical
+    - `*` : alphanumeric
+  - `bootstrap-currency-input`
+    - `prefix` : '$'
+  - Docs - [ember-inputmask](https://brandynbennett.github.io/ember-inputmask/docs)
+  
+  #### Example:
+  #### v1.x.x 
+  `ssnMask = [/[0-9]/, /\d/, /\d/, '-', /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];`
+
+  #### v2.0.0
+  `ssnMask = '999-99-9999';`
+
 ### 0.18.1 -> v1.0.0-alpha.x
  - Updated to bootstrap 4, still an alpha release, public API/class names are subject to change before a 1.0 release.
 
