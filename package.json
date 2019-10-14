@@ -37,7 +37,7 @@
     "ember-prop-types": "github:wildland/ember-prop-types",
     "ember-source-channel-url": "^1.1.0",
     "ember-truth-helpers": "^2.1.0",
-    "ember-tui-editor": "^0.1.2",
+    "ember-tui-editor": "^0.1.5",
     "lodash": "^4.17.15"
   },
   "devDependencies": {
