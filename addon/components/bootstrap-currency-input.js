@@ -2,8 +2,7 @@ import { computed } from '@ember/object';
 import Component from '@ember/component';
 import layout from '../templates/components/bootstrap-currency-input';
 import InputableMixin from '../mixins/components/inputable';
-import asserIfUsingRenamedEvents from '../utils/assert-if-using-renamed-events';
-import { createNumberMask } from 'ember-text-mask-addons';
+import { set } from '@ember/object';
 
 export default Component.extend(InputableMixin, {
   tagName: '',
@@ -15,10 +14,12 @@ export default Component.extend(InputableMixin, {
   readonly: null,
   type: null,
   srOnly: false,
-  tabindex: 0,
   required: true,
 
-  currencyMask: createNumberMask({ prefix: '$', allowDecimal: true, decimalLimit: 2 }),
+
+  prefix:'$',
+  allowDecimal: true,
+  decimalLimit: 2,
 
   hasValue: computed('value', function() {
     const value = this.get('value');
@@ -28,7 +29,16 @@ export default Component.extend(InputableMixin, {
 
   didReceiveAttrs() {
     this._super(...arguments);
-
-    asserIfUsingRenamedEvents(this);
   },
+
+  actions: {
+    update(unmasked, masked) {
+      set(this, 'value', unmasked);
+      set(this, 'masked', masked);
+
+      if (this.onUpdate) {
+        this.onUpdate(unmasked, masked);
+      }
+    },
+  }
 });

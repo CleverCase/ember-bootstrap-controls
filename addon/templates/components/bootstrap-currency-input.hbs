@@ -5,20 +5,22 @@
     {{#if label}}
       <label for="{{inputId}}" class="control-label {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
     {{/if}}
-    {{masked-input
-      mask=currencyMask
-      tabindex=tabindex
+    {{one-way-currency-mask
+      class="form-control"
+      elementId=control.inputId
       value=value
-      elementId=inputId
-      type=type
-      placeholder=placeholder
-      classNames="form-control"
-      readonly=readonly
       disabled=disabled
-      key-press=key-press
-      key-up=key-up
-      key-down=key-down
-      required=required}}
+      options=(hash
+        prefix=prefix
+        allowDecimal=allowDecimal
+        decimalLimit=decimalLimit
+        clearMaskOnLostFocus=clearMaskOnLostFocus
+      )
+      update=(action 'update')
+      required=required
+      placeholder=placeholder
+      onComplete=onComplete
+    }}
     {{#if errors}}
       <div class="form-control-static alert alert-danger" role="alert">
         {{#each errors as |error|}}

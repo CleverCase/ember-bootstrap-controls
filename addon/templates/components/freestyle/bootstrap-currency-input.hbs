@@ -1,0 +1,17 @@
+{{#section.subsection name="Currency Input"}}
+  {{#freestyle-collection title='Currency Input' defaultKey='currency-input' inline=true as |collection|}}
+    {{#collection.variant key='currency-input'}}
+      {{#freestyle-usage "currency-input" title="Currency Input"}}
+        {{bootstrap-currency-input
+          value=value
+          placeholder="Enter total amount"
+          readonly=readonly
+          disabled=disabled
+          label="Currency Input"
+          required=false
+          clearMaskOnLostFocus=true
+          }}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
+  {{/freestyle-collection}}
+{{/section.subsection}}
