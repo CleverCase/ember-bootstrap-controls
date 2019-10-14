@@ -2,6 +2,7 @@ import Component from '@ember/component';
 import layout from '../templates/components/bootstrap-phone-mask-input';
 import InputableMixin from '../mixins/components/inputable';
 import asserIfUsingRenamedEvents from '../utils/assert-if-using-renamed-events';
+import { set } from '@ember/object';
 
 export default Component.extend(InputableMixin, {
   classNames: ['form-group', 'bootstrap-input-component'],
@@ -27,4 +28,15 @@ export default Component.extend(InputableMixin, {
 
     asserIfUsingRenamedEvents(this);
   },
+
+  actions: {
+    update(unmasked, masked) {
+      set(this, 'value', masked);
+      set(this, 'unmasked', masked);
+
+      if (this.onUpdate) {
+        this.onUpdate(unmasked, masked);
+      }
+    },
+  }
 });
