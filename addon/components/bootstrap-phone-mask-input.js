@@ -8,7 +8,6 @@ export default Component.extend(InputableMixin, {
   classNameBindings: ['hasSuccess:has-success', 'hasWarning:has-warning', 'showError:has-error'],
   layout: layout,
 
-  placeholderChar: '_',
   placeholder: '(___) ___-____',
   value: null,
   readonly: null,
@@ -19,7 +18,7 @@ export default Component.extend(InputableMixin, {
 
 
   init() {
-    this.phoneMask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+    this.phoneMask = '(999) 999-9999';
     this._super(...arguments);
   },
 

@@ -4,20 +4,15 @@
   {{#if label}}
     <label for="{{inputId}}" class="control-label {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
   {{/if}}
-  {{masked-input
+  {{one-way-input-mask
     mask=phoneMask
     tabindex=tabindex
     value=value
     elementId=inputId
     classNames="form-control"
-    type=type
     readonly=readonly
     disabled=disabled
     placeholder=placeholder
-    placeholderChar=placeholderChar
-    key-press=key-press
-    key-up=key-up
-    key-down=key-down
     required=required}}
   {{#if errors}}
     <div class="form-control-static alert alert-danger" role="alert">

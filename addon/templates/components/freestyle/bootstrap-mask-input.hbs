@@ -5,16 +5,15 @@
         {{bootstrap-mask-input
           mask=myMask
           value=value
+          showMaskOnFocus=showMaskOnFocus
+          showMaskOnHover=showMaskOnHover
           placeholderChar="x"
           placeholder="(000) 000-0000"
-          keepCharPositions=true
           readonly=readonly
           disabled=disabled
           label="Masked Text Input"
           required=false
-          key-press=(action 'keyPress')
-          key-down=(action 'keyDown')
-          focus-out=(action 'focusOut')}}
+          }}
       {{/freestyle-usage}}
     {{/collection.variant}}
   {{/freestyle-collection}}
