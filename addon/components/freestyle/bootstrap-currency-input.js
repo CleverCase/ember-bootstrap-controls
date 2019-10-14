@@ -5,8 +5,6 @@ export default Component.extend({
   layout: layout,
 
   value: null,
-  inputId: 1,
   disabled: false,
-  showMaskOnHover: false,
-  showMaskOnFocus: false,
+  clearMaskOnLostFocus: false
 });
