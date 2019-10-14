@@ -1,6 +1,16 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [2.0.0] - 2019-10-14
+### Added
+  * `ember-inputmask` ([@jir-f][])
+### Changed
+  * Updated `ember-tui-editor` to 0.1.5 ([@jir-f][])
+  * Updated `bootstrap-input-mask`
+  * Updated `bootstrap-currency-input`
+### Removed 
+  * `ember-text-mask-addons` ([@jir-f][])
+
 ## [1.1.0] - 2019-06-27
 ### Added
   * modals now supports `afterHidden`. ([@jweakley][])

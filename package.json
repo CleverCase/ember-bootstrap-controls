@@ -1,6 +1,6 @@
 {
   "name": "ember-bootstrap-controls",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Ember bootstrap form components.",
   "private": false,
   "keywords": [
@@ -32,13 +32,13 @@
     "ember-cli-htmlbars": "^2.0.5",
     "ember-cli-string-utils": "^1.1.0",
     "ember-concurrency": "^0.8.27",
+    "ember-inputmask": "^0.9.1",
     "ember-power-select": "^2.2.3",
     "ember-prop-types": "github:wildland/ember-prop-types",
     "ember-source-channel-url": "^1.1.0",
-    "ember-text-mask-addons": "^5.0.1",
     "ember-truth-helpers": "^2.1.0",
-    "ember-tui-editor": "^0.1.2",
-    "lodash": ">=4.17.11"
+    "ember-tui-editor": "^0.1.5",
+    "lodash": "^4.17.15"
   },
   "devDependencies": {
     "@ember/jquery": "^0.5.2",

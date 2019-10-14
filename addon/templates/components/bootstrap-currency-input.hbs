@@ -1,30 +1,50 @@
 <div class="{{concat-class-names classNames}} form-group bootstrap-input-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
   {{#if hasBlock}}
-    {{yield inputId}}
+    {{yield
+      (hash
+        label=(component control.label for=control.inputId label=label srOnly=srOnly)
+        input=(component 'one-way-currency-mask'
+          class="form-control"
+          id=control.inputId
+          value=value
+          disabled=disabled
+          options=(hash
+            prefix=prefix
+            allowDecimal=allowDecimal
+            decimalLimit=decimalLimit
+            clearMaskOnLostFocus=clearMaskOnLostFocus
+          )
+          update=(action 'update')
+          required=required
+          placeholder=placeholder
+          onComplete=onComplete
+        )
+      )
+    }}
   {{else}}
-    {{#if label}}
-      <label for="{{inputId}}" class="control-label {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
-    {{/if}}
-    {{masked-input
-      mask=currencyMask
-      tabindex=tabindex
+    {{control.label for=control.inputId label=label srOnly=srOnly}}
+    {{one-way-currency-mask
+      class="form-control"
+      id=control.inputId
       value=value
-      elementId=inputId
-      type=type
-      placeholder=placeholder
-      classNames="form-control"
-      readonly=readonly
       disabled=disabled
-      key-press=key-press
-      key-up=key-up
-      key-down=key-down
-      required=required}}
-    {{#if errors}}
-      <div class="form-control-static alert alert-danger" role="alert">
-        {{#each errors as |error|}}
-          <span>{{error.message}}</span>
-        {{/each}}
-      </div>
-    {{/if}}
+      options=(hash
+        prefix=prefix
+        allowDecimal=allowDecimal
+        decimalLimit=decimalLimit
+        clearMaskOnLostFocus=clearMaskOnLostFocus
+      )
+      update=(action 'update')
+      required=required
+      placeholder=placeholder
+      onComplete=onComplete
+    }}
+  {{/if}}
+  {{#if errors}}
+    <div class="form-control-static alert alert-danger" role="alert">
+      {{#each errors as |error|}}
+        <span>{{error.message}}</span>
+      {{/each}}
+    </div>
   {{/if}}
 </div>

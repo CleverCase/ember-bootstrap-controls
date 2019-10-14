@@ -10,8 +10,11 @@ export default Component.extend({
   type: "text",
   readonly: false,
   disabled: false,
+  showMaskOnHover: false,
+  showMaskOnFocus: false,
+
   init() {
-    this.myMask = ['(', /[1-9]/, /\d/, /\d/, ')', ' ', /\d/, /\d/, /\d/, '-', /\d/, /\d/, /\d/, /\d/];
+    this.myMask = '(999) 999-999';
     this._super(...arguments);
   },
 
