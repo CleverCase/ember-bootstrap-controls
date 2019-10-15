@@ -14,8 +14,8 @@ export default Component.extend({
 
   actions: {
     update(unmasked, masked) {
-      set(this, 'value', unmasked);
-      set(this, 'masked', masked);
+      set(this, 'value', masked);
+      set(this, 'unmasked', unmasked);
 
       if (this.onUpdate) {
         this.onUpdate(unmasked, masked);

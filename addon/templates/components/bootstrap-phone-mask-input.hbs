@@ -5,15 +5,20 @@
     <label for="{{inputId}}" class="control-label {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
   {{/if}}
   {{one-way-input-mask
-    mask=phoneMask
-    tabindex=tabindex
+    elementId=control.inputId
+    class="form-control"
     value=value
-    elementId=inputId
-    classNames="form-control"
-    readonly=readonly
+    elementId=control.inputId
+    mask=phoneMask
+    update=(action 'update')
     disabled=disabled
+    options=(hash
+      showMaskOnHover=showMaskOnHover
+      showMaskOnFocus=showMaskOnFocus
+      repeat=repeat)
+    required=required
     placeholder=placeholder
-    required=required}}
+    onComplete=onComplete}}
   {{#if errors}}
     <div class="form-control-static alert alert-danger" role="alert">
       {{#each errors as |error|}}
