@@ -53,7 +53,7 @@
     "ember-cli-github-pages": "^0.2.1",
     "ember-cli-htmlbars-inline-precompile": "^1.0.5",
     "ember-cli-inject-live-reload": "^1.10.2",
-    "ember-cli-sass": "^8.0.1",
+    "ember-cli-sass": "^10.0.0",
     "ember-cli-shims": "^1.2.0",
     "ember-cli-sri": "^2.1.0",
     "ember-cli-uglify": "^2.0.0",
@@ -74,7 +74,7 @@
     "npm-check": "^5.9.0",
     "popper.js": "^1.14.7",
     "qunit-dom": "^0.8.4",
-    "sass": "^1.19.0"
+    "sass": "~1.25.0"
   },
   "engines": {
     "node": "6.* || 8.* || ~ 10.13.*",
@@ -88,5 +88,8 @@
   "bugs": {
     "url": "https://github.com/wildland/ember-bootstrap-controls/issues"
   },
-  "homepage": "https://github.com/wildland/ember-bootstrap-controls#readme"
+  "homepage": "https://github.com/wildland/ember-bootstrap-controls#readme",
+  "volta": {
+    "node": "10.13.0"
+  }
 }
