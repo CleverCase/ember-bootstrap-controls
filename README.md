@@ -8,8 +8,6 @@ This README outlines the details of using and collaborating on this Ember addon.
 
 Checkout our [Releases](../../releases/latest) or [Changelog](CHANGELOG.md) for what has changed.
 
-Issues or ideas? Checkout our [contributing guide](CONTRIBUTING.md) for how to help contribute to this project.
-
 Here's a [list](https://github.com/wildland/ember-bootstrap-controls/graphs/contributors) of
 all the people who have contributed to the development of this library.
 
