@@ -1,29 +1,37 @@
-{{#if hasBlock}}
-  {{yield inputId}}
-{{else}}
-  {{#if label}}
-    <label for="{{inputId}}" class="control-label {{if customLabelCss customLabelCss ''}} {{if srOnly 'sr-only' ''}}">{{label}}</label>
-  {{/if}}
-  {{one-way-input-mask
-    elementId=control.inputId
+{{#bootstrap/control-wrapper
+  label=label
+  srOnly=srOnly
+  errors=errors
+  classNames=classNames
+as |control|}}
+  {{#let (component 'one-way-input-mask'
+    id=control.inputId
     class="form-control"
     value=value
-    elementId=control.inputId
     mask=phoneMask
     update=(action 'update')
     disabled=disabled
     options=(hash
       showMaskOnHover=showMaskOnHover
       showMaskOnFocus=showMaskOnFocus
-      repeat=repeat)
+      repeat=repeat
+    )
     required=required
     placeholder=placeholder
-    onComplete=onComplete}}
-  {{#if errors}}
-    <div class="form-control-static alert alert-danger" role="alert">
-      {{#each errors as |error|}}
-        <span>{{error.message}}</span>
-      {{/each}}
-    </div>
-  {{/if}}
-{{/if}}
+    onComplete=onComplete
+  ) as |input|}}
+    {{#if hasBlock}}
+      {{yield control.inputId}}
+    {{else}}
+      {{control.label}}
+      {{input}}
+      {{#if errors}}
+        <div class="form-control-static alert alert-danger" role="alert">
+          {{#each errors as |error|}}
+            <span>{{error.message}}</span>
+          {{/each}}
+        </div>
+      {{/if}}
+    {{/if}}
+  {{/let}}
+{{/bootstrap/control-wrapper}}

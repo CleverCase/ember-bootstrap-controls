@@ -3,11 +3,12 @@ import Checkbox from '@ember/component/checkbox';
 export default Checkbox.extend({
   classNames: ['form-check-input'],
 
-  click() {
+  change() {
     const onClick = this.get('onClick');
+    this.set('checked', this.element.checked);
 
     if (onClick) {
-      onClick(!this.get('checked'), this.get('checked'), ...arguments);
+      onClick(this.element.checked, !this.element.checked);
     }
-  }
+  },
 });

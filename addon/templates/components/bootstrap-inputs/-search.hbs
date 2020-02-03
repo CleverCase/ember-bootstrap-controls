@@ -6,54 +6,39 @@
   help=help
   as |control|
 }}
-  {{#if hasBlock}}
-    {{yield
-      (hash
-        label=(component control.label)
-        help=(component control.help)
-        control=control
-        input=(component 'bootstrap/-input'
-          value=_value
-          elementId=control.inputId
-          type='search'
-          disabled=(readonly _disabled)
-          autocomplete=autocomplete
-          maxlength=maxlength
-          minlength=minlength
-          pattern=pattern
-          placeholder=placeholder
-          readonly=readonly
-          required=required
-          srOnly=srOnly
-          tabindex=tabindex
-          helpId=control.helpId
-          change=onChange
-          input=(action 'onInput')
+  {{#let (component 'bootstrap/-input'
+    value=_value
+    id=control.inputId
+    type='search'
+    disabled=(readonly _disabled)
+    autocomplete=autocomplete
+    maxlength=maxlength
+    minlength=minlength
+    pattern=pattern
+    placeholder=placeholder
+    readonly=readonly
+    required=required
+    srOnly=srOnly
+    tabindex=tabindex
+    helpId=control.helpId
+    change=onChange
+    input=(action 'onInput')
+  ) as |input|}}
+    {{#if hasBlock}}
+      {{yield
+        (hash
+          label=control.label
+          help=control.help
+          control=control
+          input=input
         )
-      )
-    }}
-  {{else}}
-    {{control.label}}
-    {{bootstrap/-input
-      value=_value
-      elementId=control.inputId
-      type='search'
-      disabled=(readonly _disabled)
-      autocomplete=autocomplete
-      maxlength=maxlength
-      minlength=minlength
-      pattern=pattern
-      placeholder=placeholder
-      readonly=readonly
-      required=required
-      srOnly=srOnly
-      tabindex=tabindex
-      helpId=control.helpId
-      change=onChange
-      input=(action 'onInput')
-    }}
-    {{#if help}}
-      {{control.help}}
+      }}
+    {{else}}
+      {{control.label}}
+      {{input}}
+      {{#if help}}
+        {{control.help}}
+      {{/if}}
     {{/if}}
-  {{/if}}
+  {{/let}}
 {{/bootstrap/control-wrapper}}

@@ -1,15 +1,18 @@
 import Component from '@ember/component';
 import layout from '../templates/components/freestyle-prop-types';
+import { computed } from '@ember/object'
 const definedTypes = ['arrayOf', 'bool', 'instanceOf', 'number', 'oneOf', 'string', 'date'];
 
 export default Component.extend({
   layout,
   options: null,
-  didReceiveAttrs() {
-    let propDefinitions = this.get('propDefinitions');
+
+  options: computed('propDefinitions', function() {
+    let propDefinitions = this.propDefinitions;
     let properties = [];
     let componentName = '';
     let type = null;
+
     for (var key in propDefinitions) {
       if (propDefinitions.hasOwnProperty(key)) {
         componentName = 'freestyle-prop-types/-default';
@@ -38,6 +41,7 @@ export default Component.extend({
       if (a.name > b.name) return 1;
       return 0;
     });
-    this.set('options', properties);
-  },
+
+    return properties;
+  }),
 });

@@ -34,7 +34,7 @@ module('Integration | Component | bootstrap/tables/table-with-pagination', funct
         columnKey: 'handle',
         sortingCriteriaValue: 'handle'})
     ]);
-  
+
     this.set('models',[
       Mod.create({
         number: 1,
@@ -56,7 +56,7 @@ module('Integration | Component | bootstrap/tables/table-with-pagination', funct
       }),
     ]);
     await render(hbs`{{bootstrap/tables/table-with-pagination
-      tableClassNames=["table-dark"]
+      tableClassNames="table-dark"
       columns=columns
       rowsData=models
       onEdit=noop
@@ -71,7 +71,7 @@ module('Integration | Component | bootstrap/tables/table-with-pagination', funct
     });
   });
 
-  test('it renders a table with bagination in block syntax', async function(assert){
+  test('it renders a table with pagination in block syntax', async function(assert){
     assert.expect(2);
     const Col = EmberObject.extend({});
     const Mod = EmberObject.extend({});
@@ -96,7 +96,7 @@ module('Integration | Component | bootstrap/tables/table-with-pagination', funct
         sortingCriteriaValue: 'handle',
       })
     ]);
-  
+
     this.set('models',[
       Mod.create({
         number: 1,
@@ -117,7 +117,7 @@ module('Integration | Component | bootstrap/tables/table-with-pagination', funct
         handle: '@twitter'
       }),
     ]);
-    
+
     await render(hbs`
       {{#bootstrap/tables/table-with-pagination
         columns=columns

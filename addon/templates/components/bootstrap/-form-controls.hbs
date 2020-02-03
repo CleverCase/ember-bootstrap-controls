@@ -1,27 +1,33 @@
-{{#if hasBlock}}
-  {{yield
-    (hash
-      cancelButton=(component
-        'bootstrap/-form-controls/cancel-button'
-        disabled=isRunning
-        action=cancel
+{{#let (hash
+  editButton=(component
+    'bootstrap/-form-controls/edit-button'
+    action=edit
+  )
+  saveButton=(component
+    'bootstrap/-form-controls/save-button'
+    disabled=isRunning
+    action=save
+  )
+  cancelButton=(component
+    'bootstrap/-form-controls/cancel-button'
+    disabled=isRunning
+    action=cancel
+  )
+) as |control|}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        cancelButton=control.cancelButton
+        saveButton=control.saveButton
+        editButton=control.editButton
       )
-      saveButton=(component
-        'bootstrap/-form-controls/save-button'
-        disabled=isRunning
-        action=save
-      )
-      editButton=(component
-        'bootstrap/-form-controls/edit-button'
-        action=edit
-      )
-    )
-  }}
-{{else}}
-  {{#if isEditing}}
-    {{bootstrap/-form-controls/save-button disabled=isRunning action=save}}
-    {{bootstrap/-form-controls/cancel-button disabled=isRunning action=cancel}}
+    }}
   {{else}}
-    {{bootstrap/-form-controls/edit-button action=edit}}
+    {{#if isEditing}}
+      {{control.saveButton}}
+      {{control.cancelButton}}
+    {{else}}
+      {{control.editButton}}
+    {{/if}}
   {{/if}}
-{{/if}}
+{{/let}}

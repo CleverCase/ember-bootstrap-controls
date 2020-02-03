@@ -27,7 +27,7 @@ export default Mixin.create({
   }),
 
   inputId: computed(function() {
-    return `bootstrap-control-input-${guidFor(this)}`;
+    return `bootstrap-control-${this.elementId}-input`;
   }),
 
   helpId: computed(function() {

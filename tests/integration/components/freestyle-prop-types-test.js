@@ -2,27 +2,24 @@ import { module, test } from 'qunit';
 import { setupRenderingTest } from 'ember-qunit';
 import { render } from '@ember/test-helpers';
 import hbs from 'htmlbars-inline-precompile';
+import { PropTypes } from 'ember-prop-types';
 
 module('Integration | Component | Freestyle Prop Types', function(hooks) {
   setupRenderingTest(hooks);
 
   test('it renders', async function(assert) {
-    // Set any properties with this.set('myProperty', 'value');
-    // Handle any actions with this.on('myAction', function(val) { ... });
+    const description = 'Indicates whether the table is responsive or not'
 
-    this.set('fakeOptions', ['fakeOption']);
+    this.set('propDefs', {
+      responsive: {
+        default: true,
+        description,
+        type: PropTypes.bool
+      },
+    });
 
-    await render(hbs`{{freestyle-prop-types options=fakeOptions}}`);
+    await render(hbs`{{freestyle-prop-types propDefinitions=propDefs}}`);
 
-    assert.ok(true, this.$().text().trim().includes(this.get('fakeOption')));
-
-    // Template block usage:
-    await render(hbs`
-      {{#freestyle-prop-types}}
-        template block text
-      {{/freestyle-prop-types}}
-    `);
-
-    assert.ok(true, this.$().text().trim().includes('template block text'));
+    assert.ok(true, this.$().text().trim().includes(description));
   });
 });

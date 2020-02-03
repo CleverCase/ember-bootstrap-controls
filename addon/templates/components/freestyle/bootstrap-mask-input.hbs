@@ -15,5 +15,19 @@
           }}
       {{/freestyle-usage}}
     {{/collection.variant}}
+    {{#collection.variant key='input-phone-mask-text'}}
+      {{#freestyle-usage "input-phone-mask-text" title="Masked Phone Text Input"}}
+        {{bootstrap-phone-mask-input
+          value=value
+          showMaskOnFocus=showMaskOnFocus
+          showMaskOnHover=showMaskOnHover
+          placeholder="(000) 000-0000"
+          readonly=readonly
+          disabled=disabled
+          label="Masked Phone Input"
+          required=false
+          }}
+      {{/freestyle-usage}}
+    {{/collection.variant}}
   {{/freestyle-collection}}
 {{/section.subsection}}

@@ -6,47 +6,35 @@
   help=help
   as |control|
 }}
-  {{#if hasBlock}}
-    {{yield
-      (hash
-        label=(component control.label)
-        help=(component control.help)
-        control=control
-        input=(component 'bootstrap/-input'
-          value=value
-          elementId=control.inputId
-          type='range'
-          disabled=(readonly _disabled)
-          max=max
-          min=min
-          readonly=readonly
-          required=required
-          srOnly=srOnly
-          step=step
-          tabindex=tabindex
-          change=onChange
+  {{#let (component 'bootstrap/-input'
+    value=value
+    id=control.inputId
+    type='range'
+    disabled=(readonly _disabled)
+    max=max
+    min=min
+    readonly=readonly
+    required=required
+    srOnly=srOnly
+    step=step
+    tabindex=tabindex
+    change=onChange
+  ) as |input|}}
+    {{#if hasBlock}}
+      {{yield
+        (hash
+          label=control.label
+          help=control.help
+          control=control
+          input=input
         )
-      )
-    }}
-  {{else}}
-    {{control.label}}
-    {{bootstrap/-input
-      value=value
-      elementId=control.inputId
-      type='range'
-      disabled=(readonly _disabled)
-      max=max
-      min=min
-      readonly=readonly
-      required=required
-      srOnly=srOnly
-      step=step
-      tabindex=tabindex
-      change=onChange
-    }}
-    {{#if help}}
-      {{control.help}}
+      }}
+    {{else}}
+      {{control.label}}
+      {{input}}
+      {{#if help}}
+        {{control.help}}
+      {{/if}}
     {{/if}}
-  {{/if}}
-
+  {{/let}}
 {{/bootstrap/control-wrapper}}

@@ -1,29 +1,21 @@
-{{#if hasBlock}}
-  {{yield
-    (hash
-      acceptAction=acceptAction
-      acceptButton=(component 'bootstrap-button'
-        classNames='btn-primary'
-        action=acceptAction
-        buttonText='Accept'
-      )
-      closeAction=closeAction
-      closeButton=(component 'bootstrap-button'
-        classNames='btn-secondary'
-        action=closeAction
-        buttonText='Close'
-      )
-    )
-  }}
-{{else}}
-  {{bootstrap-button
+{{#let (hash
+  acceptAction=acceptAction
+  acceptButton=(component 'bootstrap-button'
+    classNames='btn-primary'
+    action=acceptAction
+    buttonText='Accept'
+  )
+  closeAction=closeAction
+  closeButton=(component 'bootstrap-button'
     classNames='btn-secondary'
     action=closeAction
     buttonText='Close'
-  }}
-  {{bootstrap-button
-    classNames='btn-primary'
-    action=closeAction
-    buttonText='Accept'
-  }}
-{{/if}}
+  )
+) as |parts|}}
+  {{#if hasBlock}}
+    {{yield parts}}
+  {{else}}
+    {{parts.closeButton}}
+    {{parts.acceptButton}}
+  {{/if}}
+{{/let}}

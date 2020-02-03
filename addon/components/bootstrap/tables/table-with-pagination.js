@@ -8,7 +8,7 @@ import { task } from 'ember-concurrency';
 import { isPresent } from '@ember/utils';
 
 export const propDefinitions = {
-  tableClassNames:{
+  tableClassNames: {
     default: ['table', 'table-striped', 'table-sm'],
     description: 'Table class names to be adeed to the list of class names',
     type: PropTypes.arrayOf(PropTypes.string),

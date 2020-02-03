@@ -1,31 +1,13 @@
-{{#if hasBlock}}
-  {{yield
-    (hash
-      label=(component 'bootstrap/-label'
-        classNames='form-check-label'
-        label=label
-        srOnly=srOnly
-        for=inputId
-      )
-      inputId=inputId
-      input=(component 'bootstrap/-checkbox'
-        checked=value
-        elementId=inputId
-        name=groupId
-        type='checkbox'
-        disabled=(readonly _disabled)
-        required=required
-        srOnly=srOnly
-        tabindex=tabindex
-        onClick=onClick
-        change=onChange
-      )
-    )
-  }}
-{{else}}
-  {{bootstrap/-checkbox
+{{#let (hash
+  label=(component 'bootstrap/-label'
+    classNames='form-check-label'
+    label=label
+    srOnly=srOnly
+    for=inputId
+  )
+  input=(component 'bootstrap/-checkbox'
     checked=value
-    elementId=inputId
+    id=inputId
     name=groupId
     type='checkbox'
     disabled=(readonly _disabled)
@@ -33,12 +15,18 @@
     srOnly=srOnly
     tabindex=tabindex
     onClick=onClick
-    change=onChange
-  }}
-  {{bootstrap/-label
-    classNames='form-check-label'
-    label=label
-    srOnly=srOnly
-    for=inputId
-  }}
-{{/if}}
+  )
+) as |control|}}
+  {{#if hasBlock}}
+    {{yield
+      (hash
+        label=control.label
+        inputId=inputId
+        input=control.input
+      )
+    }}
+  {{else}}
+    {{control.input}}
+    {{control.label}}
+  {{/if}}
+{{/let}}

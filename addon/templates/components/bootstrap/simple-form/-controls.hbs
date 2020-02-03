@@ -1,19 +1,14 @@
-{{#if hasBlock}}
-  {{yield
-    (hash
-      submitButton=(component 'bootstrap-button' classNames='btn-primary' action=(action 'submitForm') type='submit' buttonText='Submit')
-      resetButton=(component 'bootstrap-button' type='reset' buttonText='Reset')
-      normalButton=(component 'bootstrap-button' type='button')
-      submitAction=(action "submitForm")
-    )
-  }}
-{{else}}
-  {{#if submitAction}}
-    {{bootstrap-button
-      classNames='btn-success'
-      action=submitAction
-      type='submit'
-      buttonText='Submit'
-    }}
+{{#let (hash
+  submitButton=(component 'bootstrap-button' classNames='btn-primary' action=submitAction type='submit' buttonText='Submit')
+  resetButton=(component 'bootstrap-button' type='reset' buttonText='Reset')
+  normalButton=(component 'bootstrap-button' type='button')
+  submitAction=submitAction
+) as |parts|}}
+  {{#if hasBlock}}
+    {{yield parts}}
+  {{else}}
+    {{#if submitAction}}
+      {{parts.submitButton}}
+    {{/if}}
   {{/if}}
-{{/if}}
+{{/let}}

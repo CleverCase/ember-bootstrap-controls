@@ -1,11 +1,11 @@
-import $ from 'jquery';
+import jQuery from 'jquery';
 
 export default function checkInView() {
-  if ($.fn.checkInView) {
+  if (jQuery.fn.checkInView) {
     return;
   }
 
-  $.fn.checkInView = function(partial = false) {
+  jQuery.fn.checkInView = function(partial = false) {
     const elem = this;
 
     if (!elem.length) {
