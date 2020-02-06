@@ -1,19 +1,15 @@
-{{#if hasBlock}}
-  {{yield (hash
-    bar=(component 'progress-bars/-bar'
-      classNames='progress-bar-striped progress-bar-animated'
-      minimumValue=0
-      maximumValue=100
-      currentValue=100
-      label=label
-    )
-  )}}
-{{else}}
-  {{progress-bars/-bar
-    classNames='progress-bar-striped progress-bar-animated'
-    minimumValue=0
-    maximumValue=100
-    currentValue=100
-    label=label
-  }}
-{{/if}}
+{{#let (component 'progress-bars/-bar'
+  classNames='progress-bar-striped progress-bar-animated'
+  minimumValue=0
+  maximumValue=100
+  currentValue=100
+  label=label
+) as |progressBar|}}
+  {{#if hasBlock}}
+    {{yield (hash
+      bar=progressBar
+    )}}
+  {{else}}
+    {{progressBar}}
+  {{/if}}
+{{/let}}

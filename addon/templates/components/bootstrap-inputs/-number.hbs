@@ -6,51 +6,37 @@
   help=help
   as |control|
 }}
-  {{#if hasBlock}}
-    {{yield
-      (hash
-        label=(component control.label)
-        help=(component control.help)
-        control=control
-        input=(component 'bootstrap/-input'
-          elementId=control.inputId
-          helpId=control.helpId
-          type='number'
-          disabled=(readonly _disabled)
-          inputmode=inputmode
-          max=max
-          min=min
-          placeholder=placeholder
-          readonly=readonly
-          required=required
-          step=step
-          tabindex=tabindex
-          value=value
-          change=onChange
+  {{#let (component 'bootstrap/-input'
+    id=control.inputId
+    helpId=control.helpId
+    type='number'
+    disabled=(readonly _disabled)
+    inputmode=inputmode
+    max=max
+    min=min
+    placeholder=placeholder
+    readonly=readonly
+    required=required
+    step=step
+    tabindex=tabindex
+    value=value
+    change=onChange
+  ) as |input|}}
+    {{#if hasBlock}}
+      {{yield
+        (hash
+          label=control.label
+          help=control.help
+          control=control
+          input=input
         )
-      )
-    }}
-
-  {{else}}
-    {{control.label for=control.inputId}}
-    {{bootstrap/-input
-      elementId=control.inputId
-      helpId=control.helpId
-      type='number'
-      disabled=(readonly _disabled)
-      inputmode=inputmode
-      max=max
-      min=min
-      placeholder=placeholder
-      readonly=readonly
-      required=required
-      step=step
-      tabindex=tabindex
-      value=value
-      change=onChange
-    }}
-    {{#if help}}
-      {{control.help}}
+      }}
+    {{else}}
+      {{control.label for=control.inputId}}
+      {{input}}
+      {{#if help}}
+        {{control.help}}
+      {{/if}}
     {{/if}}
-  {{/if}}
+  {{/let}}
 {{/bootstrap/control-wrapper}}

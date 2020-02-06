@@ -8,6 +8,7 @@ import {
   BuilderForPropDefaults
 } from 'ember-bootstrap-controls/utils/prop-definition-tools';
 import { task } from 'ember-concurrency';
+import jQuery from 'jquery'
 
 export const propDefinitions = {
   isOpen: {
@@ -87,7 +88,7 @@ export default Component.extend({
   },
 
   modalObj: computed(function() {
-    return $('#' + guidFor(this)); // eslint-disable-line ember/no-global-jquery, no-undef
+    return jQuery('#' + guidFor(this));
   }),
 
   didUpdateAttrs() {

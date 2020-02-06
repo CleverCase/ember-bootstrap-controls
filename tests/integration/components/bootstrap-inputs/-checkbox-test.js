@@ -38,12 +38,12 @@ module('Integration | Component | Checkbox Input', function(hooks) {
     assert.equal(find('label').textContent.trim(), this.get('label'));
   });
 
-  test('it supports onChange', async function(assert) {
+  test('it supports change', async function(assert) {
     assert.expect(1);
     this.set('onChange', () => {
       assert.ok(true);
     });
-    await render(hbs`{{bootstrap-inputs/-checkbox onChange=onChange label='Label' value=true}}`);
+    await render(hbs`{{bootstrap-inputs/-checkbox change=onChange label='Label' value=true}}`);
     await click('input');
   });
 

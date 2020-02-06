@@ -5,30 +5,33 @@
   backdropClose=false
   as |modal|
 }}
-  {{#if hasBlock}}
-    {{yield (hash
-      isOpen=isOpen
+  {{#let (hash
+    header=(component 'modals/-header'
       modal=modal
-      header=(component 'modals/-header'
-        modal=modal
-        title=title
-        closeAction=(action 'close' modal.close)
-      )
-      body=(component 'modals/-body' modal=modal content=modalBodyContent)
+      title=title
       closeAction=(action 'close' modal.close)
-      footer=(component 'modals/-footer'
-        modal=modal
-        acceptAction=acceptAction
-        cancelAction=(action 'close' modal.close)
-      )
-    )}}
-  {{else}}
-    {{modals/-header modal=modal title=title closeAction=(action 'close' modal.close)}}
-    {{modals/-body modal=modal content=modalBodyContent}}
-    {{modals/-footer
+    )
+    body=(component 'modals/-body' modal=modal content=modalBodyContent)
+    closeAction=(action 'close' modal.close)
+    footer=(component 'modals/-footer'
       modal=modal
       acceptAction=acceptAction
       cancelAction=(action 'close' modal.close)
-    }}
-  {{/if}}
+    )
+  ) as |parts|}}
+    {{#if hasBlock}}
+      {{yield (hash
+        isOpen=isOpen
+        modal=modal
+        header=parts.header
+        body=parts.body
+        closeAction=parts.closeAction
+        footer=parts.footer
+      )}}
+    {{else}}
+      {{parts.header}}
+      {{parts.body}}
+      {{parts.footer}}
+    {{/if}}
+  {{/let}}
 {{/bs-modal}}

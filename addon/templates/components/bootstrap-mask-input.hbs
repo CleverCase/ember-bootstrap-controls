@@ -1,41 +1,35 @@
-{{#bootstrap/control-wrapper errors=errors classNames=classNames as |control|}}
-  {{#if hasBlock}}
-    {{yield
-      (hash
-        label=(component control.label for=control.inputId label=label srOnly=srOnly)
-        input=(component 'one-way-input-mask'
-          elementId=control.inputId
-          class="form-control"
-          value=value
-          mask=mask
-          update=(action 'update')
-          disabled=disabled
-          options=(hash
-            showMaskOnHover=showMaskOnHover
-            showMaskOnFocus=showMaskOnFocus
-            repeat=repeat)
-          required=required
-          placeholder=placeholder
-          onComplete=onComplete
+{{#bootstrap/control-wrapper
+  label=label
+  srOnly=srOnly
+  errors=errors
+  classNames=classNames
+as |control|}}
+  {{#let (component 'one-way-input-mask'
+    id=control.inputId
+    class="form-control"
+    value=value
+    mask=mask
+    update=(action 'update')
+    disabled=disabled
+    options=(hash
+      showMaskOnHover=showMaskOnHover
+      showMaskOnFocus=showMaskOnFocus
+      repeat=repeat
+    )
+    required=required
+    placeholder=placeholder
+    onComplete=onComplete
+  ) as |input|}}
+    {{#if hasBlock}}
+      {{yield
+        (hash
+          label=control.label
+          input=input
         )
-      )
-    }}
-  {{else}}
-    {{control.label for=control.inputId label=label srOnly=srOnly}}
-    {{one-way-input-mask
-      elementId=control.inputId
-      class="form-control"
-      value=value
-      mask=mask
-      update=(action 'update')
-      disabled=disabled
-      options=(hash
-        showMaskOnHover=showMaskOnHover
-        showMaskOnFocus=showMaskOnFocus
-        repeat=repeat)
-      required=required
-      placeholder=placeholder
-      onComplete=onComplete
-    }}
-  {{/if}}
+      }}
+    {{else}}
+      {{control.label}}
+      {{input}}
+    {{/if}}
+  {{/let}}
 {{/bootstrap/control-wrapper}}

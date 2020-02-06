@@ -1,35 +1,34 @@
 <div class="modal-dialog{{if centered " modal-dialog-centered" ""}}" role="document" tabindex='-1'>
   <div class="modal-content">
-    {{#if hasBlock}}
-      {{yield
-        (hash
-          isOpen=isOpen
-          toggle=(action 'toggleModal')
-          close=(action 'closeAction')
-          accept=acceptAction
-          header=(component 'bootstrap/modal/-header'
-            title=title
-            showCloseInHeader=showCloseInHeader
-            closeAction=(action 'closeAction')
-          )
-          body=(component 'bootstrap/modal/-body' content=body)
-          footer=(component 'bootstrap/modal/-footer'
-            acceptAction=acceptAction
-            closeAction=(action 'closeAction')
-          )
-        )
-      }}
-    {{else}}
-      {{bootstrap/modal/-header
+    {{#let (hash
+      header=(component 'bootstrap/modal/-header'
         title=title
         showCloseInHeader=showCloseInHeader
         closeAction=(action 'closeAction')
-      }}
-      {{bootstrap/modal/-body content=body}}
-      {{bootstrap/modal/-footer
+      )
+      body=(component 'bootstrap/modal/-body' content=body)
+      footer=(component 'bootstrap/modal/-footer'
         acceptAction=acceptAction
         closeAction=(action 'closeAction')
-      }}
-    {{/if}}
+      )
+    ) as |modal|}}
+      {{#if hasBlock}}
+        {{yield
+          (hash
+            isOpen=isOpen
+            toggle=(action 'toggleModal')
+            close=(action 'closeAction')
+            accept=acceptAction
+            header=modal.header
+            body=modal.body
+            footer=modal.footer
+          )
+        }}
+      {{else}}
+        {{modal.header}}
+        {{modal.body}}
+        {{modal.footer}}
+      {{/if}}
+    {{/let}}
   </div>
 </div>

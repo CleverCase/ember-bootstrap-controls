@@ -1,51 +1,36 @@
-{{#if hasBlock}}
-  {{yield
-    (hash
-      isEditing=(readonly isEditing)
-      isSaving=(readonly isSaving)
-      isCanceling=(readonly isCanceling)
-      isRunning=(readonly isRunning)
-      cancelButton=(component 'bootstrap-button'
-        'bootstrap-button'
-        classNames='btn-secondary'
-        disabled=isRunning
-        action=cancel
-        buttonText='Cancel'
-      )
-      saveButton=(component 'bootstrap-button'
-        classNames='btn-primary'
-        disabled=isRunning
-        action=save
-        buttonText='Save'
-      )
-      editButton=(component 'bootstrap-button'
-        classNames='btn-primary'
-        action=edit
-        disabled=isRunning
-        buttonText='Edit'
-      )
-    )
-  }}
-{{else}}
-  {{#if isEditing}}
-    {{bootstrap-button
-      classNames='btn-secondary'
-      disabled=isRunning
-      action=cancel
-      buttonText='Cancel'
-    }}
-    {{bootstrap-button
-      classNames='btn-primary'
-      disabled=isRunning
-      action=save
-      buttonText='Save'
-    }}
+{{#let (hash
+  isEditing=(readonly isEditing)
+  isSaving=(readonly isSaving)
+  isCanceling=(readonly isCanceling)
+  isRunning=(readonly isRunning)
+  cancelButton=(component 'bootstrap-button'
+    'bootstrap-button'
+    classNames='btn-secondary'
+    disabled=isRunning
+    action=cancel
+    buttonText='Cancel'
+  )
+  saveButton=(component 'bootstrap-button'
+    classNames='btn-primary'
+    disabled=isRunning
+    action=save
+    buttonText='Save'
+  )
+  editButton=(component 'bootstrap-button'
+    classNames='btn-primary'
+    action=edit
+    disabled=isRunning
+    buttonText='Edit'
+  )
+) as |formControls|}}
+  {{#if hasBlock}}
+    {{yield formControls}}
   {{else}}
-    {{bootstrap-button
-      classNames='btn-primary'
-      action=edit
-      disabled=isRunning
-      buttonText='Edit'
-    }}
+    {{#if isEditing}}
+      {{formControls.cancelButton}}
+      {{formControls.saveButton}}
+    {{else}}
+      {{formControls.editButton}}
+    {{/if}}
   {{/if}}
-{{/if}}
+{{/let}}

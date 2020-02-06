@@ -5,39 +5,29 @@
   label=label
   as |control|
 }}
-  {{#if hasBlock}}
-    {{yield
-      (hash
-        label=(component control.label for=control.inputId)
-        input=(component 'bootstrap/-input'
-          value=value
-          elementId=control.inputId
-          type=type
-          placeholder=placeholder
-          classNames="form-control"
-          readonly=readonly
-          disabled=disabled
-          key-press=key-press
-          key-up=key-up
-          key-down=key-down
-          required=required
+  {{#let (component 'bootstrap/-input'
+    value=value
+    id=control.inputId
+    type=type
+    placeholder=placeholder
+    classNames="form-control"
+    readonly=readonly
+    disabled=disabled
+    key-press=key-press
+    key-up=key-up
+    key-down=key-down
+    required=required
+  ) as |input|}}
+    {{#if hasBlock}}
+      {{yield
+        (hash
+          label=control.label
+          input=input
         )
-      )
-    }}
-  {{else}}
-    {{control.label for=control.inputId}}
-    {{bootstrap/-input
-      tabindex=tabindex
-      value=value
-      elementId=control.inputId
-      type=type
-      placeholder=placeholder
-      readonly=readonly
-      disabled=disabled
-      key-press=key-press
-      key-up=key-up
-      key-down=key-down
-      required=required
-    }}
-  {{/if}}
+      }}
+    {{else}}
+      {{control.label}}
+      {{input}}
+    {{/if}}
+  {{/let}}
 {{/bootstrap/control-wrapper}}

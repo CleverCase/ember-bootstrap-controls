@@ -1,6 +1,12 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [Unreleased]
+### Changed
+  * Updated to ember-cli 3.12
+  * due to breakage in `elementId` being specified, all components were switched to use `id`
+  * Refactored many components to use let helpers to reduce duplication
+
 ## [2.0.0] - 2019-10-14
 ### Added
   * `ember-inputmask` ([@jir-f][])

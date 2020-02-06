@@ -1,29 +1,7 @@
 <div class="{{concat-class-names classNames}} form-group bootstrap-input-component {{if hasSuccess 'has-success'}} {{if hasWarning 'has-warning'}} {{if (or hasError (and required (not hasValue))) 'has-error'}}">
-  {{#if hasBlock}}
-    {{yield
-      (hash
-        label=(component control.label for=control.inputId label=label srOnly=srOnly)
-        input=(component 'one-way-currency-mask'
-          class="form-control"
-          id=control.inputId
-          value=value
-          disabled=disabled
-          options=(hash
-            prefix=prefix
-            allowDecimal=allowDecimal
-            decimalLimit=decimalLimit
-            clearMaskOnLostFocus=clearMaskOnLostFocus
-          )
-          update=(action 'update')
-          required=required
-          placeholder=placeholder
-          onComplete=onComplete
-        )
-      )
-    }}
-  {{else}}
-    {{control.label for=control.inputId label=label srOnly=srOnly}}
-    {{one-way-currency-mask
+  {{#let (hash
+    label=(component control.label for=control.inputId label=label srOnly=srOnly)
+    input=(component 'one-way-currency-mask'
       class="form-control"
       id=control.inputId
       value=value
@@ -38,8 +16,20 @@
       required=required
       placeholder=placeholder
       onComplete=onComplete
-    }}
-  {{/if}}
+    )
+  ) as |element|}}
+    {{#if hasBlock}}
+      {{yield
+        (hash
+          label=element.label
+          input=element.input
+        )
+      }}
+    {{else}}
+      {{element.label}}
+      {{element.input}}
+    {{/if}}
+  {{/let}}
   {{#if errors}}
     <div class="form-control-static alert alert-danger" role="alert">
       {{#each errors as |error|}}

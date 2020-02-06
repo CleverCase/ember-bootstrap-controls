@@ -1,7 +1,7 @@
-/* global $ */
 import { get } from '@ember/object';
 import layout from '../../templates/components/power-select/lazy-options';
 import PSOptionsComponent from 'ember-power-select/components/power-select/options';
+import jQuery from 'jquery'
 
 export default PSOptionsComponent.extend({
   layout,
@@ -26,16 +26,16 @@ export default PSOptionsComponent.extend({
 
   attachCheckVisibilty() {
     const checkVisibility = () => {
-      if ($(this.element).find('.ember-power-select-option--load-more').checkInView(true)) { // eslint-disable-line ember/no-global-jquery
+      if (jQuery(this.element).find('.ember-power-select-option--load-more').checkInView(true)) {
         this.loadMore();
       }
     };
 
-    $(this.element).on('scroll', checkVisibility); // eslint-disable-line ember/no-global-jquery
+    jQuery(this.element).on('scroll', checkVisibility);
   },
 
   removeCheckVisibility() {
-    $(this.element).off('scroll'); // eslint-disable-line ember/no-global-jquery
+    jQuery(this.element).off('scroll');
   },
 
   didInsertElement() {
