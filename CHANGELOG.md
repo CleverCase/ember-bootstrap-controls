@@ -1,6 +1,10 @@
 # Changelog
 All notable changes to this project will be documented in this file.
 
+## [3.0.1] - 2020-03-13
+### Fixed
+  * Fixed a bug where initial sort was inconsistent with route reloads.
+
 ## [3.0.0] - 2020-02-06
 ### Changed
   * Updated to ember-cli 3.12
