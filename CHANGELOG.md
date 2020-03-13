@@ -4,6 +4,8 @@ All notable changes to this project will be documented in this file.
 ## [3.0.1] - 2020-03-13
 ### Fixed
   * Fixed a bug where initial sort was inconsistent with route reloads.
+### Security
+  * Updated dependencies.
 
 ## [3.0.0] - 2020-02-06
 ### Changed
@@ -18,7 +20,7 @@ All notable changes to this project will be documented in this file.
   * Updated `ember-tui-editor` to 0.1.5 ([@jir-f][])
   * Updated `bootstrap-input-mask`
   * Updated `bootstrap-currency-input`
-### Removed 
+### Removed
   * `ember-text-mask-addons` ([@jir-f][])
 
 ## [1.1.0] - 2019-06-27
