@@ -1,5 +1,5 @@
 import Mixin from '@ember/object/mixin';
-import { isPresent } from '@ember/utils';
+import { isPresent, isEqual } from '@ember/utils';
 
 export default Mixin.create({
   sortDirectionDefault: "false",
@@ -17,11 +17,12 @@ export default Mixin.create({
   },
 
   sortingParams(params, defaultSortCriteria, defaultSortReverse = false) {
-    if (params.sortReverse === true || params.sortReverse === false) {
-      // NOTE: Convert T/F to string in order to send across server
-      params.sortReverse = params.sortReverse.toString();
+    let literalBoolean = params.sortReverse === true || params.sortReverse === false;
+    let stringBoolean = isEqual(params.sortReverse, 'true') || isEqual(params.sortReverse, 'false');
+    if (literalBoolean || stringBoolean) {
+      params.sortReverse = params.sortReverse.toString(); // NOTE: Convert T/F to string in order to send across server
     } else {
-      params.sortReverse = this.sortDirectionDefault;
+      params.sortReverse = defaultSortReverse;
     }
     return {
       criteria: params.sortCriteria ? params.sortCriteria : defaultSortCriteria,
